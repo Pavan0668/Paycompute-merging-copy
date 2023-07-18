@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="SiteMaster" Codebehind="Site.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+
+    <title></title>
+    <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:PlaceHolder ID="PlaceHolderJquery" runat="server">  <script src="<%=ResolveClientUrl("~/Scripts/jquery-1.4.1-vsdoc.js")%>" type="text/javascript"></script></asp:PlaceHolder>
+   <asp:PlaceHolder ID="PlaceHolderJquery14" runat="server"> <script src="<%=ResolveClientUrl("~/Scripts/jquery-1.4.1.js")%>" type="text/javascript"></script></asp:PlaceHolder>
+   <asp:PlaceHolder ID="PlaceHolderJquery14min" runat="server"> <script src="<%=ResolveClientUrl("~/Scripts/jquery-1.4.1.min.js")%>" type="text/javascript"></script></asp:PlaceHolder>
+   <%-- <script type="text/javascript">
+
+        function GetContentValue() {
+
+            alert(document.getElementById('<%= ((TextBox)MainContent.FindControl("txtChild")).ClientID %>').value);
+
+            return false;
+        }  
+
+ </script>--%>      
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <asp:Image ID="Image1" runat="server" AlternateText="iEmpPower Logo" 
+                    ImageUrl="~/images/iemp-small-logo.jpg" Width="100px" />
+                    <asp:Image ID="Image3" runat="server" AlternateText="iEmpPower Logo" 
+                    ImageUrl="~/images/img-sep.jpg" Width="33px" />
+                    <asp:Image ID="imgCustomerLogo" runat="server" AlternateText=" Logo" 
+                    Height="45px" />
+                    
+            </div>
+             
+            <div class="loginDisplay">
+            <div style="padding: 2px; position: absolute; top: 0px; right: 0px;">
+            <div style="float: left; border: 1px solid #333333; padding: 2px; background-color: #FFFFFF;"> <asp:Image ID="imgEmp" runat="server" Width="40px" BorderWidth="0px" 
+                        ImageUrl="~/images/default-emp.jpg" Height="40px"/></div>
+           <div style="clear: right">
+            <asp:LoginView ID="HeadLoginView" runat="server">
+            
+                    <AnonymousTemplate>
+                      <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log Out</a> 
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span ><asp:Label ID="lblEmployyeName" runat="server" Text=""></asp:Label></span>
+                       
+                       <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/Account/Login.aspx"/>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            </div>
+                
+                
+            </div>
+      <div class="clear hideSkiplink">
+          
+                
+                <asp:Menu ID="NavigationMenu" runat="server"  StaticEnableDefaultPopOutImage="false"
+                    EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                    DataSourceID="SiteMapDataSource1" StaticDisplayLevels="2"  CssClass="menu"
+                    BackColor="#2781BA" DynamicHorizontalOffset="2" StaticSubMenuIndent="10px" 
+                     Font-Size="10pt" ForeColor="White">
+                    <%--<Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    </Items>--%>
+                                            <DataBindings>
+                                                <asp:MenuItemBinding DataMember="SiteMapNode" NavigateUrlField="Url" />
+                                            </DataBindings>
+                                            <DynamicHoverStyle  ForeColor="White" Height="4px" 
+                        BackColor="#5AB3EB" Width="100%"   />
+                                            <DynamicMenuItemStyle  Font-Bold="False" 
+                        HorizontalPadding="10px" Font-Underline="False" 
+                                                VerticalPadding="2px" BackColor="#257AB4" />
+                                            <DynamicMenuStyle CssClass="menuDynamic" 
+                        HorizontalPadding="0px" VerticalPadding="0px" />
+                                            <DynamicSelectedStyle BackColor="#59B1E8" 
+                        Font-Bold="False" />
+                                            <StaticHoverStyle ForeColor="White" 
+                        BackColor="#5CB9F3" />
+                                            <StaticMenuItemStyle HorizontalPadding="5px" 
+                                                Font-Bold="False" Font-Size="10pt" 
+                        VerticalPadding="2px"  />
+                    <StaticMenuStyle CssClass="menuStatic" />
+                                            <StaticSelectedStyle BackColor="#2989C9" 
+                        Font-Bold="False" />
+                </asp:Menu>
+                <div style="position: absolute; right: 0px; bottom: 4px;">
+                <asp:ImageButton ID="imgbtnDirectory" runat="server" Height="25px" ImageAlign="Right" 
+                    ImageUrl="~/images/dir_icon.gif" Width="30px" 
+                    AlternateText="Company Directrory" 
+                    ToolTip="Company Directory" onclick="imgbtnDirectory_Click" />
+        </div>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" 
+                    SiteMapProvider="Web" />
+          
+            </div>
+       </div>
+        <div class="nav">
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"  Font-Size="8pt"
+                PathSeparator="  &gt;  ">
+            </asp:SiteMapPath>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear" >
+        </div>
+    </div>
+    <div class="footer">
+    <div style="float: left">© 2010 - 2015 ITChamps Software Private Limited.
+       All rights reserved.</div>
+    
+    <div style="float: right">
+         <asp:LinkButton ID="lnkHomepage" runat="server" CssClass="lnk-btn" 
+             PostBackUrl="~/Default.aspx">Home</asp:LinkButton><em class="blue">|</em>
+        <asp:LinkButton ID="lnkSitemap" runat="server" CssClass="lnk-btn" 
+             PostBackUrl="~/sitemap.aspx">Sitemap</asp:LinkButton>
+        </div>
+        
+    </div>
+    <div class="clear">
+    <br />
+    </div>
+    </form>
+</body>
+</html>

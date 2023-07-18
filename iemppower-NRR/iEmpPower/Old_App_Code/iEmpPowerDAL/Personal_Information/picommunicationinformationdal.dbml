@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="picommunicationinformationdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PayCompute20032020ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_ms_load_hr_approval_for_employee" Method="sp_ms_load_hr_approval_for_employee">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_ms_load_hr_approval_for_employeeResult">
+      <Column Name="PERNR" Type="System.Decimal" DbType="Decimal(8,0) NOT NULL" CanBeNull="false" />
+      <Column Name="PLANS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pi_update_communication_info" Method="sp_pi_update_communication_info">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="USR2" Parameter="uSR2" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="USR2ID" Parameter="uSR2ID" Type="System.String" DbType="Char(40)" />
+    <Parameter Name="USR3" Parameter="uSR3" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="USR3ID" Parameter="uSR3ID" Type="System.String" DbType="Char(40)" />
+    <Parameter Name="USR4" Parameter="uSR4" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="USR4ID" Parameter="uSR4ID" Type="System.String" DbType="Char(40)" />
+    <Parameter Name="USR5" Parameter="uSR5" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="USR5ID" Parameter="uSR5ID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="USR6" Parameter="uSR6" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="USR6ID" Parameter="uSR6ID" Type="System.String" DbType="Char(40)" />
+    <Parameter Name="USRMPHN" Parameter="uSRMPHN" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="USRMPHNID" Parameter="uSRMPHNID" Type="System.String" DbType="Char(40)" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SuperVisorStatus" Parameter="superVisorStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HRStatus" Parameter="hRStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HR_Name" Parameter="hR_Name" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Pernr_Email" Parameter="pernr_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_pi_get_communication_info" Method="sp_pi_get_communication_info">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_pi_get_communication_infoResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USTXT" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="USRTY" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="RecordCnt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_pi_communication_details" Method="usp_pi_communication_details">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="USRTY" Parameter="uSRTY" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="USRID" Parameter="uSRID" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Parameter Name="Supervisor_Email" Parameter="supervisor_Email" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_pi_get_communication_info_full" Method="sp_pi_get_communication_info_full">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_pi_get_communication_info_fullResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USTXT" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="USRTY" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TransStatus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pi_get_Communicationinfo_mail" Method="sp_pi_get_Communicationinfo_mail">
+    <Parameter Name="pkey" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sts" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_pi_get_Communicationinfo_mailResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PKEY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="USRTY" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="USTXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ms_load_who_is_who" Method="sp_ms_load_who_is_who">
+    <Parameter Name="employee_name" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_ms_load_who_is_whoResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="PHOTO" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="joiningdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="perslareadesc" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="depdetails" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PLANS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="emailid" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Altemail" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="mobileno" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="mngrname" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="EMP_DEPART" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pi_get_communication_info_s" Method="sp_pi_get_communication_info_s">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_pi_get_communication_info_sResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pkey" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="USRTY" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="mgrcomments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="isapproved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="hr_approved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

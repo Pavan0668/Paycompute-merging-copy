@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="Default.aspx" title="Home"  description="">
+        <!--<siteMapNode url="" title="Configuration"  description="" >-->
+            <siteMapNode url="~/UI/Configuration/Configuration.aspx" title="Configuration"  description=""/>
+            <siteMapNode url="~/UI/Configuration/iEmpPower_DT_Wizard.aspx" title="DT wizard"  description=""/>
+        <!--</siteMapNode>-->
+      
+        <siteMapNode url="UI/Personal_Information/personal_information.aspx" title="Personal Information"  description="" >
+        <siteMapNode url="UI/Personal_Information/address_information.aspx" title="Address Information"  description="" />
+          <siteMapNode url="UI/Personal_Information/bank_information.aspx" title="Bank Information"  description="" />
+          <siteMapNode url="UI/Personal_Information/communication_information.aspx" title="Communication Information"  description="" />
+          <siteMapNode url="UI/Personal_Information/family_members.aspx" title="Family members / Dependents"  description="" />
+          <siteMapNode url="UI/Personal_Information/personal_data.aspx" title="Personal Data"  description="" />
+          <siteMapNode url="UI/Personal_Information/personal_ids.aspx" title="Personal IDs"  description="" />
+            <siteMapNode url="UI/Manager_Self_Service/addressproof.aspx" title="Address proof"  description="" />
+            <siteMapNode url="UI/Manager_Self_Service/employmentproof.aspx" title="Employment proof"  description="" />
+          
+        </siteMapNode>
+        <siteMapNode url="UI/Benefits_Payment/benefits_and_payment.aspx" title="Benefits and Payment"  description="" >
+          
+            <!--<siteMapNode url="UI/Benefits_Payment/travel_expenses.aspx" title="Travel Expense"  description="" />-->
+            <siteMapNode url="UI/Benefits_Payment/payslip.aspx" title="Payslip"  description="" />
+            <siteMapNode url="UI/Benefits_Payment/leave_encashment.aspx" title="Leave Encashment"  description="" />
+            <siteMapNode url="UI/Benefits_Payment/form16.aspx" title="Form 16"  description="" />
+            <!--<siteMapNode url="UI/Benefits_Payment/reimbursement-stmnt.aspx" title="Reimbursement Statement"  description="" />-->
+            
+        </siteMapNode>
+        <siteMapNode url="UI/Working_Time/working_time.aspx" title="Working Time"  description="" >
+        <siteMapNode url="UI/Working_Time/clockinout_correction.aspx" title="Clock In / Out correction"  description="" />
+          <siteMapNode url="UI/Working_Time/recordworking_time.aspx" title="Record Working Time"  description="" />
+          <siteMapNode url="UI/Working_Time/timestatement.aspx" title="Time Statements"  description="" />
+          <siteMapNode url="UI/Working_Time/leaverequest.aspx" title="Leave Request"  description="" />
+        </siteMapNode>
+      
+        <siteMapNode url="UI/Manager_Self_Service/manager_self_service.aspx" title="Manager Self Service"  description="" >
+          
+        <siteMapNode url="UI/Manager_Self_Service/assignedtome.aspx" title="Assigned To Me"  description="" />
+          <!--<siteMapNode url="UI/Manager_Self_Service/assignedtorole.aspx" title="Assigned To My Role"  description="" />-->
+       <siteMapNode url="UI/Manager_Self_Service/who'swho.aspx" title="Directory "  description="" />  <!--Who's who-->
+        </siteMapNode>
+      <siteMapNode  title="Travel Request"  description="" >
+
+        <siteMapNode  title="Requisition"  description="" >
+        <siteMapNode url="" title="Local"  description="">
+            <!-- For Employee -->
+          <siteMapNode url="UI/Local_requisition/local_travel_requisition.aspx" title="Local travel requisition"  description="" />
+          <siteMapNode url="UI/Local_requisition/local_accommodation_requisition.aspx" title="Local accommodation requisition"  description="" />
+        </siteMapNode>
+        
+        <siteMapNode url="" title="Outstation"  description="">
+          <siteMapNode url="UI/Benefits_Payment/travel_request.aspx" title="Traveller-Requisition"  description="" />
+          <siteMapNode url="UI/Benefits_Payment/new_accommodation_requisition.aspx" title="Traveller-Accommodation requisition"  description="" />
+          <siteMapNode url="UI/Benefits_Payment/new_vehicle_requisition.aspx" title="Traveller-Vehicle requisition"  description="" />
+          <siteMapNode url="UI/Benefits_Payment/proposals_employee.aspx" title="Traveller-Proposals"  description="" />
+          <siteMapNode url="UI/Benefits_Payment/hod_requisition.aspx" title="HOD-Requisitions"  description="" />
+          <siteMapNode url="UI/Benefits_Payment/hod_proposals.aspx" title="HOD-Proposals"  description="" />
+        </siteMapNode>
+
+        </siteMapNode>
+
+
+        <!-- common for employee and hod -->
+
+        <!-- common for employee and hod -->
+      
+        <!-- common for employee and hod -->
+     <!--  <siteMapNode url="UI/Benefits_Payment/travellers_feedback.aspx" title="Travellers Feedback"  description="" />-->
+        <!-- common for employee and hod -->
+        <siteMapNode url="UI/Benefits_Payment/ticket_summary_td.aspx" title="Ticket Summary"  description="" />
+      
+        <!-- For HOD -->
+       
+        <!--<siteMapNode url="UI/Benefits_Payment/acc_requisition_hod.aspx" title="Accommodation requisitions(HOD)"  description="" />
+            <siteMapNode url="UI/Benefits_Payment/veh_requisition_hod.aspx" title="Vehicle requisitions(HOD)"  description="" />-->
+        <siteMapNode url="UI/Benefits_Payment/acc_proposals_hod.aspx" title="Acc. proposals"  description="" />
+        <siteMapNode url="UI/Benefits_Payment/veh_proposals_hod.aspx" title="Veh proposals"  description="" />
+        <!-- For TD -->
+        <siteMapNode url="UI/Benefits_Payment/td_requisitions.aspx" title="Requisitions"  description="" />
+        <siteMapNode url="UI/Benefits_Payment/veh_requisitions_td.aspx" title="Vehicle requisitions"  description="" />
+        <siteMapNode url="UI/Benefits_Payment/acc_requisition_td.aspx" title="Accommodation requisitions"  description="" />
+        <siteMapNode url="UI/Benefits_Payment/td_proposals.aspx" title="Proposals"  description="" />
+        <siteMapNode url="UI/Benefits_Payment/ticket_booking_td.aspx" title="Ticket booking"  description="" />
+        <siteMapNode url="UI/Benefits_Payment/acc_booking_td.aspx" title="Acc booking"  description="" />
+        <siteMapNode url="UI/Benefits_Payment/veh_booking_td.aspx" title="Veh booking"  description="" />
+        <siteMapNode url="UI/Benefits_Payment/ticket_cancel_td.aspx" title="Ticket Cancel"  description="" />
+        
+        <siteMapNode  title="Claims"  description="" >
+            <siteMapNode  title="Corporate Employee"  description="" >
+              <siteMapNode url="UI/Benefits_Payment/EmpClaim.aspx" title="Employee claims"  description="" />
+              <siteMapNode url="UI/Benefits_Payment/AccountsClaim.aspx" title="Account claims"  description="" />
+              <siteMapNode url="UI/Benefits_Payment/HODClaim.aspx" title="HOD claims"  description="" />
+            </siteMapNode>
+            <siteMapNode  title="Field Staff"  description="" >
+              <siteMapNode url="UI/Benefits_Payment/Expense_statement.aspx" title="Expense statement"  description="" />
+              <siteMapNode url="UI/Benefits_Payment/Expence_approval.aspx" title="Expense approval"  description="" />
+            </siteMapNode>
+        </siteMapNode>
+      </siteMapNode>
+      
+        <!--<siteMapNode url="" title="Employee Performance"  description="" >
+        <siteMapNode url="" title="G and O Settings"  description="" />
+          <siteMapNode url="" title="Self appraisal"  description="" />
+          <siteMapNode url="" title="Level 1 Appraisal review (Revert support)"  description="" />
+          <siteMapNode url="" title="Level 2 Appraisal review (Revert support)"  description="" />
+          <siteMapNode url="" title="HR Manager review (Revert support)"  description="" />
+          <siteMapNode url="" title="Competency configuration"  description="" />
+          <siteMapNode url="" title="Competency mapping"  description="" />
+         
+        </siteMapNode>-->
+        <siteMapNode title="My account" description="">
+            <siteMapNode url="~/UI/UserAccount/createuseraccount.aspx" title="Maintain User Account"  description="" />
+            <siteMapNode url="~/UI/UserAccount/changepassword.aspx" title="Change password"  description="" />
+            <siteMapNode url="~/UI/UserAccount/createquestionandanswer.aspx" title="Account Security Question"  description="" />
+            <siteMapNode url="~/UI/UserAccount/ResetEmployeePassword.aspx" title="Reset Employee Password"  description="" />
+          <siteMapNode url="~/UI/Configuration/Login_Details.aspx" title="Employee Activity"  description="" />
+          <siteMapNode url="~/UI/Benefits_Payment/kannadaPayslip.aspx" title="Kannada Payslip"  description="" />
+        </siteMapNode>
+    </siteMapNode>
+</siteMap>
+
+
+
+
+
+

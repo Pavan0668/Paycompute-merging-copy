@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPowerRangsons" Class="payslipDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=iEmpPowerRangsons;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_zhr_Load_Payslip" Method="sp_zhr_Load_Payslip">
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="sp_zhr_Load_PayslipResult">
+      <Column Name="PERNR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DESIG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="JOIND" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DEPT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PABLE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BANKN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PAID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ZMODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NEFT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BANK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PFN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ESI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG01" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT01" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG02" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT02" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG03" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT03" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG04" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT04" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG05" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT05" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG06" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT06" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG07" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT07" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG08" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT08" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG09" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT09" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG10" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT10" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG11" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT11" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG12" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT12" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG13" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT13" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG14" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT14" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EWAG15" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EAMT15" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TOTEAR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG16" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT16" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG17" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT17" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG18" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT18" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG19" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT19" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG20" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT20" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG21" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT21" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG22" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT22" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG23" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT23" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG24" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT24" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG25" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT25" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG26" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT26" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG27" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT27" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG28" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT28" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG29" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT29" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DWAG30" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DAMT30" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TOTDED" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NETPAY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_zhr_Load_pernr" Method="sp_zhr_Load_pernr">
+    <Parameter Name="WERKS" Parameter="wERKS" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="sp_zhr_Load_pernrResult">
+      <Column Name="pernr" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_wt_load_payslip" Method="usp_wt_load_payslip">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="YEAR" Parameter="yEAR" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FilePath" Parameter="filePath" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_wt_load_payslipResult">
+      <Column Name="Rownumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(63)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(45)" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="VarChar(198)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

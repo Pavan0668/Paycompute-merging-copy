@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Customers>
+  <Customer>
+    <Type_of_Expenses>Stationaries</Type_of_Expenses>
+    <Actual> 150</Actual>
+  </Customer>
+  <Customer>
+    <Type_of_Expenses>Courier</Type_of_Expenses>
+    <Actual>  0.00</Actual>
+  </Customer>
+  <Customer>
+    <Type_of_Expenses>P and T</Type_of_Expenses>
+    <Actual>  0.00</Actual>
+  </Customer>
+  <Customer>
+    <Type_of_Expenses>E_mail</Type_of_Expenses>
+    <Actual>  0.00</Actual>
+  </Customer>
+  <Customer>
+    <Actual>  0.00</Actual>
+    <Type_of_Expenses>Compitator product purchase</Type_of_Expenses>
+  </Customer>
+  <Customer>
+    <Type_of_Expenses>Others</Type_of_Expenses>
+    <Actual> 150</Actual>
+  </Customer>
+  <Customer>
+    <Type_of_Expenses>Market Development Expences</Type_of_Expenses>
+    <Actual> 0.00</Actual>
+  </Customer>
+  <Customer>
+    <Type_of_Expenses>Bus Pass</Type_of_Expenses>
+    <Actual>  0.00</Actual>
+  </Customer>
+  <Customer>
+    <Type_of_Expenses>Conveyance</Type_of_Expenses>
+    <Actual>  0.00</Actual>
+  </Customer>
+  <Customer>
+    <Type_of_Expenses>Jc Meetings</Type_of_Expenses>
+    <Actual>  0.00</Actual>
+  </Customer>
+  
+</Customers>

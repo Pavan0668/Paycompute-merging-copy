@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Floors>
+  <VehicleType>Taxi</VehicleType>
+  <VehicleCategory>
+    <VehicleCategory>taxi1</VehicleCategory>
+
+  </VehicleCategory>
+  <VehicleType>Taxi</VehicleType>
+  <VehicleCategory>
+    <VehicleCategory>taxi1</VehicleCategory>
+
+  </VehicleCategory>
+</Floors>

@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPower" Class="Vehicle_requisitionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=iEmpPower;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_delete_vehicle_requisition" Method="sp_delete_vehicle_requisition">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TravelType" Parameter="travelType" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_traveller_vehicle" Method="sp_get_traveller_vehicle">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_get_traveller_vehicleResult">
+      <Column Name="Vehicle_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRIP_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRIP_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_FROM" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_TO" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_FROM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_TO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE_OF_TRAVEL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Carrying_any_materials" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_TIME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DROP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_services" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_local_travel_requistion_group_member_names" Method="sp_get_local_travel_requistion_group_member_names">
+    <Parameter Name="travel_req_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_local_travel_requistion_group_member_namesResult">
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Member_Id" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_vehicle_requisition_History" Method="sp_get_vehicle_requisition_History">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_vehicle_requisition_HistoryResult">
+      <Column Name="Vehicle_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRIP_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRIP_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_FROM" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_TO" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_FROM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_TO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE_OF_TRAVEL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Carrying_any_materials" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_TIME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DROP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_services" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_vehicle_requisition_details" Method="sp_get_vehicle_requisition_details">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_vehicle_requisition_detailsResult">
+      <Column Name="Vehicle_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRIP_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRIP_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_FROM" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_TO" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_FROM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_TO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE_OF_TRAVEL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Carrying_any_materials" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_TIME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DROP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_services" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_create_Sep_vehicle_proposal" Method="sp_create_Sep_vehicle_proposal">
+    <Parameter Name="Vehicle_req_id" Parameter="vehicle_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Date_of_travel" Parameter="date_of_travel" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Duration_from" Parameter="duration_from" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Duration_to" Parameter="duration_to" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Departure_from" Parameter="departure_from" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Destination_to" Parameter="destination_to" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Purpose_of_travel" Parameter="purpose_of_travel" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Carrying_any_materials" Parameter="carrying_any_materials" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Pickup_time" Parameter="pickup_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pickup_address" Parameter="pickup_address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Drop_time" Parameter="drop_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Drop_address" Parameter="drop_address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Vehicle_type" Parameter="vehicle_type" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_category" Parameter="vehicle_category" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_name" Parameter="vehicle_name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="Additional_services" Parameter="additional_services" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="STATUS_UPDATED_BY" Parameter="sTATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="created_by" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_update_HOD_status_SeparateVehi" Method="sp_update_HOD_status_SeparateVehi">
+    <Parameter Name="Vehicle_req_id" Parameter="vehicle_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="OutstLocal" Parameter="outstLocal" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_update_Local_travel_details" Method="sp_update_Local_travel_details">
+    <Parameter Name="travel_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Type_of_travel" Parameter="type_of_travel" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="from" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="to" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_type" Parameter="vehicle_type" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_category" Parameter="vehicle_category" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_name" Parameter="vehicle_name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pickup_time" Parameter="pickup_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pickup_address" Parameter="pickup_address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Drop_time" Parameter="drop_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Drop_address" Parameter="drop_address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Purpose_of_travel" Parameter="purpose_of_travel" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Number_of_members" Parameter="number_of_members" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name_of_members" Parameter="name_of_members" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="STATUS_UPDATED_BY" Parameter="sTATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="created_by" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_OutLocalVehicle_requisition_details" Method="sp_get_OutLocalVehicle_requisition_details">
+    <Parameter Name="vehi_req_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_OutLocalVehicle_requisition_detailsResult">
+      <Column Name="Vehicle_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRIP_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRIP_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_FROM" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_TO" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_FROM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_TO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE_OF_TRAVEL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Carrying_any_materials" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_TIME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DROP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_services" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_LocalVehicle_requisition_details" Method="sp_get_LocalVehicle_requisition_details">
+    <Parameter Name="vehi_req_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_LocalVehicle_requisition_detailsResult">
+      <Column Name="Local_travel_req_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type_of_travel" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_TIME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_adress" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Purpose_of_travel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Number_of_members" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="From_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="To_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_vehicle_TravelReq_details" Method="sp_get_vehicle_TravelReq_details">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_vehicle_TravelReq_detailsResult">
+      <Column Name="Vehicle_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRIP_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRIP_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_FROM" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_TO" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_FROM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_TO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE_OF_TRAVEL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Carrying_any_materials" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_TIME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DROP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_services" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_vehicle_SeparateReq_details" Method="sp_get_vehicle_SeparateReq_details">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_get_vehicle_SeparateReq_detailsResult">
+      <Column Name="Vehicle_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRIP_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRIP_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_FROM" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_TO" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_FROM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTURE_TO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE_OF_TRAVEL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Carrying_any_materials" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_TIME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DROP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_services" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Reason_for_cancel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Local_travel_details" Method="sp_get_Local_travel_details">
+    <Parameter Name="travel_type" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Employee_No" Parameter="employee_No" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Role" Parameter="role" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_get_Local_travel_detailsResult">
+      <Column Name="Local_travel_req_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type_of_travel" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Number_of_members" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VehicleTypeName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="VehicleTypeId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VehicleCategoryId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VehicleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VehicleId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_TIME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_adress" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Purpose_of_travel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Employee_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="From_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="To_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_create_local_travel_requisition" Method="sp_create_local_travel_requisition">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Type_of_travel" Parameter="type_of_travel" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="from" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="to" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_type" Parameter="vehicle_type" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_category" Parameter="vehicle_category" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_name" Parameter="vehicle_name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pickup_time" Parameter="pickup_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pickup_address" Parameter="pickup_address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Drop_time" Parameter="drop_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Drop_address" Parameter="drop_address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Purpose_of_travel" Parameter="purpose_of_travel" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Number_of_members" Parameter="number_of_members" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name_of_members" Parameter="name_of_members" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="STATUS_UPDATED_BY" Parameter="sTATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="created_by" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="From_date" Parameter="from_date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="To_date" Parameter="to_date" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_vehicle_requisition" Method="sp_create_vehicle_requisition">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Date_of_travel" Parameter="date_of_travel" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Duration_from" Parameter="duration_from" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Duration_to" Parameter="duration_to" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Departure_from" Parameter="departure_from" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Destination_to" Parameter="destination_to" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Purpose_of_travel" Parameter="purpose_of_travel" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Carrying_any_materials" Parameter="carrying_any_materials" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Pickup_time" Parameter="pickup_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pickup_address" Parameter="pickup_address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Drop_time" Parameter="drop_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Drop_address" Parameter="drop_address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Vehicle_type" Parameter="vehicle_type" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_category" Parameter="vehicle_category" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_name" Parameter="vehicle_name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="Additional_services" Parameter="additional_services" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="STATUS_UPDATED_BY" Parameter="sTATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="created_by" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

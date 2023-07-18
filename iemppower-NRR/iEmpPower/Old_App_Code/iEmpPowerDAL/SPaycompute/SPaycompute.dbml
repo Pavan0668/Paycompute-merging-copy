@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="SPaycomputeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PayCompute20032020ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.payc_get_salary_rates_toadmin" Method="payc_get_salary_rates_toadmin">
+    <Parameter Name="companycode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="salary_month" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="payc_get_salary_rates_toadminResult">
+      <Column Name="[Emp ID/Ref No.]" Member="Emp_ID_Ref_No_" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 1]" Member="Col_1" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 2]" Member="Col_2" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 3]" Member="Col_3" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 4]" Member="Col_4" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 5]" Member="Col_5" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 6]" Member="Col_6" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 7]" Member="Col_7" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 8]" Member="Col_8" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 9]" Member="Col_9" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 10]" Member="Col_10" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 11]" Member="Col_11" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 12]" Member="Col_12" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 13]" Member="Col_13" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 14]" Member="Col_14" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 15]" Member="Col_15" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 16]" Member="Col_16" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 17]" Member="Col_17" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 18]" Member="Col_18" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 19]" Member="Col_19" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[Col 20]" Member="Col_20" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_operate_masters" Method="payc_operate_masters">
+    <Parameter Name="Salary_Component" Parameter="salary_Component" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Created_By" Parameter="created_By" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_operate_mastersResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Salary_Component" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_payroll_activity" Method="payc_payroll_activity">
+    <Parameter Name="Company_Code" Parameter="company_Code" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Payroll_month" Parameter="payroll_month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_Insert_payroll_activity" Method="payc_Insert_payroll_activity">
+    <Parameter Name="Company_Code" Parameter="company_Code" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="payrolladstatus" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Payroll_month" Parameter="payroll_month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="update_activity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_Working_days_calculation" Method="payc_Working_days_calculation">
+    <Parameter Name="compode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateFrom" Parameter="dateFrom" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DateTo" Parameter="dateTo" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="payc_Working_days_calculationResult">
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Emp_Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FromDate" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ToDate" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Total_Days" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WeekEnds" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AppliedTimesheet" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Public_Holidays" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Paydays" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_payroll_checkmonth" Method="payc_payroll_checkmonth">
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_payroll_checkmnthxlup" Method="payc_payroll_checkmnthxlup">
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_employeeis_activelogin" Method="payc_get_employeeis_activelogin">
+    <Parameter Name="empid" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_save_salary_rates" Method="payc_save_salary_rates">
+    <Parameter Name="Salary_Componenet" Parameter="salary_Componenet" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Salary_Rate" Parameter="salary_Rate" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Company_Code" Parameter="company_Code" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Salary_Month" Parameter="salary_Month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Created_By" Parameter="created_By" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="rowid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_iemppayroll_admin" Method="payc_get_iemppayroll_admin">
+    <ElementType Name="payc_get_iemppayroll_adminResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Admin_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Admin_Email" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Admin_Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_HRdetails" Method="payc_get_HRdetails">
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="payc_get_HRdetailsResult">
+      <Column Name="HRID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="HRNAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="HREMAIL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_save_masters" Method="payc_save_masters">
+    <Parameter Name="component" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="txt" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="TXTA" Parameter="tXTA" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="company_code" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prjextID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="begda" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="endda" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="wbsbegda" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="wbsendda" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="activity" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_check_projects" Method="payc_check_projects">
+    <Parameter Name="cc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pspnr" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="begda" Type="System.DateTime" DbType="Date" Direction="InOut" />
+    <Parameter Name="endda" Type="System.DateTime" DbType="Date" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_salary_compo_mapping" Method="payc_get_salary_compo_mapping">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_salary_compo_mappingResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="comp" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Updated_On" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Salary_Component" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Component_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="typtxt" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_salary_compo_mapping" Method="payc_salary_compo_mapping">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="comID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="comtyp" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_salary_history" Method="payc_salary_history">
+    <Parameter Name="Salary_Month" Parameter="salary_Month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Created_By" Parameter="created_By" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Emp_ID" Parameter="emp_ID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_salary_historyResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Salary_Rate" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Company_Code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Salary_Month" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Salary_Component" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Ename" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Company_Name" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_check_comp_salrymap" Method="payc_check_comp_salrymap">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_load_projectswbs" Method="payc_load_projectswbs">
+    <Parameter Name="cc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_load_projectswbsResult">
+      <Column Name="PSPNR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PSPNRTXT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_update_projectdtls" Method="payc_update_projectdtls">
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="begda" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="endda" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="proj" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="wbs" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="extrnID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="title" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_projects" Method="payc_get_projects">
+    <Parameter Name="cc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pspnr" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="begda" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="endda" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="payc_get_projectsResult">
+      <Column Name="PSPNR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="txt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Start_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="End_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Updated_On" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="pjct" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="actywbs" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Updated_By" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PrismTCSCH260022018" Class="msemployeedetailsdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=PrismTCSCH260022018;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_ms_load_employee_details_for_proof" Method="sp_ms_load_employee_details_for_proof">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_ms_load_employee_details_for_proofResult">
+      <Column Name="BEGDA" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

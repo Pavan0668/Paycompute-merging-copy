@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PRD06032019" Class="AnnouncementdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=PRD06032019;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_CheckHR" Method="usp_CheckHR">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(5)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Create_Announcements" Method="usp_Create_Announcements">
+    <Parameter Name="AID" Parameter="aID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ATITLE" Parameter="aTITLE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ADESC" Parameter="aDESC" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ADATE" Parameter="aDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TOADATE" Parameter="tOADATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ATIME" Parameter="aTIME" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APLACE" Parameter="aPLACE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="UPDATED_BY" Parameter="uPDATED_BY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="UPDATED_ON" Parameter="uPDATED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CREATEDBYNAME" Parameter="cREATEDBYNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CREATEDBYEMAIL" Parameter="cREATEDBYEMAIL" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="OUTAD" Parameter="oUTAD" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_delete_Announcement" Method="usp_delete_Announcement">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AID" Parameter="aID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CREATEDBYNAME" Parameter="cREATEDBYNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CREATEDBYEMAIL" Parameter="cREATEDBYEMAIL" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="ATITLE" Parameter="aTITLE" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="ADESC" Parameter="aDESC" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="DtFrom" Parameter="dtFrom" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="DtTo" Parameter="dtTo" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="ATIME" Parameter="aTIME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="APLACE" Parameter="aPLACE" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="PERNERNAME" Parameter="pERNERNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Get_AIDAnnouncements" Method="usp_Get_AIDAnnouncements">
+    <Parameter Name="AID" Parameter="aID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Get_AIDAnnouncementsResult">
+      <Column Name="AID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ATITLE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ADESC" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ADATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TOADATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ATIME" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="APLACE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Get_Announcements" Method="usp_Get_Announcements">
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Get_AnnouncementsResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ATITLE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ADESC" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ADATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TOADATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ATIME" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="APLACE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RecordCnt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Get_AnnouncementsSearch" Method="usp_Get_AnnouncementsSearch">
+    <Parameter Name="Titlesearch" Parameter="titlesearch" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Placesearch" Parameter="placesearch" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Fromdate" Parameter="fromdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="usp_Get_AnnouncementsSearchResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ATITLE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ADESC" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ADATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TOADATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ATIME" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="APLACE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Get_AnnouncementsSiteMaster" Method="usp_Get_AnnouncementsSiteMaster">
+    <ElementType Name="usp_Get_AnnouncementsSiteMasterResult">
+      <Column Name="AID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ATITLE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ADESC" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ADATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TOADATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ATIME" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="APLACE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IEmpPower_NRR" Class="TrainingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=IEmpPower_NRR;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_create_training" Method="sp_create_training">
+    <Parameter Name="GROUP_ID" Parameter="gROUP_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SUBGROUP_ID" Parameter="sUBGROUP_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EVENT_ID" Parameter="eVENT_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="INTERNAL_EXTERNAL" Parameter="iNTERNAL_EXTERNAL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="START_DATE" Parameter="sTART_DATE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="END_DATE" Parameter="eND_DATE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LOCATION" Parameter="lOCATION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="KAPZ1" Parameter="kAPZ1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="KAPZ2" Parameter="kAPZ2" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="KAPZ3" Parameter="kAPZ3" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IPRICE" Parameter="iPRICE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IWAERS" Parameter="iWAERS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EPRICE" Parameter="ePRICE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EWAERS" Parameter="eWAERS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="KOKRS" Parameter="kOKRS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="KOSTL" Parameter="kOSTL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ORGANIZER_TYPE" Parameter="oRGANIZER_TYPE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ORGANIZER_NAME" Parameter="oRGANIZER_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AMUST" Parameter="aMUST" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TAGNR" Parameter="tAGNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DAUER" Parameter="dAUER" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="START_DAY" Parameter="sTART_DAY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MULTIPLE_DATES" Parameter="mULTIPLE_DATES" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="NO_OF_TIMES" Parameter="nO_OF_TIMES" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NO_OF_WORM" Parameter="nO_OF_WORM" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="WORM" Parameter="wORM" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Enteredby" Parameter="enteredby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Enteredon" Parameter="enteredon" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FIRMLY_BOOK" Parameter="fIRMLY_BOOK" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LOCK" Parameter="lOCK" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_Controlling_Area" Method="sp_get_Controlling_Area">
+    <ElementType Name="sp_get_Controlling_AreaResult">
+      <Column Name="KOKRS" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Cost_Center" Method="sp_get_Cost_Center">
+    <Parameter Name="KOKRS" Parameter="kOKRS" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_Cost_CenterResult">
+      <Column Name="KOKRS" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="KOSTL" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Durationdays" Method="sp_get_Durationdays">
+    <Parameter Name="AMUST" Parameter="aMUST" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_DurationdaysResult">
+      <Column Name="AMUST" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TAGNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ZBLID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Durationhours" Method="sp_get_Durationhours">
+    <Parameter Name="ZBLID" Parameter="zBLID" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_DurationhoursResult">
+      <Column Name="ZBLID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="DAUER" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Event" Method="sp_get_Event">
+    <Parameter Name="OBJID" Parameter="oBJID" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_EventResult">
+      <Column Name="OBJID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLVAR" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SHORT" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_group" Method="sp_get_group">
+    <ElementType Name="sp_get_groupResult">
+      <Column Name="OBJID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLVAR" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SHORT" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Internalprice" Method="sp_get_Internalprice">
+    <ElementType Name="sp_get_InternalpriceResult">
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Location" Method="sp_get_Location">
+    <ElementType Name="sp_get_LocationResult">
+      <Column Name="OBJID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLVAR" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SHORT" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_NoofAttendees" Method="sp_get_NoofAttendees">
+    <Parameter Name="OBJID" Parameter="oBJID" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_NoofAttendeesResult">
+      <Column Name="OBJID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLVAR" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="KAPZ1" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="KAPZ2" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="KAPZ3" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Organizer_Type" Method="sp_get_Organizer_Type">
+    <ElementType Name="sp_get_Organizer_TypeResult">
+      <Column Name="OTEXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="OTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Organizer_Name" Method="sp_get_Organizer_Name">
+    <Parameter Name="OTYPE" Parameter="oTYPE" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_Organizer_NameResult">
+      <Column Name="OBJID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLVAR" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SHORT" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Schedule" Method="sp_get_Schedule">
+    <ElementType Name="sp_get_ScheduleResult">
+      <Column Name="AMUST" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_SubGroup" Method="sp_get_SubGroup">
+    <Parameter Name="OBJID" Parameter="oBJID" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_SubGroupResult">
+      <Column Name="OBJID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLVAR" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SHORT" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Training" Method="sp_Get_Training">
+    <Parameter Name="GROUP_ID" Parameter="gROUP_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SUBGROUP_ID" Parameter="sUBGROUP_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EVENT_ID" Parameter="eVENT_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="START_DATE" Parameter="sTART_DATE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="END_DATE" Parameter="eND_DATE" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_Get_TrainingResult">
+      <Column Name="TRAINING_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GROUP_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SUBGROUP_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="INTERNAL_EXTERNAL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="START_DATE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="END_DATE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCATION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KAPZ1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KAPZ2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KAPZ3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IPRICE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IWAERS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EPRICE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EWAERS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KOKRS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KOSTL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ORGANIZER_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ORGANIZER_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AMUST" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TAGNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DAUER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="START_DAY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MULTIPLE_DATES" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="NO_OF_TIMES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NO_OF_WORM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WORM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENTERED_BY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENTERED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FIRMLY_BOOK" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCK" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

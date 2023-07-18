@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title="Home"  description="">
+        <siteMapNode url="" title="Configuration"  description="" >
+            <siteMapNode url="" title="Configuration"  description=""/>
+        </siteMapNode>
+      
+        <siteMapNode url="About.aspx" title="Personal Information"  description="" >
+        <siteMapNode url="" title="Address Information"  description="" />
+          <siteMapNode url="" title="Bank Information"  description="" />
+          <siteMapNode url="" title="Communication Information"  description="" />
+          <siteMapNode url="" title="Family members / Dependants"  description="" />
+          <siteMapNode url="" title="Personal Information"  description="" />
+          <siteMapNode url="" title="Address proof"  description="" />
+          <siteMapNode url="" title="Employment proof"  description="" />
+          <siteMapNode url="" title="PAN Details"  description="" />
+          <siteMapNode url="" title="Emergency Contact Details"  description="" />
+         
+        </siteMapNode>
+      
+        <siteMapNode url="" title="Working Time"  description="" >
+        <siteMapNode url="" title="Clock In / Out correction"  description="" />
+          <siteMapNode url="" title="Record Working Time"  description="" />
+          <siteMapNode url="" title="Time Statements"  description="" />
+          <siteMapNode url="" title="Pay Slip"  description="" />
+          <siteMapNode url="" title="Leave Request"  description="" />          
+        </siteMapNode>
+
+      <siteMapNode url="" title="Employee Performance"  description="" >
+        <siteMapNode url="" title="Upload Appraisal Form"  description="" />
+        <siteMapNode url="" title="Download Appraisal Form"  description="" />
+      </siteMapNode>
+      
+        <siteMapNode url="" title="Manager Self Service"  description="" >
+        <siteMapNode url="" title="Assigned To Me"  description="" />
+          <siteMapNode url="" title="Assigned To My Role"  description="" />
+        </siteMapNode>
+      
+        <siteMapNode url="" title="Employee Performance"  description="" >
+        <siteMapNode url="" title="G and O Settings"  description="" />
+          <siteMapNode url="" title="Self appraisal"  description="" />
+          <siteMapNode url="" title="Level 1 Appraisal review (Revert support)"  description="" />
+          <siteMapNode url="" title="Level 2 Appraisal review (Revert support)"  description="" />
+          <siteMapNode url="" title="HR Manager review (Revert support)"  description="" />
+          <siteMapNode url="" title="Competency configuration"  description="" />
+          <siteMapNode url="" title="Competency mapping"  description="" />
+         
+        </siteMapNode>
+      
+    </siteMapNode>
+</siteMap>
+
+
+
+
+
+

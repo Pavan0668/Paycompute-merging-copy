@@ -1,0 +1,215 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainSiteMaster.master.cs" Inherits="iEmpPower.MainSiteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>iEmpPower</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Admin" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- Plugins css -->
+    <link href="NewAssets/css/flatpickr.css" rel="stylesheet" type="text/css" />
+
+    <!-- App css -->
+    <link href="NewAssets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="NewAssets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="NewAssets/css/app.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <style>
+        .modalprogress
+        {
+            position: fixed;
+            z-index: 999;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            background-color: rgba(128, 128, 128,.2) !important;
+            filter: alpha(opacity=90);
+            /*opacity: 0.6;
+            -moz-opacity: 0.6;*/
+        }
+
+        .sidebrscroll
+        {
+            overflow-y: scroll !important;
+            /*overflow-x: hidden;*/
+        }
+
+            .sidebrscroll::-webkit-scrollbar .sidebrscroll::-ms-scrollbar
+            {
+                width: 1px !important;
+            }
+
+            .sidebrscroll::-webkit-scrollbar-track .sidebrscroll::-ms-scrollbar-track
+            {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            }
+
+            .sidebrscroll::-webkit-scrollbar-thumb .sidebrscroll::-ms-scrollbar-thumb
+            {
+                background-color: darkgrey;
+                outline: 1px solid slategrey;
+            }
+
+        .centerprogress
+        {
+            position: absolute;
+            left: 45% !important;
+            top: 45% !important;
+            z-index: 1000;
+            /*margin: 300px auto;*/
+            padding: 10px;
+            /*width: 130px;*/
+            /*background-color: White;*/
+            /*border-radius: 10px;*/
+            filter: alpha(opacity=100);
+            opacity: 1;
+            -moz-opacity: 1;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        // Broad cast that your're opening a page.
+        if (!isIE() || edge > 0) {
+            localStorage.openpages = Date.now();
+            var onLocalStorageEvent = function (e) {
+                if (e.key == "openpages") {
+                    // Listen if anybody else opening the same page!
+                    localStorage.page_available = Date.now();
+                }
+                if (e.key == "page_available") {
+                    alert("One more page already open");
+                    window.location.href = "/Error.html";
+                }
+            };
+        }
+        window.addEventListener('storage', onLocalStorageEvent, false);
+
+
+        function isIE() {
+            ua = navigator.userAgent;
+            /* MSIE used to detect old browsers and Trident used to newer ones*/
+            var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+
+
+            return is_ie;
+        }
+
+
+        var ua = window.navigator.userAgent;
+        var edge = ua.indexOf('Edge/');
+        //if (edge > 0) {
+        //    // Edge (IE 12+) => return version number
+        //    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+        //}
+    </script>
+
+
+
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="enlarged" data-keep-enlarged="true">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true" ScriptMode="Release" LoadScriptsBeforeUI="true">
+        </asp:ScriptManager>
+        <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
+            <ProgressTemplate>
+                <div class="modalprogress">
+                    <div class="centerprogress">
+                        <img src="../../../NewAssets/images/iEmp_Loader.gif" alt="Loading..." />
+                    </div>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div id="wrapper">
+
+                    <!-- Topbar Start -->
+                    <div class="navbar-custom">
+                        <asp:ContentPlaceHolder ID="NavigationContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+
+                    <!-- end Topbar -->
+
+                    <!-- ========== Left Sidebar Start ========== -->
+                    <div class="left-side-menu">
+
+                        <div class="slimScrollDiv sidebrscroll" style="position: relative; width: auto; height: 1286.9px;">
+                            <div class="slimscroll-menu sidebrscroll" style="width: auto; height: 1286.9px;">
+
+                                <!--- Sidemenu -->
+                                <div id="sidebar-menu" class="active">
+                                    <asp:ContentPlaceHolder ID="SideMenuContentPlaceHolder" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+                                <!-- End Sidebar -->
+
+                                <div class="clearfix"></div>
+
+                            </div>
+                            <div class="slimScrollBar" style="background: rgb(158, 165, 171) none repeat scroll 0% 0%; width: 8px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 864px;"></div>
+                            <div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;"></div>
+                        </div>
+                        <!-- Sidebar -left -->
+
+                    </div>
+                    <!-- Left Sidebar End -->
+
+                    <!-- ============================================================== -->
+                    <!-- Start Page Content here -->
+                    <!-- ============================================================== -->
+
+                    <div class="content-page">
+                        <div class="content">
+
+                            <!-- Start Content-->
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <!-- container -->
+                        </div>
+                        <!-- content -->
+
+                        <!-- Footer Start -->
+                        <footer class="footer">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6">2010 - <%=DateTime.Now.Year.ToString() %> © <a href="https://itchamps.com/">ITChamps Software Private Limited. All rights reserved.</a></div>
+                                    <div class="col-md-6">
+                                        <div class="text-md-right footer-links d-none d-sm-block">
+                                            <%--<a href="javascript:void(0);">This WebApplication is best viewed in latest version of Mozilla Firefox browser</a>--%>
+                                            <!--<a href="javascript:void(0);">Contact Us</a>-->
+                                        </div>
+                                    </div>
+                                    <asp:Button ID="Button1" runat="server" Text="Button" Visible="false" />
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- end Footer -->
+
+                    </div>
+
+                    <!-- ============================================================== -->
+                    <!-- End Page content -->
+                    <!-- ============================================================== -->
+
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <!-- END wrapper -->
+    </form>
+</body>
+</html>

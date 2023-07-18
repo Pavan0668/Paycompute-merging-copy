@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPower" Class="appraisal_formDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=iEmpPower;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_xml_create_AppraisalID_Name" Method="sp_xml_create_AppraisalID_Name">
+    <Parameter Name="APPRAISAL_ID" Parameter="aPPRAISAL_ID" Type="System.String" DbType="Char(32)" />
+    <Parameter Name="APPRAISAL_NAME" Parameter="aPPRAISAL_NAME" Type="System.String" DbType="Char(80)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_xml_create_Appraisal_Dropdown" Method="sp_xml_create_Appraisal_Dropdown">
+    <Parameter Name="VALUE_NUM" Parameter="vALUE_NUM" Type="System.Decimal" DbType="Decimal(15,0)" />
+    <Parameter Name="APPRAISAL_ID" Parameter="aPPRAISAL_ID" Type="System.String" DbType="Char(32)" />
+    <Parameter Name="VALUE_TEXT" Parameter="vALUE_TEXT" Type="System.String" DbType="Char(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Load_ApprDropdown" Method="sp_Load_ApprDropdown">
+    <ElementType Name="sp_Load_ApprDropdownResult">
+      <Column Name="VALUE_TEXT" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_apr_Load_DropDown" Method="sp_apr_Load_DropDown">
+    <Parameter Name="APPRAISAL_NAME" Parameter="aPPRAISAL_NAME" Type="System.String" DbType="Char(80)" />
+    <Parameter Name="ELEMENT_NAME" Parameter="eLEMENT_NAME" Type="System.String" DbType="Char(200)" />
+    <ElementType Name="sp_apr_Load_DropDownResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(23)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_apr_insert_appraisal" Method="sp_apr_insert_appraisal">
+    <Parameter Name="APPRAISAL_ID" Parameter="aPPRAISAL_ID" Type="System.String" DbType="Char(32)" />
+    <Parameter Name="APPRAISAL_NAME" Parameter="aPPRAISAL_NAME" Type="System.String" DbType="Char(80)" />
+    <Parameter Name="ELEMENT_NAME" Parameter="eLEMENT_NAME" Type="System.String" DbType="Char(200)" />
+    <Parameter Name="VALUE_TEXT" Parameter="vALUE_TEXT" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="TDLINE" Parameter="tDLINE" Type="System.String" DbType="Char(132)" />
+    <Parameter Name="APPRAISEE_ID" Parameter="aPPRAISEE_ID" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="APPRAISER_ID" Parameter="aPPRAISER_ID" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="STATUSAPPR" Parameter="sTATUSAPPR" Type="System.String" DbType="Char(12)" />
+    <Parameter Name="sendstatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_apr_load_appraisal" Method="sp_apr_load_appraisal">
+    <Parameter Name="APPRAISAL_ID" Parameter="aPPRAISAL_ID" Type="System.String" DbType="Char(32)" />
+    <Parameter Name="APPRAISAL_NAME" Parameter="aPPRAISAL_NAME" Type="System.String" DbType="Char(80)" />
+    <Parameter Name="APPRAISEE_ID" Parameter="aPPRAISEE_ID" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="APPRAISER_ID" Parameter="aPPRAISER_ID" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_apr_load_appraisalResult">
+      <Column Name="APPRAISAL_ID" Type="System.String" DbType="Char(32)" CanBeNull="true" />
+      <Column Name="APPRAISAL_NAME" Type="System.String" DbType="Char(80)" CanBeNull="true" />
+      <Column Name="ELEMENT_NAME" Type="System.String" DbType="Char(200)" CanBeNull="true" />
+      <Column Name="VALUE_TEXT" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="TDLINE" Type="System.String" DbType="Char(132)" CanBeNull="true" />
+      <Column Name="APPRAISEE_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="APPRAISER_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="STATUSAPPR" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_apr_load_appraiseeName" Method="sp_apr_load_appraiseeName">
+    <Parameter Name="APPRAISEE_ID" Parameter="aPPRAISEE_ID" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_apr_load_appraiseeNameResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

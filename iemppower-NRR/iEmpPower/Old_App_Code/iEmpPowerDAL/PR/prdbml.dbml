@@ -1,0 +1,743 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="prdbmlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-6D7ET0F\SQLEXPRESS;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Paycompute_NewUIPRDConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_FinanceUpdate_PR" Method="sp_FinanceUpdate_PR">
+    <Parameter Name="PR_ID" Parameter="pR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CREATEDBY" Parameter="cREATEDBY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MIS_GRPC" Parameter="mIS_GRPC" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="MIS_GRPA" Parameter="mIS_GRPA" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="MIS_GRPB" Parameter="mIS_GRPB" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="BWERKS" Parameter="bWERKS" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="SWERKS" Parameter="sWERKS" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="IN_BUDGET" Parameter="iN_BUDGET" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CAPITALIZED" Parameter="cAPITALIZED" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CAP_TEXT" Parameter="cAP_TEXT" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_EmployeeName" Method="sp_Get_EmployeeName">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_EmployeeNameResult">
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_EmpPR_Requested" Method="sp_Get_EmpPR_Requested">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="type" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="sp_Get_EmpPR_RequestedResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_EmpPR_Requested_month" Method="sp_Get_EmpPR_Requested_month">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="type" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_EmpPR_Requested_monthResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_EmpPR_Requested_month_Rpager" Method="sp_Get_EmpPR_Requested_month_Rpager">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="type" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_Get_EmpPR_Requested_month_RpagerResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_EmpPR_Requested_Rpager" Method="sp_Get_EmpPR_Requested_Rpager">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="type" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_Get_EmpPR_Requested_RpagerResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_MailList_PR" Method="sp_Get_MailList_PR">
+    <Parameter Name="PRID" Parameter="pRID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IEMPPERNR" Parameter="iEMPPERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMPPERNR" Parameter="rEMPPERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY1" Parameter="aPPROVED_BY1" Type="System.String" DbType="VarChar(8)" Direction="InOut" />
+    <Parameter Name="Approver_Name" Parameter="approver_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Approver_Email" Parameter="approver_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="IEMP_Name" Parameter="iEMP_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="IEMP_Email" Parameter="iEMP_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="REMP_Name" Parameter="rEMP_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="REMP_Email" Parameter="rEMP_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="total" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="createdon" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="currency" Type="System.String" DbType="VarChar(5)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_MailList_PRApp" Method="sp_Get_MailList_PRApp">
+    <Parameter Name="PRID" Parameter="pRID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="APPROVEDBY1" Parameter="aPPROVEDBY1" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" Direction="InOut" />
+    <Parameter Name="APPROVED_BY" Parameter="aPPROVED_BY" Type="System.String" DbType="VarChar(8)" Direction="InOut" />
+    <Parameter Name="Approver_Name" Parameter="approver_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Approver_Email" Parameter="approver_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="IEMP_Name" Parameter="iEMP_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="IEMP_Email" Parameter="iEMP_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="RequesterID" Parameter="requesterID" Type="System.String" DbType="VarChar(8)" Direction="InOut" />
+    <Parameter Name="REMP_Name" Parameter="rEMP_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="REMP_Email" Parameter="rEMP_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PRSNTAPPROVEDBY_Email" Parameter="pRSNTAPPROVEDBY_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PRSNTAPPROVEDBY_Name" Parameter="pRSNTAPPROVEDBY_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_PR_Items" Method="sp_Get_PR_Items">
+    <Parameter Name="PrID" Parameter="prID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Get_PR_ItemsResult">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MATNR" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="MAKTX" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TXZ01" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PART_NO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MTART" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MEINS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="NO_OF_UNITS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UNIT_PRICE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TAXABLE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ITEM_NOTE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="SAKNR" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_PR_ItemsDetails" Method="sp_Get_PR_ItemsDetails">
+    <Parameter Name="PrID" Parameter="prID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Get_PR_ItemsDetailsResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="FUNC_AREA" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="BTEXT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="cidid" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EKGRP" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="bwerksid" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="swerskid" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUP_ADDRESS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUP_PHONE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SERVICE_BUREAU" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="pspnrid" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(203)" CanBeNull="true" />
+      <Column Name="VERNR" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="BILLABLE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="PROPOSAL" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="PFID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PFPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AGREEMENT" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="AFID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AFPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EMAIL_COMMN" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EFID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EFPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="INVOICE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="IFID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IFPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="spartid" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="SPART" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="JUSTIFICATOION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SPECIAL_NOTES" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOLD_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RELEASED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="COMMENTS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOLD_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RELEASED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="COMMENTS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOLD_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RELEASED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="COMMENTS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOLD_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RELEASED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="COMMENTS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOLD_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RELEASED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="COMMENTS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME6" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOLD_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RELEASED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="COMMENTS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REGIONID" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="REGION_TEXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="WARES" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_PR_Requested" Method="sp_Get_PR_Requested">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="sp_Get_PR_RequestedResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_PR_Requested_allAppRej" Method="sp_Get_PR_Requested_allAppRej">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="sp_Get_PR_Requested_allAppRejResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_PR_Requested_App_Completed" Method="sp_Get_PR_Requested_App_Completed">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="sp_Get_PR_Requested_App_CompletedResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_PR_Requested_App_Completed_month" Method="sp_Get_PR_Requested_App_Completed_month">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_PR_Requested_App_Completed_monthResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_PR_Requested_App_Completed_month_Rpager" Method="sp_Get_PR_Requested_App_Completed_month_Rpager">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_Get_PR_Requested_App_Completed_month_RpagerResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_PR_Requested_month" Method="sp_Get_PR_Requested_month">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_PR_Requested_monthResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_PR_Requested_month_Rpager" Method="sp_Get_PR_Requested_month_Rpager">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_Get_PR_Requested_month_RpagerResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_requested_PRStatus" Method="sp_Get_requested_PRStatus">
+    <Parameter Name="PR_ID" Parameter="pR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Approved_by" Parameter="approved_by" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Approver_comment" Parameter="approver_comment" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_Get_requested_PRStatusResult">
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_load_Indentor" Method="sp_load_Indentor">
+    <ElementType Name="sp_load_IndentorResult">
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pr_add_items" Method="sp_pr_add_items">
+    <Parameter Name="ID" Parameter="iD" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="BANFN_EXT" Parameter="bANFN_EXT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BNFPO" Parameter="bNFPO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="MATNR" Parameter="mATNR" Type="System.String" DbType="VarChar(18)" />
+    <Parameter Name="TXZ01" Parameter="tXZ01" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="PART_NO" Parameter="pART_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="MTART" Parameter="mTART" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MEINS" Parameter="mEINS" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NO_OF_UNITS" Parameter="nO_OF_UNITS" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="UNIT_PRICE" Parameter="uNIT_PRICE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="WAERS" Parameter="wAERS" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TAXABLE" Parameter="tAXABLE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="ITEM_NOTE" Parameter="iTEM_NOTE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ACTION" Parameter="aCTION" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_pr_create_request" Method="sp_pr_create_request">
+    <Parameter Name="BANFN_EXT" Parameter="bANFN_EXT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="I_PERNR" Parameter="i_PERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="R_PERNR" Parameter="r_PERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="FUNC_AREA" Parameter="fUNC_AREA" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="BTEXT" Parameter="bTEXT" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="MIS_GROUP_C" Parameter="mIS_GROUP_C" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="MIS_GROUP_A" Parameter="mIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="MIS_GROUP_B" Parameter="mIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="EKGRP" Parameter="eKGRP" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="B_WERKS" Parameter="b_WERKS" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="S_WERKS" Parameter="s_WERKS" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="SUG_SUPPLIER" Parameter="sUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="SUP_ADDRESS" Parameter="sUP_ADDRESS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="SUP_PHONE" Parameter="sUP_PHONE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="IN_BUDGET" Parameter="iN_BUDGET" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CAPITALIZED" Parameter="cAPITALIZED" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CAP_TEXT" Parameter="cAP_TEXT" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="SERVICE_BUREAU" Parameter="sERVICE_BUREAU" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CRITICALITY" Parameter="cRITICALITY" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PSPNR" Parameter="pSPNR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VERNR" Parameter="vERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="BILLABLE" Parameter="bILLABLE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="PROPOSAL" Parameter="pROPOSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="PFID" Parameter="pFID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PFPATH" Parameter="pFPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="AGREEMENT" Parameter="aGREEMENT" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="AFID" Parameter="aFID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="AFPATH" Parameter="aFPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMAIL_COMMN" Parameter="eMAIL_COMMN" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="EFID" Parameter="eFID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EFPATH" Parameter="eFPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="INVOICE" Parameter="iNVOICE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="IFID" Parameter="iFID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="IFPATH" Parameter="iFPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="SPART" Parameter="sPART" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="JUSTIFICATOION" Parameter="jUSTIFICATOION" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="SPECIAL_NOTES" Parameter="sPECIAL_NOTES" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_ON1" Parameter="aPPROVED_ON1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY1" Parameter="aPPROVED_BY1" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="HOLD_ON1" Parameter="hOLD_ON1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="RELEASED_ON1" Parameter="rELEASED_ON1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="COMMENTS1" Parameter="cOMMENTS1" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON2" Parameter="aPPROVED_ON2" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY2" Parameter="aPPROVED_BY2" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="HOLD_ON2" Parameter="hOLD_ON2" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="RELEASED_ON2" Parameter="rELEASED_ON2" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="COMMENTS2" Parameter="cOMMENTS2" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON3" Parameter="aPPROVED_ON3" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY3" Parameter="aPPROVED_BY3" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="HOLD_ON3" Parameter="hOLD_ON3" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="RELEASED_ON3" Parameter="rELEASED_ON3" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="COMMENTS3" Parameter="cOMMENTS3" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON4" Parameter="aPPROVED_ON4" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY4" Parameter="aPPROVED_BY4" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="HOLD_ON4" Parameter="hOLD_ON4" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="RELEASED_ON4" Parameter="rELEASED_ON4" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="COMMENTS4" Parameter="cOMMENTS4" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON5" Parameter="aPPROVED_ON5" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY5" Parameter="aPPROVED_BY5" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="HOLD_ON5" Parameter="hOLD_ON5" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="RELEASED_ON5" Parameter="rELEASED_ON5" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="COMMENTS5" Parameter="cOMMENTS5" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON6" Parameter="aPPROVED_ON6" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY6" Parameter="aPPROVED_BY6" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="HOLD_ON6" Parameter="hOLD_ON6" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="RELEASED_ON6" Parameter="rELEASED_ON6" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="COMMENTS6" Parameter="cOMMENTS6" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REGIONID" Parameter="rEGIONID" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="PR_ID" Parameter="pR_ID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_pr_getPurchaseIDnew" Method="sp_pr_getPurchaseIDnew">
+    <Parameter Name="PRID" Parameter="pRID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_pr_getPurchaseIDnewResult">
+      <Column Name="PurchaseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_update_PR_Status" Method="sp_update_PR_Status">
+    <Parameter Name="PR_ID" Parameter="pR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Approved_by" Parameter="approved_by" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Approver_comment" Parameter="approver_comment" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="GLAcc" Parameter="gLAcc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="BNFPO" Parameter="bNFPO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Status1" Parameter="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_ManagerParticularPRDetails" Method="sp_Get_ManagerParticularPRDetails">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Get_ManagerParticularPRDetailsResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_ManagerParticularPR_Requested" Method="sp_Get_ManagerParticularPR_Requested1">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Get_ManagerParticularPR_RequestedResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_ManagerParticularPR_Requested" Method="sp_Get_ManagerParticularPR_Requested">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Get_ManagerParticularPR_RequestedResult1">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_C" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MIS_GROUP_A" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIS_GROUP_B" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="B_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="S_WERKS" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CAPITALIZED" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CAP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_ParticularPR_Requested" Method="sp_Get_ParticularPR_Requested">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="type" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_ParticularPR_RequestedResult">
+      <Column Name="BANFN_EXT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUG_SUPPLIER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IN_BUDGET" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CRITICALITY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BNFPO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="I_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ename2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TotalINRamt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="InCurr" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_merging" Class="PR_MasteruploadDALDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-6D7ET0F\SQLEXPRESS;Initial Catalog=Paycompute_merging;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Paycompute_NewUIPRDConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_PR_uploadExcell_master_T001W" Method="usp_PR_uploadExcell_master_T001W">
+    <Parameter Name="WERKS" Parameter="wERKS" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="NAME1" Parameter="nAME1" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_PR_uploadExcell_master_T006J" Method="usp_PR_uploadExcell_master_T006J">
+    <Parameter Name="ISOCODE" Parameter="iSOCODE" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="ISOTXT" Parameter="iSOTXT" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_PR_uploadExcell_master_T024" Method="usp_PR_uploadExcell_master_T024">
+    <Parameter Name="EKGRP" Parameter="eKGRP" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="EKNAM" Parameter="eKNAM" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_PR_uploadExcell_master_TSPAT" Method="usp_PR_uploadExcell_master_TSPAT">
+    <Parameter Name="SPART" Parameter="sPART" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="VTEXT" Parameter="vTEXT" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_PR_uploadExcell_master_ZMM_MIS" Method="usp_PR_uploadExcell_master_ZMM_MIS">
+    <Parameter Name="CID" Parameter="cID" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="C_DESC" Parameter="c_DESC" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="A_DESC" Parameter="a_DESC" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="B_DESC" Parameter="b_DESC" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_PR_uploadExcell_master_ZMM_PR_REGION" Method="usp_PR_uploadExcell_master_ZMM_PR_REGION">
+    <Parameter Name="REGION_ID" Parameter="rEGION_ID" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="REGION_TEXT" Parameter="rEGION_TEXT" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_iexpense_uploadExcell_master_T512T" Method="usp_iexpense_uploadExcell_master_T512T">
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="LGTXT" Parameter="lGTXT" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_FBP_master_T7INA3" Method="usp_master_uploadExcell_FBP_master_T7INA3">
+    <Parameter Name="TRFAR" Parameter="tRFAR" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="TRFGB" Parameter="tRFGB" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="TRFGR" Parameter="tRFGR" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="TRFST" Parameter="tRFST" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="ALGRP" Parameter="aLGRP" Type="System.String" DbType="Char(4)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_FBP_MSS_PA0008" Method="usp_master_uploadExcell_FBP_MSS_PA0008">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="TRFAR" Parameter="tRFAR" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="TRFGB" Parameter="tRFGB" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="TRFGR" Parameter="tRFGR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="TRFST" Parameter="tRFST" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_FBP_PA9001" Method="usp_master_uploadExcell_FBP_PA9001">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="AN_FBP" Parameter="aN_FBP" Type="System.String" DbType="VarChar(13)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_FBP_T7INA9" Method="usp_master_uploadExcell_FBP_T7INA9">
+    <Parameter Name="ALGRP" Parameter="aLGRP" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="AMUNT" Parameter="aMUNT" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_FBP_FBPHOA" Method="usp_master_uploadExcell_FBP_FBPHOA">
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="LTEXT" Parameter="lTEXT" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Colid" Parameter="colid" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_T7INI3_IT" Method="usp_master_uploadExcell_T7INI3_IT">
+    <Parameter Name="ICODE" Parameter="iCODE" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="ITEXT" Parameter="iTEXT" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_T7INI4_IT" Method="usp_master_uploadExcell_T7INI4_IT">
+    <Parameter Name="ICODE" Parameter="iCODE" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CTGRY" Parameter="cTGRY" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="WAEHI" Parameter="wAEHI" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ITLMT" Parameter="iTLMT" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_T7INI8_IT" Method="usp_master_uploadExcell_T7INI8_IT">
+    <Parameter Name="SBSEC" Parameter="sBSEC" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="SBDIV" Parameter="sBDIV" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="SBDDS" Parameter="sBDDS" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_T7INI9_IT" Method="usp_master_uploadExcell_T7INI9_IT">
+    <Parameter Name="SBSEC" Parameter="sBSEC" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SBDIV" Parameter="sBDIV" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SDVLT" Parameter="sDVLT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TXEXM" Parameter="tXEXM" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_T7INI5_IT" Method="usp_master_uploadExcell_T7INI5_IT">
+    <Parameter Name="SBSEC" Parameter="sBSEC" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SBTDS" Parameter="sBTDS" Type="System.String" DbType="Char(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_master_PRPS_CM" Method="usp_master_uploadExcell_master_PRPS_CM">
+    <Parameter Name="POSID" Parameter="pOSID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="POST1" Parameter="pOST1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PSPHI" Parameter="pSPHI" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="VERNR" Parameter="vERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="VERNA" Parameter="vERNA" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PBUKR" Parameter="pBUKR" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="POSKI" Parameter="pOSKI" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="PSPNR" Parameter="pSPNR" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Created_By" Parameter="created_By" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Created_On" Parameter="created_On" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Company_Code" Parameter="company_Code" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Start_Date" Parameter="start_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="End_Date" Parameter="end_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Updated_On" Parameter="updated_On" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Updated_By" Parameter="updated_By" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="WBS_EXTNID" Parameter="wBS_EXTNID" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_master_TCURR_CM" Method="usp_master_uploadExcell_master_TCURR_CM">
+    <Parameter Name="FCURR" Parameter="fCURR" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TCURR" Parameter="tCURR" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="UKURS" Parameter="uKURS" Type="System.Decimal" DbType="Decimal(10,5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_master_TCURT_CM" Method="usp_master_uploadExcell_master_TCURT_CM">
+    <Parameter Name="WAERS" Parameter="wAERS" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="LTEXT" Parameter="lTEXT" Type="System.String" DbType="VarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_master_T005T_Travel" Method="usp_master_uploadExcell_master_T005T_Travel">
+    <Parameter Name="LAND1" Parameter="lAND1" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="LANDX" Parameter="lANDX" Type="System.String" DbType="Char(15)" />
+    <Parameter Name="NATIO" Parameter="nATIO" Type="System.String" DbType="Char(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_master_uploadExcell_master_T706O_Travel" Method="usp_master_uploadExcell_master_T706O_Travel">
+    <Parameter Name="LAND1" Parameter="lAND1" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="RGION" Parameter="rGION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TEXT25" Parameter="tEXT25" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="configurationdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PayCompute20032020ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_conf_update_address_information" Method="sp_conf_update_address_information">
+    <Parameter Name="names" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="modifiedby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifiedon" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="mandatroy_values" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_conf_update_bank_information" Method="sp_conf_update_bank_information">
+    <Parameter Name="names" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="modifiedby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifiedon" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="mandatroy_values" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_conf_update_family_member_information" Method="sp_conf_update_family_member_information">
+    <Parameter Name="names" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="modifiedby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifiedon" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="mandatroy_values" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_conf_update_family_member_information" Method="sp_conf_update_family_member_information1">
+    <Parameter Name="names" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="modifiedby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifiedon" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="mandatroy_values" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_conf_update_personal_data" Method="sp_conf_update_personal_data">
+    <Parameter Name="names" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="modifiedby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifiedon" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="mandatroy_values" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_conf_get_logo" Method="sp_conf_get_logo">
+    <ElementType Name="sp_conf_get_logoResult">
+      <Column Name="img_logo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_conf_create_logo" Method="sp_conf_create_logo">
+    <Parameter Name="img_data" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="createdon" Type="System.DateTime" DbType="SmallDateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_conf_create_employee_photo" Method="sp_conf_create_employee_photo">
+    <Parameter Name="employee_photo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="createdon" Type="System.DateTime" DbType="SmallDateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_conf_get_employee_photo" Method="sp_conf_get_employee_photo">
+    <ElementType Name="sp_conf_get_employee_photoResult">
+      <Column Name="photo_path" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_conf_get_address_information" Method="sp_conf_get_address_information">
+    <ElementType Name="sp_conf_get_address_informationResult">
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="default_value" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ismandatroy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_conf_get_bank_information" Method="sp_conf_get_bank_information">
+    <ElementType Name="sp_conf_get_bank_informationResult">
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="default_value" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ismandatroy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_conf_get_family_member_information" Method="sp_conf_get_family_member_information">
+    <ElementType Name="sp_conf_get_family_member_informationResult">
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="default_value" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ismandatroy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_conf_get_personal_data" Method="sp_conf_get_personal_data">
+    <ElementType Name="sp_conf_get_personal_dataResult">
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="default_value" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ismandatroy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_conf_create_mail_server_details" Method="sp_conf_create_mail_server_details">
+    <Parameter Name="popserver" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="imapserver" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="smtpserver" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="emailid" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="createdby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="createdon" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="port" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_conf_load_mail_server_details" Method="sp_conf_load_mail_server_details">
+    <ElementType Name="sp_conf_load_mail_server_detailsResult">
+      <Column Name="imap_Server" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pop_Server" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="smtp_Server" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email_id" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="port" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_conf_get_requires_supervisor_approval" Method="sp_conf_get_requires_supervisor_approval">
+    <ElementType Name="sp_conf_get_requires_supervisor_approvalResult">
+      <Column Name="requires_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="requires_status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="hr_status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="fin_admin_status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_conf_update_requires_supervisor_approval" Method="sp_conf_update_requires_supervisor_approval">
+    <Parameter Name="requires_ids" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="modifiedby" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modifiedon" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="requires_status" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="hr_status" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="payroll_status" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_conf_get_leave_type_for_encashment" Method="sp_conf_get_leave_type_for_encashment">
+    <ElementType Name="sp_conf_get_leave_type_for_encashmentResult">
+      <Column Name="moawb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="awart" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="atext" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="encashable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_conf_create_leave_encashmet_types" Method="sp_conf_create_leave_encashmet_types">
+    <Parameter Name="moawb" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="awart" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="atext" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="encashable" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_master_Dublicate_CSKT" Method="sp_master_Dublicate_CSKT">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Last_LoginDetails" Method="sp_Last_LoginDetails">
+    <ElementType Name="sp_Last_LoginDetailsResult">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pi_load_login_details" Method="sp_pi_load_login_details">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_pi_load_login_detailsResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PHOTO" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PERSK" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_states" Method="payc_get_states">
+    <Parameter Name="coutry" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_statesResult">
+      <Column Name="BLAND" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="BEZEI" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_countrys" Method="payc_get_countrys">
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_countrysResult">
+      <Column Name="LAND1" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="LANDX" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_company_types" Method="payc_get_company_types">
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_company_typesResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Compnay_Types" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_Address_types" Method="payc_get_Address_types">
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_Address_typesResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address_type" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_ContactTypes" Method="payc_get_ContactTypes">
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_ContactTypesResult">
+      <Column Name="ID" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_type" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_DocumentTypes" Method="payc_get_DocumentTypes">
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_DocumentTypesResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Proff_type" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_MaterialStatus" Method="payc_get_MaterialStatus">
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_MaterialStatusResult">
+      <Column Name="FAMST" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FTEXT" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_salutation" Method="payc_get_salutation">
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_salutationResult">
+      <Column Name="ANRED" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ATEXT" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ANRLT" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_create_Designation" Method="payc_create_Designation">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="desig" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_create_EmpDesig_Mgrmapping" Method="payc_create_EmpDesig_Mgrmapping">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Employee_ID" Parameter="employee_ID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="desig" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_designations" Method="payc_get_designations">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_designationsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Designation_Text" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_LeaveTypes" Method="payc_get_LeaveTypes">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_LeaveTypesResult">
+      <Column Name="Att_Code" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Att_type" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_create_HolidayCalender" Method="payc_create_HolidayCalender">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="year" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="disc" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="type" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_CheckHR" Method="usp_CheckHR">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(5)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_set_Weekends" Method="payc_get_set_Weekends">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="weekend" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_set_WeekendsResult">
+      <Column Name="Compcode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="WeekendID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_create_Emp_Mgrmapping" Method="payc_create_Emp_Mgrmapping">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Employee_ID" Parameter="employee_ID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="mgrID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="loginID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_company_creation" Method="payc_company_creation">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="CompanyName" Parameter="companyName" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="CompanyType" Parameter="companyType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompAddr" Parameter="compAddr" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="country" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="state" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="district" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="pincode" Type="System.Decimal" DbType="Decimal(10,0)" />
+    <Parameter Name="CMailID" Parameter="cMailID" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="offContcNo" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="UpdatedBy" Parameter="updatedBy" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Logo" Parameter="logo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_loadEmpDetails" Method="payc_loadEmpDetails">
+    <Parameter Name="empID" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="payc_loadEmpDetailsResult">
+      <Column Name="Comany_Code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PHOTO" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="CompanyLogin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isDR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoPath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_allCompanydetails" Method="payc_get_allCompanydetails">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_allCompanydetailsResult">
+      <Column Name="Company_Code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Name" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="Company_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Company_Typetxt" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Address" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="countrytxt" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="statetxt" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Pincode" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="Company_MailID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_ContactNum" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsLocked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LogoPath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_designations_employee" Method="payc_get_designations_employee">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_designations_employeeResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="Designation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Designation_Text" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_MAnager_employee" Method="payc_get_MAnager_employee">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_MAnager_employeeResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="ManagerID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MGRENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_HolidayCalender" Method="payc_get_HolidayCalender">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="year" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_HolidayCalenderResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="YEAR" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TXT_LONG" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="KLASS" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_updateLeaveQuoa" Method="payc_updateLeaveQuoa">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_gnerateLeaveQuoa" Method="payc_gnerateLeaveQuoa">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_tempolock_user_membership" Method="payc_tempolock_user_membership">
+    <Parameter Name="company_Code" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="empid" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_update_lock_unlockuser" Method="payc_update_lock_unlockuser">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="exitdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_create_leaveQuotamapping" Method="payc_create_leaveQuotamapping">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="leavtye" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="period" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="qc" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="val" Type="System.Int32" DbType="Int" />
+    <Parameter Name="login" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="periodfrom" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="periodend" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_companyleavequotas" Method="payc_get_companyleavequotas">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_companyleavequotasResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Leave_type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Att_type" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="period" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="quotaupdate" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="validity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Period_From" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Period_End" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_row_deletefrom_compConfig" Method="payc_row_deletefrom_compConfig">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="type" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="subtype" Type="System.Int32" DbType="Int" />
+    <Parameter Name="frmdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="todate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="sts" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_validaton_check" Method="payc_validaton_check">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Employee_ID" Parameter="employee_ID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Data" Parameter="data" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="subty" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fromdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="todate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="stst" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(150)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_gnerateLeaveQuoa_optn" Method="payc_gnerateLeaveQuoa_optn">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_Departments" Method="payc_get_Departments">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_DepartmentsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dept" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="company_code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_addDepartments" Method="payc_get_addDepartments">
+    <Parameter Name="departmenttxt" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_create_emp_designmgrconfig" Method="payc_create_emp_designmgrconfig">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="empid" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="mgrid" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="did" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dsgnstatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="mgrstatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_emp_designmgrconfig_full" Method="payc_get_emp_designmgrconfig_full">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="empid" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_emp_designmgrconfig_fullResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eid" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="txt" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Startdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="enddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="updated_on" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_emp_mgrconfig_full" Method="payc_get_emp_mgrconfig_full">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="empid" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_emp_mgrconfig_fullResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eid" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="txt" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Startdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="enddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MNAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="updated_on" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_empinfo_cadmin" Method="payc_get_empinfo_cadmin">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_empinfo_cadminResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_Photo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="salutationid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="salutationtxt" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="genderid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Marital_stsid" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Marital_sts" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Father_Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Mother_Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Spouse_Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Dept_id" Type="System.Decimal" DbType="Decimal(8,0)" CanBeNull="true" />
+      <Column Name="Dept" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Branch" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="DOJ" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DOL" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_empcommunication_cadmin" Method="payc_get_empcommunication_cadmin">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_empcommunication_cadminResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="Contact_typetxt" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="contactid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_Type_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Approved_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Approved_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_empaddinfo_cadmin" Method="payc_get_empaddinfo_cadmin">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_empaddinfo_cadminResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="typid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address_type" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="AddLine1" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AddLine2" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="locality" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="district" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="countyid" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="country" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="stateid" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="state" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="pincode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="valid_from" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="valid_to" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_getUsers_compcode" Method="payc_getUsers_compcode">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="eid" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_getUsers_compcodeResult">
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="EMPNAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_Type_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="created" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_emp_designmgrconfig" Method="payc_get_emp_designmgrconfig">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="empid" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_emp_designmgrconfigResult">
+      <Column Name="DesignID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Ename" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mgrid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Mgrname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_employees" Method="payc_get_employees">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_employeesResult">
+      <Column Name="EMPID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="eid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_validation_userinfoform" Method="payc_validation_userinfoform">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="IDtype" Parameter="iDtype" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_empbeneinfo_cadmin" Method="payc_get_empbeneinfo_cadmin">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_empbeneinfo_cadminResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="esiapplicable" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="esiappid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ESI_Num" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ESI_Dispencary" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="PFapplible" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="pfappid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PF_Num" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Restrict_PF" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="respfid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Zero_Pension" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="zropenid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zroptid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Zero_PT" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_empbank_cadmin" Method="payc_get_empbank_cadmin">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_empbank_cadminResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="Bank_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Acc_Num" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IFSC_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Bank_Branch" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Bank_District" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="countyid" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="countrytxt" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="state" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="stateid" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_empdocument_cadmin" Method="payc_get_empdocument_cadmin">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_empdocument_cadminResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="Doc_Types" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Proff_type" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Doc_Type_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Approved_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Approved_On" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docpath" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_Update_EmpInfo" Method="payc_Update_EmpInfo">
+    <Parameter Name="Employee_ID" Parameter="employee_ID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="rowid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fname" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="mname" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="sname" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="cntry" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="state" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="locality" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="dept" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="pt" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="begda" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="endda" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="hrmail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="empmail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_PunchInOut_AdminConfig" Method="payc_PunchInOut_AdminConfig">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="eid_len" Type="System.String" DbType="VarChar(250)" Direction="InOut" />
+    <Parameter Name="eid_substringlen" Type="System.String" DbType="VarChar(250)" Direction="InOut" />
+    <Parameter Name="date_len" Type="System.String" DbType="VarChar(250)" Direction="InOut" />
+    <Parameter Name="date_substringlen" Type="System.String" DbType="VarChar(250)" Direction="InOut" />
+    <Parameter Name="time_len" Type="System.String" DbType="VarChar(250)" Direction="InOut" />
+    <Parameter Name="time_substringlen" Type="System.String" DbType="VarChar(250)" Direction="InOut" />
+    <Parameter Name="date_format" Type="System.String" DbType="VarChar(250)" Direction="InOut" />
+    <Parameter Name="timeformat" Type="System.String" DbType="VarChar(250)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_add_punchinfiles" Method="payc_add_punchinfiles">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="filepath" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ststus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_insert_punchindata" Method="payc_insert_punchindata">
+    <Parameter Name="Employee_ID" Parameter="employee_ID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="date" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="time" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="note" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="activitycode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_punchinfiles" Method="payc_get_punchinfiles">
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_punchinfilesResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="File_Path" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Updated_By" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Updated_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_allemps" Method="payc_get_allemps">
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="payc_get_allempsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="FbpClaimsdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-6D7ET0F\SQLEXPRESS;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Paycompute_NewUIPRDConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_FBP_Check_declaration_val" Method="usp_FBP_Check_declaration_val">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_check_not_declaredIDs" Method="usp_Fbp_check_not_declaredIDs">
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Fbp_check_not_declaredIDsResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_ClaimsHistory" Method="usp_Fbp_ClaimsHistory">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_Fbp_ClaimsHistoryResult">
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BETRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OVERRIDE_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_ClaimsHistory_month" Method="usp_Fbp_ClaimsHistory_month">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_Fbp_ClaimsHistory_monthResult">
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BETRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OVERRIDE_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_CountofFbpLID" Method="usp_Fbp_CountofFbpLID">
+    <Parameter Name="FBPID" Parameter="fBPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_Create_FbpDeclare" Method="usp_Fbp_Create_FbpDeclare">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="AA_AMT01" Parameter="aA_AMT01" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT02" Parameter="aA_AMT02" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT03" Parameter="aA_AMT03" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT04" Parameter="aA_AMT04" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT05" Parameter="aA_AMT05" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT06" Parameter="aA_AMT06" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT07" Parameter="aA_AMT07" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT08" Parameter="aA_AMT08" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT09" Parameter="aA_AMT09" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT10" Parameter="aA_AMT10" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT11" Parameter="aA_AMT11" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AA_AMT12" Parameter="aA_AMT12" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_CreateClaims_Footer" Method="usp_Fbp_CreateClaims_Footer">
+    <Parameter Name="FBPC_ID" Parameter="fBPC_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BILL_NO" Parameter="bILL_NO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BILL_DATE" Parameter="bILL_DATE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="RELATIONSHIP" Parameter="rELATIONSHIP" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BILL_AMT" Parameter="bILL_AMT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Rstatus" Parameter="rstatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_CreateClaims_Header" Method="usp_Fbp_CreateClaims_Header">
+    <Parameter Name="FBPC_ID" Parameter="fBPC_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="BETRG" Parameter="bETRG" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="BILL_NO" Parameter="bILL_NO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BILL_DATE" Parameter="bILL_DATE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="RELATIONSHIP" Parameter="rELATIONSHIP" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BILL_AMT" Parameter="bILL_AMT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="BILLID" Parameter="bILLID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TYPE" Parameter="tYPE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FBP_ID" Parameter="fBP_ID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Rstatus" Parameter="rstatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_Get_BasketTotal" Method="usp_Fbp_Get_BasketTotal">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_Fbp_Get_BasketTotalResult">
+      <Column Name="AN_FBP" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_Get_ClaimTotal" Method="usp_Fbp_Get_ClaimTotal">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_Fbp_Get_ClaimTotalResult">
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalClaimamt" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_Get_GetFBPDeclared" Method="usp_Fbp_Get_GetFBPDeclared">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_Fbp_Get_GetFBPDeclaredResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AA_AMT01" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT02" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT03" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT04" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT05" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT06" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT07" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT08" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT09" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT10" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT11" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT12" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_Get_HeadsofAllowances" Method="usp_Fbp_Get_HeadsofAllowances">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_Fbp_Get_HeadsofAllowancesResult">
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AMUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MONTHLY" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="ANNUAL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_Get_LastUpdatedDate" Method="usp_Fbp_Get_LastUpdatedDate">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_Fbp_Get_LastUpdatedDateResult">
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_FBP_get_lockDetailsBits" Method="usp_FBP_get_lockDetailsBits">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="login" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MOBin" Parameter="mOBin" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CCin" Parameter="cCin" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="MOB" Parameter="mOB" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="CC" Parameter="cC" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_Get_LTAMbPur" Method="usp_Fbp_Get_LTAMbPur">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_Fbp_Get_LTAMbPurResult">
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_Get_MailList_Fbp" Method="usp_Fbp_Get_MailList_Fbp">
+    <Parameter Name="FBP_ID" Parameter="fBP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPPERNR" Parameter="eMPPERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EMP_Name" Parameter="eMP_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EMP_Email" Parameter="eMP_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EmpEntity" Parameter="empEntity" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="ENTITLEMENT" Parameter="eNTITLEMENT" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="AMOUNT" Parameter="aMOUNT" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="OVERRIDEAMT" Parameter="oVERRIDEAMT" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="ADMINREMARKS" Parameter="aDMINREMARKS" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="LTEXT" Parameter="lTEXT" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_Get_MailList_Fbp_Declare" Method="usp_Fbp_Get_MailList_Fbp_Declare">
+    <Parameter Name="EMPPERNR" Parameter="eMPPERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="EMP_Name" Parameter="eMP_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EMP_Email" Parameter="eMP_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_Get_Plans" Method="usp_Fbp_Get_Plans">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_Fbp_Get_PlansResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="MASSN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_FBP_get_user_mob_no_FBPID" Method="usp_FBP_get_user_mob_no_FBPID">
+    <Parameter Name="FBPID" Parameter="fBPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MobIn" Parameter="mobIn" Type="System.String" DbType="VarChar(13)" />
+    <Parameter Name="Mob" Parameter="mob" Type="System.String" DbType="VarChar(13)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_FBP_get_user_mob_nos" Method="usp_FBP_get_user_mob_nos">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_FBP_get_user_mob_nosResult">
+      <Column Name="USRID" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="USRTY" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_GetBillDetails" Method="usp_Fbp_GetBillDetails">
+    <Parameter Name="FBP_ID" Parameter="fBP_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Fbp_GetBillDetailsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BILL_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BILL_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RELATIONSHIP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BILL_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RECEIPT_FILE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="RECEIPT_FID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_GetClaimsPending" Method="usp_Fbp_GetClaimsPending">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="VarChar(4)" />
+    <ElementType Name="usp_Fbp_GetClaimsPendingResult">
+      <Column Name="Paid" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AMUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MONTHLY" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="ANNUAL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ACCRUED" Type="System.Decimal" DbType="Decimal(38,0) NOT NULL" CanBeNull="false" />
+      <Column Name="claimsPending" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="balance" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_GetDeclarationDetails" Method="usp_Fbp_GetDeclarationDetails">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_Fbp_GetDeclarationDetailsResult">
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AA_AMT01" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT02" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT03" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT04" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT05" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT06" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT07" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT08" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT09" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT10" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT11" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AA_AMT12" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_GetDeclarationDetails_admin" Method="usp_Fbp_GetDeclarationDetails_admin">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="txtsearch" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="filt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="newDec" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="fromDt" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="todate" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="usp_Fbp_GetDeclarationDetails_adminResult">
+      <Column Name="entity" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="[SAP ID]" Member="SAP_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="DOJ" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DOL" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AA_AMT01" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT02" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT03" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT04" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT05" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT06" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT07" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT08" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT09" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT10" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT11" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AA_AMT12" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_GetLockStatus" Method="usp_Fbp_GetLockStatus">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="FBPLOCK" Parameter="fBPLOCK" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_GetSavedClaims" Method="usp_Fbp_GetSavedClaims">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_Fbp_GetSavedClaimsResult">
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BETRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_GetSavedStatus" Method="usp_Fbp_GetSavedStatus">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(3)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_GetTotalAmount" Method="usp_Fbp_GetTotalAmount">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="curClaimAmt" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <ElementType Name="usp_Fbp_GetTotalAmountResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_GetTotalFBPAmount" Method="usp_Fbp_GetTotalFBPAmount">
+    <Parameter Name="FBP_ID" Parameter="fBP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FBPTOTALAMT" Parameter="fBPTOTALAMT" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_LIDFileDel" Method="usp_Fbp_LIDFileDel">
+    <Parameter Name="FBPID" Parameter="fBPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_Load_ClaimsDetailsEmp" Method="usp_Fbp_Load_ClaimsDetailsEmp">
+    <Parameter Name="Employee_ID" Parameter="employee_ID" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="usp_Fbp_Load_ClaimsDetailsEmpResult">
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BETRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OVERRIDE_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_Load_ParticularClaimDetails" Method="usp_Fbp_Load_ParticularClaimDetails">
+    <Parameter Name="APPROVER_ID" Parameter="aPPROVER_ID" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="usp_Fbp_Load_ParticularClaimDetailsResult">
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BETRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OVERRIDE_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_LoadAllClaims" Method="usp_Fbp_LoadAllClaims">
+    <ElementType Name="usp_Fbp_LoadAllClaimsResult">
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BETRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OVERRIDE_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_LoadAllowances" Method="usp_Fbp_LoadAllowances">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_Fbp_LoadAllowancesResult">
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Colid" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_LoadClaimDetails" Method="usp_Fbp_LoadClaimDetails">
+    <ElementType Name="usp_Fbp_LoadClaimDetailsResult">
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BETRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OVERRIDE_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_LoadLocking" Method="usp_Fbp_LoadLocking">
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_Fbp_LoadLockingResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCK" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_FBP_LTA_get_family_members_type" Method="usp_FBP_LTA_get_family_members_type">
+    <ElementType Name="usp_FBP_LTA_get_family_members_typeResult">
+      <Column Name="SUBTY" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_FBP_LTA_get_records" Method="usp_FBP_LTA_get_records">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FBPID" Parameter="fBPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FBPstatus" Parameter="fBPstatus" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="usp_FBP_LTA_get_recordsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="SUBTY" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="JBGDT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="JENDT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STPNT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DESTN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MTRVL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CTRVL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TKTNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SLFTR" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="UPDATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR1" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CBPY1" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CBPY2" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CBPY3" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CBPY4" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CLYear" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CLY1" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CLY2" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CLY3" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CLY4" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="UPDATED_ON1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_FBP_LTA_get_records_LineItems" Method="usp_FBP_LTA_get_records_LineItems">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_FBP_LTA_get_records_LineItemsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="SUBTY" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="JBGDT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="JENDT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STPNT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DESTN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MTRVL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CTRVL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TKTNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KM_TRVLD" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="UPDATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LineID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_FBP_LTA_get_records_Relationships" Method="usp_FBP_LTA_get_records_Relationships">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_FBP_LTA_get_records_RelationshipsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FAMTX" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="FCNAM" Type="System.String" DbType="VarChar(99)" CanBeNull="true" />
+      <Column Name="FGBDT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FASEX" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DEPDT" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="UPDATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LineID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INFTY" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="SUBTY" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_FBP_LTA_Set_records" Method="usp_FBP_LTA_Set_records">
+    <Parameter Name="LTAID" Parameter="lTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LineID" Parameter="lineID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="JBGDT" Parameter="jBGDT" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="JENDT" Parameter="jENDT" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="STPNT" Parameter="sTPNT" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="DESTN" Parameter="dESTN" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="MTRVL" Parameter="mTRVL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CTRVL" Parameter="cTRVL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TKTNO" Parameter="tKTNO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="KM_TRVLD" Parameter="kM_TRVLD" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="AMOUNT" Parameter="aMOUNT" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_FBP_LTA_Set_records_head" Method="usp_FBP_LTA_Set_records_head">
+    <Parameter Name="FBPID" Parameter="fBPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ROWID_head" Parameter="rOWID_head" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="JBGDT" Parameter="jBGDT" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="JENDT" Parameter="jENDT" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="STPNT" Parameter="sTPNT" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="DESTN" Parameter="dESTN" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="MTRVL" Parameter="mTRVL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CTRVL" Parameter="cTRVL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TKTNO" Parameter="tKTNO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SLFTR" Parameter="sLFTR" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="Bly1" Parameter="bly1" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="Bly2" Parameter="bly2" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="Bly3" Parameter="bly3" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="Bly4" Parameter="bly4" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="curYear" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="cLy1" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="cLy2" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="cLy3" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="cLy4" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="rowid" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_FBP_LTA_Set_records_Relationships" Method="usp_FBP_LTA_Set_records_Relationships">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LineID" Parameter="lineID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FAMTX" Parameter="fAMTX" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="FCNAM" Parameter="fCNAM" Type="System.String" DbType="VarChar(99)" />
+    <Parameter Name="FGBDT" Parameter="fGBDT" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FASEX" Parameter="fASEX" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="DEPDT" Parameter="dEPDT" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_Submit_Fbpclaims" Method="usp_Fbp_Submit_Fbpclaims">
+    <Parameter Name="FBP_ID" Parameter="fBP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="LGART" Parameter="lGART" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Rstatus" Parameter="rstatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <ElementType Name="usp_Fbp_Submit_FbpclaimsResult">
+      <Column Name="[Accrued Amount]" Member="Accrued_Amount" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="[Claimed Amount]" Member="Claimed_Amount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_update_Added_to_Savedstatus" Method="usp_Fbp_update_Added_to_Savedstatus">
+    <Parameter Name="Fbp_id" Parameter="fbp_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_update_fbp_Status" Method="usp_Fbp_update_fbp_Status">
+    <Parameter Name="Fbp_id" Parameter="fbp_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Override_Amt" Parameter="override_Amt" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Approver_comment" Parameter="approver_comment" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Status1" Parameter="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_UpdateLocking" Method="usp_Fbp_UpdateLocking">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="LOCK" Parameter="lOCK" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Fbp_Load_ParticularSavedClaimDetails" Method="usp_Fbp_Load_ParticularSavedClaimDetails">
+    <Parameter Name="APPROVER_ID" Parameter="aPPROVER_ID" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="usp_Fbp_Load_ParticularSavedClaimDetailsResult">
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BETRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_ParticularClaimsHistory" Method="usp_Fbp_ParticularClaimsHistory">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="usp_Fbp_ParticularClaimsHistoryResult">
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BETRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OVERRIDE_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Fbp_ParticularClaimsAdmin" Method="usp_Fbp_ParticularClaimsAdmin">
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CREATED_ONTo" Parameter="cREATED_ONTo" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="VarChar(1)" />
+    <ElementType Name="usp_Fbp_ParticularClaimsAdminResult">
+      <Column Name="FBPC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="LGART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BETRG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OVERRIDE_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

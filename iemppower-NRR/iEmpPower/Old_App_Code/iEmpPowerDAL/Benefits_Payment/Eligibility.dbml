@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IEmpPower_NRR" Class="EligibilityDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=IEmpPower_NRR;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_get_Vehicle_Eligibility" Method="sp_get_Vehicle_Eligibility">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_get_Vehicle_EligibilityResult">
+      <Column Name="VEC_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VEC_CATEGORY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_HotelRoom_Eligibility" Method="sp_get_HotelRoom_Eligibility">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_get_HotelRoom_EligibilityResult">
+      <Column Name="HOTEL_CATEGORY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ROOM_CATEGORY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_FlyNumber_Eligibility" Method="sp_get_FlyNumber_Eligibility">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_get_FlyNumber_EligibilityResult">
+      <Column Name="ICNUM" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_MailList_Traveller" Method="sp_Get_MailList_Traveller">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="HR_Name" Parameter="hR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="TD_Name" Parameter="tD_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="TD_Email" Parameter="tD_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="TD_Phn" Parameter="tD_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_MailList_HODTDTraveller" Method="sp_Get_MailList_HODTDTraveller">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="SPERNR" Parameter="sPERNR" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="HR_Name" Parameter="hR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="TD_Name" Parameter="tD_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="TD_Email" Parameter="tD_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="TD_Phn" Parameter="tD_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[sp_get_master.ZTR_FLYER_NUMBER]" Method="sp_get_master_ZTR_FLYER_NUMBER">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_get_master_ZTR_FLYER_NUMBERResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="FRFLYNUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMPNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AIRLINE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VALSTATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[sp_get_master.ZTR_PASSPORT]" Method="sp_get_master_ZTR_PASSPORT">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_get_master_ZTR_PASSPORTResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMPNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PASNUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOI" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DOE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PLISS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[sp_get_master.ZTR_TRAVEL_INS]" Method="sp_get_master_ZTR_TRAVEL_INS">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_get_master_ZTR_TRAVEL_INSResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRINSNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMPNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOI" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DOE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PLAN1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PREMIUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AGENT_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[sp_get_master.ZTR_VISA]" Method="sp_get_master_ZTR_VISA">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_get_master_ZTR_VISAResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VINUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PASNUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMPNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COUNTRY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOI" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DOE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VISA_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_MailList_Training" Method="sp_Get_MailList_Training">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="HR_Name" Parameter="hR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="TD_Name" Parameter="tD_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="TD_Email" Parameter="tD_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="TD_Phn" Parameter="tD_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

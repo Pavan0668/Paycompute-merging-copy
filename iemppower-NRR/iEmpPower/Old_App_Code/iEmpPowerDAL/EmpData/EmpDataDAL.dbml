@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="EmpDataDALDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PayCompute20032020ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.payc_update_EmpDetails_dept" Method="payc_update_EmpDetails_dept">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="dept" Type="System.Decimal" DbType="Decimal(8,0)" />
+    <Parameter Name="grade" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="division" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="branch" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="doj" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_get_all_detailsof_emp_saral" Method="payc_get_all_detailsof_emp_saral">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_all_detailsof_emp_saralResult">
+      <Column Name="[1]" Member="_1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="[2]" Member="_2" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[3]" Member="_3" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[4]" Member="_4" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="[5]" Member="_5" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[6]" Member="_6" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[7]" Member="_7" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="[8]" Member="_8" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="[9]" Member="_9" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="[10]" Member="_10" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="[11]" Member="_11" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="[12]" Member="_12" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="[13]" Member="_13" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="[14]" Member="_14" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[15]" Member="_15" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[16]" Member="_16" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="[17]" Member="_17" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[18]" Member="_18" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="[19]" Member="_19" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="[20]" Member="_20" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+      <Column Name="[21]" Member="_21" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[22]" Member="_22" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[23]" Member="_23" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[24]" Member="_24" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[25]" Member="_25" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[26]" Member="_26" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[27]" Member="_27" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="[28]" Member="_28" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="[29]" Member="_29" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[30]" Member="_30" Type="System.Decimal" DbType="Decimal(15,0) NOT NULL" CanBeNull="false" />
+      <Column Name="[31]" Member="_31" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[32]" Member="_32" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[33]" Member="_33" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[34]" Member="_34" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="[35]" Member="_35" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="[36]" Member="_36" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[37]" Member="_37" Type="System.Decimal" DbType="Decimal(15,0) NOT NULL" CanBeNull="false" />
+      <Column Name="[38]" Member="_38" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[39]" Member="_39" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[40]" Member="_40" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[41]" Member="_41" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[42]" Member="_42" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="[43]" Member="_43" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="[44]" Member="_44" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[45]" Member="_45" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[46]" Member="_46" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="[47]" Member="_47" Type="System.Decimal" DbType="Decimal(12,0) NOT NULL" CanBeNull="false" />
+      <Column Name="[48]" Member="_48" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="[49]" Member="_49" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="[50]" Member="_50" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[51]" Member="_51" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[52]" Member="_52" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="[53]" Member="_53" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="[54]" Member="_54" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="[55]" Member="_55" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[56]" Member="_56" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[57]" Member="_57" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="[58]" Member="_58" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[59]" Member="_59" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[60]" Member="_60" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[61]" Member="_61" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_EmpDetails_dept" Method="payc_get_EmpDetails_dept">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_EmpDetails_deptResult">
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="Dept_id" Type="System.Decimal" DbType="Decimal(8,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ORGTX" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Branch" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="DOJ" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_all_detailsof_emp_comlogin" Method="payc_get_all_detailsof_emp_comlogin">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_all_detailsof_emp_comloginResult">
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="EName" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="DOJ" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DOL" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_all_detailsof_emp_comloginfull" Method="payc_get_all_detailsof_emp_comloginfull">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_all_detailsof_emp_comloginfullResult">
+      <Column Name="Empid" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Salutation" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="F_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="M_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="L_NAme" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fathername" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Mothername" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Maritialstatus" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Spousename" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Branch" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="AccNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Bankname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IFSCcode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TMPAddressLine1" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TMPAddressLine2" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TMPaddlocality" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="TMPadddistrict" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="TMPaddstate" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TMPaddpincode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRMaddLine1" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PRMaddLine2" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PRMaddlocality" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="PRMadddsitrict" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="PRMaddstate" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PRMaddpincode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="stdcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mobile" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ESIapplicability" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ESINUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ESIDispensary" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="PFapplicability" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="PFNUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PFDeptfile" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PFRestrict" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ZeroPension" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ZeroPT" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_create_update_empInfo" Method="payc_create_update_empInfo">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Employee_ID" Parameter="employee_ID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Salutation" Parameter="salutation" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="First_Name" Parameter="first_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Middle_Name" Parameter="middle_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Last_Name" Parameter="last_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Date_of_Birth" Parameter="date_of_Birth" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Material_Status" Parameter="material_Status" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Father_Name" Parameter="father_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Mother_Name" Parameter="mother_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Spouse_Name" Parameter="spouse_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Bank_Name" Parameter="bank_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Account_Number" Parameter="account_Number" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IFSC_Code" Parameter="iFSC_Code" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Bank_Branch" Parameter="bank_Branch" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Bank_District" Parameter="bank_District" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Branch_Country" Parameter="branch_Country" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Branch_State" Parameter="branch_State" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Address_Type" Parameter="address_Type" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Residence_Number" Parameter="residence_Number" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Street" Parameter="street" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Locality" Parameter="locality" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="District" Parameter="district" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Country" Parameter="country" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Pincode" Parameter="pincode" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="STD_Code" Parameter="sTD_Code" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Ward_Number" Parameter="ward_Number" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ESI_Applicable" Parameter="eSI_Applicable" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ESI_Number" Parameter="eSI_Number" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ESI_Dispencary" Parameter="eSI_Dispencary" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PF_Applicable" Parameter="pF_Applicable" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PF_Number" Parameter="pF_Number" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PF_Number_Dept_Fi" Parameter="pF_Number_Dept_Fi" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Restrict_PF" Parameter="restrict_PF" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Zero_Pension" Parameter="zero_Pension" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Zero_PT" Parameter="zero_PT" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="loginID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="eDept" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="egrade" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="ebranch" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="eDivision" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="eDOJ" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="Addstart_Date" Parameter="addstart_Date" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="Addend_Date" Parameter="addend_Date" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payc_create_update_Con_Doc_types" Method="payc_create_update_Con_Doc_types">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Employee_ID" Parameter="employee_ID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="IDtype" Parameter="iDtype" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="loginID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="docpath" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

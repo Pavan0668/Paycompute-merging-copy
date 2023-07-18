@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPower" Class="piclockinoutcorrectiondalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=RASHMI-PC\SQLEXPRESS;Initial Catalog=iEmpPower;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_pi_create_clock_in_out" Method="sp_pi_create_clock_in_out">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="dates" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="times" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

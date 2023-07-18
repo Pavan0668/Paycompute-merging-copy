@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPower" Class="Local_travel_requisitionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=iEmpPower;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_load_hotel_cat_code" Method="sp_load_hotel_cat_code">
+    <Parameter Name="HOTEL_CAT_CODE" Parameter="hOTEL_CAT_CODE" Type="System.String" DbType="Char(2)" />
+    <ElementType Name="sp_load_hotel_cat_codeResult">
+      <Column Name="HOTEL_CATEGORY" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_load_hotel_names_code" Method="sp_load_hotel_names_code">
+    <Parameter Name="CODE" Parameter="cODE" Type="System.String" DbType="Char(6)" />
+    <ElementType Name="sp_load_hotel_names_codeResult">
+      <Column Name="HOTEL_NAME" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_load_room_names_code" Method="sp_load_room_names_code">
+    <Parameter Name="ROOM_CODE" Parameter="rOOM_CODE" Type="System.String" DbType="Char(6)" />
+    <ElementType Name="sp_load_room_names_codeResult">
+      <Column Name="ROOM_CATEGORY" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_load_vehiceType_code" Method="sp_load_vehiceType_code">
+    <Parameter Name="KZPMF" Parameter="kZPMF" Type="System.String" DbType="VarChar(1)" />
+    <ElementType Name="sp_load_vehiceType_codeResult">
+      <Column Name="FZTXT" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_load_vehicle_names_code" Method="sp_load_vehicle_names_code">
+    <Parameter Name="VEHNUM" Parameter="vEHNUM" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_load_vehicle_names_codeResult">
+      <Column Name="ZZVEHNAM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_load_VehicleClass_code" Method="sp_load_VehicleClass_code">
+    <Parameter Name="PKWKL" Parameter="pKWKL" Type="System.String" DbType="VarChar(3)" />
+    <ElementType Name="sp_load_VehicleClass_codeResult">
+      <Column Name="TEXT25" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Local_vehicle_SeparateReq_details" Method="sp_get_Local_vehicle_SeparateReq_details">
+    <Parameter Name="Employee_no" Parameter="employee_no" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_get_Local_vehicle_SeparateReq_detailsResult">
+      <Column Name="Local_travel_req_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type_of_travel" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_TYPE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_CLASS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEC_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_TIME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PICKUP_ADDRESS" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Drop_adress" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Purpose_of_travel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Number_of_members" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="From_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="To_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Reason_for_cancel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_create_local_travel_requisition" Method="sp_create_local_travel_requisition">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Type_of_travel" Parameter="type_of_travel" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="from" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="to" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_type" Parameter="vehicle_type" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_category" Parameter="vehicle_category" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Vehicle_name" Parameter="vehicle_name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pickup_time" Parameter="pickup_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Pickup_address" Parameter="pickup_address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Drop_time" Parameter="drop_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Drop_address" Parameter="drop_address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Purpose_of_travel" Parameter="purpose_of_travel" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Number_of_members" Parameter="number_of_members" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name_of_members" Parameter="name_of_members" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="STATUS_UPDATED_BY" Parameter="sTATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="created_by" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="From_date" Parameter="from_date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="To_date" Parameter="to_date" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_load_FromTo_name_code" Method="sp_load_FromTo_name_code">
+    <Parameter Name="RGION" Parameter="rGION" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_load_FromTo_name_codeResult">
+      <Column Name="TEXT25" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

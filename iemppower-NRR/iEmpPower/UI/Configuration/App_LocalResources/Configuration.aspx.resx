@@ -1,0 +1,1557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BoundFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.HeaderText" xml:space="preserve">
+    <value>Modules</value>
+  </data>
+  <data name="btnAddressInformationResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnAddressInformationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAddressProofResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnAddressProofResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnBankInformationResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnBankInformationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnEmploymentProofResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnEmploymentProofResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnFamilyMemberInformationResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnFamilyMemberInformationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMailServerDetailsResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnMailServerDetailsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnPersonalDataResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnPersonalDataResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnPersonalIdResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnPersonalIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnResetResource1.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="btnResetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSaveResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnSaveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnStatusResource1.Text" xml:space="preserve">
+    <value>Check all</value>
+  </data>
+  <data name="btnStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultBankAccountNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultBankAccountNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultBankCountryKeyResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultBankCountryKeyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultBankKeyResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultBankKeyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultBankTransfersResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultBankTransfersResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultCityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultCityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultCurrencyKeyResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultCurrencyKeyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultPaymentMethodResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultPaymentMethodResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultPostalCodeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultPostalCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultRecipientTextResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultRecipientTextResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultSubtypeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankDefaultSubtypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryBankAccountNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryBankAccountNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryBankCountryKeyResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryBankCountryKeyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryBankKeyResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryBankKeyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryBankTransfersResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryBankTransfersResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryCityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryCityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryCurrencyKeyResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryCurrencyKeyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryPaymentMethodResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryPaymentMethodResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryPostalCodeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryPostalCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryRecipientTextResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatoryRecipientTextResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatorySubtypeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBankMandatorySubtypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBxRequiresStatusResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkBxRequiresStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDAuthorResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDAuthorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDCOIssueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDCOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDCountryResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDCountryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDDOIssueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDDOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultAddressLine1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultAddressLine1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultAddressLine2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultAddressLine2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultCityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultCityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultPhoneResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultPhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultPostalCodeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultPostalCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultRegionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultRegionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultSubtypeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultSubtypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultValidFromDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultValidFromDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultValidToDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDefaultValidToDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDIDNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDIdTypeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDIdTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDIssuingNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDIssuingNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDNoCheckResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDNoCheckResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDPOIssueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDPOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDPreviousIDNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDPreviousIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDValidToResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDValidToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultCOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultCOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultDOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultDOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultFirstNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultFirstNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultGenderResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultGenderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultInitialsResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultInitialsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultNamePrefixResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultNamePrefixResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultNationality2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultNationality2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultNationality3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultNationality3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultNationalityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultNationalityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultNOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultNOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultOtherTitleResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultOtherTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultPOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultPOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultSubtypeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIDefaultSubtypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIFMIDefaultLastNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIFMIDefaultLastNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIFMIMandatoryLastNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIFMIMandatoryLastNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryCOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryCOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryDOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryDOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryFirstNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryFirstNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryGenderResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryGenderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryInitialsResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryInitialsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryNamePrefixResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryNamePrefixResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryNationality2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryNationality2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryNationality3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryNationality3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryNationalityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryNationalityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryNOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryNOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryOtherTitleResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryOtherTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryPOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatoryPOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatorySubtypeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFMIMandatorySubtypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryAddressLine1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryAddressLine1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryAddressLine2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryAddressLine2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryCityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryCityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryPhoneResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryPhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryPostalCodeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryPostalCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryRegionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryRegionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatorySubtypeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatorySubtypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryValidFromDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryValidFromDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryValidToDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMandatoryValidToDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMAuthorResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMAuthorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMCOIssueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMCOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMCountryResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMCountryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMDOIssueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMDOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMIDNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMIdTypeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMIdTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMIssuingNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMIssuingNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMNoCheckResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMNoCheckResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMPOIssueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMPOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMPreviousIDNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMPreviousIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMValidToResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMValidToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultCOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultCOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultDOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultDOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultFirstNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultFirstNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultGenderResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultGenderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultInitialsResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultInitialsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultKnownAsResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultKnownAsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultLanguageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultLanguageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultLastNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultLastNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultMartialResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultMartialResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultNationality2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultNationality2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultNationality3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultNationality3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultNationalityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultNationalityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultNOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultNOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultNoOfChildrenResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultNoOfChildrenResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultPOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultPOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultReligiousResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultReligiousResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultStateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultStateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultTitleResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultValidFromMaritalStatusResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDDefaultValidFromMaritalStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryCOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryCOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryDOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryDOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryFirstNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryFirstNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryGenderResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryGenderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryInitialsResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryInitialsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryKnownAsResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryKnownAsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryLanguageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryLanguageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryLastNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryLastNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryMartialResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryMartialResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryNationality2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryNationality2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryNationality3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryNationality3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryNationalityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryNationalityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryNOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryNOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryNoOfChildrenResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryNoOfChildrenResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryPOBResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryPOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryReligiousResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryReligiousResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryStateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryStateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryTitleResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryValidFromMaritalStatusResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPDMandatoryValidFromMaritalStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtAddressProofResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtEmploymentProofResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="grdReqSupApprovalResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="grdReqSupApprovalResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="grdReqSupApprovalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label5Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label5Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblADdressDefaultResource1.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="lblADdressDefaultResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblADdressDescriptionResource1.Text" xml:space="preserve">
+    <value>Fields</value>
+  </data>
+  <data name="lblADdressDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAddressLine1Resource1.Text" xml:space="preserve">
+    <value>House number and street</value>
+  </data>
+  <data name="lblAddressLine1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAddressLine2Resource1.Text" xml:space="preserve">
+    <value>2nd Address Line</value>
+  </data>
+  <data name="lblAddressLine2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblADdressMandatoryResource1.Text" xml:space="preserve">
+    <value>Mandatory</value>
+  </data>
+  <data name="lblADdressMandatoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAuthorResource1.Text" xml:space="preserve">
+    <value>Author </value>
+  </data>
+  <data name="lblAuthorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankBankAccountNoResource1.Text" xml:space="preserve">
+    <value>Bank account number</value>
+  </data>
+  <data name="lblBankBankAccountNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankBankKeyResource1.Text" xml:space="preserve">
+    <value>Bank Key</value>
+  </data>
+  <data name="lblBankBankKeyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankBankTransfersResource1.Text" xml:space="preserve">
+    <value>Purpose of bank transfers</value>
+  </data>
+  <data name="lblBankBankTransfersResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankCityResource1.Text" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="lblBankCityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankCountryKeyResource1.Text" xml:space="preserve">
+    <value>Bank country key</value>
+  </data>
+  <data name="lblBankCountryKeyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankCurrencyKeyResource1.Text" xml:space="preserve">
+    <value>Currency Key</value>
+  </data>
+  <data name="lblBankCurrencyKeyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankDefaultResource1.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="lblBankDefaultResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankDescriptionResource1.Text" xml:space="preserve">
+    <value>Fields</value>
+  </data>
+  <data name="lblBankDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankMandatoryResource1.Text" xml:space="preserve">
+    <value>Mandatory</value>
+  </data>
+  <data name="lblBankMandatoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankPaymentMethodResource1.Text" xml:space="preserve">
+    <value>Payment method</value>
+  </data>
+  <data name="lblBankPaymentMethodResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankPostalCodeResource1.Text" xml:space="preserve">
+    <value>Postal code</value>
+  </data>
+  <data name="lblBankPostalCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBankSubtypeResource1.Text" xml:space="preserve">
+    <value>Subtype </value>
+  </data>
+  <data name="lblBankSubtypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCityResource1.Text" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="lblCityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCOIssueResource1.Text" xml:space="preserve">
+    <value>Country of issue </value>
+  </data>
+  <data name="lblCOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCountryResource1.Text" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="lblCountryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDefaultResource1.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="lblDefaultResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDescriptionResource1.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDOIssueResource1.Text" xml:space="preserve">
+    <value>Date of issue </value>
+  </data>
+  <data name="lblDOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMICOBResource1.Text" xml:space="preserve">
+    <value>Country of Birth</value>
+  </data>
+  <data name="lblFMICOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMIDefaultResource1.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="lblFMIDefaultResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMIDescriptionResource1.Text" xml:space="preserve">
+    <value>Fields</value>
+  </data>
+  <data name="lblFMIDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMIDOBResource1.Text" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="lblFMIDOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMIFirstNameResource1.Text" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="lblFMIFirstNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMIGenderResource1.Text" xml:space="preserve">
+    <value>Gender key</value>
+  </data>
+  <data name="lblFMIGenderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMIInitialsResource1.Text" xml:space="preserve">
+    <value>Employee's initials</value>
+  </data>
+  <data name="lblFMIInitialsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMILastNameResource1.Text" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="lblFMILastNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMIMandatoryResource1.Text" xml:space="preserve">
+    <value>Mandatory</value>
+  </data>
+  <data name="lblFMIMandatoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMINamePrefixResource1.Text" xml:space="preserve">
+    <value>Name prefix</value>
+  </data>
+  <data name="lblFMINamePrefixResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMINationality2Resource1.Text" xml:space="preserve">
+    <value>Second nationality</value>
+  </data>
+  <data name="lblFMINationality2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMINationality3Resource1.Text" xml:space="preserve">
+    <value>Third nationality</value>
+  </data>
+  <data name="lblFMINationality3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMINationalityResource1.Text" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="lblFMINationalityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMINOBResource1.Text" xml:space="preserve">
+    <value>Name at birth</value>
+  </data>
+  <data name="lblFMINOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMIOtherTitleResource1.Text" xml:space="preserve">
+    <value>Other title</value>
+  </data>
+  <data name="lblFMIOtherTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMIPOBResource1.Text" xml:space="preserve">
+    <value>Birthplace</value>
+  </data>
+  <data name="lblFMIPOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFMISubtypeResource1.Text" xml:space="preserve">
+    <value>Family member type</value>
+  </data>
+  <data name="lblFMISubtypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIDNoResource1.Text" xml:space="preserve">
+    <value>ID number  </value>
+  </data>
+  <data name="lblIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIdTypeResource1.Text" xml:space="preserve">
+    <value>ID type</value>
+  </data>
+  <data name="lblIdTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIMAPServerResource1.Text" xml:space="preserve">
+    <value>IMAP Server</value>
+  </data>
+  <data name="lblIMAPServerResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIssuingNoResource1.Text" xml:space="preserve">
+    <value>Issuing number  </value>
+  </data>
+  <data name="lblIssuingNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMandatoryResource1.Text" xml:space="preserve">
+    <value>Mandatory</value>
+  </data>
+  <data name="lblMandatoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageBoardResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageBoardResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNoCheckResource1.Text" xml:space="preserve">
+    <value>No check </value>
+  </data>
+  <data name="lblNoCheckResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDCOBResource1.Text" xml:space="preserve">
+    <value>Country of Birth</value>
+  </data>
+  <data name="lblPDCOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDDefaultResource1.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="lblPDDefaultResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDDescriptionResource1.Text" xml:space="preserve">
+    <value>Fields</value>
+  </data>
+  <data name="lblPDDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDDOBResource1.Text" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="lblPDDOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDFirstNameResource1.Text" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="lblPDFirstNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDGenderResource1.Text" xml:space="preserve">
+    <value>Gender key</value>
+  </data>
+  <data name="lblPDGenderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDInitialsResource1.Text" xml:space="preserve">
+    <value>Employee's initials</value>
+  </data>
+  <data name="lblPDInitialsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDKnownAsResource1.Text" xml:space="preserve">
+    <value>Known As</value>
+  </data>
+  <data name="lblPDKnownAsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDLanguageResource1.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lblPDLanguageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDLastNameResource1.Text" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="lblPDLastNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDMandatoryResource1.Text" xml:space="preserve">
+    <value>Mandatory</value>
+  </data>
+  <data name="lblPDMandatoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDMaritalResource1.Text" xml:space="preserve">
+    <value>Marital status key</value>
+  </data>
+  <data name="lblPDMaritalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDNationality2Resource1.Text" xml:space="preserve">
+    <value>Second nationality</value>
+  </data>
+  <data name="lblPDNationality2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDNationality3Resource1.Text" xml:space="preserve">
+    <value>Third nationality</value>
+  </data>
+  <data name="lblPDNationality3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDNationalityResource1.Text" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="lblPDNationalityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDNOBResource1.Text" xml:space="preserve">
+    <value>Name at birth</value>
+  </data>
+  <data name="lblPDNOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDNoOfChildrenResource1.Text" xml:space="preserve">
+    <value>Number of children</value>
+  </data>
+  <data name="lblPDNoOfChildrenResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDPOBResource1.Text" xml:space="preserve">
+    <value>Birthplace</value>
+  </data>
+  <data name="lblPDPOBResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDReligiousResource1.Text" xml:space="preserve">
+    <value>Religious denomination key</value>
+  </data>
+  <data name="lblPDReligiousResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDStateResource1.Text" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="lblPDStateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDTitleResource1.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="lblPDTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPDValidFromMaritalStatusResource1.Text" xml:space="preserve">
+    <value>Valid from date of current marital status</value>
+  </data>
+  <data name="lblPDValidFromMaritalStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPhoneResource1.Text" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="lblPhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPOIssueResource1.Text" xml:space="preserve">
+    <value>Place of issue </value>
+  </data>
+  <data name="lblPOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPOPServerResource1.Text" xml:space="preserve">
+    <value>POP Server</value>
+  </data>
+  <data name="lblPOPServerResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPostalCodeResource1.Text" xml:space="preserve">
+    <value>Postal code</value>
+  </data>
+  <data name="lblPostalCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPreviousIDNoResource1.Text" xml:space="preserve">
+    <value>Previous ID number</value>
+  </data>
+  <data name="lblPreviousIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRecipientTextResource1.Text" xml:space="preserve">
+    <value>Recipient text</value>
+  </data>
+  <data name="lblRecipientTextResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRegionResource1.Text" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="lblRegionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSMTPServerResource1.Text" xml:space="preserve">
+    <value>SMTP Server</value>
+  </data>
+  <data name="lblSMTPServerResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSubtypeResource1.Text" xml:space="preserve">
+    <value>Subtype </value>
+  </data>
+  <data name="lblSubtypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidFromDateResource1.Text" xml:space="preserve">
+    <value>Valid from date</value>
+  </data>
+  <data name="lblValidFromDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidToDateResource1.Text" xml:space="preserve">
+    <value>Valid To Date</value>
+  </data>
+  <data name="lblValidToDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidToResource1.Text" xml:space="preserve">
+    <value>Valid to </value>
+  </data>
+  <data name="lblValidToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="Panel1Resource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Panel1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlAddressProofResource1.GroupingText" xml:space="preserve">
+    <value>Address proof</value>
+  </data>
+  <data name="pnlAddressProofResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlEmploymentProofResource1.GroupingText" xml:space="preserve">
+    <value>Employment proof</value>
+  </data>
+  <data name="pnlEmploymentProofResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlMailServerDetailsResource1.GroupingText" xml:space="preserve">
+    <value>Mail server</value>
+  </data>
+  <data name="pnlMailServerDetailsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabAddressInformationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabBankInformationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabConfigurationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabFamilyMemberInformationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPersonalDataResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPersonalIdsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource1.HeaderText" xml:space="preserve">
+    <value>Requires supervisor approval</value>
+  </data>
+  <data name="TemplateFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource2.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIMAPServerResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIMAPServerResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPOPServerResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPOPServerResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSMTPServerResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSMTPServerResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SaveSuccess" xml:space="preserve">
+    <value>Saved successfully.</value>
+  </data>
+  <data name="UnkownError" xml:space="preserve">
+    <value>Unknown error occured. Please contact your system administrator.</value>
+  </data>
+</root>

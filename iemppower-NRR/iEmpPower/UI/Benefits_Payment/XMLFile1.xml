@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Customers>
+
+  <Customer>
+    <Date>23/04/2014 </Date>
+    <JourneyParticulars>Mysore to Bangalore</JourneyParticulars>
+    <From>
+      Bangalore
+    </From>
+    <To>
+      Mysore
+    </To>
+    <ModeofTransportation>
+      Bus
+    </ModeofTransportation>
+    <FaresRs>
+      500
+    </FaresRs>
+    <FaresPaisa>
+      50
+    </FaresPaisa>
+    <DailyallowanceRs >
+      5000
+    </DailyallowanceRs>
+    <DailyallowancePaisa >
+
+    </DailyallowancePaisa>
+
+    10
+    <LoadingconveyanceRs>
+      500
+    </LoadingconveyanceRs>
+    <LoadingconveyancePaisa>
+
+    </LoadingconveyancePaisa>
+    <ActualLoadgingconveyanceRS>
+      1500
+    </ActualLoadgingconveyanceRS>
+
+    <ActualLoadgingconveyancePaisa>
+      10
+    </ActualLoadgingconveyancePaisa>
+
+    <LocalconveyanceRs>
+      100
+    </LocalconveyanceRs>
+    <LocalconveyancePaisa>
+      10
+    </LocalconveyancePaisa>
+
+    <MiscExpencesParticulars>
+
+    </MiscExpencesParticulars>
+    <MiscExpencesParticularsRs>
+      100
+    </MiscExpencesParticularsRs>
+    <MiscExpencesParticularsPaisa>
+      10
+    </MiscExpencesParticularsPaisa>
+    <TotalRs>
+      2800
+    </TotalRs>
+    <TotalPaisa>
+      80
+    </TotalPaisa>
+
+  </Customer>
+
+  <Customer>
+    <Date>25/04/2014 </Date>
+    <JourneyParticulars>NRR to Busstand</JourneyParticulars>
+    <From>
+
+    </From>
+    <To>
+
+    </To>
+    <ModeofTransportation>
+      Bus
+    </ModeofTransportation>
+    <FaresRs>
+      500
+    </FaresRs>
+    <FaresPaisa>
+
+    </FaresPaisa>
+    <DailyallowanceRs >
+      5000
+    </DailyallowanceRs>
+    <DailyallowancePaisa >
+
+    </DailyallowancePaisa>
+
+
+    <LoadingconveyanceRs>
+      500
+    </LoadingconveyanceRs>
+    <LoadingconveyancePaisa>
+
+    </LoadingconveyancePaisa>
+    <ActualLoadgingconveyanceRS>
+      1500
+    </ActualLoadgingconveyanceRS>
+    300
+    <ActualLoadgingconveyancePaisa>
+    </ActualLoadgingconveyancePaisa>
+
+    <LocalconveyanceRs>
+      1000
+    </LocalconveyanceRs>
+    <LocalconveyancePaisa>
+    </LocalconveyancePaisa>
+
+    <MiscExpencesParticulars>
+    </MiscExpencesParticulars>
+    <MiscExpencesParticularsRs>
+      100
+    </MiscExpencesParticularsRs>
+    <MiscExpencesParticularsPaisa>
+
+    </MiscExpencesParticularsPaisa>
+    <TotalRs>
+      8000
+    </TotalRs>
+    <TotalPaisa>
+
+    </TotalPaisa>
+  </Customer>
+
+  <Customer>
+    <Date>28/04/2014 </Date>
+    <JourneyParticulars>Room to Mumbai airport</JourneyParticulars>
+    <From>
+
+    </From>
+    <To>
+
+    </To>
+    <ModeofTransportation>
+      Air
+    </ModeofTransportation>
+    <FaresRs>
+      500
+    </FaresRs>
+    <FaresPaisa>
+
+    </FaresPaisa>
+    <DailyallowanceRs >
+      5000
+    </DailyallowanceRs>
+    <DailyallowancePaisa >
+
+    </DailyallowancePaisa>
+
+
+    <LoadingconveyanceRs>
+      500
+    </LoadingconveyanceRs>
+    <LoadingconveyancePaisa>
+
+    </LoadingconveyancePaisa>
+    <ActualLoadgingconveyanceRS>
+      1500
+    </ActualLoadgingconveyanceRS>
+    1000
+    <ActualLoadgingconveyancePaisa>
+    </ActualLoadgingconveyancePaisa>
+
+    <LocalconveyanceRs>
+      500
+    </LocalconveyanceRs>
+    <LocalconveyancePaisa>
+    </LocalconveyancePaisa>
+
+    <MiscExpencesParticulars>
+
+    </MiscExpencesParticulars>
+    <MiscExpencesParticularsRs>
+      500
+    </MiscExpencesParticularsRs>
+    <MiscExpencesParticularsPaisa>
+
+    </MiscExpencesParticularsPaisa>
+    <TotalRs>
+      10000
+    </TotalRs>
+    <TotalPaisa>
+
+    </TotalPaisa>
+  </Customer>
+
+  <Customer>
+    <Date>29/04/2014 </Date>
+
+    <JourneyParticulars>Mumbai airport to Bangalore</JourneyParticulars>
+    <From>
+      Mumbai
+    </From>
+    <To>
+      Bangalore
+    </To>
+    <ModeofTransportation>
+      Air
+    </ModeofTransportation>
+    <FaresRs>
+      500
+    </FaresRs>
+    <FaresPaisa>
+
+    </FaresPaisa>
+    <DailyallowanceRs >
+      5000
+    </DailyallowanceRs>
+    <DailyallowancePaisa >
+
+    </DailyallowancePaisa>
+
+
+    <LoadingconveyanceRs>
+      500
+    </LoadingconveyanceRs>
+    <LoadingconveyancePaisa>
+
+    </LoadingconveyancePaisa>
+    <ActualLoadgingconveyanceRS>
+      1500
+    </ActualLoadgingconveyanceRS>
+    <ActualLoadgingconveyancePaisa>
+    </ActualLoadgingconveyancePaisa>
+
+    <LocalconveyanceRs>
+      500
+    </LocalconveyanceRs>
+    <LocalconveyancePaisa>
+    </LocalconveyancePaisa>
+
+    <MiscExpencesParticulars>
+    </MiscExpencesParticulars>
+    <MiscExpencesParticularsRs>
+      500
+    </MiscExpencesParticularsRs>
+    <MiscExpencesParticularsPaisa>
+
+    </MiscExpencesParticularsPaisa>
+    <TotalRs>
+      20000
+    </TotalRs>
+    <TotalPaisa>
+
+    </TotalPaisa>
+  </Customer>
+
+  <Customer>
+    <Date>30/04/2014 </Date>
+    <JourneyParticulars>Bangalore airport to Mysore</JourneyParticulars>
+    <From>
+      Bangalore
+    </From>
+    <To>
+      Mysore
+    </To>
+    <ModeofTransportation>
+      Air
+    </ModeofTransportation>
+    <FaresRs>
+      500
+    </FaresRs>
+    <FaresPaisa>
+
+    </FaresPaisa>
+    <DailyallowanceRs >
+      5000
+    </DailyallowanceRs>
+    <DailyallowancePaisa >
+
+    </DailyallowancePaisa>
+
+
+    <LoadingconveyanceRs>
+      500
+    </LoadingconveyanceRs>
+    <LoadingconveyancePaisa>
+
+    </LoadingconveyancePaisa>
+    <ActualLoadgingconveyanceRS>
+      1500
+    </ActualLoadgingconveyanceRS>
+    500
+    <ActualLoadgingconveyancePaisa>
+    </ActualLoadgingconveyancePaisa>
+
+    <LocalconveyanceRs>
+      500
+    </LocalconveyanceRs>
+    <LocalconveyancePaisa>
+    </LocalconveyancePaisa>
+
+    <MiscExpencesParticulars>
+
+    </MiscExpencesParticulars>
+    <MiscExpencesParticularsRs>
+      500
+    </MiscExpencesParticularsRs>
+    <MiscExpencesParticularsPaisa>
+
+    </MiscExpencesParticularsPaisa>
+    <TotalRs>
+      2000
+    </TotalRs>
+    <TotalPaisa>
+
+    </TotalPaisa>
+  </Customer>
+
+
+</Customers>

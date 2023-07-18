@@ -1,0 +1,792 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PRD19062019" Class="TicketingTooldalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=PRD19062019;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_tcikety_load_category" Method="usp_tcikety_load_category">
+    <ElementType Name="usp_tcikety_load_categoryResult">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_priority" Method="usp_tcikety_load_priority">
+    <ElementType Name="usp_tcikety_load_priorityResult">
+      <Column Name="PriorityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriorityTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_assignee" Method="usp_tcikety_load_assignee">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="usp_tcikety_load_assigneeResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_get_clients" Method="usp_tcikety_get_clients">
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_tcikety_get_clientsResult">
+      <Column Name="USErName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_statusSearch" Method="usp_tcikety_load_statusSearch">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_tcikety_load_statusSearchResult">
+      <Column Name="SearchStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SearchStatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_CheckIf_clients" Method="usp_tcikety_CheckIf_clients">
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(5)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_status" Method="usp_tcikety_load_status">
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pernr" Parameter="pernr" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_load_statusResult">
+      <Column Name="StatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_statusForTask" Method="usp_tcikety_load_statusForTask">
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pernr" Parameter="pernr" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_load_statusForTaskResult">
+      <Column Name="StatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Ticket_Attachments" Method="usp_tcikety_load_Ticket_Attachments">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="usp_tcikety_load_Ticket_AttachmentsResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ATTACHEMNT_FILE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ATTACHEMENT_FID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ATTACHEMENT_FPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIDREF" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Ticket_Comments" Method="usp_tcikety_load_Ticket_Comments">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="usp_tcikety_load_Ticket_CommentsResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="COMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIDREF" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Ticket_Status" Method="usp_tcikety_load_Ticket_Status">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_load_Ticket_StatusResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="FRMSTATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TOSTATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FRMASSIGNEE" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TOASSIGNEE" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TIDREF" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="FRMSTATUSTXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TOSTATUSTXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FrmAssigneename" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ToAssigneename" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_getTimeRemaining" Method="usp_tcikety_getTimeRemaining">
+    <Parameter Name="TICKETID" Parameter="tICKETID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_getTimeRemainingResult">
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="resolution" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="enddate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_Rework_Ticket" Method="usp_tcikety_Rework_Ticket">
+    <Parameter Name="TID" Parameter="tID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="ATTACHEMENT_FILE" Parameter="aTTACHEMENT_FILE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ATTACHEMENT_FID" Parameter="aTTACHEMENT_FID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ATTACHEMENT_FPATH" Parameter="aTTACHEMENT_FPATH" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="COMMENTS" Parameter="cOMMENTS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="LASTMODIFIED_BY" Parameter="lASTMODIFIED_BY" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REWORKTIDOUT" Parameter="rEWORKTIDOUT" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_tcikety_get_PrvStsofCA" Method="usp_tcikety_get_PrvStsofCA">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="PRVCASTS" Parameter="pRVCASTS" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_customerwiseSrch" Method="usp_tcikety_load_customerwiseSrch">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="usp_tcikety_load_customerwiseSrchResult">
+      <Column Name="customertxt" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="customerId" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_statusRprt" Method="usp_tcikety_load_statusRprt">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_tcikety_load_statusRprtResult">
+      <Column Name="RptStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RptStatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Issuecategory" Method="usp_tcikety_load_Issuecategory">
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pernr" Parameter="pernr" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_load_IssuecategoryResult">
+      <Column Name="IssueCategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IssueCategoryTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_Create_TicketTask" Method="usp_tcikety_Create_TicketTask">
+    <Parameter Name="TASKID" Parameter="tASKID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TICKETID" Parameter="tICKETID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TASKTITLE" Parameter="tASKTITLE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKDESC" Parameter="tASKDESC" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKFRM" Parameter="tASKFRM" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="TASKAGENT" Parameter="tASKAGENT" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="TASKCCMAILID" Parameter="tASKCCMAILID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TaskComments" Parameter="taskComments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKFROMSTATUS" Parameter="tASKFROMSTATUS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TASKTOSTATUS" Parameter="tASKTOSTATUS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TASKATTACHEMENT_FILE" Parameter="tASKATTACHEMENT_FILE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKATTACHEMENT_FID" Parameter="tASKATTACHEMENT_FID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKATTACHEMENT_FPATH" Parameter="tASKATTACHEMENT_FPATH" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKCREATED_ON" Parameter="tASKCREATED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="TASKCREATED_BY" Parameter="tASKCREATED_BY" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="TASKMODIFIED_ON" Parameter="tASKMODIFIED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="TASKMODIFIED_BY" Parameter="tASKMODIFIED_BY" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TaskPlndHrs" Parameter="taskPlndHrs" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="TaskActualdHrs" Parameter="taskActualdHrs" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="TASKIDOUTREF" Parameter="tASKIDOUTREF" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_tcikety_get_MailListREWORK" Method="usp_tcikety_get_MailListREWORK">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="REWORKTicketID" Parameter="rEWORKTicketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PERNRNAME" Parameter="pERNRNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="PERNRMAILID" Parameter="pERNRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CLIENTID" Parameter="cLIENTID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CLIENTNAME" Parameter="cLIENTNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CLIENTMAILID" Parameter="cLIENTMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="FRMUSRID" Parameter="fRMUSRID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="FRMUSRNAME" Parameter="fRMUSRNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="FRMUSRMAILID" Parameter="fRMUSRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TOASSIGNEEID" Parameter="tOASSIGNEEID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TOASSIGNEENAME" Parameter="tOASSIGNEENAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TOASSIGNEEMAILID" Parameter="tOASSIGNEEMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="AGENTID" Parameter="aGENTID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="AGENTNAME" Parameter="aGENTNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="AGENTMAILID" Parameter="aGENTMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="MNGRID" Parameter="mNGRID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="MNGRNAME" Parameter="mNGRNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="MNGRMAILID" Parameter="mNGRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CSSTEAMMAILID" Parameter="cSSTEAMMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TITLE" Parameter="tITLE" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="PRIORITY" Parameter="pRIORITY" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CCMAILIDS" Parameter="cCMAILIDS" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_TicketForReport" Method="usp_tcikety_load_TicketForReport">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_load_TicketForReportResult">
+      <Column Name="TID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ISSDESC" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CLIENT" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FRMUSR" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="USRMAILID" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ASSIGNEE" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PRIORITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PriorityTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CATEGORY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LASTMODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LASTMODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TIDREF" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CBINREVIEWNEEDED" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ISSCATEGORYCSS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IssueCategoryTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Clientname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Agentname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Toassigneename" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tickety_get_employee_mailids" Method="usp_tickety_get_employee_mailids">
+    <Parameter Name="mailtxt" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="usp_tickety_get_employee_mailidsResult">
+      <Column Name="EMailID" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_SLA_Details" Method="usp_tcikety_load_SLA_Details">
+    <ElementType Name="usp_tcikety_load_SLA_DetailsResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Client" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Trouble" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Priority_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Response_Time" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Resolution_Time" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Resolution_Days" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Ticket_RWT" Method="usp_tcikety_load_Ticket_RWT">
+    <Parameter Name="Pernr" Parameter="pernr" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="usp_tcikety_load_Ticket_RWTResult">
+      <Column Name="TID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tickety_get_mandate_template_docs" Method="usp_tickety_get_mandate_template_docs">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="usp_tickety_get_mandate_template_docsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_IssueType" Method="usp_tcikety_load_IssueType">
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pernr" Parameter="pernr" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_load_IssueTypeResult">
+      <Column Name="IssueTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IssueTypeTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Ticket" Method="usp_tcikety_load_Ticket">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_load_TicketResult">
+      <Column Name="TID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ISSDESC" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CLIENT" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FRMUSR" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="USRMAILID" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ASSIGNEE" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PRIORITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PriorityTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CATEGORY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LASTMODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LASTMODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TIDREF" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TasksStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CBINREVIEWNEEDED" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ISSCATEGORYCSS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISSCATEGORYTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clientname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Agentname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Toassigneename" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PlndHrs" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CCMAILID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ActualHrs" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_Create_Ticket" Method="usp_tcikety_Create_Ticket">
+    <Parameter Name="TID" Parameter="tID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TITLE" Parameter="tITLE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ISSDESC" Parameter="iSSDESC" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CLIENT" Parameter="cLIENT" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FRMUSR" Parameter="fRMUSR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="USRMAILID" Parameter="uSRMAILID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CCMAILID" Parameter="cCMAILID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FRMASSIGNEE" Parameter="fRMASSIGNEE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="TOASSIGNEE" Parameter="tOASSIGNEE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PRIORITY" Parameter="pRIORITY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CATEGORY" Parameter="cATEGORY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ISSCATEGORYCSS" Parameter="iSSCATEGORYCSS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ISSTYPE" Parameter="iSSTYPE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FRMSTATUS" Parameter="fRMSTATUS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TOSTATUS" Parameter="tOSTATUS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ATTACHEMENT_FILE" Parameter="aTTACHEMENT_FILE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ATTACHEMENT_FID" Parameter="aTTACHEMENT_FID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ATTACHEMENT_FPATH" Parameter="aTTACHEMENT_FPATH" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="COMMENTS" Parameter="cOMMENTS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CBINREVIEWNEEDED" Parameter="cBINREVIEWNEEDED" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="LASTMODIFIED_ON" Parameter="lASTMODIFIED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="LASTMODIFIED_BY" Parameter="lASTMODIFIED_BY" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TICKETACTION" Parameter="tICKETACTION" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PLNDHRS" Parameter="pLNDHRS" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="ACTUALHRS" Parameter="aCTUALHRS" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="TICKETIDOUTREF" Parameter="tICKETIDOUTREF" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_chart_MSS_load_basedon_issueType" Method="usp_chart_MSS_load_basedon_issueType">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="frmdt" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="todt" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="usp_chart_MSS_load_basedon_issueTypeResult">
+      <Column Name="IssueTypeTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_chart_load_basedon_issueType" Method="usp_chart_load_basedon_issueType">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="frmdt" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="todt" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="usp_chart_load_basedon_issueTypeResult">
+      <Column Name="IssueTypeTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Task" Method="usp_tcikety_load_Task">
+    <Parameter Name="TIcketID" Parameter="tIcketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TaskID" Parameter="taskID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="usp_tcikety_load_TaskResult">
+      <Column Name="TICKETID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKTITLE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKDESC" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKAGENT" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKSTATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCREATED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKMODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TASKMODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="agentname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TaskPlndHrs" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCCMAILID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TaskActualHrs" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKACTUALAGENT" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKLINEID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Task_Attachments" Method="usp_tcikety_load_Task_Attachments">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TaskID" Parameter="taskID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_load_Task_AttachmentsResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKAID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKTICKETID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKATTACHEMNT_FILE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="TASKATTACHEMENT_FID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TASKATTACHEMENT_FPATH" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TASKMODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TASKMODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKASTATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKLINEID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Task_Comments" Method="usp_tcikety_load_Task_Comments">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TaskID" Parameter="taskID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_load_Task_CommentsResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKTICKETID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCCOMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TASKCMODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCMODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCSTATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKLINEID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Task_Status" Method="usp_tcikety_load_Task_Status">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TaskID" Parameter="taskID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_tcikety_load_Task_StatusResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKSID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKTICKETID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKSFRMSTATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TASKSTOSTATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TASKSMODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TASKSMODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKSFRMASSIGNEE" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKSTOASSIGNEE" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FRMSTATUSTXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TOSTATUSTXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FrmAssigneename" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ToAssigneename" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKLINEID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_allTask" Method="usp_tcikety_load_allTask">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="usp_tcikety_load_allTaskResult">
+      <Column Name="TICKETID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKTITLE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKDESC" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKAGENT" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="agentname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKSTATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCREATED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="createdonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKMODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TASKMODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TASKACTUALAGENT" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TaskActAgentname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKLINEID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_get_MailListTASK" Method="usp_tcikety_get_MailListTASK">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TASKID" Parameter="tASKID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PERNRNAME" Parameter="pERNRNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="PERNRMAILID" Parameter="pERNRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="AGENTID" Parameter="aGENTID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="AGENTNAME" Parameter="aGENTNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="AGENTMAILID" Parameter="aGENTMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="MNGRID" Parameter="mNGRID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="MNGRNAME" Parameter="mNGRNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="MNGRMAILID" Parameter="mNGRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CSSTEAMMAILID" Parameter="cSSTEAMMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TITLE" Parameter="tITLE" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CCMAILIDS" Parameter="cCMAILIDS" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TASKLINEID" Parameter="tASKLINEID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_allTasksofTicket" Method="usp_tcikety_load_allTasksofTicket">
+    <Parameter Name="TIcketID" Parameter="tIcketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="usp_tcikety_load_allTasksofTicketResult">
+      <Column Name="TICKETID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TASKTITLE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKDESC" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKAGENT" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKSTATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TASKCREATED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKMODIFIED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TASKMODIFIED_BY" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="agentname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKACTUALAGENT" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TaskActAgentname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASKLINEID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_basedOn_ChartClick" Method="usp_tcikety_load_basedOn_ChartClick">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="CHARTNO" Parameter="cHARTNO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TYPCLICK" Parameter="tYPCLICK" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FRMDT" Parameter="fRMDT" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TODAT" Parameter="tODAT" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="usp_tcikety_load_basedOn_ChartClickResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ISSDESC" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CLIENT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FRMUSR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="USRMAILID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ASSIGNEE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PRIORITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriorityTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CATEGORY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ISSUETYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISSUETYPETxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LASTMODIFIED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LASTMODIFIED_BY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TIDREF" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Action" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="taskpresent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Clientname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Agentname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Toassigneename" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="totaldatediffernce" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="tilldatediffernce" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="percentage" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="breacheddiffHr" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_get_postbackValue_on_chartclick" Method="usp_tcikety_get_postbackValue_on_chartclick">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="chartNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="value" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="valueOut" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_all_chart" Method="usp_tcikety_load_all_chart">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Fdate" Parameter="fdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="tdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="sp" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="usp_tcikety_load_all_chartResult">
+      <Column Name="Statustxt" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_Taskassignee_names" Method="usp_tcikety_load_Taskassignee_names">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="TID" Parameter="tID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TASKID" Parameter="tASKID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TYPE" Parameter="tYPE" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_tcikety_load_Taskassignee_namesResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_assignee_names" Method="usp_tcikety_load_assignee_names">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="TID" Parameter="tID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TYPE" Parameter="tYPE" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_tcikety_load_assignee_namesResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_Add_Custrating" Method="usp_tcikety_Add_Custrating">
+    <Parameter Name="TID" Parameter="tID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="RATE1" Parameter="rATE1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RATE2" Parameter="rATE2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RATE3" Parameter="rATE3" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RATE4" Parameter="rATE4" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RATE5" Parameter="rATE5" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RATESUGGESTION" Parameter="rATESUGGESTION" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_tcikety_Get_Custrating" Method="usp_tcikety_Get_Custrating">
+    <Parameter Name="TID" Parameter="tID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="RATE1" Parameter="rATE1" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="RATE2" Parameter="rATE2" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="RATE3" Parameter="rATE3" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="RATE4" Parameter="rATE4" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="RATE5" Parameter="rATE5" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="RATESUGGESTION" Parameter="rATESUGGESTION" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_tcikety_get_MailList" Method="usp_tcikety_get_MailList">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FRMSTATUS" Parameter="fRMSTATUS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TOSTATUS" Parameter="tOSTATUS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNRNAME" Parameter="pERNRNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="PERNRMAILID" Parameter="pERNRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CLIENTID" Parameter="cLIENTID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CLIENTNAME" Parameter="cLIENTNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CLIENTMAILID" Parameter="cLIENTMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="FRMUSRID" Parameter="fRMUSRID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="FRMUSRNAME" Parameter="fRMUSRNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="FRMUSRMAILID" Parameter="fRMUSRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TOASSIGNEEID" Parameter="tOASSIGNEEID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TOASSIGNEENAME" Parameter="tOASSIGNEENAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TOASSIGNEEMAILID" Parameter="tOASSIGNEEMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="AGENTID" Parameter="aGENTID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="AGENTNAME" Parameter="aGENTNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="AGENTMAILID" Parameter="aGENTMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="MNGRID" Parameter="mNGRID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="MNGRNAME" Parameter="mNGRNAME" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="MNGRMAILID" Parameter="mNGRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CSSTEAMMAILID" Parameter="cSSTEAMMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TITLE" Parameter="tITLE" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="PRIORITY" Parameter="pRIORITY" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="CCMAILIDS" Parameter="cCMAILIDS" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="FRMUSRMNGRMAILID" Parameter="fRMUSRMNGRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TOUSRMNGRMAILID" Parameter="tOUSRMNGRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="AGENTRPRTNGMNGRMAILID" Parameter="aGENTRPRTNGMNGRMAILID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_customerforRating" Method="usp_tcikety_load_customerforRating">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="usp_tcikety_load_customerforRatingResult">
+      <Column Name="customertxt" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="customerId" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_EmployeeforRating" Method="usp_tcikety_load_EmployeeforRating">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="usp_tcikety_load_EmployeeforRatingResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_CustomerFeedbackTickets" Method="usp_tcikety_load_CustomerFeedbackTickets">
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="CUSTTYPE" Parameter="cUSTTYPE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPTYPE" Parameter="eMPTYPE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="TICKETID" Parameter="tICKETID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="usp_tcikety_load_CustomerFeedbackTicketsResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CLIENT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Agentname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Q1" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Q2" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Q3" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Q4" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Q5" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="RATINGCOMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUMRATING" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="AVGRATING" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_allTickets" Method="usp_tcikety_load_allTickets">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUSTTYPE" Parameter="cUSTTYPE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="BEGINDATE" Parameter="bEGINDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDATE" Parameter="eNDDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TICKETID" Parameter="tICKETID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="percnt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="usp_tcikety_load_allTicketsResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ISSDESC" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CLIENT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FRMUSR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="USRMAILID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ASSIGNEE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PRIORITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriorityTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CATEGORY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ISSUETYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISSUETYPETxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LASTMODIFIED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LASTMODIFIED_BY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TIDREF" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Action" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="taskpresent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Clientname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Agentname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Toassigneename" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="totaldatediffernce" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="tilldatediffernce" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="percentage" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="breacheddiffHr" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_load_TicketsReports" Method="usp_tcikety_load_TicketsReports">
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="CUSTTYPE" Parameter="cUSTTYPE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="STATUSTYPE" Parameter="sTATUSTYPE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BEGINDATE" Parameter="bEGINDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDATE" Parameter="eNDDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="percnt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="usp_tcikety_load_TicketsReportsResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ISSDESC" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CLIENT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FRMUSR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="USRMAILID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ASSIGNEE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PRIORITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriorityTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CATEGORY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ISSUETYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISSUETYPETxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusTxt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LASTMODIFIED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LASTMODIFIED_BY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TIDREF" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Action" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="taskpresent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Clientname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="modifiedonname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Agentname" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Toassigneename" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="totaldatediffernce" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="tilldatediffernce" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="percentage" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="PlndHrs" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Actualhrs" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="breacheddiffHr" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TRAVERAGE" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Modu_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modu_text" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_tcikety_get_tickPlndhrs" Method="usp_tcikety_get_tickPlndhrs">
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="ticketTitl" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="plndhrs" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

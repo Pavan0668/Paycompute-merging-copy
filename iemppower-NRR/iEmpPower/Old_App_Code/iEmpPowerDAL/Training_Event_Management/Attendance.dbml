@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPowerRangsons" Class="AttendanceDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=iEmpPowerRangsons;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_Get_Attendance" Method="sp_Get_Attendance">
+    <ElementType Name="sp_Get_AttendanceResult">
+      <Column Name="TRAINING_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERIOD_FROM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERIOD_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ORG_UNIT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NO_OF_ATTENDEES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EXTERNAL_PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BOOKING_PRIORITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENTERED_BY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENTERED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CANCELLATION_REASON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_CancellationReason" Method="sp_get_CancellationReason">
+    <ElementType Name="sp_get_CancellationReasonResult">
+      <Column Name="CAATR" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CAATRT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_CancellationReason_Text" Method="sp_get_CancellationReason_Text">
+    <Parameter Name="CAATR" Parameter="cAATR" Type="System.String" DbType="VarChar(4)" Direction="InOut" />
+    <ElementType Name="sp_get_CancellationReason_TextResult">
+      <Column Name="CAATR" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CAATRT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Contact_Person" Method="sp_get_Contact_Person">
+    <ElementType Name="sp_get_Contact_PersonResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PHOTO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TITEL" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="VORNA" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="NACHN" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="NAME2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="INITS" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RUFNM" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="SPRSL" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="GESCH" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="GBDAT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GBORT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="GBLND" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NATI0" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="GBDEP" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NATI2" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NATI3" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FAMST" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="FAMDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ANZKD" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="KONFE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="isapproved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isupdate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="hr_approved_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hr_approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="hr_approved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="hr_status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="hr_comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_EventName" Method="sp_get_EventName">
+    <Parameter Name="OBJID" Parameter="oBJID" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_EventNameResult">
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Externalperson" Method="sp_get_Externalperson">
+    <ElementType Name="sp_get_ExternalpersonResult">
+      <Column Name="OBJID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLVAR" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SHORT" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_GroupName" Method="sp_get_GroupName">
+    <Parameter Name="OBJID" Parameter="oBJID" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_GroupNameResult">
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_LocationName" Method="sp_get_LocationName">
+    <Parameter Name="OBJID" Parameter="oBJID" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_LocationNameResult">
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Org_Person" Method="sp_get_Org_Person">
+    <Parameter Name="OBJID" Parameter="oBJID" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_Org_PersonResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PHOTO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TITEL" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="VORNA" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="NACHN" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="NAME2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="INITS" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RUFNM" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="SPRSL" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="GESCH" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="GBDAT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GBORT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="GBLND" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NATI0" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="GBDEP" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NATI2" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NATI3" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FAMST" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="FAMDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ANZKD" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="KONFE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="isapproved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isupdate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="hr_approved_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hr_approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="hr_approved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="hr_status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="hr_comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Organizationunit" Method="sp_get_Organizationunit">
+    <ElementType Name="sp_get_OrganizationunitResult">
+      <Column Name="ORGEH" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ORGTX" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Organizationunit_ID" Method="sp_get_Organizationunit_ID">
+    <Parameter Name="ORGTX" Parameter="oRGTX" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_Organizationunit_IDResult">
+      <Column Name="ORGEH" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ORGTX" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Organizationunit_Name" Method="sp_get_Organizationunit_Name">
+    <Parameter Name="ORGEH" Parameter="oRGEH" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_Organizationunit_NameResult">
+      <Column Name="ORGEH" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ORGTX" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_OrganizerName" Method="sp_get_OrganizerName">
+    <Parameter Name="OBJID" Parameter="oBJID" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_OrganizerNameResult">
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Person_Name" Method="sp_get_Person_Name">
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="sp_get_Person_NameResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PHOTO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TITEL" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="VORNA" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="NACHN" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="NAME2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="INITS" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RUFNM" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="SPRSL" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="GESCH" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="GBDAT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GBORT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="GBLND" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NATI0" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="GBDEP" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NATI2" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NATI3" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FAMST" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="FAMDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ANZKD" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="KONFE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="isapproved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isupdate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="hr_approved_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hr_approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="hr_approved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="hr_status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="hr_comments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_update_Attendance_Person" Method="sp_update_Attendance_Person">
+    <Parameter Name="TRAINING_ID" Parameter="tRAINING_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERIOD_FROM" Parameter="pERIOD_FROM" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PERIOD_TO" Parameter="pERIOD_TO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ORG_UNIT" Parameter="oRG_UNIT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ORG_UNIT_OLD" Parameter="oRG_UNIT_OLD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PERSON" Parameter="pERSON" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PERSON_OLD" Parameter="pERSON_OLD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NO_OF_ATTENDEES" Parameter="nO_OF_ATTENDEES" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CANCELLATION_REASON" Parameter="cANCELLATION_REASON" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_Attendance_Requested" Method="sp_Get_Attendance_Requested">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="sp_Get_Attendance_RequestedResult">
+      <Column Name="TRAINING_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERIOD_FROM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERIOD_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ORG_UNIT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NO_OF_ATTENDEES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EXTERNAL_PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BOOKING_PRIORITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENTERED_BY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENTERED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CANCELLATION_REASON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Attendance_Approved" Method="sp_Get_Attendance_Approved">
+    <ElementType Name="sp_Get_Attendance_ApprovedResult">
+      <Column Name="TRAINING_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERIOD_FROM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERIOD_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ORG_UNIT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NO_OF_ATTENDEES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EXTERNAL_PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BOOKING_PRIORITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENTERED_BY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENTERED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CANCELLATION_REASON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Attendance_TrainingIdwise" Method="sp_Get_Attendance_TrainingIdwise">
+    <Parameter Name="TrainingId" Parameter="trainingId" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_Attendance_TrainingIdwiseResult">
+      <Column Name="TRAINING_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERIOD_FROM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERIOD_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ORG_UNIT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NO_OF_ATTENDEES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EXTERNAL_PERSON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BOOKING_PRIORITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENTERED_BY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENTERED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CANCELLATION_REASON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Training_All" Method="sp_Get_Training_All">
+    <Parameter Name="ID" Parameter="iD" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TRAINING_ID" Parameter="tRAINING_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Get_Training_AllResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TRAINING_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GROUP_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SUBGROUP_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GROUP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUBGROUP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EVENT_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="INTERNAL_EXTERNAL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCATION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCATION_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="KAPZ1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KAPZ2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KAPZ3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ORGANIZER_NAME" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="START_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="END_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TAGNR" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
+      <Column Name="DAUER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BOOKED_STATUS" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="RecordCnt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_create_attendance" Method="sp_create_attendance">
+    <Parameter Name="ID" Parameter="iD" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TRAININGID" Parameter="tRAININGID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TRAINING_ID" Parameter="tRAINING_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ORG_UNIT" Parameter="oRG_UNIT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PERSON" Parameter="pERSON" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NO_OF_ATTENDEES" Parameter="nO_OF_ATTENDEES" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CONTACT_PERSON" Parameter="cONTACT_PERSON" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EXTERNAL_PERSON" Parameter="eXTERNAL_PERSON" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BOOKING_PRIORITY" Parameter="bOOKING_PRIORITY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ENTERED_BY" Parameter="eNTERED_BY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ENTERED_ON" Parameter="eNTERED_ON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CANCELLATION_REASON" Parameter="cANCELLATION_REASON" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_Attendance_Employeewise" Method="sp_Get_Attendance_Employeewise">
+    <Parameter Name="ID" Parameter="iD" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TRAINING_ID" Parameter="tRAINING_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="person" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Get_Attendance_EmployeewiseResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TRAINING_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GROUP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUBGROUP_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EVENT_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="INTERNAL_EXTERNAL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCATION_TEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="KAPZ1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KAPZ2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KAPZ3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ORGANIZER_NAME" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="START_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="END_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Attendees_Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecordCnt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_update_Attendance_Status" Method="sp_update_Attendance_Status">
+    <Parameter Name="ID" Parameter="iD" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CANCELLATION_REASON" Parameter="cANCELLATION_REASON" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

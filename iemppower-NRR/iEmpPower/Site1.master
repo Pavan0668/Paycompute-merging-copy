@@ -1,0 +1,366 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="SiteMaster" CodeBehind="Site1.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+
+    <title>iEmpPower</title>
+    <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <%-- <asp:PlaceHolder ID="PlaceHolderJquery" runat="server">  <script src="<%=ResolveClientUrl("~/Scripts/jquery-1.4.1-vsdoc.js")%>" type="text/javascript"></script></asp:PlaceHolder>
+   <asp:PlaceHolder ID="PlaceHolderJquery14" runat="server"> <script src="<%=ResolveClientUrl("~/Scripts/jquery-1.4.1.js")%>" type="text/javascript"></script></asp:PlaceHolder>
+   <asp:PlaceHolder ID="PlaceHolderJquery14min" runat="server"> <script src="<%=ResolveClientUrl("~/Scripts/jquery-1.4.1.min.js")%>" type="text/javascript"></script></asp:PlaceHolder>
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server"> <script src="<%=ResolveClientUrl("~/Utilities/Validations.js")%>" type="text/javascript"></script></asp:PlaceHolder>--%>
+    <%-- <script type="text/javascript">
+        function GetContentValue() {
+            alert(document.getElementById('<%= ((TextBox)MainContent.FindControl("txtChild")).ClientID %>').value);
+            return false;}
+         window.onload = window.history.forward(0);
+        </script>--%>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="FrmID" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Services>
+                <asp:ServiceReference Path="~/WebService/Service.asmx" />
+            </Services>
+        </asp:ScriptManager>
+        <div class="page">
+            <div class="header">
+                <div class="title">
+                    <asp:Image ID="Image1" runat="server" AlternateText="iEmpPower Logo"
+                        ImageUrl="~/images/iemp-small-logo.jpg" Width="100px" />
+                    <asp:Image ID="Image3" runat="server" AlternateText="iEmpPower Logo"
+                        ImageUrl="~/images/img-sep.jpg" Width="33px" />
+                    <asp:Image ID="imgCustomerLogo" runat="server" AlternateText=" Logo"
+                        Height="45px" />
+
+                </div>
+
+                <div class="loginDisplay">
+                    <div style="padding: 2px; position: absolute; top: 0px; right: 0px;">
+                        <div style="float: left; border: 1px solid #333333; padding: 2px; background-color: #FFFFFF;">
+                            <asp:Image ID="imgEmp" runat="server" Width="40px" BorderWidth="0px"
+                                ImageUrl="~/images/default-emp.jpg" Height="40px" />
+                        </div>
+                        <div style="clear: right">
+                            <asp:LoginView ID="HeadLoginView" runat="server">
+
+                                <AnonymousTemplate>
+                                    <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Log Out</a>
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>
+                                    Welcome <span>
+                                        <asp:Label ID="lblEmployyeName" runat="server" Text=""></asp:Label></span>
+
+                                    <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/Account/Login.aspx" />
+                                </LoggedInTemplate>
+                            </asp:LoginView>
+                        </div>
+                    </div>
+                </div>
+
+                <%--<div class="clear hideSkiplink">
+
+                    <asp:Menu ID="NavigationMenu" runat="server" StaticEnableDefaultPopOutImage="false"
+                        EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal"
+                        DataSourceID="SiteMapDataSource1" StaticDisplayLevels="2" CssClass="menu"
+                        BackColor="#2781BA" DynamicHorizontalOffset="2" StaticSubMenuIndent="10px"
+                        Font-Size="10pt" ForeColor="White">
+                     
+                        <DataBindings>
+                            <asp:MenuItemBinding DataMember="SiteMapNode" NavigateUrlField="Url" />
+                        </DataBindings>
+                        <DynamicHoverStyle ForeColor="White" Height="4px"
+                            BackColor="#5AB3EB" Width="100%" />
+                        <DynamicMenuItemStyle Font-Bold="False"
+                            HorizontalPadding="10px" Font-Underline="False"
+                            VerticalPadding="2px" BackColor="#257AB4" />
+                        <DynamicMenuStyle CssClass="menuDynamic"
+                            HorizontalPadding="0px" VerticalPadding="0px" />
+                        <DynamicSelectedStyle BackColor="#59B1E8"
+                            Font-Bold="False" />
+                        <StaticHoverStyle ForeColor="White"
+                            BackColor="#5CB9F3" />
+                        <StaticMenuItemStyle HorizontalPadding="5px"
+                            Font-Bold="False" Font-Size="10pt"
+                            VerticalPadding="2px" />
+                        <StaticMenuStyle CssClass="menuStatic" />
+                        <StaticSelectedStyle BackColor="#2989C9"
+                            Font-Bold="False" />
+                    </asp:Menu>
+                    <div style="position: absolute; right: 0px; bottom: 4px;">
+                        <asp:ImageButton ID="imgbtnDirectory" runat="server" Height="25px" ImageAlign="Right"
+                            ImageUrl="~/images/dir_icon.gif" Width="30px"
+                            AlternateText="Company Directrory"
+                            ToolTip="Company Directory" OnClick="imgbtnDirectory_Click" />
+                    </div>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server"
+                        SiteMapProvider="Web" />
+
+                </div>--%>
+
+
+                <div class="clear2 hideSkiplink">
+
+                    <div class="clear2 hideSkiplink">
+                        <div id="NavigationMenu" class="menu" style="float: left;">
+                            <ul class="menuStatic static" tabindex="0" style="position: relative; width: auto; float: left;">
+                                <li id="MenuHome" runat="server" class="static" style="position: relative; float: left;"><a href="/Default.aspx"
+                                    class="selected static" tabindex="-1">Home</a></li>
+                                <li id="MenuConfig" runat="server" class="static" style="position: relative; float: left;"><a href="/UI/Configuration/Configuration.aspx" class="selected static" tabindex="-1">Config</a></li>
+                                <li class="has-popup static" style="position: relative; float: left;">
+                                    <li id="MenuDTwizard" runat="server" class="static" style="position: relative; float: left;"><a href="/UI/Configuration/iEmpPower_DT_Wizard.aspx" class="selected static" tabindex="-1">DT wizard</a></li>
+                                    <!------------------------- PERSONAL INFO --------------------------------- START -->
+                                    <li id="MenuPersonalInfo" runat="server" class="has-popup static" style="position: relative; float: left;">
+                                        <a href="/UI/Personal_Information/personal_information.aspx" class="static" tabindex="-1">Personal Information</a>
+                                        <ul class="menuDynamic dynamic" id="NavigationMenu:submenu:3" style="position: absolute; top: 100%; left: 0px;">
+                                            <li class="dynamic" style="position: relative;"><a href="/UI/Personal_Information/address_information.aspx"
+                                                class="dynamic" tabindex="-1">Address Information</a></li>
+                                            <li class="dynamic"
+                                                style="position: relative;"><a href="/UI/Personal_Information/bank_information.aspx"
+                                                    class="dynamic" tabindex="-1">Bank Information</a></li>
+                                            <li class="dynamic"
+                                                style="position: relative;"><a href="/UI/Personal_Information/communication_information.aspx"
+                                                    class="dynamic" tabindex="-1">Communication Information</a></li>
+                                            <li class="dynamic"
+                                                style="position: relative;"><a href="/UI/Personal_Information/family_members.aspx"
+                                                    class="dynamic" tabindex="-1">Family members / Dependents</a></li>
+                                            <li class="dynamic"
+                                                style="position: relative;"><a href="/UI/Personal_Information/personal_data.aspx"
+                                                    class="dynamic" tabindex="-1">Personal Data</a></li>
+                                            <li class="dynamic" style="position: relative;">
+                                                <a href="/UI/Personal_Information/personal_ids.aspx" class="dynamic" tabindex="-1">Personal IDs</a></li>
+                                             <li class="dynamic"
+                                                style="position: relative;"><a href="/UI/Manager_Self_Service/addressproof.aspx"
+                                                    class="dynamic" tabindex="-1">Address Proof</a></li>
+                                             <li class="dynamic"
+                                                style="position: relative;"><a href="/UI/Manager_Self_Service/employmentproof.aspx"
+                                                    class="dynamic" tabindex="-1">Employment Proof</a></li>
+                                        </ul>
+                                    </li>
+                                    <!------------------------- PERSONAL INFO --------------------------------- END -->
+                                    <!------------------------- BENIFIT PAYMENT --------------------------------- START -->
+                                    <li id="MenuBenefitsNPayments" runat="server" class="has-popup static" style="position: relative; float: left;">
+                                        <a href="/UI/Benefits_Payment/benefits_and_payment.aspx" class="static"
+                                        tabindex="-1">Benefits and Payment</a>
+                                        <ul class="menuDynamic dynamic" style="position: absolute; top: 100%; left: 0px;">
+                                            <li class="dynamic" style="position: relative;"><asp:HyperLink ID="APayslip" runat="server" Text="Payslip" 
+                                                NavigateUrl="~/UI/Benefits_Payment/PaySlipNew.aspx" CssClass="dynamic" TabIndex="-1"></asp:HyperLink> </li>
+                                            <li class="dynamic" style="position: relative;"><asp:HyperLink ID="ACTC" runat="server" Text="CTC" Visible="false"
+                                                NavigateUrl="~/UI/Benefits_Payment/Ctc.aspx" CssClass="dynamic" TabIndex="-1"></asp:HyperLink> </li>
+                                  
+                                        </ul>
+                                    </li>
+                                    <!------------------------- WORKINGBENIFIT PAYMENT --------------------------------- END -->
+                                    <!------------------------- WORKING TIME --------------------------------- START -->
+                                    <li id="MenuWorkingTime" runat="server" class="has-popup static" style="position: relative; float: left;">
+                                        <a href="/UI/Working_Time/working_time.aspx" class="static"
+                                        tabindex="-1">Working Time</a>
+                                        <ul class="menuDynamic dynamic" style="position: absolute; top: 100%; left: 0px;">
+                                            <li class="dynamic" style="position: relative;"><a href="/UI/Working_Time/Leaverequest_new.aspx"
+                                                class="dynamic" tabindex="-1">Leave Request</a></li>
+                                             <li class="dynamic"
+                                                        style="position: relative;"><a href="/UI/Working_Time/recordworking_time.aspx" class="dynamic"
+                                                            tabindex="-1">Record Working Time</a></li>
+                                             <li class="dynamic"
+                                                        style="position: relative;"><a href="/UI/Manager_Self_Service/TimeSheetReview_Employees.aspx" class="dynamic"
+                                                            tabindex="-1">TimeSheet Overview</a></li>
+                                        </ul>
+
+                                    </li>
+                                    <!------------------------- WORKING TIME --------------------------------- END -->
+                                    <!------------------------- TRAVEL MANAGEMENT TIME --------------------------------- START -->
+                                  <%--  <li id="MenuTravel" runat="server" class="has-popup static" style="position: relative; float: left;"><a href="javascript:void(0);" class="static"
+                                        tabindex="-1">Travel Management</a>
+                                        <ul class="menuDynamic dynamic" style="display: none; position: absolute; top: 100%; left: 0px;">
+                                            <li id="MenuTravelRequest" runat="server" class="has-popup dynamic" style="position: relative;">
+                                                <a href="javascript:void(0);" class="popout-dynamic dynamic" tabindex="-1">Travel Request</a>
+                                                <ul class="menuDynamic dynamic" style="display: none; position: absolute; top: 0px; left: 100%;">
+                                                    <li class="dynamic" style="position: relative;"><a href="/UI/Benefits_Payment/TravelReqUpdate.aspx"
+                                                        class="dynamic" tabindex="-1">Local vehicle requisition</a></li>
+                                                    <li class="dynamic"
+                                                        style="position: relative;"><a href="/UI/Benefits_Payment/TravelReqAppRej.aspx" class="dynamic"
+                                                            tabindex="-1">Requisitions</a></li>
+                                                    <li class="dynamic"
+                                                        style="position: relative;"><a href="/UI/Benefits_Payment/TravelReqAppRej.aspx" class="dynamic"
+                                                            tabindex="-1">Travel Summary</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="has-popup dynamic" style="position: relative;">
+                                                <a onclick="__doPostBack('ctl00$NavigationMenu','Home\\Travel Management\\Travel')"
+                                                    href="#" class="popout-dynamic dynamic" tabindex="-1">Travel Claims</a>
+                                                <ul class="menuDynamic dynamic" id="Ul1" style="display: none; position: absolute; top: 0px; left: 100%;">
+                                                    <li id="MenuClaimRequest" runat="server" class="dynamic" style="position: relative;"><a href="/UI/Benefits_Payment/TravelClaimReq1.aspx"
+                                                        class="dynamic" tabindex="-1">Claim Request</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>--%>
+                                    <!------------------------- TRAVEL MANAGEMENT TIME --------------------------------- END -->
+                                    <!------------------------- TRAINING & EVENT MANAGEMENT TIME --------------------------------- START -->
+                                <%--    <li id="MenuTraining" runat="server" class="has-popup static" style="position: relative; float: left;"><a href="javascript:void(0);" class="static"
+                                        tabindex="-1">Training and Event Mgmt</a>
+                                        <ul class="menuDynamic dynamic" style="display: none; position: absolute; top: 100%; left: 0px;">
+                                            <li id="Li2" runat="server" class="has-popup dynamic" style="position: relative;">
+                                                <a href="javascript:void(0);" class="popout-dynamic dynamic" tabindex="-1">Attendee</a>
+                                                <ul class="menuDynamic dynamic" style="display: none; position: absolute; top: 0px; left: 100%;">
+                                                    <li class="dynamic" style="position: relative;"><a href="UI/Training_Event_Management/EmployeeBooking.aspx"
+                                                        class="dynamic" tabindex="-1">Book Training</a></li>
+                                                    <li class="dynamic"
+                                                        style="position: relative;"><a href="UI/Training_Event_Management/Cancel_Attendance.aspx" class="dynamic"
+                                                            tabindex="-1">Cancel Attendee</a></li>
+                                                </ul>
+                                            </li>
+
+
+                                        </ul>
+                                    </li>--%>
+                                    <!------------------------- TRAINING & EVENT MANAGEMENT TIME --------------------------------- END -->
+
+
+                                  <%--    <li id="MenuTravel" runat="server" class="has-popup static" style="position: relative; float: left;"><a href="javascript:void(0);" class="static"
+                                        tabindex="-1">Training and Event Mgmt</a>
+                                        <ul class="menuDynamic dynamic" style="display: none; position: absolute; top: 100%; left: 0px;">
+                                            <li id="MenuTravelRequest" runat="server" class="has-popup dynamic" style="position: relative;">
+                                                <a onclick="javascript:void(0);" href="#" class="popout-dynamic dynamic" tabindex="-1">Attendee</a>
+                                                <ul class="menuDynamic dynamic" style="display: none; position: absolute; top: 0px; left: 100%;">
+                                                    <li class="dynamic" style="position: relative;"><a href="/UI/Benefits_Payment/TravelReqUpdate.aspx"
+                                                        class="dynamic" tabindex="-1">Book Training</a></li>
+                                                    <li class="dynamic"
+                                                        style="position: relative;"><a href="/UI/Benefits_Payment/TravelReqAppRej.aspx" class="dynamic"
+                                                            tabindex="-1">Cancel Attendee</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="has-popup dynamic" style="position: relative;">
+                                                <a onclick="__doPostBack('ctl00$NavigationMenu','Home\\Travel Management\\Travel')"
+                                                    href="#" class="popout-dynamic dynamic" tabindex="-1">Travel Claims</a>
+                                                <ul class="menuDynamic dynamic" id="Ul1" style="display: none; position: absolute; top: 0px; left: 100%;">
+                                                    <li id="MenuClaimRequest" runat="server" class="dynamic" style="position: relative;"><a href="/UI/Benefits_Payment/TravelClaimReq1.aspx"
+                                                        class="dynamic" tabindex="-1">Claim Request</a></li>
+                                                    <li id="MenuEditSavedReqClaims" runat="server" class="dynamic"
+                                                        style="position: relative;"><a href="/UI/Benefits_Payment/SavedTravelClaims.aspx" class="dynamic"
+                                                            tabindex="-1">Edit Saved / Requested Claims</a></li>
+
+                                                    <li id="MenuTravelClaimHistory" runat="server" class="dynamic" style="position: relative;"><a href="/UI/Benefits_Payment/TravelClaimHistoryStatusNew.aspx"
+                                                        class="dynamic" tabindex="-1">Travel Claim Status</a></li>
+                                                    <li class="dynamic"
+                                                        style="position: relative;"><a href="/UI/Benefits_Payment/TravelClaimAppRejNew.aspx" class="dynamic"
+                                                            tabindex="-1">Claim Request Approve / Reject</a></li>
+                                                    <li id="MenuFinanceViewClaimsStatus" runat="server" class="dynamic"
+                                                        style="position: relative;"><a href="/UI/Benefits_Payment/FinanceViewTravelClaimsStatus.aspx" class="dynamic"
+                                                            tabindex="-1">Finance View Claims Status</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>--%>
+                                    <!------------------------- EMPLOYEE PERFORMANCE --------------------------------- START -->
+
+<%--                                    <li id="MenuEmpPerformance" runat="server" class="has-popup static" style="position: relative; float: left;"><a href="javascript:void(0);" class="static"
+                                        tabindex="-1">Employee Performance</a>
+                                        <ul class="menuDynamic dynamic" style="position: absolute; top: 100%; left: 0px;">
+                                            <li class="dynamic" style="position: relative;"><a href="/UI/Performance_Management_System/frmPMSDownload.aspx"
+                                                class="dynamic" tabindex="-1">Download Appraisal Form</a></li>
+
+                                            <li class="dynamic" style="position: relative;">
+                                                <a href="/UI/Performance_Management_System/frmPMSUpload.aspx" class="dynamic"
+                                                    tabindex="-1">Upload Appraisal Form</a></li>
+
+                                        </ul>
+                                    </li>--%>
+                                    <!------------------------- EMPLOYEE PERFORMANCE --------------------------------- END -->
+
+                                    <!------------------------- MANAGER SELF SERVICE --------------------------------- START -->
+
+                                    <li id="MenuMSS" runat="server" class="has-popup static" style="position: relative; float: left;">
+                                        <a href="/UI/Manager_Self_Service/manager_self_service.aspx" class="static"
+                                        tabindex="-1">Manager Self Service</a>
+                                        <ul class="menuDynamic dynamic" style="position: absolute; top: 100%; left: 0px;">
+                                            <li id="MSSAssgndtome" runat="server" class="dynamic" style="position: relative;"><a href="/UI/Manager_Self_Service/assignedtome.aspx"
+                                                class="dynamic" tabindex="-1">Assigned To Me</a></li>
+                                             <li id="MSSTimeShtRevw" runat="server"  class="dynamic" style="position: relative;"><a href="/UI/Manager_Self_Service/TimeSheetReview.aspx"
+                                                class="dynamic" tabindex="-1">TimeSheet Review</a></li>
+                                            <%--<li class="dynamic" style="position: relative;">
+                                                <a href="/UI/Manager_Self_Service/Managers_view_ClockIn_ClockOut.aspx" class="dynamic"
+                                                    tabindex="-1">Manager View Attendance Report</a></li>--%>
+
+                                        </ul>
+                                    </li>
+                                    <!------------------------- TRAINING & EVENT MANAGEMENT TIME --------------------------------- END -->
+                                    <li id="MenuMyaccount" runat="server" class="has-popup static" style="position: relative; float: left;">
+                                        <a href="/UI/UserAccount/user_account.aspx" class="static" tabindex="-1">My account</a>
+                                        <ul class="menuDynamic dynamic" style="position: absolute; top: 100%; left: 0px;">
+                                            <li class="dynamic" style="position: relative;"><a href="/UI/UserAccount/changepassword.aspx"
+                                                class="dynamic" tabindex="-1">Change password</a></li>
+                                            <li class="dynamic"
+                                                style="position: relative;"><a href="/UI/UserAccount/createquestionandanswer.aspx"
+                                                    class="dynamic" tabindex="-1">Account Security Question</a></li>
+                                            <li class="dynamic" style="position: relative;">
+                                                <a href="/UI/Manager_Self_Service/who'swho.aspx" class="dynamic" tabindex="-1">Directory </a></li>
+
+                                            <li id="MenuMaintainUserAccounts" runat="server" class="dynamic"
+                                                style="position: relative;"><a href="/UI/UserAccount/createuseraccount.aspx"
+                                                    class="dynamic" tabindex="-1">Maintain User Accounts</a></li>
+                                            <li id="MenuResetEmployeePassword" runat="server" class="dynamic"
+                                                style="position: relative;"><a href="/UI/UserAccount/ResetEmployeePassword.aspx"
+                                                    class="dynamic" tabindex="-1">Reset Employee Password</a></li>
+
+                                        </ul>
+                                    </li>
+                            </ul>
+                        </div>
+                        <div style="clear: left;">
+                        </div>
+                        <%-- <a id="NavigationMenu_SkipLink"></a>--%>
+                        <div style="position: absolute; right: 0px; bottom: 4px; height: 40px;">
+                            <input type="image" align="right" style="height: 25px; width: 30px;" alt=""
+                                src="images/dir_icon.gif" title="Company Directory" id="Image2" name="ctl00$imgbtnDirectory" />
+                        </div>
+                    </div>
+                    <div style="position: absolute; right: 0px; bottom: 4px; height: 40px;">
+
+                        <asp:ImageButton ID="imgbtnDirectory" runat="server" Height="25px" ImageAlign="Right"
+                            ImageUrl="~/images/dir_icon.gif" Width="30px"
+                            AlternateText="Company Directrory"
+                            ToolTip="Company Directory" OnClick="imgbtnDirectory_Click" />
+                    </div>
+                    <%--  <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server"
+                        SiteMapProvider="Web" />--%>
+                </div>
+
+            </div>
+            <div class="nav">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Size="8pt"
+                    PathSeparator="  &gt;  ">
+                </asp:SiteMapPath>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div class="clear2">
+            </div>
+        </div>
+        <div class="footer">
+            <div style="float: left" id="divfooter" runat="server"></div>
+            <br />
+            <br />
+            This WebApplication is best viewed in latest version of Mozilla Firefox browser.
+            <%--© 2010 - 2015 ITChamps Software Private Limited. All rights reserved.--%>
+
+            <div style="float: right">
+                <asp:LinkButton ID="lnkHomepage" runat="server" CssClass="lnk-btn"
+                    PostBackUrl="~/Default.aspx">Home</asp:LinkButton><em class="blue">|</em>
+               
+            </div>
+
+        </div>
+        <div class="clear2">
+            <br />
+        </div>
+    </form>
+</body>
+</html>

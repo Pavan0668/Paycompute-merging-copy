@@ -1,0 +1,1119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/MainSiteMaster.Master" CodeBehind="SubSiteMaster.master.cs" Inherits="iEmpPower.UI.SubSiteMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="Ajx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        function pageLoad(sender, args) {
+            menuload();
+            $("select").select2({
+                // placeholder: "Select",
+                triggerChange: false,
+                allowClear: false
+            });
+        }
+
+        window.onload = (event) => {
+            menuload();
+        $("select").select2({
+            //placeholder: "Select",
+            triggerChange: false,
+            allowClear: false
+        });
+        };
+
+        function menuload() {
+            ! function (t) {
+                "use strict";
+                window.jQuery.App.init()
+            }(), Waves.init();
+        }
+
+        function redct(type) {
+            if (type == "PR") {
+                window.location.href = "/UI/PR/Purchase_Requisitions.aspx";
+            }
+            else if (type == "IEXP") {
+                window.location.href = "/UI/Benefits_Payment/iExpense_Request.aspx";
+            }
+            else if (type == "TR") {
+                window.location.href = "/UI/Benefits_Payment/Travel_Requests.aspx";
+            }
+        }
+    </script>
+
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="NavigationContentPlaceHolder2" runat="server">
+    <%--<link type="text/css" href="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/themes/blitzer/jquery-ui.css" rel="Stylesheet" />--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #ContentPlaceHolder1_rbtnSlabSelection label {
+            padding-left: 10px;
+        }
+
+        .popUpStyle1 {
+            background-color: #000000;
+            filter: alpha(opacity=80);
+            opacity: 0.15;
+        }
+
+
+        .modalPopupDefault3 {
+            text-align: left;
+            background-color: #FFFFFF;
+            width: auto;
+            height: 80vh;
+            overflow: auto;
+        }
+
+        .input-group ::placeholder {
+            color: white;
+            opacity: 1; /* Firefox */
+        }
+
+
+
+        .modalBackground {
+            background-color: white !important;
+            filter: alpha(opacity=80) !important;
+            opacity: 0.15 !important;
+        }
+
+
+
+        .modalPopup {
+            width: 20% !important;
+            height: 25% !important;
+            left: 70% !important;
+            top: 11vh !important;
+            position: absolute !important;
+            text-align: center !important;
+            word-break: break-all !important;
+            border: groove 1px;
+            overflow: hidden !important;
+            background-color: white!important;
+        }
+
+
+
+        .completionListmain {
+            width: 250px !important;
+            border: solid 1px Gray;
+            margin: 0px;
+            padding: 3px;
+            height: 150px;
+            overflow: auto;
+            background-color: #FFFFFF;
+            font-size: small !important;
+        }
+
+
+
+        .listItemmain {
+            color: #191919;
+        }
+
+
+
+        .itemHighlightedmain {
+            color: black;
+        }
+
+
+
+        .navbar-custom .topnav-menu .nav-link {
+            display: inline-block !important;
+        }
+
+
+
+        .setdatainput {
+            align-content: center;
+            position: inherit;
+            display: inline-block;
+            margin: 0 !important;
+            margin-bottom: 17px !important;
+            margin-left: 5px !important;
+            padding: 0 !important;
+        }
+        .auto-style1 {
+            width: 100%;
+            padding-right: 12px;
+            padding-left: 12px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 0px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            var val = $("#lsd").hasClass("enlarged");
+            if (val == false) {
+                $("#SideMenuContentPlaceHolder_imenuicon").addClass("fe-chevron-right");
+            }
+        });
+
+        $(document).ready(function () {
+            HTMLInputElement.prototype.scrollIntoView = function (a) { this.scrollIntoViewIfNeeded(); }
+            HTMLSelectElement.prototype.scrollIntoView = function (a) { this.scrollIntoViewIfNeeded(); }
+            HTMLAreaElement.prototype.scrollIntoView = function (a) { this.scrollIntoViewIfNeeded(); }
+        });
+
+        function changemenuicon() {
+            if ($("#SideMenuContentPlaceHolder_imenuicon").hasClass("fe-chevron-right") == true) {
+                document.getElementById("SideMenuContentPlaceHolder_imenuicon").classList.add("fe-chevron-left");
+                document.getElementById("SideMenuContentPlaceHolder_imenuicon").classList.remove("fe-chevron-right");
+            }
+            else {
+                document.getElementById("SideMenuContentPlaceHolder_imenuicon").classList.remove("fe-chevron-left");
+                document.getElementById("SideMenuContentPlaceHolder_imenuicon").classList.add("fe-chevron-right");
+            }
+        }
+
+        function Employees_Populated(sender, e) {
+            var autoList = $find("AutoCompleteEx").get_completionList();
+            for (i = 0; i < autoList.childNodes.length; i++) {
+                var imgeUrl = autoList.childNodes[i]._value;
+                var text = autoList.childNodes[i].firstChild.nodeValue;
+                autoList.childNodes[i]._value = text;
+                autoList.childNodes[i].innerHTML = imgeUrl;
+            }
+        }
+
+        function OnEmployeeSelected(source, eventArgs) {
+            var idx = source._selectIndex;
+            sessionStorage.setItem("searchitem", eventArgs.get_text())
+            SetSession();
+            $get(idx).click();
+        }
+
+        function SetSession() {
+            var name = sessionStorage.getItem("searchitem");
+            var request;
+            if (window.XMLHttpRequest) {
+                //New browsers.
+                request = new XMLHttpRequest();
+            }
+            else if (window.ActiveXObject) {
+                //Old IE Browsers.
+                request = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            if (request != null) {
+                var url = "../../UI/Default.aspx/SetSession";
+
+
+                request.open("POST", url, false);
+                var params = "{name: '" + name + "'}";
+                request.setRequestHeader("Content-Type", "application/json");
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4 && request.status == 200) {
+                        // alert(JSON.parse(request.responseText).d);
+                    }
+                };
+                request.send(params);
+            }
+        }
+
+       
+    </script>
+
+    <ul class="list-unstyled topnav-menu float-right mb-0">
+
+
+        <li class="d-none d-sm-block">
+            <div class="app-search">
+                <div class="app-search-box">
+                    <div class="input-group">
+                        <asp:TextBox ID="txtmainSearch" runat="server" type="text" class="form-control" placeholder="Search" Style="height: auto !important" OnTextChanged="txtmainSearch_TextChanged"></asp:TextBox>
+                        <%--<Ajx:CalendarExtender ID="CE_Frmdate_ADmi" PopupButtonID="txtmainSearch" runat="server" TargetControlID="txtmainSearch" Format="yyyy-MM-dd" />--%>
+                        <Ajx:AutoCompleteExtender ID="EmpNameAutoCompleteExtender" runat="server" TargetControlID="txtmainSearch"
+                            MinimumPrefixLength="1" EnableCaching="true" CompletionSetCount="5" CompletionInterval="1" FirstRowSelected="True"
+                            ServiceMethod="getIDs" ServicePath="~/WebService/Service.asmx"
+                            CompletionListCssClass="completionListmain"
+                            CompletionListHighlightedItemCssClass="itemHighlighted"
+                            CompletionListItemCssClass="listItem" BehaviorID="AutoCompleteEx" OnClientPopulated="Employees_Populated"
+                            OnClientItemSelected="OnEmployeeSelected">
+                        </Ajx:AutoCompleteExtender>
+                        <Ajx:FilteredTextBoxExtender ID="FTEtxtmainSearch" runat="server" FilterMode="ValidChars" FilterType="Numbers, UppercaseLetters, LowercaseLetters, Custom" ValidChars="/- " Enabled="true" TargetControlID="txtmainSearch"></Ajx:FilteredTextBoxExtender>
+                        <div class="input-group-append">
+                            <button class="btn" type="submit" id="serch" runat="server">
+                                <i class="fe-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <!-- Notification -->
+        <li class="dropdown notification-list" id="liNotifiacton" runat="server">
+            <a id="A2" class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false" runat="server">
+                <i class="fe-bell noti-icon"></i>
+                <span class="badge badge-danger rounded-circle noti-icon-badge" id="spanntfCnt" runat="server"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-lg" style="">
+
+                <!-- item-->
+                <div class="dropdown-item noti-title">
+                    <h5 class="m-0">
+                        <span class="float-right"></span>Notification
+                    </h5>
+                </div>
+
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 509.5px;">
+                    <div class="slimscroll noti-scroll" style="overflow: hidden; width: auto; height: 509.5px;">
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item active" id="aOtherBday" runat="server">
+                            <div class="notify-icon">
+                                <img src="../../../NewAssets/images/celebration.jpg" class="img-fluid rounded-circle" alt="" />
+                            </div>
+                            <p class="notify-details">Hi, Your Colleague Birthday Today</p>
+                            <p class="text-muted mb-0 user-msg">
+                                <small id="pNotHead" runat="server"></small>
+                            </p>
+                        </a>
+
+                        <a href="javascript:void(0);" class="dropdown-item notify-item active" id="aMyBday" runat="server">
+                            <div class="notify-icon">
+                                <img src="../../../NewAssets/images/cake.jpg" class="img-fluid rounded-circle" alt="" />
+                            </div>
+                            <p class="notify-details" id="aMyBdayHead" runat="server"></p>
+                            <p class="text-muted mb-0 user-msg">
+                                <small>Many More Happy Returns of the Day !!</small>
+                            </p>
+                        </a>
+
+                        <!-- item-->
+
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+               <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 509.5px;">
+                    <div class="slimscroll noti-scroll" style="overflow: hidden; width: auto; height: 509.5px;">
+
+                        <!-- item-->
+                        <%--<a href="javascript:void(0);" class="dropdown-item notify-item active">
+                            <div class="notify-icon">
+                                <img src="../../../NewAssets/images/user-1.jpg" class="img-fluid rounded-circle" alt="" />
+                            </div>
+                            <p class="notify-details">Hi User</p>
+                            <p class="text-muted mb-0 user-msg">
+                                <small>Hi, How are you? Welcome to iEmpPower</small>
+                            </p>
+                        </a>--%>
+
+                        <!-- item-->    
+                        <%--<a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon">
+                                <img src="assets/images/user-4.jpg" class="img-fluid rounded-circle" alt="" />
+                            </div>
+                            <p class="notify-details">
+                                <asp:Literal ID="ltFBPTitle" runat="server" />
+                            </p>
+                            <p class="text-muted mb-0 user-msg">
+                                <%--<small>Wow ! this admin looks good and awesome design</small>--%>
+                 <%--               <small>
+                                    <asp:Literal ID="ltFBPLockStatus" runat="server" /></small>
+                            <%--</p>--%>
+                        <%--</a>--%
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                           <%-- <div class="notify-icon bg-warning">
+                                <i class="mdi mdi-account-plus"></i>
+                            </div>--%>
+                            <%-- <p class="notify-details">
+                                Income Tax
+	<small class="text-muted">
+        <asp:Literal ID="ltITLockStatus" runat="server" /></small>
+                            </p>--%>
+                           <%-- <p class="notify-details">
+                                <asp:Literal ID="ltITTitle" runat="server" />
+                            </p>--%>
+                            <%--<p class="text-muted mb-0 user-msg">--%>
+                                <%--<small>Wow ! this admin looks good and awesome design</small>--%>
+                               <%-- <small>
+                                    <asp:Literal ID="ltITLockStatus" runat="server" /></small>
+                            </p>
+
+                        </a>--%>
+
+                        <!-- item-->
+                       <%-- <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-info">
+                                <i class="mdi mdi-comment-account-outline"></i>
+                            </div>
+                            <p class="notify-details">
+                                <asp:Literal ID="ltTCTitle" runat="server" />
+                                <small class="text-muted">
+                                    <asp:Literal ID="ltTCText" runat="server" /></small>
+                            </p>
+                        </a>--%>
+
+                        <!-- item-->
+                        <%--<a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-info">
+                                <i class="mdi mdi-comment-account-outline"></i>
+                            </div>
+                            <p class="notify-details">
+                                Caleb Flakelar commented on Admin
+	<small class="text-muted">4 days ago</small>
+                            </p>
+                        </a>--%>
+
+                        <!-- item-->
+                        <%--<a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-secondary">
+                                <i class="mdi mdi-heart"></i>
+                            </div>
+                            <p class="notify-details">
+                                Carlos Crouch liked
+	<b>Admin</b>
+                                <small class="text-muted">13 days ago</small>
+                            </p>
+                        </a>--%>
+                    </div>
+
+                   <%-- <div class="slimScrollBar" style="background: rgb(158, 165, 171) none repeat scroll 0% 0%; width: 8px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>
+                    <div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;"></div>--%>
+                </div>
+            <%-- <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">View all
+                            <i class="fi-arrow-right"></i>
+                </a>--%>
+
+        </li>
+
+        <!-- Settings -->
+        <li class="dropdown notification-list">
+            <asp:ImageButton ID="imgEmp" runat="server" ImageUrl="~/NewAssets/images/user-1.jpg" Height="35" Width="35" alt="user-image" class="rounded-circle setdatainput" />
+
+            <%--<asp:ImageButton ID="imgEmp" runat="server" ImageUrl="~/NewAssets/images/user-1.jpg" Height="35" Width="35" alt="user-image" OnClick="imgEmp_Click" CausesValidation="false" class="rounded-circle setdatainput" />--%>
+            <span style="color: whitesmoke" id="spnCompCode" runat="server"></span>
+
+            <Ajx:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panel1" TargetControlID="imgEmp"
+                CancelControlID="lnkbtnClose" BackgroundCssClass="modalBackground">
+            </Ajx:ModalPopupExtender>
+            <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+                <div style="text-align: right; margin-right: 3px !important">
+                    <asp:LinkButton ID="lnkbtnClose" runat="server" Text="X" CssClass="close" />
+                    <hr />
+
+                </div>
+                <div class="text-center">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <asp:Image ID="newImage" runat="server" Width="80%" Height="160" />
+                        </div>
+                        <br />
+                        <asp:Button ID="btnImgUpdate" runat="server" Text="Upload New?" OnClick="btnImgUpdate_Click" CssClass="btn bg-brand-btn waves-effect waves-light btn-std" />
+
+                    </div>
+                </div>
+            </asp:Panel>
+
+
+
+
+
+
+            <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light setdata" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                <asp:LoginView ID="HeadLoginView" runat="server">
+                    <AnonymousTemplate>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <span class="pro-user-name ml-1 ">
+                            <asp:Label ID="lblEmployyeName" runat="server" Text=""></asp:Label><i class="mdi mdi-chevron-down"></i></span>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                <!-- item-->
+                <div class="dropdown-header noti-title">
+                    <h6 class="text-overflow m-0">Welcome !</h6>
+                </div>
+
+                <!-- item-->
+                <a href="../../UI/UserAccount/changepassword.aspx" class="dropdown-item notify-item">
+                    <i class="fe-settings"></i><span>Settings</span>
+                </a>
+
+                <!-- item-->
+
+                <a href="../../UI/Manager_Self_Service/who'swho.aspx" class="dropdown-item notify-item">
+                    <i class="fe-info"></i><span>Directory</span>
+                </a>
+
+                <a href="~/UI/Manager_Self_Service/OrgChart.aspx" id="asli18" runat="server" class="dropdown-item notify-item">
+                    <i class="fe-users"></i><span>Org Chart</span>
+                </a>
+
+
+                <div class="dropdown-divider"></div>
+
+                <!-- item-->
+                <a id="A1" href="../../Account/Login.aspx" class="dropdown-item notify-item" causesvalidation="false" onserverclick="A1_ServerClick" runat="server">
+                    <i class="fe-log-out"></i><span>Logout</span>
+                </a>
+
+            </div>
+        </li>
+
+    </ul>
+
+    <!-- ========== Mega Menu Start ========== -->
+
+    <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+        <li class="nav"><a href="/UI/Default.aspx" class="logo text-center">
+            <asp:Image ID="imgCustomerLogo" runat="server" ImageUrl="~/images/itchamps_logo.png" alt="Company Logo" Height="34" />
+            &nbsp;&nbsp;<img src="../../../NewAssets/images/logo-login2.png" alt="Company Logo" height="34" />
+
+        </a></li>
+
+        <li class="dropdown dropdown-mega d-none d-lg-block">
+            <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false" style="padding-top: 6px">
+                <i class="fe-menu" style="font-size: x-large;"></i></a>
+
+            <div class="dropdown-menu dropdown-megamenu">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+
+                            <div id="Mega_itcadmin" runat="server" class="col-md-2">
+                                <ul class="list-unstyled megamenu-list">
+                                    <li>
+                                        <a href="../../UI/Configuration/Company_Creation.aspx">Company Creation</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Configuration/Companies.aspx">View Company's Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/SPaycompute/Admin_salary.aspx">Generate Salary Details</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="../../UI/SPaycompute/Admin_salary.aspx?Attendance=4">Generate Monthly Attendance</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div id="Mega_comlog" runat="server" class="col-md-2">
+                                <ul class="list-unstyled megamenu-list">
+                                    <li>
+                                        <a href="../../UI/Configuration/addData.aspx">Add User's Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Configuration/lock_lockuser.aspx">Company Config</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Configuration/UpdateEmpInfo.aspx">Update User's Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/SPaycompute/Salary_Details.aspx">Upload Salary Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/SPaycompute/Payc_Masters.aspx">Add Masters</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Configuration/Punch_InOut.aspx">Punch In/Out</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+
+                            <div class="col-md-2" id="Mega_PI" runat="server">
+                                <ul class="list-unstyled megamenu-list">
+                                    <li>
+                                        <a href="../../UI/Personal_Information/address_information.aspx">Address Information</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Personal_Information/bank_information.aspx">Bank Information</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Personal_Information/communication_information.aspx">Communication Information</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Personal_Information/personal_data.aspx">Personal Data</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Personal_Information/personal_ids.aspx">Personal IDs</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="col-md-2" id="Mega_WTR" runat="server">
+                                <ul class="list-unstyled megamenu-list">
+                                    <li>
+                                        <a href="../../UI/Working_Time/Leaverequest_new.aspx">Leave Request</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Working_Time/recordworking_time.aspx">Record Working Time</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Manager_Self_Service/TimeSheetReview_Employees.aspx">TimeSheet Overview</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Manager_Self_Service/ClockInOutReviewNew.aspx">Punch In/Out</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="col-md-2" id="Mega_payreports" runat="server">
+                                <ul class="list-unstyled megamenu-list">
+                                    <li id="megaSR" runat="server">
+                                        <a href="../../UI/Payroll_Management/SalaryRegister.aspx">Salary Register</a>
+                                    </li>
+                                    <li id="megaallpay" runat="server">
+                                        <a href="../../UI/Benefits_Payment/PaySlipNew.aspx">All Employees Payslip</a>
+                                    </li>
+                                    <li id="megastatu" runat="server">
+                                        <a href="../../UI/Payroll_Management/Statutory.aspx">Statutory</a>
+                                    </li>
+                                    <li id="megacompayslip" runat="server" visible="false">
+                                        <a href="../../UI/Payroll_Management/EmployeesPayslip.aspx">Employee's PaySlip</a>  <%--Cmpany--%>
+                                    </li>
+                                    <li id="megapayslip" runat="server" visible="false">
+                                        <a href="../../UI/Payroll_Management/Payslip_Emp.aspx">PaySlip</a>   <%--Employee--%>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div id="Mega_mgrapprvl" runat="server" class="col-md-2">
+                                <ul class="list-unstyled megamenu-list">
+                                    <li>
+                                        <a href="../../UI/Manager_Self_Service/assignedtome.aspx">Assigned To Me</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="../../UI/Manager_Self_Service/TimeSheetReview.aspx">WorkingTime Review</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div id="Mega_pswrest" runat="server" class="col-md-2">
+                                <ul class="list-unstyled megamenu-list">
+                                    <li>
+                                        <a href="../../UI/UserAccount/changepassword.aspx">Change password</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/UserAccount/createquestionandanswer.aspx">Account Security Question</a>
+                                    </li>
+                                    <li id="mega_directory" runat="server" visible="false">
+                                        <a href="../../UI/Manager_Self_Service/who'swho.aspx">Directory</a>
+                                    </li>
+                                    <li id="mega_itchaccnts" runat="server" visible="false">
+                                        <a href="../../UI/UserAccount/createuseraccount.aspx">Maintain User Accounts</a>
+                                    </li>
+                                    <li id="mega_itcrestpsw" runat="server" visible="false">
+                                        <a href="../../UI/UserAccount/ResetEmployeePassword.aspx">Reset Employee Password</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+
+                            <div class="col-md-2" id="MegaMenuIT" runat="server">
+                                <ul class="list-unstyled megamenu-list">
+                                    <li>
+                                        <a href="../../UI/Document Management System/UserManual.aspx">iEmp User Manual</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+    <!-- Mega Menu End -->
+
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="SideMenuContentPlaceHolder" runat="server">
+
+
+
+    <ul class="metismenu in" id="side-menu">
+        <li>
+            <a class="button-menu-mobile" id="dmenuicon" runat="server" onclick="changemenuicon();">
+                <i id="imenuicon" runat="server" class="fe-chevron-right" style="font-size: x-large !important;"></i>
+            </a>
+        </li>
+
+        <li id="MenuConfig" runat="server">
+            <a href="../../UI/Configuration/Configuration.aspx">
+                <i class="fe-mail"></i>
+                <span>Mail Server Config</span>
+            </a>
+        </li>
+
+        <li id="Compcreate" runat="server">
+            <a href="../../UI/Configuration/Company_Creation.aspx">
+                <i class="fe-anchor"></i>
+                <span>Company Creation</span>
+            </a>
+        </li>
+        <li id="addUsers" runat="server">
+            <a href="../../UI/Configuration/addData.aspx">
+                <i class="fe-users"></i>
+                <span>Add User's Details</span>
+            </a>
+        </li>
+
+        <li id="ConpConfig" runat="server">
+            <a href="../../UI/Configuration/lock_lockuser.aspx">
+                <i class="fe-unlock"></i>
+                <span>Company Config</span>
+            </a>
+        </li>
+        <li id="menuUpdateEmpinfo" runat="server">
+            <a href="../../UI/Configuration/UpdateEmpInfo.aspx">
+                <i class="fe-edit"></i>
+                <span>Update User's Details</span>
+            </a>
+        </li>
+        <li id="myrequests" runat="server">
+            <a href="../../UI/Default.aspx">
+                <i class="fe-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+
+        <li id="Companies" runat="server">
+            <a href="../../UI/Configuration/Companies.aspx">
+                <i class="fe-eye"></i>
+                <span>View Company's Details</span>
+            </a>
+        </li>
+
+        <li id="Admin_upload_salary" runat="server"><%--Admin--%>
+            <a>
+                <i class="fe-calendar"></i>
+                <span onclick="<%--redct('PR')--%>">Run Monthly Payroll</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li>
+                    <a href="../../UI/SPaycompute/Admin_salary.aspx">Generate Salary Details</a>
+                </li>
+
+                <li>
+                    <a href="../../UI/SPaycompute/Admin_salary.aspx?Attendance=4">Generate Monthly Attendance</a>
+                </li>
+            </ul>
+        </li>
+
+
+
+        <li id="Menuupload_salarydtls_compn" runat="server"><%--Company--%>
+            <a>
+                <i class="fe-upload"></i>
+                <span onclick="<%--redct('PR')--%>">Uploads</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li>
+                    <a href="../../UI/SPaycompute/Salary_Details.aspx">Upload Salary Details</a>
+                </li>
+
+                <li>
+                    <a href="../../UI/Configuration/Punch_InOut.aspx">Upload Punch In/Out details</a>
+                </li>
+            </ul>
+        </li>
+
+
+
+        <%--<li id="Menuupload_salarydtls_compn" runat="server">
+            <a href="../../UI/SPaycompute/Salary_Details.aspx">
+                <i class="fe-upload"></i>
+                <span>Upload Salary Details</span>
+            </a>
+        </li>--%>
+
+
+        <li id="Company_masters" runat="server">
+            <a>
+                <i class="fe-plus-square"></i>
+                <span onclick="<%--redct('PR')--%>">Add Masters</span>
+                <span class="menu-arrow"></span>
+            </a>
+          
+              <%--  <span>Add Masters</span>--%>
+            
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li>
+                     <a href="../../UI/SPaycompute/Payc_Masters.aspx">Add master</a>
+                </li>
+                <li>
+                  <a href="../../UI/SPaycompute/Master_upload_from_excel.aspx">Add Excel Master</a>
+                </li>
+                </ul>
+        </li>
+
+        <li id="Payroll_Management" runat="server">
+            <a>
+                <i class="fe-credit-card"></i>
+                <span onclick="<%--redct('PR')--%>">Payroll Management</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+
+                <li id="li24" runat="server">
+                    <a href="../../UI/Payroll_Management/SalaryRegister.aspx">Salary Register</a>
+                </li>
+                <li id="li25" runat="server">
+                    <a href="../../UI/Benefits_Payment/PaySlipNew.aspx">All Employees Payslip</a>
+                </li>
+                <li id="li22" runat="server">
+                    <a href="../../UI/Payroll_Management/Statutory.aspx">Statutory</a>
+                </li>
+                <li id="MenuAdminPayslip" runat="server">
+                    <a href="../../UI/Payroll_Management/EmployeesPayslip.aspx">Employee's PaySlip</a>  <%--Cmpany--%>
+                </li>
+
+            </ul>
+        </li>
+
+        <li id="MenuPersonalInfo" runat="server">
+            <a>
+                <i class="fe-user" aria-hidden="true"></i>
+                <span onclick="<%--redct('PR')--%>">Personal Info. </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li>
+                    <a href="../../UI/Personal_Information/address_information.aspx">Address Information</a>
+                </li>
+                <li>
+                    <a href="../../UI/Personal_Information/bank_information.aspx">Bank Information</a>
+                </li>
+                <li>
+                    <a href="../../UI/Personal_Information/communication_information.aspx">Communication Information</a>
+                </li>
+                <li>
+                    <a href="../../UI/Personal_Information/personal_data.aspx">Personal Data</a>
+                </li>
+                <li>
+                    <a href="../../UI/Personal_Information/personal_ids.aspx">Personal IDs</a>
+                </li>
+            </ul>
+        </li>
+
+
+
+        <li id="MenuWorkingTime" runat="server">
+            <a>
+                <i class="fe-clock"></i>
+                <span onclick="<%--redct('PR')--%>">Working Time</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li>
+                    <a href="../../UI/Working_Time/Leaverequest_new.aspx">Leave Request</a>
+                </li>
+                <li>
+                    <a href="../../UI/Working_Time/recordworking_time.aspx">Record Working Time</a>
+                </li>
+                <li>
+                    <a href="../../UI/Manager_Self_Service/TimeSheetReview_Employees.aspx">TimeSheet Overview</a>
+                </li>
+                <li>
+                    <a href="../../UI/Manager_Self_Service/ClockInOutReviewNew.aspx">Punch In/Out</a>
+                </li>
+            </ul>
+        </li>
+
+        <li id="MenuMSS" runat="server" visible="false">
+            <a>
+                <i class="fe-trending-down"></i>
+                <span onclick="<%--redct('PR')--%>">MSS</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li id="MSSAssgndtome" runat="server">
+                    <a href="../../UI/Manager_Self_Service/assignedtome.aspx">Assigned To Me</a>
+                </li>
+
+                <li id="MSSTimeShtRevw" runat="server">
+                    <a href="../../UI/Manager_Self_Service/TimeSheetReview.aspx">WorkingTime Review</a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li id="MenuBP" runat="server">
+            <a>
+                <i class="fe-dollar-sign"></i>
+                <span onclick="<%--redct('PR')--%>">Benefits & Payments</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+
+                <li id="MenuPayslip1" runat="server">
+                    <a href="../../UI/Payroll_Management/Payslip_Emp.aspx">PaySlip</a>   <%--Employee--%>
+                </li>
+
+            </ul>
+        </li>
+         <li id="Li1" runat="server">
+            <a>
+                  <i class="fe-star"></i>
+             <%--   <i class="fe-dollar-sign"></i>--%>
+                <span onclick="<%--redct('PR')--%>">Employee performance</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+               <%-- <a href="Performance_Management_System/frmPMSDownload.aspx">Performance_Management_System/frmPMSDownload.aspx</a>--%>
+
+                <li id="Li3" runat="server">
+                    <a href="../../UI/Performance_Management_System/frmPMSDownload.aspx">PMS</a>   <%--Employee--%>
+                </li>
+               <%-- <li id="Li4" runat="server">
+                    <a href="../../UI/Performance_Management_System/WebForm1.aspx">P</a>   <%--Employee--%>
+          <%--      </li>--%>
+
+            </ul>
+        </li>
+         <li id="MenuPR" runat="server">
+            <a href="/UI/PR/Purchase_Requisitions.aspx">
+                <i class="fe-shopping-bag"></i>
+                <span onclick="redct('PR')">Purchase Request </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li id="MenuPRReq" runat="server"><a href="/UI/PR/Purchase_Request.aspx">Raise PR</a></li>
+                <li id="MenuPRStatus" runat="server"><a href="/UI/PR/Purchase_Requisitions.aspx">My PR Tickets</a></li>
+                <li id="MenuPRApp" runat="server"><a href="/UI/PR/Purchase_Requisitions.aspx?PC=P">PR - Pending My Action</a></li>
+                <li id="MenuPRDetails" runat="server"><a href="/UI/PR/Purchase_Requisitions.aspx?PC=C">PR - Completed My Action</a></li>
+                <li id="MenuPRStatusforPT" runat="server"><a href="/UI/PR/ViewStatusPT.aspx">PR Status for PT</a></li>
+            </ul>
+        </li>
+         <li id="MenuIExpense" runat="server">
+            <a href="/UI/Benefits_Payment/iExpense_Request.aspx">
+                <i class="fe-layers"></i>
+                <span onclick="redct('IEXP')">iExpense </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li id="MenuIExpenseRequest" runat="server"><a href="/UI/Benefits_Payment/Other_Reimbursements.aspx">Raise iExpense</a></li>
+                <%--          <li id="MenuIExpenseEditSavedReq" runat="server"><a href="/UI/Benefits_Payment/Saved_Other_Reimbursements.aspx">Edit Saved / Requested Iexpense</a></li>--%>
+                <li id="MenuIExpenseStatus" runat="server"><a href="/UI/Benefits_Payment/iExpense_Request.aspx">My iExpense Requests</a></li>
+                <li id="MenuIExpenseApproveReject" runat="server"><a href="/UI/Benefits_Payment/iExpense_Request.aspx?PC=P">iExpense - Pending My Action</a></li>
+                <li id="MenuIExpenseDetails" runat="server"><a href="/UI/Benefits_Payment/iExpense_Request.aspx?PC=C">iExpense - Completed My Action</a></li>
+                <li id="MenuFinanceViewIExpenseStatus" runat="server"><a href="/UI/Benefits_Payment/FinanceViewAllIexpenseStatus.aspx">Finance View Iexpense Status</a></li>
+            </ul>
+        </li>
+
+        <li id="MenuTravel" runat="server">
+            <a href="/UI/Benefits_Payment/Travel_Requests.aspx">
+                <i class="fe-briefcase"></i>
+                <span onclick="redct('TR')">Travel Management </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li id="MenuTravelRequest" runat="server"><a href="/UI/Benefits_Payment/Travel_Requests.aspx?PC=R">Raise Travel Claims</a></li>
+                <%--<li><a href="/UI/Benefits_Payment/Travel_Requests.aspx?PC=P">Travel Request Approve / Reject</a></li>--%>
+                <li id="MenuClaimRequest" runat="server" visible="false"><a href="/UI/Benefits_Payment/Travel_Requests.aspx?PC=R">Claim Request</a></li>
+                <li id="MenuEditSavedReqClaims" runat="server"><a href="/UI/Benefits_Payment/Travel_Requests.aspx">My Travel Claims</a></li>
+
+                <li id="MenuTravelClaimHistory" runat="server" visible="false"><a href="/UI/Benefits_Payment/Travel_Requests.aspx">Travel Claim Status</a></li>
+                <%-- <li><a href="#">Tour Page</a></li>--%>
+                <li id="MenuTravelClaimApprej" runat="server"><a href="/UI/Benefits_Payment/Travel_Requests.aspx?PC=P">Travel Claims - Pending My Action</a></li>
+                <li><a href="/UI/Benefits_Payment/Travel_Requests.aspx?PC=C">Travel Claims - Completed My Action</a></li>
+                <li id="MenuFinanceViewClaimsStatus" runat="server"><a href="/UI/Benefits_Payment/FinanceViewTravelClaimsStatus.aspx">Finance View Claims Status</a></li>
+            </ul>
+        </li>
+
+
+          <li id="MenuFBP" runat="server">
+            <a href="/UI/FBP/FBP.aspx">
+                <i class="mdi mdi-coin"></i>
+                <span>FBP </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li id="fbpdeclare" runat="server"><a href="/UI/FBP/FBP.aspx">FBP Declaration</a></li>
+                <li id="fbpclaims" runat="server"><a href="/UI/FBP/FBP.aspx?PC=C">FBP Claims</a></li>
+                <li id="fbpclaimshistory" runat="server"><a href="/UI/FBP/FBP.aspx?PC=H">FBP Claims History</a></li>
+                <li id="fbpDeclaration" runat="server" visible="false"><a href="/UI/FBP/FBP_Declarations.aspx">View FBP Declaration</a></li>
+                <li id="fbpapprej" runat="server"><a href="/UI/FBP/FBP_AppRejClaims.aspx">FBP Claim Approval</a></li>
+                <li id="fbplocking" runat="server"><a href="/UI/FBP/FBP_AdminLocking.aspx">FBP Lock</a></li>
+                <li id="fbpAllClaims" runat="server"><a href="/UI/FBP/FBP_AdminViewAllClaims.aspx">FBP View  All Claims</a></li>
+            </ul>
+        </li>
+
+
+         <li id="MenuIT" runat="server">
+            <a href="/UI/IT/Income_Tax.aspx">
+                <i class="mdi mdi-credit-card"></i>
+                <span>Income Tax </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li id="ITsec80C" runat="server"><a href="/UI/IT/Income_Tax.aspx?PC=C">Section 80 C</a></li>
+                <li id="ITSec80" runat="server"><a href="/UI/IT/Income_Tax.aspx">Section 80</a></li>
+                <li id="ITHousing" runat="server"><a href="/UI/IT/Income_Tax.aspx?PC=H">Housing</a></li>
+                <%-- <li id="ITPrevEmpIncome" runat="server"><a href="/UI/IT/Income_Tax.aspx?PC=P">Previous Employment Income</a></li>--%>
+                <li id="ITOthers" runat="server"><a href="/UI/IT/Income_Tax.aspx?PC=O">Income From Other Sources</a></li>
+                <li id="ITEmpView" runat="server"><a href="/UI/IT/Income_Tax.aspx?PC=V">Employee View IT History</a></li>
+                <li id="ITAppRej" runat="server"><a href="/UI/IT/IT_AppRej.aspx">IT App / Rej</a></li>
+                <li id="ITLock" runat="server"><a href="/UI/IT/IT_AdminLocking.aspx">IT Lock</a></li>
+                <li id="ITAdminViewAll" runat="server"><a href="/UI/IT/IT_AdminViewAll.aspx">IT Admin View All</a></li>
+                <%--<li><a href="#">Payslip</a></li>--%>
+            </ul>
+      
+             </li>
+
+           
+        
+
+
+        <li id="MenuDoc" runat="server">
+            <a><i class="fe-help-circle"></i>
+                <span onclick="<%--redct('PR')--%>">DMS</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li id="Li2" runat="server">
+                    <a href="../../UI/Document Management System/UserManual.aspx">iEmp User Manual</a>
+                </li>
+
+
+            </ul>
+        </li>
+
+        <li id="MenuMyaccount" runat="server" visible="false">
+            <a>
+                <i class="fe-settings"></i>
+                <span onclick="<%--redct('PR')--%>">My Account</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <ul class="nav-second-level collapse" aria-expanded="false">
+                <li id="MenuChgePass" runat="server">
+                    <a href="../../UI/UserAccount/changepassword.aspx">Password Reset</a>
+                </li>
+                <li id="MenuMaintainDirectory" runat="server">
+                    <a href="../../UI/Manager_Self_Service/who'swho.aspx">Directory</a>
+                </li>
+                <li id="MenuMaintainUserAccounts" runat="server">
+                    <a href="../../UI/UserAccount/createuseraccount.aspx">Maintain User Accounts</a>
+                </li>
+                <li id="MenuResetEmployeePassword" runat="server">
+                    <a href="../../UI/UserAccount/ResetEmployeePassword.aspx">Reset Employee Password</a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li>
+            <a id="A11" href="../../Account/Login.aspx" class="dropdown-item notify-item" causesvalidation="false" onserverclick="A1_ServerClick" runat="server"><i class="fe-log-out"></i>
+                <span>Logout </span>
+            </a>
+        </li>
+    </ul>
+
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <!-- Start Content-->
+    <%--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>--%>
+    <%--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+    <link href="../../../../Content/css/select2.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            HTMLInputElement.prototype.scrollIntoView = function (a) { this.scrollIntoViewIfNeeded(); }
+            HTMLSelectElement.prototype.scrollIntoView = function (a) { this.scrollIntoViewIfNeeded(); }
+            HTMLAreaElement.prototype.scrollIntoView = function (a) { this.scrollIntoViewIfNeeded(); }
+        });
+    </script>
+    <div class="auto-style1">
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </div>
+    <!-- End Content-->
+    <!-- Vendor js -->
+    <script src=".../../../../NewAssets/jquery/vendor.js" type="text/javascript"></script>
+
+    <!-- Plugins js-->
+    <script src=".../../../../NewAssets/css/jquery.js" type="text/javascript"></script>
+    <script src=".../../../../NewAssets/jquery/flatpickr.js" type="text/javascript"></script>
+
+    <script src=".../../../../NewAssets/jquery/jquery.js" type="text/javascript"></script>
+    <!-- Datatables init -->
+
+
+    <!-- App js-->
+    <script src=".../../../../NewAssets/jquery/app.js" type="text/javascript"></script>
+
+
+ <%-- Newly added--%>
+    <script src=".../../../../NewAssets/jquery/jquery.table2excel.js"></script>
+
+
+    <Ajx:ModalPopupExtender BackgroundCssClass="popUpStyle1" BehaviorID="ViewDetails" ID="MPE_Pend"
+        runat="server" PopupControlID="divpopup" TargetControlID="abc">
+    </Ajx:ModalPopupExtender>
+
+
+
+    <button style="display: none;" id="abc" runat="server"></button>
+    <div id="divpopup" runat="server" class="modalPopupDefault3" align="center" style="width: 25% !important; height: 25% !important; overflow: hidden;display:none">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="padding-top: 2px !important">
+                    <h4 class="modal-title" id="H1">Tax regime selection </h4>
+                    <%--<asp:UpdatePanel ID="upclose" runat="server">
+                        <ContentTemplate>
+                            <asp:Button ID="Button1" runat="server" Text="x" CssClass="close" data-dismiss="modal" aria-hidden="true" CausesValidation="false" />
+                        </ContentTemplate>
+                    </asp:UpdatePanel>--%>
+                <%--</div>--%>
+              <%--  <div class="modal-body">
+                    <div class="row" style="width: 100% !important">
+                        <div class="col-md-2"></div>
+                        <%--<div class="col-md-3">Select IT Slab : </div>--%>
+                       <%-- <div class="col-md-5">
+                            <asp:RadioButtonList ID="rbtnSlabSelection" runat="server">
+                                <asp:ListItem Value="1" Text="Old tax" Selected="True"></asp:ListItem>
+                                <asp:ListItem Value="2" Text="New tax"></asp:ListItem>
+                            </asp:RadioButtonList>
+
+
+
+                        </div>--%>
+                      <%--  <div class="col-md-2">
+                            <asp:Button ID="btnSetITSlab" runat="server" class="btn btn-xs btn-secondary" Text="Set Slab" OnClick="btnSetITSlab_Click"></asp:Button>
+                        </div>--%>--%>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <asp:Label ID="Label1" runat="server" Text="status" Visible="false"></asp:Label>
+</div>
+</asp:Content>
+
+

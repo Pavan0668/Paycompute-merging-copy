@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="ITdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-6D7ET0F\SQLEXPRESS;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Paycompute_NewUIPRDConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_get_IT_slab" Method="usp_get_IT_slab">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_get_IT_slabResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="IT_SLAB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UPDATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_AppRej" Method="usp_IT_AppRej">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REMARKS" Parameter="rEMARKS" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sts" Parameter="sts" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_EmpViewHeaderHistry" Method="usp_IT_EmpViewHeaderHistry">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_IT_EmpViewHeaderHistryResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CONACTPROP" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PROPTYP" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_get_12b_80C" Method="usp_IT_get_12b_80C">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="usp_IT_get_12b_80CResult">
+      <Column Name="Text1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_get_12b_get_all" Method="usp_IT_get_12b_get_all">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_IT_get_12b_get_allResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="NVarChar(285)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_get_12b_HosingDtls" Method="usp_IT_get_12b_HosingDtls">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="usp_IT_get_12b_HosingDtlsResult">
+      <Column Name="text1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="rent" Type="System.Decimal" DbType="Decimal(32,2)" CanBeNull="true" />
+      <Column Name="Apprent" Type="System.Decimal" DbType="Decimal(32,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_get_Emp_details_IT_12b" Method="usp_IT_get_Emp_details_IT_12b">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="usp_IT_get_Emp_details_IT_12bResult">
+      <Column Name="ICNUM" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="BDT" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="EDT" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_get_HousingOthers_CONT" Method="usp_IT_get_HousingOthers_CONT">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_IT_get_HousingOthers_CONTResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LEDNAME" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="LEDPAN" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="LEDADD" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddPRP" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PUPS" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="LNSAC_DT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STMP_DT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BORNAME" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="PERCNT" Type="System.Decimal" DbType="Decimal(32,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_Get_MailListSec80" Method="usp_IT_Get_MailListSec80">
+    <Parameter Name="ITHID" Parameter="iTHID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPPERNR" Parameter="eMPPERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="EMP_Name" Parameter="eMP_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EMP_Email" Parameter="eMP_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Get_PreEmpHistry" Method="usp_IT_Get_PreEmpHistry">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_IT_Get_PreEmpHistryResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="PrevEmployer" Type="System.String" DbType="VarChar(99)" CanBeNull="true" />
+      <Column Name="CompanyPAN" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CompanyTAN" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GRSAL" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="VPRQS" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="PRSAL" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="EXS10" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="PRTAX" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="PRFND" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TXDED" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="SCDED" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="ECDED" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIFIED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetHousing" Method="usp_IT_GetHousing">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_IT_GetHousingResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ACCOM" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="METRO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="RTAMT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="HRTXE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LDAD1" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="LDAID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="LDADE" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIFIED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMPCOMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="LDNAM" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LAND1" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="BLAND" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="BEZEI" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetHousingHistory" Method="usp_IT_GetHousingHistory">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="usp_IT_GetHousingHistoryResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ACCOM" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="METRO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="RTAMT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="HRTXE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LDAD1" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="LDAID" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="LDADE" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="EMPCOMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetHousingOthers" Method="usp_IT_GetHousingOthers">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="PROPTYP" Parameter="pROPTYP" Type="System.String" DbType="VarChar(2)" />
+    <ElementType Name="usp_IT_GetHousingOthersResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROPTYP" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="RENTO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="INT24" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="LETVL" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="REP24" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="OTH24" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TDSOT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="BSPFT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CPGLN" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CPGLS" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CPGNS" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CPGSS" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="DVDND" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="INTRS" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="UNSPI" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TDSAT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="EMPCOMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMPCOMMENTS2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetHousingOthersHistory" Method="usp_IT_GetHousingOthersHistory">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PROPTYP" Parameter="pROPTYP" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="RbType" Parameter="rbType" Type="System.String" DbType="VarChar(2)" />
+    <ElementType Name="usp_IT_GetHousingOthersHistoryResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PROPTYP" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="RENTO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="INT24" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="LETVL" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="REP24" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="OTH24" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TDSOT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="BSPFT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CPGLN" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CPGLS" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CPGNS" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CPGSS" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="DVDND" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="INTRS" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="UNSPI" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TDSAT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIFIED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMPCOMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMPCOMMENTS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetLockStatus" Method="usp_IT_GetLockStatus" IsComposable="true">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="ITLOCK" Parameter="iTLOCK" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.usp_IT_GetSec80" Method="usp_IT_GetSec80">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Count" Parameter="count" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="usp_IT_GetSec80Result">
+      <Column Name="LID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SBSEC" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SBDIV" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SBDDS" Type="System.String" DbType="VarChar(221)" CanBeNull="true" />
+      <Column Name="SDVLT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TXEXM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROPCONTR" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="ACTCONTR" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="RECEIPT_FILE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="RECEIPT_FID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EMPCOMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CONACTPROP" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetSec80_12BB" Method="usp_IT_GetSec80_12BB">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_IT_GetSec80_12BBResult">
+      <Column Name="text1" Type="System.String" DbType="VarChar(221)" CanBeNull="true" />
+      <Column Name="rent" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetSec80_12BB" Method="usp_IT_GetSec80_12BB1">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_IT_GetSec80_12BBResult1">
+      <Column Name="text1" Type="System.String" DbType="VarChar(221)" CanBeNull="true" />
+      <Column Name="rent" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetSec80C" Method="usp_IT_GetSec80C">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Count" Parameter="count" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="usp_IT_GetSec80CResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ICODE" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="ITTXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ITLMT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CTGRY" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PROPINVST" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="ACTINVST" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="RECEIPT_FILE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="RECEIPT_FID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EMPCOMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CONACTPROP" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetSec80C_12BB" Method="usp_IT_GetSec80C_12BB">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_IT_GetSec80C_12BBResult">
+      <Column Name="text1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="rent" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetSec80CHistory" Method="usp_IT_GetSec80CHistory">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="usp_IT_GetSec80CHistoryResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ICODE" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="ITTXT" Type="System.String" DbType="VarChar(114)" CanBeNull="true" />
+      <Column Name="ITLMT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CTGRY" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PROPINVST" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="ACTINVST" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="RECEIPT_FILE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="RECEIPT_FID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EMPCOMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_GetSec80History" Method="usp_IT_GetSec80History">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="usp_IT_GetSec80HistoryResult">
+      <Column Name="LID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SBSEC" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SBDIV" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="SBDDS" Type="System.String" DbType="VarChar(223)" CanBeNull="true" />
+      <Column Name="SDVLT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TXEXM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROPCONTR" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="ACTCONTR" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="RECEIPT_FILE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="RECEIPT_FID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EMPCOMMENTS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_HeaderForAdmin" Method="usp_IT_HeaderForAdmin">
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_IT_HeaderForAdminResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="CONACTPROP" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PROPTYP" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_HeaderForApproval" Method="usp_IT_HeaderForApproval">
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_IT_HeaderForApprovalResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="CONACTPROP" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PROPTYP" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_ParticularITAdminForAppRej" Method="usp_IT_ParticularITAdminForAppRej">
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_IT_ParticularITAdminForAppRejResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="CONACTPROP" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PROPTYP" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_PreEmplmnt_income" Method="usp_IT_PreEmplmnt_income">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PrevEmployer" Parameter="prevEmployer" Type="System.String" DbType="VarChar(99)" />
+    <Parameter Name="CompanyPAN" Parameter="companyPAN" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="CompanyTAN" Parameter="companyTAN" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="GRSAL" Parameter="gRSAL" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="VPRQS" Parameter="vPRQS" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="PRSAL" Parameter="pRSAL" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="EXS10" Parameter="eXS10" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="PRTAX" Parameter="pRTAX" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="PRFND" Parameter="pRFND" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="TXDED" Parameter="tXDED" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="SCDED" Parameter="sCDED" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="ECDED" Parameter="eCDED" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="MODIFIED_BY" Parameter="mODIFIED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HID" Parameter="hID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="STS" Parameter="sTS" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Sec80_fileDelete" Method="usp_IT_Sec80_fileDelete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Sec80_fileUpdate" Method="usp_IT_Sec80_fileUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Sec80C_fileDelete" Method="usp_IT_Sec80C_fileDelete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Sec80C_fileUpdate" Method="usp_IT_Sec80C_fileUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_set_get_submitionFile" Method="usp_IT_set_get_submitionFile">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="BDT" Parameter="bDT" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EDT" Parameter="eDT" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FPATH" Parameter="fPATH" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sts" Parameter="sts" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="FPATHout" Parameter="fPATHout" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Submit_ALL" Method="usp_IT_Submit_ALL">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="STS" Parameter="sTS" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="EMP_Email" Parameter="eMP_Email" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="EMP_Name" Parameter="eMP_Name" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Submit_Housing" Method="usp_IT_Submit_Housing">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ACCOM" Parameter="aCCOM" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="METRO" Parameter="mETRO" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="RTAMT" Parameter="rTAMT" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="HRTXE" Parameter="hRTXE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LDAD1" Parameter="lDAD1" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="LDAID" Parameter="lDAID" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="LDADE" Parameter="lDADE" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MODIFIED_BY" Parameter="mODIFIED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPCOMMENTS" Parameter="eMPCOMMENTS" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="State" Parameter="state" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="LDNAM" Parameter="lDNAM" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="HID" Parameter="hID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="STS" Parameter="sTS" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Submit_Housing_Delete" Method="usp_IT_Submit_Housing_Delete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Submit_HousingOthers" Method="usp_IT_Submit_HousingOthers">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PROPTYP" Parameter="pROPTYP" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="RENTO" Parameter="rENTO" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="INT24" Parameter="iNT24" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="LETVL" Parameter="lETVL" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="REP24" Parameter="rEP24" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="OTH24" Parameter="oTH24" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="TDSOT" Parameter="tDSOT" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="BSPFT" Parameter="bSPFT" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="CPGLN" Parameter="cPGLN" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="CPGLS" Parameter="cPGLS" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="CPGNS" Parameter="cPGNS" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="CPGSS" Parameter="cPGSS" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="DVDND" Parameter="dVDND" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="INTRS" Parameter="iNTRS" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="UNSPI" Parameter="uNSPI" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="TDSAT" Parameter="tDSAT" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MODIFIED_BY" Parameter="mODIFIED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPCOMMENTS" Parameter="eMPCOMMENTS" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="EMPCOMMENTS2" Parameter="eMPCOMMENTS2" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="ITID" Parameter="iTID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="STS" Parameter="sTS" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Submit_HousingOthers_CONT" Method="usp_IT_Submit_HousingOthers_CONT">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LENDNAME" Parameter="lENDNAME" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="LENDPAN" Parameter="lENDPAN" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="LENDADD" Parameter="lENDADD" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ADDPROPTY" Parameter="aDDPROPTY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="STATE" Parameter="sTATE" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="CITY" Parameter="cITY" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="PUPSHSLN" Parameter="pUPSHSLN" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="LNSAC_DATE" Parameter="lNSAC_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="STMPCHR_DATE" Parameter="sTMPCHR_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PERCNT" Parameter="pERCNT" Type="System.Decimal" DbType="Decimal(32,2)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="STS" Parameter="sTS" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Submit_Section80CHeader" Method="usp_IT_Submit_Section80CHeader">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MODIFIED_BY" Parameter="mODIFIED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CONACTPROP" Parameter="cONACTPROP" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="HID" Parameter="hID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Submit_Section80CTransaction" Method="usp_IT_Submit_Section80CTransaction">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ITCODE" Parameter="iTCODE" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="PROPINVST" Parameter="pROPINVST" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="ACTINVST" Parameter="aCTINVST" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPCOMMENTS" Parameter="eMPCOMMENTS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sts" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Submit_Section80Header" Method="usp_IT_Submit_Section80Header">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MODIFIED_BY" Parameter="mODIFIED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CONACTPROP" Parameter="cONACTPROP" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="HID" Parameter="hID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_Submit_Section80Transaction" Method="usp_IT_Submit_Section80Transaction">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SBSEC" Parameter="sBSEC" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="SBDIV" Parameter="sBDIV" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="PROPCONTR" Parameter="pROPCONTR" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="ACTCONTR" Parameter="aCTCONTR" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPCOMMENTS" Parameter="eMPCOMMENTS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sts" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_UpdateLocking" Method="usp_IT_UpdateLocking" IsComposable="true">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="LOCK" Parameter="lOCK" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="S80" Parameter="s80" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="S80C" Parameter="s80C" Type="System.Boolean" DbType="Bit" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.usp_set_IT_slab" Method="usp_set_IT_slab">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IT_SLAB" Parameter="iT_SLAB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_IT_ParticularITAdmin" Method="usp_IT_ParticularITAdmin">
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FROMDATE" Parameter="fROMDATE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="TODATE" Parameter="tODATE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_IT_ParticularITAdminResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="CONACTPROP" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PROPTYP" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_ParticularITEmp" Method="usp_IT_ParticularITEmp">
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FROMDATE" Parameter="fROMDATE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="TODATE" Parameter="tODATE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_IT_ParticularITEmpResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="CONACTPROP" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PROPTYP" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_IT_LoadLocking" Method="usp_IT_LoadLocking">
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_IT_LoadLockingResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCK" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Sec80" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Sec80C" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

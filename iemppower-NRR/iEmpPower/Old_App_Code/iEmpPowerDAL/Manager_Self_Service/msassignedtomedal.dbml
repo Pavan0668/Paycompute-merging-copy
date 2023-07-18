@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="msassignedtomedalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PayCompute20032020ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_ms_approve_leave_encashment_details" Method="sp_ms_approve_leave_encashment_details">
+    <Parameter Name="PKEY" Parameter="pKEY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="isstatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="approver_pernr" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="approver_mail" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="pernr_mail" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_approve_bank_details" Method="sp_ms_approve_bank_details">
+    <Parameter Name="PKEY" Parameter="pKEY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isstatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="approver_pernr" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="approver_mail" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="pernr_mail" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_approve_clockinout_details" Method="sp_ms_approve_clockinout_details">
+    <Parameter Name="PKEY" Parameter="pKEY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isstatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="entrystatus" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="approver_pernr" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="approver_mail" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="pernr_mail" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_approve_leave_request" Method="sp_ms_approve_leave_request">
+    <Parameter Name="PKEY" Parameter="pKEY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isstatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approver_pernr" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="approver_mail" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="pernr_mail" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_approve_travel_request_details" Method="sp_ms_approve_travel_request_details">
+    <Parameter Name="travel_PERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PKEY" Parameter="pKEY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="isstatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="approver_pernr" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="approver_mail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="pernr_mail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="ceo_pernr" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="ceo_name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="ceo_mail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="hr_pernr" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="hr_name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="hr_mail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="payroll_pernr" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="payroll_name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="payroll_mail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Chk" Parameter="chk" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_get_HR_Details" Method="sp_ms_get_HR_Details">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="HRStatus" Parameter="hRStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HR_Pernr" Parameter="hR_Pernr" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="HR_Name" Parameter="hR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_approve_address_details" Method="sp_ms_approve_address_details">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MODIFIEDON" Parameter="mODIFIEDON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MODON" Parameter="mODON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="strApproverName" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strApprovalMail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strReqesterName" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strReqesterMail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_approve_communication_details" Method="sp_ms_approve_communication_details">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MODIFIEDON" Parameter="mODIFIEDON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MODON" Parameter="mODON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="strApproverName" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strApprovalMail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strReqesterName" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strReqesterMail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_approve_familymember_details" Method="sp_ms_approve_familymember_details">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MODIFIEDON" Parameter="mODIFIEDON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MODON" Parameter="mODON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="strApproverName" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strApprovalMail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strReqesterName" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strReqesterMail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_approve_personal_data_details" Method="sp_ms_approve_personal_data_details">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MODIFIEDON" Parameter="mODIFIEDON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MODON" Parameter="mODON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="strApproverName" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strApprovalMail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strReqesterName" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strReqesterMail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_approve_personal_id_details" Method="sp_ms_approve_personal_id_details">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MODIFIEDON" Parameter="mODIFIEDON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="MODON" Parameter="mODON" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="strApproverName" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strApprovalMail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strReqesterName" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="strReqesterMail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_PERNR_List" Method="sp_get_PERNR_List">
+    <ElementType Name="sp_get_PERNR_ListResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_employee_names" Method="sp_get_employee_names">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="sp_get_employee_namesResult">
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_sp_Get_Employee_Bday" Method="usp_sp_Get_Employee_Bday">
+    <ElementType Name="usp_sp_Get_Employee_BdayResult">
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_get_head_count_mf" Method="usp_get_head_count_mf">
+    <ElementType Name="usp_get_head_count_mfResult">
+      <Column Name="Male" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Female" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_PMS_get_mailIDS" Method="usp_PMS_get_mailIDS">
+    <Parameter Name="emp_name" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Supmail" Parameter="supmail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="HR_mail" Parameter="hR_mail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="HRM_mail" Parameter="hRM_mail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="PERNR_MAIL" Parameter="pERNR_MAIL" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_rrf_get_designation_of_emp" Method="usp_rrf_get_designation_of_emp">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_rrf_get_designation_of_empResult">
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_get_subordinates_for_KPI" Method="usp_get_subordinates_for_KPI">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_get_subordinates_for_KPIResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ms_load_approval_for_employee" Method="sp_ms_load_approval_for_employee">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_ms_load_approval_for_employeeResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="PLANS" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PLXST" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SOBID" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="S_PERNR" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="S_ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="S_PLXST" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="S_USRID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ms_get_sub_employeesForMSS" Method="sp_ms_get_sub_employeesForMSS">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_ms_get_sub_employeesForMSSResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PHN" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_HR_id" Method="sp_get_HR_id">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_get_HR_idResult">
+      <Column Name="USRID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_ms_approve_reject" Method="usp_ms_approve_reject">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Req_ID" Parameter="req_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PKEY" Parameter="pKEY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Req_PERNR" Parameter="req_PERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Approved_by" Parameter="approved_by" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Approver_comments" Parameter="approver_comments" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TableTyp" Parameter="tableTyp" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Parameter Name="Supervisor_Name" Parameter="supervisor_Name" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Parameter Name="Supervisor_Email" Parameter="supervisor_Email" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <ElementType Name="usp_ms_approve_rejectResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="EMPID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DESTA" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DEEND" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SUBTY" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="ANZHL" Type="System.Decimal" DbType="Decimal(10,1) NOT NULL" CanBeNull="false" />
+      <Column Name="KVERB" Type="System.Decimal" DbType="Decimal(10,1) NOT NULL" CanBeNull="false" />
+      <Column Name="createdon" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ms_approve_recordworking_details" Method="sp_ms_approve_recordworking_details">
+    <Parameter Name="company_code" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PKEY" Parameter="pKEY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="comments" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isstatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="approver_pernr" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="approver_mail" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="pernr_mail" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ms_load_pending_assigned_to_me" Method="sp_ms_load_pending_assigned_to_me">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SelTyp" Parameter="selTyp" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="YEAR" Parameter="yEAR" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="RecordCnt" Parameter="recordCnt" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_ms_load_pending_assigned_to_meResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pkey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="change_approval" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Subtype" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Last_Activity_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TableTyp" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MODON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ms_load_completed_assigned_to_me" Method="sp_ms_load_completed_assigned_to_me">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SelTyp" Parameter="selTyp" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="YEAR" Parameter="yEAR" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="RecordCnt" Parameter="recordCnt" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_ms_load_completed_assigned_to_meResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pkey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="change_approval" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Subtype" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Last_Activity_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TableTyp" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AppvdBy" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ms_get_sub_employees_Details" Method="sp_ms_get_sub_employees_Details">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_ms_get_sub_employees_DetailsResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PHN" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ms_get_sub_employees" Method="sp_ms_get_sub_employees">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_ms_get_sub_employeesResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR1" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PHN" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ms_load_completed_assigned_to_me_dashboard" Method="sp_ms_load_completed_assigned_to_me_dashboard">
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SelTyp" Parameter="selTyp" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="YEAR" Parameter="yEAR" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="RecordCnt" Parameter="recordCnt" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="sortdt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_ms_load_completed_assigned_to_me_dashboardResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pkey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="change_approval" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Subtype" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Last_Activity_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TableTyp" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AppvdBy" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ms_load_pending_assigned_to_me_dashboard" Method="sp_ms_load_pending_assigned_to_me_dashboard">
+    <Parameter Name="compCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SelTyp" Parameter="selTyp" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="YEAR" Parameter="yEAR" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="RecordCnt" Parameter="recordCnt" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="sortdt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_ms_load_pending_assigned_to_me_dashboardResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pkey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="change_approval" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Subtype" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Last_Activity_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TableTyp" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MODON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_mgr_hr_cnt" Method="payc_mgr_hr_cnt">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="payc_mgr_hr_cntResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR1" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_Get_Employee_Bday" Method="payc_Get_Employee_Bday">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="bt" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <ElementType Name="payc_Get_Employee_BdayResult">
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(154)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_get_Org_Chart_data" Method="usp_get_Org_Chart_data">
+    <Parameter Name="LGNPERNR" Parameter="lGNPERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Ccode" Parameter="ccode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_get_Org_Chart_dataResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Manager" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DESIG" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_get_leaveattd_review" Method="payc_get_leaveattd_review">
+    <Parameter Name="compycode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="begda" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="endda" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MngPernr" Parameter="mngPernr" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_get_leaveattd_reviewResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pkey" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="AWART" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="ATEXT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TTL" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ltype" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="BEGUZ" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="ENDUZ" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,18 @@
+if(@SCHM = '01')
+	BEGIN
+	if(@ExpType in (select expsetype from @exptypetbl))
+
+	select expsetype from @exptypetbl where expsetype not in (select EXP_TYPE from ess.ZZPTRV_SREC where cid=5 and lid=2)
+if exists(select EXP_TYPE from ess.ZZPTRV_SREC where cid=5 and EXP_TYPE not in (select EXP_TYPE from ess.ZZPTRV_SREC where cid=5 and lid=2)
+and S_DATE between @S_date and @E_date)
+		
+		begin
+			RAISERROR('-1',16,1);   
+			set @valid='false'
+			return
+		end
+		else
+		begin
+			set @valid='true'
+			return
+		end

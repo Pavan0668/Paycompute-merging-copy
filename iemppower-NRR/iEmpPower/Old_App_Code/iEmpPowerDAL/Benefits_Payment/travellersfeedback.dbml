@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPower" Class="travellersfeedbackDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=iEmpPower;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_create_travellers_feedback" Method="sp_create_travellers_feedback">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Traveller_Name" Parameter="traveller_Name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Travel_duration" Parameter="travel_duration" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Travel_arrangement" Parameter="travel_arrangement" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Accommodation_arrangement" Parameter="accommodation_arrangement" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Taxi_arrangement" Parameter="taxi_arrangement" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Visa_Passport_arrangement" Parameter="visa_Passport_arrangement" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="communication" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Overall_travel_experience" Parameter="overall_travel_experience" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Feedback" Parameter="feedback" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_travellers_feedback" Method="sp_Get_travellers_feedback">
+    <ElementType Name="sp_Get_travellers_feedbackResult">
+      <Column Name="FeedBack_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Traveller_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Travel_duration" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Travel_arrangement" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Accommodation_arrangement" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Taxi_arrangement" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Visa_Passport_arrangement" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Communication" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Overall_travel_experience" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Feedback" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

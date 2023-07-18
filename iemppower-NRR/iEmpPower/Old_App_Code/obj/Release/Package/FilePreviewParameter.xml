@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="anupamatestexample" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\iEmpPower\\iEmpPower\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\iEmpPower\\iEmpPower\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="anupamatestexample/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\iEmpPower\\iEmpPower\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="ASPNETDBConnectionString-Web.config Connection String" description="" value="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\ASPNETDB.MDF;Integrated Security=True;User Instance=True" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\iEmpPower\\iEmpPower\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ASPNETDBConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="iEmpPowerConnectionString-Web.config Connection String" description="" value="Data Source=TOSHIBA-PC\sqlexpress;Initial Catalog=iEmpPower;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\iEmpPower\\iEmpPower\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='iEmpPowerConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="ApplicationServices-Web.config Connection String" description="ApplicationServices Connection String used in web.config by the application to access the database." value="data source=.\sqlexpress; Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnetdb.mdf;User Instance=true" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\iEmpPower\\iEmpPower\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ApplicationServices']/@connectionString" />
+  </parameter>
+</parameters>

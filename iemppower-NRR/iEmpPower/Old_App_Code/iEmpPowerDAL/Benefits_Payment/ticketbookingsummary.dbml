@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPower" Class="ticketbookingsummaryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=iEmpPower;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_get_emp_summary_ticket_booked" Method="sp_get_emp_summary_ticket_booked">
+    <ElementType Name="sp_get_emp_summary_ticket_bookedResult">
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_emp_id" Method="sp_get_emp_id">
+    <Parameter Name="emp_name" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_get_emp_idResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_emp_summary_ticketbooking_details" Method="sp_get_emp_summary_ticketbooking_details">
+    <Parameter Name="emp_name" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_get_emp_summary_ticketbooking_detailsResult">
+      <Column Name="PROPOSAL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRAVEL_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TIME_OF_DEPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODE_OF_TRANSPOPRT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MEDIA_OF_CATEGORY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="[FROM]" Member="FROM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="[TO]" Member="TO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FLYNUM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ADVANCE_AMOUNT" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="AIRLINE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="VISA_REQUIRED" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FR_EXCHANGE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="INSUR_MEDICLAIM" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="SEAT_PREFERENCE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="MEAL_PREFERENCE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BAGGAGE_COUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HAND_BAGGAGE_COUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TravelType" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="VEHICLE_NUM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPower-NRR" Class="requisitions_traveldeskdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=iEmpPower-NRR;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_update_requisition_status_mst_dtl_for_traveldesk" Method="sp_update_requisition_status_mst_dtl_for_traveldesk">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REMARKS" Parameter="rEMARKS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REASON_FOR_CANCEL" Parameter="rEASON_FOR_CANCEL" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CURRENT_STATUS" Parameter="cURRENT_STATUS" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_Visa_Passport_Expiry" Method="sp_Get_Visa_Passport_Expiry">
+    <ElementType Name="sp_Get_Visa_Passport_ExpiryResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ICTYPE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="ICNUM" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_travel_requisition_details_for_traveldesk" Method="sp_get_travel_requisition_details_for_traveldesk">
+    <Parameter Name="TravelType_Id" Parameter="travelType_Id" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TRAVEL_DATE" Parameter="tRAVEL_DATE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="sp_get_travel_requisition_details_for_traveldeskResult">
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRAVEL_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MODE_OF_TRANSPOPRT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FZTXT" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="MEDIA_OF_CATEGORY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TEXT25" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="FromValue" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ToValue" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TravelType" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TIME_OF_DEPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VEHICLE_NUM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FLYNUM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ADVANCE_AMOUNT" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="AIRLINE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="VISA_REQUIRED" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FR_EXCHANGE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="INSUR_MEDICLAIM" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="SEAT_PREFERENCE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="MEAL_PREFERENCE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BAGGAGE_COUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HAND_BAGGAGE_COUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRAVELER_REMARKS" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="HOD_REMARKS" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TD_REMARKS" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="REASON_FOR_CANCEL" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRIP_END_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ARRIVAL_TIME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REASON" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_update_requisition_mst_dtl_for_traveldesk" Method="sp_update_requisition_mst_dtl_for_traveldesk">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CHK" Parameter="cHK" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TRAVEL_DATE" Parameter="tRAVEL_DATE" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="TIME_OF_DEPT" Parameter="tIME_OF_DEPT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MODE_OF_TRANSPOPRT" Parameter="mODE_OF_TRANSPOPRT" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="MEDIA_OF_CATEGORY" Parameter="mEDIA_OF_CATEGORY" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEHICLE_NUM" Parameter="vEHICLE_NUM" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REGION_FROM" Parameter="rEGION_FROM" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="REGION_TO" Parameter="rEGION_TO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FLYNUM" Parameter="fLYNUM" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ADVANCE_AMOUNT" Parameter="aDVANCE_AMOUNT" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="AIRLINE" Parameter="aIRLINE" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="VISA_REQUIRED" Parameter="vISA_REQUIRED" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="FR_EXCHANGE" Parameter="fR_EXCHANGE" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="INSUR_MEDICLAIM" Parameter="iNSUR_MEDICLAIM" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="SEAT_PREFERENCE" Parameter="sEAT_PREFERENCE" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="MEAL_PREFERENCE" Parameter="mEAL_PREFERENCE" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="BAGGAGE_COUNT" Parameter="bAGGAGE_COUNT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HAND_BAGGAGE_COUNT" Parameter="hAND_BAGGAGE_COUNT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="STATUS_UPDATED_BY" Parameter="sTATUS_UPDATED_BY" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="REMARKS" Parameter="rEMARKS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TRIP_END_DATE" Parameter="tRIP_END_DATE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ARRIVAL_TIME" Parameter="aRRIVAL_TIME" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REASON" Parameter="rEASON" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

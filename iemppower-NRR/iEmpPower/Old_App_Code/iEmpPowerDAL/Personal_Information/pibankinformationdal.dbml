@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="pibankinformationdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_conf_checkvalidation_for_bank_info" Method="sp_conf_checkvalidation_for_bank_info">
+    <ElementType Name="sp_conf_checkvalidation_for_bank_infoResult">
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[values]" Member="values" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pi_create_bank_info" Method="sp_pi_create_bank_info">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUBTY" Parameter="sUBTY" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="EMFTX" Parameter="eMFTX" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="BKPLZ" Parameter="bKPLZ" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="BKORT" Parameter="bKORT" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="BANKS" Parameter="bANKS" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="BANKL" Parameter="bANKL" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="BANKN" Parameter="bANKN" Type="System.String" DbType="VarChar(18)" />
+    <Parameter Name="ZLSCH" Parameter="zLSCH" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="ZWECK" Parameter="zWECK" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="WAERS" Parameter="wAERS" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="isapproved" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="isactive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SuperVisorStatus" Parameter="superVisorStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HRStatus" Parameter="hRStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HR_Pernr" Parameter="hR_Pernr" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Pernr" Parameter="superVisor_Pernr" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="pernrEmail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_pi_update_bank_info" Method="sp_pi_update_bank_info">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUBTY" Parameter="sUBTY" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="EMFTX" Parameter="eMFTX" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="BKPLZ" Parameter="bKPLZ" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="BKORT" Parameter="bKORT" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="BANKS" Parameter="bANKS" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="BANKL" Parameter="bANKL" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="BANKN" Parameter="bANKN" Type="System.String" DbType="VarChar(18)" />
+    <Parameter Name="ZLSCH" Parameter="zLSCH" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="ZWECK" Parameter="zWECK" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="WAERS" Parameter="wAERS" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="OLD_BANKN" Parameter="oLD_BANKN" Type="System.String" DbType="VarChar(18)" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pkey" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="SuperVisorStatus" Parameter="superVisorStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HRStatus" Parameter="hRStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HR_Pernr" Parameter="hR_Pernr" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Pernr" Parameter="superVisor_Pernr" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="pernrEmail" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_pi_get_bank_info_full" Method="sp_pi_get_bank_info_full">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_pi_get_bank_info_fullResult">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SUBTY" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EMFTX" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="BKPLZ" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BKORT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="BANKS" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="BANKL" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="BANKN" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="ZLSCH" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ZWECK" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="LANDX" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="TEXT1" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pi_get_bank_info" Method="sp_pi_get_bank_info">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_pi_get_bank_infoResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="pkey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BANKS" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="BANKL" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="BANKN" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="WAERS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="LANDX" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="TEXT1" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="LTEXT" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="RecordCnt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

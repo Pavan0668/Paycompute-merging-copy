@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPowerRangsons_test" Class="PMSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SNC-PC;Initial Catalog=iEmpPowerRangsons_test;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_apr_load_Templates" Method="sp_apr_load_Templates">
+    <Parameter Name="APPRAISEE_ID" Parameter="aPPRAISEE_ID" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_apr_load_TemplatesResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="APPRAISAL_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISAL_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISEE_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISEE_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISER_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISER_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID4" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID5" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID6" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID7" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="OTHERS_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUBSTAT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_apr_load_Templates_For_Managers" Method="sp_apr_load_Templates_For_Managers">
+    <Parameter Name="APPRAISER_ID" Parameter="aPPRAISER_ID" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_apr_load_Templates_For_ManagersResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="APPRAISAL_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISAL_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISEE_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISEE_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISER_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISER_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID4" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID5" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID6" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID7" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="OTHERS_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUBSTAT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_PARTID" Method="sp_Get_PARTID">
+    <Parameter Name="APPRAISAL_ID" Parameter="aPPRAISAL_ID" Type="System.String" DbType="Char(32)" />
+    <ElementType Name="sp_Get_PARTIDResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="APPRAISAL_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISAL_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISEE_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISEE_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISER_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="APPRAISER_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID4" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID5" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID6" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PART_ID7" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="OTHERS_ID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUBSTAT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_MailList_PMS" Method="sp_Get_MailList_PMS">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="HR_Name" Parameter="hR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_Person_Emailid" Method="sp_get_Person_Emailid">
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_get_Person_EmailidResult">
+      <Column Name="USRID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_apr_update_Templates_status" Method="sp_apr_update_Templates_status">
+    <Parameter Name="APPRAISAL_ID" Parameter="aPPRAISAL_ID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="APPRAISEE_ID" Parameter="aPPRAISEE_ID" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SUBSTAT" Parameter="sUBSTAT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SuperVisorStatus" Parameter="superVisorStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HRStatus" Parameter="hRStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HR_Name" Parameter="hR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_apr_update_Templates_status_by_Mngr" Method="sp_apr_update_Templates_status_by_Mngr">
+    <Parameter Name="APPRAISAL_ID" Parameter="aPPRAISAL_ID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="APPRAISER_ID" Parameter="aPPRAISER_ID" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SUBSTAT" Parameter="sUBSTAT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SuperVisorStatus" Parameter="superVisorStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HRStatus" Parameter="hRStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HR_Name" Parameter="hR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

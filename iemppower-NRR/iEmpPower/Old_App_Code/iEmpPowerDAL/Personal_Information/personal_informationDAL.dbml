@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="personal_informationDALDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PayCompute20032020ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.payc_pi_load_Employee_Contact_info" Method="payc_pi_load_Employee_Contact_info">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="App_EmpID" Parameter="app_EmpID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_pi_load_Employee_Contact_infoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_tye_text" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Contact_Type_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Approved_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Approved_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_pi_load_Employee_info" Method="payc_pi_load_Employee_info">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="App_EmpID" Parameter="app_EmpID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_pi_load_Employee_infoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="F_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="M_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="L_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Material_Status" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="material_ststText" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Father_Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Mother_Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Spouse_Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Approved_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Approved_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Salutation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_Photo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_pi_load_Employee_Address_info" Method="payc_pi_load_Employee_Address_info">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="App_EmpID" Parameter="app_EmpID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_pi_load_Employee_Address_infoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="addr_tye_text" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="ResNo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Locality" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="country_text" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="state_text" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Pincode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ward_Num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STD_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Approved_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Approved_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Start_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="End_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_pi_load_Employee_Bank_info" Method="payc_pi_load_Employee_Bank_info">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="App_EmpID" Parameter="app_EmpID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_pi_load_Employee_Bank_infoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Bank_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Acc_Num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IFSC_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Bank_Branch" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Bank_District" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="Branch_Country" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="country_text" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="Branch_State" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="BLAND" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="State_text" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Approved_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Approved_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_pi_load_Employee_Benefits_info" Method="payc_pi_load_Employee_Benefits_info">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="App_EmpID" Parameter="app_EmpID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_pi_load_Employee_Benefits_infoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ESI_Applicable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ESI_Num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ESI_Dispencary" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="PF_Applicable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PF_Num" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PF_Num_Dept_File" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Restrict_PF" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Zero_Pension" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Zero_PT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Approved_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Approved_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_pi_load_Employee_Document_info" Method="payc_pi_load_Employee_Document_info">
+    <Parameter Name="CompanyCode" Parameter="companyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="App_EmpID" Parameter="app_EmpID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_pi_load_Employee_Document_infoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Doc_Types" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Doc_tye_text" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Doc_Type_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Approved_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Approved_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Document_Path" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,371 @@
+F:\Monica__PD_Copy\Divith\On 27122018 Current PRD\PRDCOPY_tt_26122018\PRDCOPY_tt_13112018\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\Monica__PD_Copy\Divith\On 27122018 Current PRD\PRDCOPY_tt_26122018\PRDCOPY_tt_13112018\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\Monica__PD_Copy\Divith\On 27122018 Current PRD\PRDCOPY_tt_26122018\PRDCOPY_tt_13112018\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\Monica__PD_Copy\Divith\On 27122018 Current PRD\PRDCOPY_tt_26122018\PRDCOPY_tt_13112018\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\Monica__PD_Copy\Divith\On 27122018 Current PRD\PRDCOPY_tt_26122018\PRDCOPY_tt_13112018\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\Monica__PD_Copy\Divith\On 27122018 Current PRD\PRDCOPY_tt_26122018\PRDCOPY_tt_13112018\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD29012019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD26022019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD26022019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD26022019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD26022019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD26022019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD26022019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD26022019\PRDCOPY_29012019\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD06032019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD06032019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD06032019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD06032019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD06032019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD06032019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD06032019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD22032019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD22032019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD22032019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD22032019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD22032019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD22032019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD22032019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\27032019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\27032019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\27032019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\27032019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\27032019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\27032019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\27032019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD15042019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD15042019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD15042019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD15042019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD15042019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD15042019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD15042019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD01052019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD01052019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD01052019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD01052019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD01052019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD01052019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD22052019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD22052019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD22052019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD22052019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD22052019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD22052019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD22052019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD04062019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD04062019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD04062019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD04062019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD04062019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD04062019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD04062019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD19062019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD19062019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD19062019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD19062019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD19062019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD19062019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD19062019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD25062019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD25062019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD25062019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD25062019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD25062019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD25062019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD25062019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD_Copy\PRD15072019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD_Copy\PRD15072019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD_Copy\PRD15072019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD_Copy\PRD15072019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD_Copy\PRD15072019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD_Copy\PRD15072019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD_Copy\PRD15072019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD_Copy\PRD19072019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD_Copy\PRD19072019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD_Copy\PRD19072019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD_Copy\PRD19072019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD_Copy\PRD19072019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD_Copy\PRD19072019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD_Copy\PRD19072019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD_Copy\PRD23072019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD_Copy\PRD23072019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD_Copy\PRD23072019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD_Copy\PRD23072019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD_Copy\PRD23072019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD_Copy\PRD23072019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD_Copy\PRD23072019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD_Copy\PRD01082019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD_Copy\PRD01082019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD_Copy\PRD01082019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD_Copy\PRD01082019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD_Copy\PRD01082019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD_Copy\PRD01082019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD_Copy\PRD01082019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD_Copy\PRD24092019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD_Copy\PRD24092019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD_Copy\PRD24092019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD_Copy\PRD24092019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD_Copy\PRD24092019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD_Copy\PRD24092019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD_Copy\PRD24092019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD_Copy\PRD09102019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD_Copy\PRD09102019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD_Copy\PRD09102019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD_Copy\PRD09102019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD_Copy\PRD09102019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD_Copy\PRD09102019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD_Copy\PRD09102019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD_Copy\PRD04112019\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD_Copy\PRD04112019\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD_Copy\PRD04112019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD_Copy\PRD04112019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD_Copy\PRD04112019\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD_Copy\PRD04112019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD_Copy\PRD04112019\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PRD_Copy\PRD08012020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD_Copy\PRD08012020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD_Copy\PRD08012020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD_Copy\PRD08012020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD_Copy\PRD08012020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD_Copy\PRD08012020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD_Copy\PRD08012020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\Paycompute 18032020\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\Paycompute 18032020\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\Paycompute 18032020\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\Paycompute 18032020\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\Paycompute 18032020\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\Paycompute 18032020\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\Paycompute 18032020\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\Paycompute\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\Paycompute\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\Paycompute\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\Paycompute\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\Paycompute\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\Paycompute\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\Paycompute\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PayCompute_new\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PayCompute_new\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PayCompute_new\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PayCompute_new\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PayCompute_new\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PayCompute_new\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PayCompute_new\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+G:\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+G:\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+G:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+G:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+G:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+G:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+G:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+G:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+G:\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+G:\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+G:\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+G:\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+G:\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PayCompute_new\08042020\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PayCompute_new\08042020\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PayCompute_new\08042020\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PayCompute_new\08042020\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\PayCompute_new\08042020\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PayCompute_new\08042020\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PayCompute_new\08042020\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+E:\Paycompute_Final\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\Paycompute_NewUI\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\Paycompute_NewUI\Paycompute_NewUI withDB\Paycompute_PRDtechvi\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+G:\IEmpPower Paycompute V1\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+F:\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+F:\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+F:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+F:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+F:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+F:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+F:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+F:\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+F:\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+F:\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+F:\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+F:\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+F:\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+D:\New folder (5)\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+D:\New folder (5)\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+C:\Users\Administrator\Desktop\tables\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+D:\bhanupaycompute\paycompute_code\PRD02032020\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+D:\bhanumerging\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+D:\bhanumerging\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+D:\bhanumerging\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+D:\bhanumerging\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+D:\bhanumerging\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+D:\bhanumerging\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+D:\bhanumerging\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+D:\bhanumerging\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+D:\bhanumerging\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.cache
+D:\bhanumerging\iemppower-NRR\iEmpPower\obj\Debug\RdlCompile.compiled
+D:\bhanumerging\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+D:\bhanumerging\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+D:\bhanumerging\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csprojResolveAssemblyReference.cache
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\iEmpPower.dll.config
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\EnvDTE.dll
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\VsWebSite.Interop.dll
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\EnvDTE80.dll
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\stdole.dll
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csproj.AssemblyReference.cache
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csproj.CoreCompileInputs.cache
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csproj.CopyComplete
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+C:\Users\pavan\Downloads\iemppower-NRR\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\iEmpPower.dll.config
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\iEmpPower.dll
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\iEmpPower.pdb
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.dll
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Web.Http.dll
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.dll
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\EnvDTE.dll
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\VsWebSite.Interop.dll
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\EnvDTE80.dll
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\stdole.dll
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Net.Http.Formatting.xml
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Web.Http.xml
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\bin\System.Web.Http.WebHost.xml
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csproj.AssemblyReference.cache
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csproj.CoreCompileInputs.cache
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.csproj.CopyComplete
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.dll
+C:\software\Project for dotnet\iemppower-NRR\iemppower-NRR\iEmpPower\obj\Debug\iEmpPower.pdb

@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using iEmpPower.Old_App_Code.iEmpPowerDAL.Working_Time;
+using System.Data;
+
+/// <summary>
+/// Summary description for payslipbl
+/// </summary>
+public class payslipbl
+{
+	public payslipbl()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
+
+    payslipdalDataContext objPaySlipDataContext = new payslipdalDataContext();
+
+    public wtpayslipcollectionbo Get_PayslipDetails(payslipbo objPayslipBo)
+    {
+        wtpayslipcollectionbo objPayslipLst = new wtpayslipcollectionbo();
+        foreach (var vRow in objPaySlipDataContext.sp_wt_load_payslip(objPayslipBo.PERNR, objPayslipBo.YEAR, objPayslipBo.MONTH)) 
+
+        {
+            payslipbo objBo = new payslipbo();
+            objBo.PERNR = Convert.ToInt32(vRow.PERNR);
+            objBo.MONTH = vRow.month.ToString();
+            objBo.YEAR = vRow.year.ToString();
+            objBo.PAYSLIP = vRow.payslip.ToString();
+            objPayslipLst.Add(objBo);
+        }
+
+        return objPayslipLst;
+    }
+
+
+}

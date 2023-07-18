@@ -1,0 +1,1351 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=Edge" /><meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" /><title>
+	Ticketing Tool
+</title>
+    <!-- Favicon-->
+    
+    <link rel="icon" type="/images/png" sizes="16x16" href="/images/favicon.png" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css" /><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Core Css -->
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Waves Effect Css -->
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="../../plugins/morrisjs/morris.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../../css/style.css" rel="stylesheet" />
+
+
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+    
+
+    <script type="text/javascript" src="http://ff.kis.v2.scr.kaspersky-labs.com/07DFD6FA-0A38-6C4E-BDF2-C33979002C91/main.js" charset="UTF-8"></script><script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+
+
+    <style type="text/css">
+        .lnkbtn
+        {
+            display: none;
+            visibility: hidden;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function signout() {
+            document.getElementById("lnkBtnSignout1").click();
+        }
+    </script>
+
+
+    
+    <style>
+        .Td07 {
+            color: #004080;
+            font-size: 13px;
+            width: 10px;
+            padding: 8px;
+            text-align: center;
+            line-height: 20px !important;
+        }
+
+        .Td07Task {
+            color: #fff;
+            font-size: 13px;
+            width: 10px;
+            padding: 8px;
+            text-align: center;
+            line-height: 20px !important;
+        }
+
+        .Td10 {
+            width: 300px !important;
+            padding: 3px !important;
+            text-align: left !important;
+            line-height: 20px !important;
+        }
+
+        .Td06 {
+            color: #004080 !important;
+            font-size: 14px !important;
+            width: 180px !important;
+            padding: 3px !important;
+            text-align: left !important;
+            line-height: 20px !important;
+        }
+
+        .Td06Task {
+            color: #fff !important;
+            font-size: 14px !important;
+            width: 180px !important;
+            padding: 3px !important;
+            text-align: left !important;
+            line-height: 20px !important;
+        }
+
+        .resize {
+            resize: none !important;
+        }
+        /*AutoComplete flyout */
+        .completionList {
+            border: solid 1px #444444;
+            margin: 0px;
+            padding: 2px;
+            height: 100px;
+            overflow: auto;
+            background-color: #FFFFFF;
+            font-size: xx-small;
+        }
+
+        .listItem {
+            color: #1C1C1C;
+        }
+
+        .itemHighlighted {
+            background-color: #dbf2ff;
+        }
+
+        .accordionContent {
+            background-color: #D3DEEF;
+            border-color: -moz-use-text-color #2F4F4F #2F4F4F;
+            border-right: 1px dashed #2F4F4F;
+            border-style: none dashed dashed;
+            border-width: medium 1px 1px;
+            padding: 10px 5px 5px;
+            width: 70%;
+        }
+
+        .accordionHeaderSelected {
+            background-color: #00617c;
+            border: 1px solid #2F4F4F;
+            color: white !important;
+            cursor: pointer;
+            font-family: Arial,Sans-Serif;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 5px;
+            padding: 5px;
+            width: 70%;
+        }
+
+        .accordionHeader {
+            background-color: #00617c;
+            border: 1px solid #2F4F4F;
+            color: white !important;
+            cursor: pointer;
+            font-family: Arial,Sans-Serif;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 5px;
+            padding: 5px;
+            width: 70%;
+        }
+
+        .href {
+            color: White !important;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .PromptCSS {
+            color: Orchid;
+            font-size: large;
+            font-style: italic;
+            font-weight: bold;
+            background-color: Snow;
+            border: solid 1px Orchid;
+            height: 30px;
+        }
+
+        .modalBackground {
+            background-color: black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+            width: 100% !important;
+        }
+
+        .modalPopup {
+            background-color: #FFFFFF;
+            border-width: 3px;
+            border-style: solid;
+            border-color: black;
+            width: 100% !important;
+            height: 500px;
+        }
+
+        #MainContent_UPTASKCREATIONBTN {
+            width: 95% !important;
+            left: 20px !important;
+            top: 12px !important;
+            overflow: auto !important;
+        }
+
+        .paddingstyl {
+            padding-left: 10px !important;
+        }
+
+        .txtdec {
+            text-decoration: underline !important;
+        }
+    </style>
+    <script src="../../Scripts/jquery-3.1.1.min.js"></script>
+    <script src="../../js/Searchable.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("select").searchable({
+                maxListSize: 200, // if list size are less than maxListSize, show them all
+                maxMultiMatch: 300, // how many matching entries should be displayed
+                exactMatch: false, // Exact matching on search
+                wildcards: true, // Support for wildcard characters (*, ?)
+                ignoreCase: true, // Ignore case sensitivity
+                latency: 200, // how many millis to wait until starting search
+                warnMultiMatch: 'top {0} matches ...',
+                warnNoMatch: 'no matches ...',
+                zIndex: 'auto'
+            });
+        });
+
+    </script>
+
+<link href="../../App_Themes/SkinFile/StyleSheet.css" type="text/css" rel="stylesheet" /></head>
+<body class="theme-red">
+    <!-- Page Loader -->
+    
+    <!-- #END# Page Loader -->
+    <form method="post" action="./CreateIssueTicket.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1" autocomplete="off" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=04JSblFBefofWjE53ITqALiybJFilsPiU0JwsMrEw3LI811IiYwtQNryj4QAZ8_PoVr9EI4o0fIXlofyWBx69gnZ2YdcSWMRuvB2VRasz0I1&amp;t=636776919115427324" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=whK7gZN8OHEs6ac6nRqtzfFJIwkdXmyNRipMKCGgwSo3hW6e94RfuZi23f6gwqAd-GwwGZ66MKrWjDewwMtq96-Sepc9R4nm3drXrwstukQYTatHUfMWbTbv_ao4N-Qp3-6pLDf7HrUjA9V4ehR4MvEIpiITGYB5P1psyX4bL241&amp;t=6e962c21" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=KV3qUjmjEBnEAbCqD9jYESzHkaaz6xxEkMvP-CXBu3T945BSZZRwQZaszAFSrGrWoAiph5U4D3iWJI3cbAuxBNjw9HtmLHN-ZyedAIkYWed_ihzybJ_pws4j5xyxVxQEbuPYOlxOWLWOSAZbjJsBPcpusJR4-JHg9l5mU4vt1F3jD_NtrK64l3G8zHUtMHsb0&amp;t=ffffffff999c3159" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=tcFy8LmxHItvRzv5CG4RF8TYFWmXBGKZ3GfmhZ6uwZMclOdgkyG5suWyLJeVx1gQkXklCXSemZcHSL8zEteh-_ZCJmzO-bgrXECiMi3xQQD1qwc8GI2Q5SWYVl6zh1NYYJMRsp7LYMb77Q0P3K8tNQbIEh9R4MoBY1DfcBnnM0m-NfNDriQH5tzdcaKdkCee0&amp;t=ffffffff999c3159" type="text/javascript"></script>
+<script src="../../plugins/jquery/jquery.min.js" type="text/javascript"></script>
+<script src="../../plugins/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+<script src="../../plugins/bootstrap-select/js/bootstrap-select.js" type="text/javascript"></script>
+<script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js" type="text/javascript"></script>
+<script src="../../plugins/node-waves/waves.js" type="text/javascript"></script>
+<script src="../../plugins/jquery-countto/jquery.countTo.js" type="text/javascript"></script>
+<script src="../../plugins/raphael/raphael.min.js" type="text/javascript"></script>
+<script src="../../plugins/morrisjs/morris.js" type="text/javascript"></script>
+<script src="../../plugins/chartjs/Chart.bundle.js" type="text/javascript"></script>
+<script src="../../plugins/flot-charts/jquery.flot.js" type="text/javascript"></script>
+<script src="../../plugins/flot-charts/jquery.flot.resize.js" type="text/javascript"></script>
+<script src="../../plugins/flot-charts/jquery.flot.pie.js" type="text/javascript"></script>
+<script src="../../plugins/flot-charts/jquery.flot.categories.js" type="text/javascript"></script>
+<script src="../../plugins/flot-charts/jquery.flot.time.js" type="text/javascript"></script>
+<script src="../../plugins/jquery-sparkline/jquery.sparkline.js" type="text/javascript"></script>
+<script src="../../js/Admin2.js" type="text/javascript"></script>
+<script src="../../js/JScontrls.js" type="text/javascript"></script>
+<script src="../../js/pages/index.js" type="text/javascript"></script>
+<script src="../../js/demo.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=vpi4q0kGLA1Wnwx4JbwvhyEKTet20Ojv1BsCjxZYUAeCQ9gWGyM8gdFh2dKmSgq71oOnIfmxYat0GK2Fa7AlqarMGkJ61Da93UhEktJH1aZ7GrWzimBCKbjxkB4oMm291BRH7szJGW0BXNjWOorY4sT_PkQVY7xsPucP78c0szI1&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dGRm3ftGU2-vsGtr2Frs1ySr144qXl-xQ6-RIeo1wzpHB4MMioK6-YyYt3d5kJCqfX1Nkk-GxdhMa4_aNvd3DpQrZahJlHMop656kffJaJ9psT4JIKQtj5ZPTi73lHH7QHwOyJMDj_EB5FObwbrSA1NzVtCg3_VNnihVoLvbYsY1&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Kg_MiaiNduhLvQth8Vkmb6J0yCPuE5KmHSjwmGFecT3tMeIdq2Z65ESx0nTO6xOpTFpGOLpCdQ2dy0QV00jaePBOkzveoPz-rWLJpmmCxsN3OD9GnRgt5cJWRXHRJsdpZx8KtJqoq0atFRNqgBVclYlxmW_VrU9YUGKcztQ4vf01&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=m6S1UDE3xizuv4nPYqWKhyCdSFqkSgD88y0v6VV6NOFTqqzODb3fVpebEA4gGKVQYSuHcPmLWeoGBHEVuWP4OFnD_YhIR0IwlarA3Ump0Peqp0SCEGHLdOuHzVtYL9vBRVEXBR5NucS5dNYYPm3-pZp5WTxodUW1gaVgQbgf4KQ1&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Iv-e5AruYa1DxV95QOd_vDD6jNAWftI82vd4guqJw4RlpZWIaJ2CbxPVVno23wJtVu7iucxqrNT8PnxYA_PCbrshvHxqt0LFxNkB0p0_CtoJBRtU1G2tsPTRMH0ubNd0F5wYpJbyk-E1ZSlCp5_Rqio4du7NRC4WUKOYFqs1M2Y8HOYqLKHIrLtAaW90XSc50&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=HW19sfnts5y5KGmo6TzBGMLsSQEHeg1MZKb8DwbCZFwil6eab35t50K7TDtWSTEABhG4vD3hVRH31hDVmTiAnLXecMODvc_Az5f-XjN36KOl8YRQUhcLLe5avNY5ywvAg1U7QYXOOLhKJ85HnLybUpiB1BiSUHKGUggDBzaWn8H-dD8SW1BdUVFCbJC1E8M70&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=zvGL2YvxZXDTlunYirbGou7PAgx6A8Gi28Js0mPDIPLCkIjkZNPNastxd6eW8dnwYeMZP30_CrzQh8FQsMnev7OdY0wD1jDiGDEOS6vvYdTyjw1bkyKxwaAwA3PtHSDB5D87dajezXFyJAHq04DKSE_AE7XqW-WCAru9A-ksdXPFe956LiCNqr2zqrZfBy0T0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Cy_NsbNGDqjuP9QhyqRZrgmuvp28qiYgDQI5eVKhz4rQYiuvERWLof5_Md5O7It-oA5KVX3qNiHtspuXIYdBlVOd89EHN3T-fzF-xW-XzE36kpwdp0uaYOCbd992ZDMDzdQyYXDPfY_3tnNzYdt2DE2q46E_6MHRWcA-4vhfMTvi2HmTuuN7vOYT1uisEZXEgLXvSzxy3J2w777UVHxLPQ2&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=k3VnTdrk6EAynssKFmDmYPyivJYOWtG_IXum4tfkUWaETdV4wX7nHTqg9DE37MblWIR-NZaJbpn9tOrQTpmnC8gV0W-6PJq2VqQ1AEQDHUgJmQ7o7n61BgJQO9YSTrQdfEbeSxTVZufP_qQvsG7iU1DFld6GgRFTnARVN_aA7FKpQazv1IjMYDYBBvBeoFmP0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ekyxdbIKqmS3yQNY0wEIOyUrLtEUctqg89-bZ6bdLgZmtBLtTo8Z6aeC3ILfUPwtEm098F3fxdNHa4mMKTMJhw9i_nexxPwfUDdtZ5i1KC0f4Mc3-iiWT2IjSQON3NdHFgmN_76wJADuiYQIzeL5_RtgZRzIbBnVXvy2Qtg3qQXyhQkKaTsVz41n-zOWUvEZ0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Vf-uW5U77x6P48CDOj1-r22Ae3367qk4bC449b6hZZ6zgUtsjUUbUbPrYEkFTV14ZZZ9-9U_5gu7I-qjXtj3-xMdb3IlVykgxHv1lwCtf1oM2lpaUFZViwvUrM-V-BrjU5RORZCzVvyrL6XLSrMNcuKArmr50fTKpp3Umv8gqD3TjscHoHcXrH9Ys-YKJ0cTzB8o6LczObSo7XzeCIKesQ2&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=x45RJQad0zOts7WlVAAtGRiat7mt3fRAW1CHI7lv7oOYKtLowHOe8Zsh9H3RgNvKI7LcavesVLO6VwZa9m7R_UOxwQMrJ4yglPrf22C2EO2RwWEtJGxff3MOWu06zP4sP9pxpswxBqw9ofozEUvC-3oGpGAmMmypnntKJ0FOXXkFw46O2WBcz_-o5VuTQj_J0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4DBBE89A" />
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="693" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+
+
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+
+        <!-- Overlay For Sidebars -->
+        <div class="overlay"></div>
+        <!-- #END# Overlay For Sidebars -->
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="search-icon">
+                <i class="material-icons">search</i>
+            </div>
+            <input type="text" placeholder="START TYPING..." />
+            <div>
+                <a href="../../Account/Login.aspx" style="text-align: right">
+
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </div>
+        <!-- #END# Search Bar -->
+        <!-- Top Bar -->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                        <input type="hidden" id="_ispostback" value="True" />
+                   <input type="hidden" name="ctl00$_CSS" id="_CSS" />
+                    
+                    <div class="title">
+                        <img id="Image1" onclick="window.location=&#39;../../Dashboard.aspx&#39;" src="../../images/logo.png" alt="iEmpPower Logo" />
+                        
+
+                        
+
+                        <img id="imgCustomerLogo" onclick="window.location=&#39;../../Dashboard.aspx&#39;" src="../../images/itchamps_logo.png" style="height:50px;width:180px;" />
+
+
+                        <img id="ImgMenu" class="menustyle" src="../../images/outline_menu_white_18dp.png" />
+                        <div>
+                            <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                            <div id="divmenu"><a href="javascript:void(0);" class="bars"></a></div>
+
+                        </div>
+
+
+                        <div class="bdemp">
+                            <marquee scrollamount="3">
+                                
+                                <table class="">
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                     
+                                        </td>
+                                        
+                                    </tr>
+                                </table>
+                               
+                            </marquee>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="pull-right"><a href="javascript:signout()">
+                            <span>Sign Out</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+        <section>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                <!-- User Info -->
+                <div class="user-info">
+                    <div class="image">
+                        <img id="imgEmp" alt="User" src="../../EmpImages/EmpImage.jpg" style="height:48px;width:48px;" />
+                    </div>
+                    <div class="info-container">
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            
+                            
+                                    <span>
+                                        <span id="HeadLoginView_lblEmployyeName">CSSTeam | cssteam</span></span>
+
+                                    
+                                
+                        </div>
+                        <div id="divemail" class="email">css@itchamps.com</div>
+                        
+                    </div>
+                </div>
+                <!-- #User Info -->
+                <!-- Menu -->
+                <div class="menu">
+                    <ul id="ulmenu" class="list">
+                        <li class="header">MAIN NAVIGATION</li>
+                        
+                        
+                        <div id="pnltckngtool">
+	
+                            <li id="MenuTicketingTool">
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <i class="material-icons">report_problem</i>
+                                    <span>Ticketing Tool</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li id="Li4">
+                                        <a href="../../UI/Ticketing Tool/TicketingTDashBoard.aspx">Ticketing Tool Dashboard</a>
+                                    </li>
+                                    <li id="Li1">
+                                        <a href="../../UI/Ticketing Tool/IssueTracker.aspx">Issue Tracker</a>
+                                    </li>
+                                    <li id="Li3">
+                                        <a href="../../UI/Ticketing Tool/TicketingToolReport.aspx">Reports</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        
+</div>
+                        
+
+                        
+
+                        <li id="MenuMyaccount">
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">settings</i>
+                                <span>My Account</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="../../UI/UserAccount/changepassword.aspx">Change password</a>
+                                </li>
+                                <li>
+                                    <a href="../../UI/UserAccount/createquestionandanswer.aspx">Account Security Question</a>
+                                </li>
+                                <li id="MenuMaintainDirectory">
+                                    <a href="../../UI/Manager_Self_Service/who'swho.aspx">Directory</a>
+                                </li>
+                                
+                                
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:signout()">
+                                <i class="material-icons">exit_to_app</i>
+                                <span>Sign Out</span>
+                                <a id="lnkBtnSignout1" class="lnkbtn" href="javascript:__doPostBack(&#39;ctl00$lnkBtnSignout1&#39;,&#39;&#39;)">Sign Out</a>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- #Menu -->
+                <!-- Footer -->
+                <div class="legal">
+                    <div class="copyright">
+                        &copy; 2010 -
+                        2019
+                        
+                        <a href="http://itchamps.com/">ITChamps Software Pvt. Ltd.</a>
+                    </div>
+                    <div class="version">
+                        <b>Version: </b>2.0
+               
+                    </div>
+                </div>
+                <!-- #Footer -->
+            </aside>
+            <!-- #END# Left Sidebar -->
+            <!-- Right Sidebar -->
+            <aside id="rightsidebar" class="right-sidebar">
+                <ul class="nav nav-tabs tab-nav-right" role="tablist">
+
+                    <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+                    
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+                        <ul class="demo-choose-skin">
+                            <li data-theme="red">
+                                <div class="red"></div>
+                                <span>Red</span>
+                            </li>
+                            <li data-theme="pink">
+                                <div class="pink"></div>
+                                <span>Pink</span>
+                            </li>
+
+
+                            <li data-theme="purple">
+                                <div class="purple"></div>
+                                <span>Purple</span>
+                            </li>
+                            <li data-theme="deep-purple">
+                                <div class="deep-purple"></div>
+                                <span>Deep Purple</span>
+                            </li>
+                            <li data-theme="indigo" class="active">
+                                <div class="indigo"></div>
+                                <span>Indigo</span>
+                            </li>
+                            <li data-theme="blue">
+                                <div class="blue"></div>
+                                <span>Blue</span>
+                            </li>
+                            <li data-theme="light-blue">
+                                <div class="light-blue"></div>
+                                <span>Light Blue</span>
+                            </li>
+                            <li data-theme="cyan">
+                                <div class="cyan"></div>
+                                <span>Cyan</span>
+                            </li>
+                            <li data-theme="teal">
+                                <div class="teal"></div>
+                                <span>Teal</span>
+                            </li>
+                            <li data-theme="green">
+                                <div class="green"></div>
+                                <span>Green</span>
+                            </li>
+                            <li data-theme="light-green">
+                                <div class="light-green"></div>
+                                <span>Light Green</span>
+                            </li>
+                            <li data-theme="lime">
+                                <div class="lime"></div>
+                                <span>Lime</span>
+                            </li>
+                            <li data-theme="yellow">
+                                <div class="yellow"></div>
+                                <span>Yellow</span>
+                            </li>
+                            <li data-theme="amber">
+                                <div class="amber"></div>
+                                <span>Amber</span>
+                            </li>
+                            <li data-theme="orange">
+                                <div class="orange"></div>
+                                <span>Orange</span>
+                            </li>
+                            <li data-theme="deep-orange">
+                                <div class="deep-orange"></div>
+                                <span>Deep Orange</span>
+                            </li>
+                            <li data-theme="brown">
+                                <div class="brown"></div>
+                                <span>Brown</span>
+                            </li>
+                            <li data-theme="grey">
+                                <div class="grey"></div>
+                                <span>Grey</span>
+                            </li>
+                            <li data-theme="blue-grey">
+                                <div class="blue-grey"></div>
+                                <span>Blue Grey</span>
+                            </li>
+                            <li data-theme="black">
+                                <div class="black"></div>
+                                <span>Black</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <!-- #END# Right Sidebar -->
+        </section>
+        <div>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="card">
+                                
+
+    <div class="body">
+        <div id="MainContent_TicketDiv">
+            <div class="header">
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-sm-6">
+                        <span class="HeadFontSize">Tickets</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <span id="MainContent_LblMsg" class="lblValidation" style="color:Transparent;"></span>
+
+            <div class="DivSpacer01">
+
+
+                <table style="float: right"><tr>
+                   <td> <a id="MainContent_LblCreateTask" class="Fr paddingstyl txtdec" href="javascript:__doPostBack(&#39;ctl00$MainContent$LblCreateTask&#39;,&#39;&#39;)" style="color:#00617C;">Task</a>
+                    </td><td>
+                        <p class="paddingstyl">| </p>
+                    </td>
+                    <td>
+                        
+                            <a id="MainContent_LinkBtnBack" class="Fr paddingstyl txtdec" href="javascript:__doPostBack(&#39;ctl00$MainContent$LinkBtnBack&#39;,&#39;&#39;)" style="color:#00617C;">Back</a>
+                        </td>
+                    </tr> 
+                </table>
+            </div>
+
+
+            
+
+
+            <div>
+                <table cellspacing="0" id="MainContent_FormTicket" style="width:99%;border-collapse:collapse;">
+	<tr>
+		<td colspan="2">
+
+                        <div class="DivSpacer01"></div>
+                        <div id="div1" style="float: left; width: 50%">
+                            <table style="border-collapse: collapse; width: 100%;">
+
+
+
+                                <tr>
+                                    <td class="Td06">Ticket ID</td>
+                                    <td class="Td07"><b>:</b> </td>
+                                    <td>10166 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="Td06">Title</td>
+                                    <td class="Td07"><b>:</b> </td>
+                                    <td>Mandatory templates for Documentation 
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="Td06">Issue Description</td>
+                                    <td class="Td07"><b>:</b> </td>
+                                    <td>Mandatory templates needed by consultants for Documentation 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="Td06">Client</td>
+                                    <td class="Td07"><b>:</b> </td>
+                                    <td>00000127-K Karthik 
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="Td06">Raised By</td>
+                                    <td class="Td07"><b>:</b> </td>
+                                    <td>Karthik.K 
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                        <div id="div2" style="float: right; width: 50%">
+                            <table style="border-collapse: collapse; width: 100%;">
+
+
+                                <tr>
+                                    <td class="Td06">Current Status</td>
+                                    <td class="Td07"><b>:</b> </td>
+                                    <td>Closed 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="Td06">Currently With</td>
+                                    <td class="Td07"><b>:</b> </td>
+                                    <td>cssteam -  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="Td06">Last Modified By</td>
+                                    <td class="Td07"><b>:</b> </td>
+                                    <td>cssteam-  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="Td06">Last Modified On</td>
+                                    <td class="Td07"><b>:</b> </td>
+
+                                    <td>
+                                        03-Jan-2019 17:41:52 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="Td06">Agent</td>
+                                    <td class="Td07"><b>:</b> </td>
+                                    <td>00000256-Divith K M 
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </td>
+	</tr>
+</table>
+
+            </div>
+
+            <div class="DivSpacer01"></div>
+
+            <div id="MainContent_DivTicketForm">
+                
+                <table id="MainContent_Tblticket2">
+	<tr>
+		<td class="Td06">Requestor MailID 
+                        </td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <input name="ctl00$MainContent$TxtUsrMailID" type="text" value="karthik.k@itchamps.com" maxlength="200" id="MainContent_TxtUsrMailID" disabled="disabled" tabindex="5" class="aspNetDisabled txtDropDownwidth1" />
+
+                        </td>
+		<td>
+                            <span id="MainContent_RFV_TxtUsrMailID" style="color:Red;display:none;">Please Enter User Mail ID</span>
+                            <span id="MainContent_REV_TxtUsrMailID" style="color:Red;display:none;">Invalid E-mail</span>
+                        </td>
+	</tr>
+	<tr>
+		<td class="Td06">CC MailID's (Separated by comma and no space) 
+                        </td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <input name="ctl00$MainContent$TxtCCMailID" type="text" value="css@itchamps.com" id="MainContent_TxtCCMailID" disabled="disabled" tabindex="6" class="aspNetDisabled txtDropDownwidth1" />
+                            
+                        </td>
+		<td>
+                            <span id="MainContent_REV_TxtCCMailID" style="color:Red;display:none;">Invalid E-mail</span>
+
+                        </td>
+		<td></td>
+	</tr>
+	<tr id="MainContent_AssindTotr">
+		<td class="Td06">Assigned To
+                        </td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            
+                            <div>
+                                <select name="ctl00$MainContent$ddlAssignee" id="MainContent_ddlAssignee" disabled="disabled" tabindex="7" class="aspNetDisabled txtDropDownwidth1" onclick="this.size=1;" onMouseOut="this.size=1;" style="position: absolute;">
+			<option selected="selected" value="0"> - SELECT - </option>
+			<option value="00000005">00000005 - Santhosh Kumar G</option>
+			<option value="00000009">00000009 - Venu Kumar S</option>
+			<option value="00000027">00000027 - Ashok Kumar R</option>
+			<option value="00000070">00000070 - Meenakshi .</option>
+			<option value="00000090">00000090 - Vijay Kumar KB</option>
+			<option value="00000097">00000097 - Kiran Navale</option>
+			<option value="00000105">00000105 - Juturu Madhan MohanReddy</option>
+			<option value="00000110">00000110 - Sukant S. Chakraborthy</option>
+			<option value="00000125">00000125 - Anirudh Srinidhi</option>
+			<option value="00000127">00000127 - K Karthik</option>
+			<option value="00000129">00000129 - N Chandrashekhara</option>
+			<option value="00000134">00000134 - Nischith R</option>
+			<option value="00000143">00000143 - Prashanth V</option>
+			<option value="00000159">00000159 - Kruthi G.S</option>
+			<option value="00000173">00000173 - Anoop Bharadwaj .A</option>
+			<option value="00000174">00000174 - Abhilash R</option>
+			<option value="00000175">00000175 - Harish Kumar N</option>
+			<option value="00000180">00000180 - K. Anuradha Rao</option>
+			<option value="00000181">00000181 - Nandini Siddura</option>
+			<option value="00000184">00000184 - Divyalakshmi M</option>
+			<option value="00000186">00000186 - Anirudh S</option>
+			<option value="00000191">00000191 - Narendra Kashyap V</option>
+			<option value="00000193">00000193 - Latha M.G</option>
+			<option value="00000196">00000196 - Prashanth Nagabhushan</option>
+			<option value="00000198">00000198 - Monica K.S</option>
+			<option value="00000201">00000201 - Rajani D Kanagond</option>
+			<option value="00000202">00000202 - Vijayalata Shivashimpi</option>
+			<option value="00000204">00000204 - Surabhi K</option>
+			<option value="00000205">00000205 - Vinod Raju D</option>
+			<option value="00000207">00000207 - Bhanuprakash Chetti</option>
+			<option value="00000209">00000209 - Jollu Subbarayudu</option>
+			<option value="00000210">00000210 - Amit L Doijode</option>
+			<option value="00000212">00000212 - Praveen G</option>
+			<option value="00000218">00000218 - Sudha .</option>
+			<option value="00000220">00000220 - Syed Qamar Hasan</option>
+			<option value="00000224">00000224 - Vijayalakshmi B.S</option>
+			<option value="00000225">00000225 - Prashanth Kumar .P</option>
+			<option value="00000229">00000229 - Govind S.C</option>
+			<option value="00000230">00000230 - Doddapineni Manoj Kumar</option>
+			<option value="00000231">00000231 - Arjun Nayak M</option>
+			<option value="00000232">00000232 - Raghupathi P</option>
+			<option value="00000235">00000235 - Sowmya S</option>
+			<option value="00000236">00000236 - Ravi M</option>
+			<option value="00000242">00000242 - Ramila Sultana A</option>
+			<option value="00000243">00000243 - Manu H C</option>
+			<option value="00000244">00000244 - Mahesh S</option>
+			<option value="00000246">00000246 - Vinay V</option>
+			<option value="00000247">00000247 - Ajay T N</option>
+			<option value="00000249">00000249 - Sathish Kumar</option>
+			<option value="00000252">00000252 - T Dipti Shankar</option>
+			<option value="00000256">00000256 - Divith K M</option>
+			<option value="00000259">00000259 - Anusha N</option>
+			<option value="00000262">00000262 - Rekha J</option>
+			<option value="00000263">00000263 - L Krishna Prasad</option>
+			<option value="00000264">00000264 - Shivam Gupta</option>
+			<option value="00000265">00000265 - Anil Kumar</option>
+			<option value="00000266">00000266 - A N Likhita</option>
+			<option value="00000267">00000267 - Pruthvi Prasad K.S</option>
+			<option value="00000268">00000268 - Vinay P</option>
+			<option value="00000269">00000269 - Prince Gupta</option>
+			<option value="00000270">00000270 - Prathap Reddy Thimmasamudram</option>
+			<option value="00000273">00000273 - Shambuling Kallappa Ballolli</option>
+			<option value="00000274">00000274 - Vedamurthy Polepalli Govindarajulu</option>
+			<option value="00000275">00000275 - Sudarsan Reddy Ernapadu</option>
+			<option value="00000276">00000276 - Sindhu M S</option>
+			<option value="00000278">00000278 - Savitha Satish M K</option>
+			<option value="00000280">00000280 - Umesh Babu H S</option>
+			<option value="00000281">00000281 - Yamuna S</option>
+			<option value="00000282">00000282 - Bhavya M B</option>
+			<option value="00000283">00000283 - Dipti Kalanee</option>
+			<option value="00000284">00000284 - Roopa Anand</option>
+			<option value="00000285">00000285 - Shoaeb Imad</option>
+			<option value="00000286">00000286 - Muqhthadir Raihan</option>
+			<option value="00000287">00000287 - Ravi K Aithala</option>
+			<option value="00000288">00000288 - Prasad Mohan Talekar</option>
+			<option value="00000289">00000289 - Kammara Bhargav Achari</option>
+			<option value="00000290">00000290 - KR Sai Ram Reddy</option>
+			<option value="00000291">00000291 - Aditya Venkatesh Tatuskar</option>
+			<option value="00000292">00000292 - Vinutha R Nayaka</option>
+			<option value="00000293">00000293 - Gautam P Shetti</option>
+			<option value="00000294">00000294 - Chandu V</option>
+			<option value="00000295">00000295 - Sindhu Kondragunta</option>
+			<option value="cssteam">cssteam - Helpdesk</option>
+			<option value="customer">customer - customer</option>
+			<option value="Skanray">Skanray - Skanray</option>
+
+		</select>
+                                <input type="hidden" name="ctl00$MainContent$LSE_ddlAssignee_ClientState" id="MainContent_LSE_ddlAssignee_ClientState" />
+
+
+
+
+                            </div>
+                        </td>
+		<td>
+                            
+
+                        </td>
+	</tr>
+	<tr>
+		<td class="Td06">Priority
+                        </td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <select name="ctl00$MainContent$DDLIssuePriority" id="MainContent_DDLIssuePriority" disabled="disabled" tabindex="8" class="aspNetDisabled txtDropDownwidth1">
+			<option value="0"> - SELECT - </option>
+			<option value="1">Low</option>
+			<option value="2">Medium</option>
+			<option selected="selected" value="3">High</option>
+			<option value="4">Critical</option>
+
+		</select>
+                        </td>
+		<td>
+                            <span id="MainContent_RFV_DDLIssuePriority" style="color:Red;display:none;">Please Select Priority</span></td>
+	</tr>
+	<tr id="MainContent_trCategory">
+		<td class="Td06">Category
+                        </td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <select name="ctl00$MainContent$DDLIssueCategory" id="MainContent_DDLIssueCategory" disabled="disabled" tabindex="9" class="aspNetDisabled txtDropDownwidth1">
+			<option value="0"> - SELECT - </option>
+			<option value="1">FAQ</option>
+			<option value="2">Support Request</option>
+			<option value="3">Incident</option>
+			<option selected="selected" value="4">Change Request</option>
+			<option value="5">Problem Solving</option>
+			<option value="6">Project</option>
+
+		</select>
+                        </td>
+		<td>
+                            <span id="MainContent_RFV_DDLIssueCategory" style="color:Red;display:none;">Please select Category</span></td>
+	</tr>
+	<tr id="MainContent_trIssueCatCss">
+		<td class="Td06">Issue Category
+                        </td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <select name="ctl00$MainContent$DDLIssueCategoryCSS" id="MainContent_DDLIssueCategoryCSS" disabled="disabled" tabindex="10" class="aspNetDisabled txtDropDownwidth1">
+			<option value="0"> - SELECT - </option>
+			<option value="12">ABAP</option>
+			<option value="4">Configuration</option>
+			<option value="3">End User Trainning</option>
+			<option value="5">Finance</option>
+			<option value="6">HR</option>
+			<option selected="selected" value="7">IEmpPower</option>
+			<option value="9">Infra Structure</option>
+			<option value="8">IT</option>
+			<option value="2">Master Data</option>
+			<option value="10">Operations</option>
+			<option value="11">Others</option>
+			<option value="1">System Issue</option>
+
+		</select>
+                        </td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="Td06">Comments
+                        </td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <textarea name="ctl00$MainContent$TxtComments" rows="2" cols="20" id="MainContent_TxtComments" tabindex="11" class="txtMultiwidth">
+</textarea>
+                        </td>
+		<td>
+                            <span id="MainContent_RFV_TxtComments" style="color:Red;display:none;">Please enter comments</span></td>
+	</tr>
+	<tr>
+		<td class="Td06">Attachments
+                        </td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <input type="file" multiple="multiple" name="ctl00$MainContent$FU_Isssue" id="MainContent_FU_Isssue" tabindex="12" />
+                        </td>
+		<td>
+                            <span id="MainContent_FU_IsssueName"></span></td>
+	</tr>
+	<tr id="MainContent_Cbtr">
+		<td class="Td06">Review Required?</td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <span class="aspNetDisabled"><input id="MainContent_Cb_InReviewNeed" type="checkbox" name="ctl00$MainContent$Cb_InReviewNeed" disabled="disabled" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$Cb_InReviewNeed\&#39;,\&#39;\&#39;)&#39;, 0)" tabindex="13" /><label for="MainContent_Cb_InReviewNeed"> </label></span>
+                        </td>
+		<td></td>
+	</tr>
+	<tr>
+		<td class="Td06">Status
+                        </td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <select name="ctl00$MainContent$DDLIssueStatus" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$DDLIssueStatus\&#39;,\&#39;\&#39;)&#39;, 0)" id="MainContent_DDLIssueStatus" disabled="disabled" tabindex="14" class="aspNetDisabled txtDropDownwidth1">
+			<option value="0"> - SELECT - </option>
+			<option value="1">New</option>
+			<option value="2">InProgress</option>
+			<option value="7">Resolved</option>
+			<option value="8">Confirm</option>
+			<option selected="selected" value="9">Closed</option>
+			<option value="10">ReOpen</option>
+			<option value="11">Cancelled</option>
+			<option value="12">Closed-TR</option>
+			<option value="13">Customer Action</option>
+
+		</select>
+                        </td>
+		<td>
+                            <span id="MainContent_RFV_DDLIssueStatus" style="color:Red;display:none;">Please select Status</span></td>
+	</tr>
+	<tr id="MainContent_TrPlndhrs">
+		<td class="Td06">Planned Hours</td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <input name="ctl00$MainContent$TxtPlndHrs" type="text" value="4.00" id="MainContent_TxtPlndHrs" disabled="disabled" tabindex="15" class="aspNetDisabled txtDropDownwidth1" />
+                        </td>
+		<td>
+                            
+                        </td>
+	</tr>
+	<tr id="MainContent_TrActhrs">
+		<td class="Td06">Actual Hours</td>
+		<td class="Td07"><b>:</b> </td>
+		<td class="Td10">
+                            <input name="ctl00$MainContent$TxtTrActhrs" type="text" value="0.00" id="MainContent_TxtTrActhrs" disabled="disabled" tabindex="16" class="aspNetDisabled txtDropDownwidth1" />
+                        </td>
+		<td>
+                            
+                        </td>
+	</tr>
+</table>
+
+
+            </div>
+
+            <div class="DivSpacer01"></div>
+
+            <table id="MainContent_TblButtons">
+	<tr>
+		<td>&nbsp;&nbsp;<input type="submit" name="ctl00$MainContent$BtnBack" value="Back" id="MainContent_BtnBack" tabindex="17" class="btnStyle" /></td>
+		<td>&nbsp;&nbsp;
+                    </td>
+		<td>&nbsp;&nbsp;
+                    </td>
+		<td>&nbsp;&nbsp;
+                    </td>
+		<td>&nbsp;&nbsp;
+                    </td>
+		<td>&nbsp;&nbsp;
+                    
+                        </td>
+		<td>&nbsp;&nbsp;
+                    </td>
+		<td>&nbsp;&nbsp;
+                    </td>
+		<td>&nbsp;&nbsp;
+                    </td>
+	</tr>
+</table>
+
+
+            <div id="MainContent_UserAccordion">
+	<input type="hidden" name="ctl00$MainContent$UserAccordion_AccordionExtender_ClientState" id="MainContent_UserAccordion_AccordionExtender_ClientState" value="1" /><div id="MainContent" class="accordionHeader">
+		<a href="#" class="href">Comments</a>
+	</div><div id="MainContent" class="accordionContent" style="display:block;">
+		
+                            <div>
+
+
+                                <div>
+			<table class="Grid" cellspacing="1" cellpadding="4" id="MainContent_grdTicketsComments" style="color:#333333;border-color:#03345B;border-width:1px;border-style:Solid;font-family:verdana;font-size:8pt;width:99%;">
+				<tr style="color:White;background-color:#00617C;font-family:verdana;font-size:8pt;font-weight:bold;height:30px;">
+					<th scope="col">Slno</th><th scope="col">Ticket ID</th><th scope="col">Comments</th><th scope="col">Commented By</th><th scope="col">Commented On</th>
+				</tr><tr style="background-color:#F4F8F9;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                                <span id="MainContent_grdTicketsComments_LblSlno_0">1</span>
+                                            </td><td>10166</td><td>Please add this in iEmpPower -  ITSM dashboard as Mandatory templates.</td><td>
+                                                00000127 - K Karthik
+                                            </td><td>02-Jan-2019 11:08:17</td>
+				</tr><tr style="background-color:White;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                                <span id="MainContent_grdTicketsComments_LblSlno_1">2</span>
+                                            </td><td>10166</td><td>New tile is added in ITSM dashboard and moved PRD</td><td>
+                                                00000256 - Divith K M
+                                            </td><td>03-Jan-2019 16:55:10</td>
+				</tr><tr style="background-color:#F4F8F9;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                                <span id="MainContent_grdTicketsComments_LblSlno_2">3</span>
+                                            </td><td>10166</td><td>Updated to PRD</td><td>
+                                                00000127 - K Karthik
+                                            </td><td>03-Jan-2019 17:39:47</td>
+				</tr><tr style="background-color:White;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                                <span id="MainContent_grdTicketsComments_LblSlno_3">4</span>
+                                            </td><td>10166</td><td>Updated to PRD</td><td>
+                                                cssteam - 
+                                            </td><td>03-Jan-2019 17:41:52</td>
+				</tr>
+			</table>
+		</div>
+                            </div>
+                        
+	</div><div id="MainContent" class="accordionHeaderSelected">
+		<a href="#" class="href">Attachments</a>
+	</div><div id="MainContent" class="accordionContent" style="display:block;">
+		
+                            <div>
+
+
+                                <div>
+			<table class="Grid" cellspacing="1" cellpadding="4" id="MainContent_GrdTicketsAttachments" style="color:#333333;border-color:#03345B;border-width:1px;border-style:Solid;font-family:verdana;font-size:8pt;width:99%;">
+				<tr style="color:White;background-color:#00617C;font-family:verdana;font-size:8pt;font-weight:bold;height:30px;">
+					<th scope="col">Slno</th><th scope="col">Ticket ID</th><th scope="col">
+                                                Attachments
+                                            </th><th scope="col">Uploaded By</th><th scope="col">Uploaded On</th>
+				</tr><tr style="background-color:#F4F8F9;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                                <span id="MainContent_GrdTicketsAttachments_LblSlno_0">1</span>
+                                            </td><td>10166</td><td style="width:100px;">
+                                                <a id="MainContent_GrdTicketsAttachments_LinkButton1_0" href="javascript:__doPostBack(&#39;ctl00$MainContent$AccordionPane1_content$GrdTicketsAttachments$ctl02$LinkButton1&#39;,&#39;&#39;)" style="font-weight:bold;">Code Review Check List.xlsx</a>
+                                            </td><td>
+                                                00000127 - K Karthik
+                                            </td><td>02-Jan-2019 11:08:17</td>
+				</tr><tr style="background-color:White;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                                <span id="MainContent_GrdTicketsAttachments_LblSlno_1">2</span>
+                                            </td><td>10166</td><td style="width:100px;">
+                                                <a id="MainContent_GrdTicketsAttachments_LinkButton1_1" href="javascript:__doPostBack(&#39;ctl00$MainContent$AccordionPane1_content$GrdTicketsAttachments$ctl03$LinkButton1&#39;,&#39;&#39;)" style="font-weight:bold;">Code_Review_Test_Defect_log.xlsx</a>
+                                            </td><td>
+                                                00000127 - K Karthik
+                                            </td><td>02-Jan-2019 11:08:17</td>
+				</tr><tr style="background-color:#F4F8F9;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                                <span id="MainContent_GrdTicketsAttachments_LblSlno_2">3</span>
+                                            </td><td>10166</td><td style="width:100px;">
+                                                <a id="MainContent_GrdTicketsAttachments_LinkButton1_2" href="javascript:__doPostBack(&#39;ctl00$MainContent$AccordionPane1_content$GrdTicketsAttachments$ctl04$LinkButton1&#39;,&#39;&#39;)" style="font-weight:bold;">Proposed TS_V2.doc</a>
+                                            </td><td>
+                                                00000127 - K Karthik
+                                            </td><td>02-Jan-2019 11:08:17</td>
+				</tr><tr style="background-color:White;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                                <span id="MainContent_GrdTicketsAttachments_LblSlno_3">4</span>
+                                            </td><td>10166</td><td style="width:100px;">
+                                                <a id="MainContent_GrdTicketsAttachments_LinkButton1_3" href="javascript:__doPostBack(&#39;ctl00$MainContent$AccordionPane1_content$GrdTicketsAttachments$ctl05$LinkButton1&#39;,&#39;&#39;)" style="font-weight:bold;">Proposed_FS_V2.docx</a>
+                                            </td><td>
+                                                00000127 - K Karthik
+                                            </td><td>02-Jan-2019 11:08:17</td>
+				</tr>
+			</table>
+		</div>
+                            </div>
+                        
+	</div><div id="MainContent" class="accordionHeader">
+		<a href="#" class="href">Status</a> 
+	</div><div id="MainContent" class="accordionContent" style="display:none;">
+		
+
+
+                            <div>
+			<table class="Grid" cellspacing="1" cellpadding="4" id="MainContent_GrdTicketStatus" style="color:#333333;border-color:#03345B;border-width:1px;border-style:Solid;font-family:verdana;font-size:8pt;width:99%;">
+				<tr style="color:White;background-color:#00617C;font-family:verdana;font-size:8pt;font-weight:bold;height:30px;">
+					<th scope="col">Slno</th><th scope="col">Ticket ID</th><th scope="col">From User</th><th scope="col">To User</th><th scope="col">From Status</th><th scope="col">To Status</th><th scope="col">By</th><th scope="col">On</th>
+				</tr><tr style="background-color:#F4F8F9;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                            <span id="MainContent_GrdTicketStatus_LblSlno_0">1</span>
+                                        </td><td>10166</td><td>
+                                            00000127-K Karthik
+                                        </td><td>
+                                            00000256-Divith K M
+                                        </td><td>
+                                            
+                                        </td><td>
+                                            InProgress
+                                        </td><td>
+                                            00000127 - K Karthik
+                                        </td><td>02-Jan-2019 11:08:17</td>
+				</tr><tr style="background-color:White;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                            <span id="MainContent_GrdTicketStatus_LblSlno_1">2</span>
+                                        </td><td>10166</td><td>
+                                            00000256-Divith K M
+                                        </td><td>
+                                            00000127-K Karthik
+                                        </td><td>
+                                            InProgress
+                                        </td><td>
+                                            Resolved
+                                        </td><td>
+                                            00000256 - Divith K M
+                                        </td><td>03-Jan-2019 16:55:10</td>
+				</tr><tr style="background-color:#F4F8F9;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                            <span id="MainContent_GrdTicketStatus_LblSlno_2">3</span>
+                                        </td><td>10166</td><td>
+                                            00000127-K Karthik
+                                        </td><td>
+                                            cssteam-
+                                        </td><td>
+                                            Resolved
+                                        </td><td>
+                                            Confirm
+                                        </td><td>
+                                            00000127 - K Karthik
+                                        </td><td>03-Jan-2019 17:39:47</td>
+				</tr><tr style="background-color:White;font-family:verdana;font-size:8pt;height:30px;">
+					<td>
+                                            <span id="MainContent_GrdTicketStatus_LblSlno_3">4</span>
+                                        </td><td>10166</td><td>
+                                            cssteam-
+                                        </td><td>
+                                            cssteam-
+                                        </td><td>
+                                            Confirm
+                                        </td><td>
+                                            Closed
+                                        </td><td>
+                                            cssteam - 
+                                        </td><td>03-Jan-2019 17:41:52</td>
+				</tr>
+			</table>
+		</div>
+                        
+	</div>
+</div>
+
+
+        </div>
+
+        
+
+    </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("MainContent_RFV_TxtUsrMailID"), document.getElementById("MainContent_REV_TxtUsrMailID"), document.getElementById("MainContent_REV_TxtCCMailID"), document.getElementById("MainContent_RFV_DDLIssuePriority"), document.getElementById("MainContent_RFV_DDLIssueCategory"), document.getElementById("MainContent_RFV_TxtComments"), document.getElementById("MainContent_RFV_DDLIssueStatus"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var MainContent_RFV_TxtUsrMailID = document.all ? document.all["MainContent_RFV_TxtUsrMailID"] : document.getElementById("MainContent_RFV_TxtUsrMailID");
+MainContent_RFV_TxtUsrMailID.controltovalidate = "MainContent_TxtUsrMailID";
+MainContent_RFV_TxtUsrMailID.errormessage = "Please Enter User Mail ID";
+MainContent_RFV_TxtUsrMailID.display = "Dynamic";
+MainContent_RFV_TxtUsrMailID.validationGroup = "VGSubmit";
+MainContent_RFV_TxtUsrMailID.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+MainContent_RFV_TxtUsrMailID.initialvalue = "";
+var MainContent_REV_TxtUsrMailID = document.all ? document.all["MainContent_REV_TxtUsrMailID"] : document.getElementById("MainContent_REV_TxtUsrMailID");
+MainContent_REV_TxtUsrMailID.controltovalidate = "MainContent_TxtUsrMailID";
+MainContent_REV_TxtUsrMailID.focusOnError = "t";
+MainContent_REV_TxtUsrMailID.errormessage = "Invalid E-mail";
+MainContent_REV_TxtUsrMailID.display = "Dynamic";
+MainContent_REV_TxtUsrMailID.validationGroup = "VGSubmit";
+MainContent_REV_TxtUsrMailID.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+MainContent_REV_TxtUsrMailID.validationexpression = "\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+var MainContent_REV_TxtCCMailID = document.all ? document.all["MainContent_REV_TxtCCMailID"] : document.getElementById("MainContent_REV_TxtCCMailID");
+MainContent_REV_TxtCCMailID.controltovalidate = "MainContent_TxtCCMailID";
+MainContent_REV_TxtCCMailID.focusOnError = "t";
+MainContent_REV_TxtCCMailID.errormessage = "Invalid E-mail";
+MainContent_REV_TxtCCMailID.display = "Dynamic";
+MainContent_REV_TxtCCMailID.validationGroup = "VGSubmit";
+MainContent_REV_TxtCCMailID.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+MainContent_REV_TxtCCMailID.validationexpression = "\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*([,]\\s*\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)*";
+var MainContent_RFV_DDLIssuePriority = document.all ? document.all["MainContent_RFV_DDLIssuePriority"] : document.getElementById("MainContent_RFV_DDLIssuePriority");
+MainContent_RFV_DDLIssuePriority.controltovalidate = "MainContent_DDLIssuePriority";
+MainContent_RFV_DDLIssuePriority.errormessage = "Please Select Priority";
+MainContent_RFV_DDLIssuePriority.display = "Dynamic";
+MainContent_RFV_DDLIssuePriority.validationGroup = "VGSubmit";
+MainContent_RFV_DDLIssuePriority.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+MainContent_RFV_DDLIssuePriority.initialvalue = "0";
+var MainContent_RFV_DDLIssueCategory = document.all ? document.all["MainContent_RFV_DDLIssueCategory"] : document.getElementById("MainContent_RFV_DDLIssueCategory");
+MainContent_RFV_DDLIssueCategory.controltovalidate = "MainContent_DDLIssueCategory";
+MainContent_RFV_DDLIssueCategory.errormessage = "Please select Category";
+MainContent_RFV_DDLIssueCategory.display = "Dynamic";
+MainContent_RFV_DDLIssueCategory.validationGroup = "VGSubmit";
+MainContent_RFV_DDLIssueCategory.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+MainContent_RFV_DDLIssueCategory.initialvalue = "0";
+var MainContent_RFV_TxtComments = document.all ? document.all["MainContent_RFV_TxtComments"] : document.getElementById("MainContent_RFV_TxtComments");
+MainContent_RFV_TxtComments.controltovalidate = "MainContent_TxtComments";
+MainContent_RFV_TxtComments.errormessage = "Please enter comments";
+MainContent_RFV_TxtComments.display = "Dynamic";
+MainContent_RFV_TxtComments.validationGroup = "VGSubmit";
+MainContent_RFV_TxtComments.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+MainContent_RFV_TxtComments.initialvalue = "";
+var MainContent_RFV_DDLIssueStatus = document.all ? document.all["MainContent_RFV_DDLIssueStatus"] : document.getElementById("MainContent_RFV_DDLIssueStatus");
+MainContent_RFV_DDLIssueStatus.controltovalidate = "MainContent_DDLIssueStatus";
+MainContent_RFV_DDLIssueStatus.errormessage = "Please select Status";
+MainContent_RFV_DDLIssueStatus.display = "Dynamic";
+MainContent_RFV_DDLIssueStatus.validationGroup = "VGSubmit";
+MainContent_RFV_DDLIssueStatus.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+MainContent_RFV_DDLIssueStatus.initialvalue = "0";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+alert('Could not find file 'F:\PRDCOPY_tt_03012019\iemppower-NRR\iEmpPower\TicketingDoc\00000127-Code Review Check List-02_01_2019_11_08_17.xlsx'.');
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+
+theForm.oldOnLoad = window.onload;
+window.onload = WebForm_RestoreScrollPosition;
+
+document.getElementById('MainContent_RFV_TxtUsrMailID').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MainContent_RFV_TxtUsrMailID'));
+}
+
+document.getElementById('MainContent_REV_TxtUsrMailID').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MainContent_REV_TxtUsrMailID'));
+}
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.AutoCompleteBehavior, {"completionInterval":1,"completionListCssClass":"completionList","completionListItemCssClass":"listItem","completionSetCount":5,"delimiterCharacters":",","firstRowSelected":true,"highlightedItemCssClass":"itemHighlighted","id":"MainContent_EmpMailIDAutoCompleteExtender","minimumPrefixLength":1,"serviceMethod":"GetEmployeeMailId","servicePath":"../../WebService/Service.asmx","showOnlyCurrentWordInCompletionListItem":true}, null, null, $get("MainContent_TxtCCMailID"));
+});
+
+document.getElementById('MainContent_REV_TxtCCMailID').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MainContent_REV_TxtCCMailID'));
+}
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ListSearchBehavior, {"ClientStateFieldID":"MainContent_LSE_ddlAssignee_ClientState","id":"MainContent_LSE_ddlAssignee","isSorted":true,"promptText":"Search Assignee","queryPattern":1}, null, null, $get("MainContent_ddlAssignee"));
+});
+
+document.getElementById('MainContent_RFV_DDLIssuePriority').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MainContent_RFV_DDLIssuePriority'));
+}
+
+document.getElementById('MainContent_RFV_DDLIssueCategory').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MainContent_RFV_DDLIssueCategory'));
+}
+
+document.getElementById('MainContent_RFV_TxtComments').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MainContent_RFV_TxtComments'));
+}
+
+document.getElementById('MainContent_RFV_DDLIssueStatus').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MainContent_RFV_DDLIssueStatus'));
+}
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.FilteredTextBoxBehavior, {"FilterType":3,"ValidChars":".","id":"MainContent_FTBE_TxtPlndHrs"}, null, null, $get("MainContent_TxtPlndHrs"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.FilteredTextBoxBehavior, {"FilterType":3,"ValidChars":".","id":"MainContent_FilteredTextBoxExtender2"}, null, null, $get("MainContent_TxtTrActhrs"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.AccordionBehavior, {"ClientStateFieldID":"MainContent_UserAccordion_AccordionExtender_ClientState","ContentCssClass":"accordionContent","FadeTransitions":true,"FramesPerSecond":40,"HeaderCssClass":"accordionHeader","HeaderSelectedCssClass":"accordionHeaderSelected","SelectedIndex":1,"id":"MainContent_UserAccordion_AccordionExtender","requireOpenedPane":false,"suppressHeaderPostbacks":true}, null, null, $get("MainContent_UserAccordion"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

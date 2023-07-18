@@ -1,0 +1,726 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="ExpenseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-6D7ET0F\SQLEXPRESS;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Paycompute_NewUIPRDConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_approve_expense" Method="sp_approve_expense">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TOT_INCHARGE_PERSON_DEDUC" Parameter="tOT_INCHARGE_PERSON_DEDUC" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CORPORATE_OFFICE_DEDUC" Parameter="cORPORATE_OFFICE_DEDUC" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TOT_DEDUC" Parameter="tOT_DEDUC" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="AMOUNT_ALLOWED" Parameter="aMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="STATIONARY" Parameter="sTATIONARY" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="COURIER" Parameter="cOURIER" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="PANDT" Parameter="pANDT" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="COMP_PRODUCT_PURCHASE" Parameter="cOMP_PRODUCT_PURCHASE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="OTHERS" Parameter="oTHERS" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="MARK_DEVELOP_EXPENCE" Parameter="mARK_DEVELOP_EXPENCE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="BUS_PASS" Parameter="bUS_PASS" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="CONVEYANCE" Parameter="cONVEYANCE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="JC_MEETINGS" Parameter="jC_MEETINGS" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="GRAND_TOTAL" Parameter="gRAND_TOTAL" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_corporate_claims" Method="sp_create_corporate_claims">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TRIP_NUMBER" Parameter="tRIP_NUMBER" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DATE1" Parameter="dATE1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PLACE_FROM" Parameter="pLACE_FROM" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PLACE_TO" Parameter="pLACE_TO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MODE_OF_TRANSPORTATION" Parameter="mODE_OF_TRANSPORTATION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FARE" Parameter="fARE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DAILY_ALLOWANCE" Parameter="dAILY_ALLOWANCE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="LODGING_CHARGES" Parameter="lODGING_CHARGES" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="LOCAL_CONVEYANCE" Parameter="lOCAL_CONVEYANCE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DETAILS_MISC_EXP" Parameter="dETAILS_MISC_EXP" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="AMT_MISC_EXP" Parameter="aMT_MISC_EXP" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TOTAL" Parameter="tOTAL" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="SPKZL" Parameter="sPKZL" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="WAERS" Parameter="wAERS" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DATE2" Parameter="dATE2" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_expense" Method="sp_create_expense">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ENAME" Parameter="eNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="WERKS" Parameter="wERKS" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="PLSXT" Parameter="pLSXT" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="STEXT" Parameter="sTEXT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REPORT_TO" Parameter="rEPORT_TO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DA_DEDUCTION" Parameter="dA_DEDUCTION" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TA_DEDUCTION" Parameter="tA_DEDUCTION" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="OTR_EXP_DEDUCT" Parameter="oTR_EXP_DEDUCT" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TOT_INCHARGE_PERSON_DEDUC" Parameter="tOT_INCHARGE_PERSON_DEDUC" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CORPORATE_OFFICE_DEDUC" Parameter="cORPORATE_OFFICE_DEDUC" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TOT_DEDUC" Parameter="tOT_DEDUC" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="AMOUNT_ALLOWED" Parameter="aMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="STATIONARY" Parameter="sTATIONARY" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="COURIER" Parameter="cOURIER" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="PANDT" Parameter="pANDT" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="COMP_PRODUCT_PURCHASE" Parameter="cOMP_PRODUCT_PURCHASE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="OTHERS" Parameter="oTHERS" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="MARK_DEVELOP_EXPENCE" Parameter="mARK_DEVELOP_EXPENCE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="BUS_PASS" Parameter="bUS_PASS" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="CONVEYANCE" Parameter="cONVEYANCE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="JC_MEETINGS" Parameter="jC_MEETINGS" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="GRAND_TOTAL" Parameter="gRAND_TOTAL" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Enteredby" Parameter="enteredby" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Enteredon" Parameter="enteredon" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_expense_inward_entry" Method="sp_create_expense_inward_entry">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ENAME" Parameter="eNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="WERKS" Parameter="wERKS" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="PLSXT" Parameter="pLSXT" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="STEXT" Parameter="sTEXT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REPORT_TO" Parameter="rEPORT_TO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="amount" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_Expense_payment_reimburse" Method="sp_create_Expense_payment_reimburse">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ENAME" Parameter="eNAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CLAIMED" Parameter="cLAIMED" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ALLOWED" Parameter="aLLOWED" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DISALLOWED" Parameter="dISALLOWED" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REIMBURSE" Parameter="rEIMBURSE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_expense_statement" Method="sp_create_expense_statement">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGIN_DATE" Parameter="bEGIN_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="END_DATE" Parameter="eND_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DATE1" Parameter="dATE1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PLACE_WORK" Parameter="pLACE_WORK" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NIGHT_HALT" Parameter="nIGHT_HALT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CATEGORY" Parameter="cATEGORY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CATEGORYofplace" Parameter="cATEGORYofplace" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LODGE_BILLS" Parameter="lODGE_BILLS" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="BILL_AMOUNT" Parameter="bILL_AMOUNT" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TRAVEL_FROM" Parameter="tRAVEL_FROM" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TRAVEL_Via" Parameter="tRAVEL_Via" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TRAVEL_TO" Parameter="tRAVEL_TO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DISTANCE" Parameter="dISTANCE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ZMODE" Parameter="zMODE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TICKETS_PROD" Parameter="tICKETS_PROD" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="FARE" Parameter="fARE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DA" Parameter="dA" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TOTAL" Parameter="tOTAL" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="REMARKS" Parameter="rEMARKS" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Enteredby" Parameter="enteredby" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Enteredon" Parameter="enteredon" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_delete_Pernrwise_places" Method="sp_delete_Pernrwise_places">
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="placeid" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="placename" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_Category" Method="sp_Get_Category">
+    <ElementType Name="sp_Get_CategoryResult">
+      <Column Name="SPKZL" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Corporate_Claims" Method="sp_Get_Corporate_Claims">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Date1" Parameter="date1" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Get_Corporate_ClaimsResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Total Amount]" Member="Total_Amount" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_DA_Rate_International" Method="sp_Get_DA_Rate_International">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RGION" Parameter="rGION" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="SPKZL" Parameter="sPKZL" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="Days" Parameter="days" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BETRG" Parameter="bETRG" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_DA_Rate_Mgr" Method="sp_Get_DA_Rate_Mgr">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="LAND1" Parameter="lAND1" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RGION" Parameter="rGION" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="SPKZL" Parameter="sPKZL" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="BETRG" Parameter="bETRG" Type="System.Decimal" DbType="Decimal(38,2)" Direction="InOut" />
+    <Parameter Name="WAERS" Parameter="wAERS" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <ElementType Name="sp_Get_DA_Rate_MgrResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Expense_Details" Method="sp_Get_Expense_Details">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Get_Expense_DetailsResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTR_EXP_DEDUCT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TOT_INCHARGE_PERSON_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CORPORATE_OFFICE_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TOT_DEDUC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATIONARY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COURIER" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PANDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COMP_PRODUCT_PURCHASE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTHERS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MARK_DEVELOP_EXPENCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BUS_PASS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CONVEYANCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="JC_MEETINGS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GRAND_TOTAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="entered_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Expense_Inward_Entry" Method="sp_Get_Expense_Inward_Entry">
+    <ElementType Name="sp_Get_Expense_Inward_EntryResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="amount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Expense_Inward_Entry_Datewise" Method="sp_Get_Expense_Inward_Entry_Datewise">
+    <Parameter Name="Date" Parameter="date" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Get_Expense_Inward_Entry_DatewiseResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="amount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Expense_Inward_Entry_PERNRwise" Method="sp_Get_Expense_Inward_Entry_PERNRwise">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_Expense_Inward_Entry_PERNRwiseResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="amount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Expense_Inward_Entry_StatusDatewise" Method="sp_Get_Expense_Inward_Entry_StatusDatewise">
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Date" Parameter="date" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Get_Expense_Inward_Entry_StatusDatewiseResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="amount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Expense_Inward_Entry_STATUSwise" Method="sp_Get_Expense_Inward_Entry_STATUSwise">
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_Get_Expense_Inward_Entry_STATUSwiseResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="amount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Expense_Payment_Reimbursement" Method="sp_Get_Expense_Payment_Reimbursement">
+    <ElementType Name="sp_Get_Expense_Payment_ReimbursementResult">
+      <Column Name="EXPENSER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GRAND_TOTAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TOT_DEDUC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="REIMBURSE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Expense_Statement_Details" Method="sp_Get_Expense_Statement_Details">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGIN_DATE" Parameter="bEGIN_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="END_DATE" Parameter="eND_DATE" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Get_Expense_Statement_DetailsResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BEGIN_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="END_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DATE1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PLACE_WORK" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NIGHT_HALT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CATEGORY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CATEGORYOFPLACE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LODGE_BILLS" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="BILL_AMOUNT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TRAVEL_FROM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRAVEL_VIA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRAVEL_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DISTANCE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ZMODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TICKETS_PROD" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="FARE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TOTAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="entered_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_ExpenseType_Rate" Method="sp_Get_ExpenseType_Rate">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SPKZL" Parameter="sPKZL" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="BETRG" Parameter="bETRG" Type="System.String" DbType="NVarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_Fare_Rate" Method="sp_Get_Fare_Rate">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RGION" Parameter="rGION" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="SPKZL" Parameter="sPKZL" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="BETRG" Parameter="bETRG" Type="System.String" DbType="NVarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[sp_Get_HQ_and State]" Method="sp_Get_HQ_and_State" IsComposable="true">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="HQ" Parameter="hQ" Type="System.String" DbType="NVarChar(50)" Direction="InOut" />
+    <Parameter Name="state" Type="System.String" DbType="NVarChar(50)" Direction="InOut" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.sp_Get_Inward_Entry" Method="sp_Get_Inward_Entry">
+    <ElementType Name="sp_Get_Inward_EntryResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTR_EXP_DEDUCT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TOT_INCHARGE_PERSON_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CORPORATE_OFFICE_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TOT_DEDUC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATIONARY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COURIER" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PANDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COMP_PRODUCT_PURCHASE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTHERS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MARK_DEVELOP_EXPENCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BUS_PASS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CONVEYANCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="JC_MEETINGS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GRAND_TOTAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="entered_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Inward_Entry_PERNRwise" Method="sp_Get_Inward_Entry_PERNRwise">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_Inward_Entry_PERNRwiseResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTR_EXP_DEDUCT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TOT_INCHARGE_PERSON_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CORPORATE_OFFICE_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TOT_DEDUC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATIONARY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COURIER" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PANDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COMP_PRODUCT_PURCHASE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTHERS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MARK_DEVELOP_EXPENCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BUS_PASS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CONVEYANCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="JC_MEETINGS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GRAND_TOTAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="entered_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Payment" Method="sp_Get_Payment">
+    <ElementType Name="sp_Get_PaymentResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTR_EXP_DEDUCT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TOT_INCHARGE_PERSON_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CORPORATE_OFFICE_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TOT_DEDUC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATIONARY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COURIER" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PANDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COMP_PRODUCT_PURCHASE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTHERS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MARK_DEVELOP_EXPENCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BUS_PASS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CONVEYANCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="JC_MEETINGS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GRAND_TOTAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="entered_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Payment_Approve" Method="sp_Get_Payment_Approve">
+    <ElementType Name="sp_Get_Payment_ApproveResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTR_EXP_DEDUCT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TOT_INCHARGE_PERSON_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CORPORATE_OFFICE_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TOT_DEDUC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATIONARY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COURIER" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PANDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COMP_PRODUCT_PURCHASE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTHERS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MARK_DEVELOP_EXPENCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BUS_PASS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CONVEYANCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="JC_MEETINGS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GRAND_TOTAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="entered_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Payment_Approve_PERNRwise" Method="sp_Get_Payment_Approve_PERNRwise">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_Payment_Approve_PERNRwiseResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTR_EXP_DEDUCT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TOT_INCHARGE_PERSON_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CORPORATE_OFFICE_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TOT_DEDUC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATIONARY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COURIER" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PANDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COMP_PRODUCT_PURCHASE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTHERS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MARK_DEVELOP_EXPENCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BUS_PASS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CONVEYANCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="JC_MEETINGS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GRAND_TOTAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="entered_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Payment_Paid_PERNRwise" Method="sp_Get_Payment_Paid_PERNRwise">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_Payment_Paid_PERNRwiseResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTR_EXP_DEDUCT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TOT_INCHARGE_PERSON_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CORPORATE_OFFICE_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TOT_DEDUC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATIONARY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COURIER" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PANDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COMP_PRODUCT_PURCHASE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTHERS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MARK_DEVELOP_EXPENCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BUS_PASS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CONVEYANCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="JC_MEETINGS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GRAND_TOTAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="entered_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Payment_PERNRwise" Method="sp_Get_Payment_PERNRwise">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_Payment_PERNRwiseResult">
+      <Column Name="EXPENSE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="STEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REPORT_TO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BEGDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TA_DEDUCTION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTR_EXP_DEDUCT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TOT_INCHARGE_PERSON_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CORPORATE_OFFICE_DEDUC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TOT_DEDUC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AMOUNT_ALLOWED" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATIONARY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COURIER" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PANDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="COMP_PRODUCT_PURCHASE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OTHERS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MARK_DEVELOP_EXPENCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BUS_PASS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CONVEYANCE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="JC_MEETINGS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GRAND_TOTAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="entered_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="approved_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_PERNR_List" Method="sp_get_PERNR_List">
+    <ElementType Name="sp_get_PERNR_ListResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_place_List" Method="sp_get_place_List">
+    <ElementType Name="sp_get_place_ListResult">
+      <Column Name="RGION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEXT25" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Place_Rate" Method="sp_Get_Place_Rate">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RATE" Parameter="rATE" Type="System.String" DbType="NVarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_States" Method="sp_Get_States">
+    <ElementType Name="sp_Get_StatesResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STATES" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_statesforplace" Method="sp_get_statesforplace" IsComposable="true">
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.sp_insert_Pernrwise_places" Method="sp_insert_Pernrwise_places">
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="placeid" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="placename" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_payment_payment_expense" Method="sp_payment_payment_expense">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_payment_payment_expense_statement" Method="sp_payment_payment_expense_statement">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Update_Expense_Inward_Entry" Method="sp_Update_Expense_Inward_Entry">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_approve_expense_statement" Method="sp_approve_expense_statement">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BEGIN_DATE" Parameter="bEGIN_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="END_DATE" Parameter="eND_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DATE1" Parameter="dATE1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CATEGORY" Parameter="cATEGORY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ZMODE" Parameter="zMODE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FARE" Parameter="fARE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DA" Parameter="dA" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="approved_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="approved_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_DA_Rate" Method="sp_Get_DA_Rate">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="LAND1" Parameter="lAND1" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RGION" Parameter="rGION" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="SPKZL" Parameter="sPKZL" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="ExpenseDate" Parameter="expenseDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="BETRG" Parameter="bETRG" Type="System.Decimal" DbType="Decimal(38,2)" Direction="InOut" />
+    <Parameter Name="WAERS" Parameter="wAERS" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <ElementType Name="sp_Get_DA_RateResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_BasicInfo_Claims" Method="sp_Get_BasicInfo_Claims">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_BasicInfo_ClaimsResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PLANS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="WERKS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="OBJID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="S_PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="S_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="S_PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="S_USRID" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

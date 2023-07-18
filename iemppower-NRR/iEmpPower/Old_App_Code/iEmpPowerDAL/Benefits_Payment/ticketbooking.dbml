@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPower-NRR" Class="ticketbookingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=iEmpPower-NRR;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_get_empname_notbooked" Method="sp_get_empname_notbooked">
+    <ElementType Name="sp_get_empname_notbookedResult">
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_create_OutLocal_Accom_ticket_booked_details" Method="sp_create_OutLocal_Accom_ticket_booked_details">
+    <Parameter Name="Accommadation_req_id" Parameter="accommadation_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Payment" Parameter="payment" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Tariff" Parameter="tariff" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Booking_given_to" Parameter="booking_given_to" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Hotel_Invoice_Num" Parameter="hotel_Invoice_Num" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Bill_date" Parameter="bill_date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="Current_status" Parameter="current_status" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="outLocal" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_OutLocal_Vehi_ticket_booked_details" Method="sp_create_OutLocal_Vehi_ticket_booked_details">
+    <Parameter Name="Vehicle_req_id" Parameter="vehicle_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Vehicle_Source" Parameter="vehicle_Source" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Agent_Name" Parameter="agent_Name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Booking_passed_to" Parameter="booking_passed_to" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Vehicle_Num" Parameter="vehicle_Num" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Rate_kms" Parameter="rate_kms" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Driver_Name" Parameter="driver_Name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Contact_Number" Parameter="contact_Number" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Statutory_Req" Parameter="statutory_Req" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Agent_BillNum" Parameter="agent_BillNum" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Bill_Date" Parameter="bill_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Agent_BillAmnt" Parameter="agent_BillAmnt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Driver_Batta" Parameter="driver_Batta" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Total_km" Parameter="total_km" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Total_Cost" Parameter="total_Cost" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="CurrentStatus" Parameter="currentStatus" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="outLocal" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_emp_details_notbooked" Method="sp_get_emp_details_notbooked">
+    <Parameter Name="chk" Type="System.String" DbType="VarChar(3)" />
+    <ElementType Name="sp_get_emp_details_notbookedResult">
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROPOSAL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="[FROM]" Member="FROM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MODE_OF_TRANSPOPRT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MEDIA_OF_CATEGORY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEHICLE_NUM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TRAVEL_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UpdateRemarksForTravellerCancel" Method="sp_UpdateRemarksForTravellerCancel">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REASON_FOR_CANCEL" Parameter="rEASON_FOR_CANCEL" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateRemarksAccomForTravellerCancel" Method="sp_UpdateRemarksAccomForTravellerCancel">
+    <Parameter Name="Accommadation_req_id" Parameter="accommadation_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REASON_FOR_CANCEL" Parameter="rEASON_FOR_CANCEL" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateRemarksVehiForTravellerCancel" Method="sp_UpdateRemarksVehiForTravellerCancel">
+    <Parameter Name="Vehicle_req_id" Parameter="vehicle_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REASON_FOR_CANCEL" Parameter="rEASON_FOR_CANCEL" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_cancel_ticket_updateStatus" Method="sp_cancel_ticket_updateStatus">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CN_No" Parameter="cN_No" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CN_Date" Parameter="cN_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CN_Amnt" Parameter="cN_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Net_Amnt" Parameter="net_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_cancel_AccmmTicket_updateStatus" Method="sp_cancel_AccmmTicket_updateStatus">
+    <Parameter Name="Accommadation_req_id" Parameter="accommadation_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CN_No" Parameter="cN_No" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CN_Date" Parameter="cN_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CN_Amnt" Parameter="cN_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Net_Amnt" Parameter="net_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_cancel_VehiTicket_updateStatus" Method="sp_cancel_VehiTicket_updateStatus">
+    <Parameter Name="Vehicle_req_id" Parameter="vehicle_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CN_No" Parameter="cN_No" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CN_Date" Parameter="cN_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CN_Amnt" Parameter="cN_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Net_Amnt" Parameter="net_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_travelFTP_details_ForTraveller_ToCancel" Method="sp_get_travelFTP_details_ForTraveller_ToCancel">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_get_travelFTP_details_ForTraveller_ToCancelResult">
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRAVEL_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MODE_OF_TRANSPOPRT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FZTXT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MEDIA_OF_CATEGORY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TEXT25" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="FromValue" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ToValue" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TravelType" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TIME_OF_DEPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VEHICLE_NUM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FLYNUM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ADVANCE_AMOUNT" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="AIRLINE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="VISA_REQUIRED" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FR_EXCHANGE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="INSUR_MEDICLAIM" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="SEAT_PREFERENCE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="MEAL_PREFERENCE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BAGGAGE_COUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HAND_BAGGAGE_COUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRAVELER_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="HOD_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TD_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="REASON_FOR_CANCEL" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_proposal_For_Traveller_TOCancel" Method="sp_get_proposal_For_Traveller_TOCancel">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_get_proposal_For_Traveller_TOCancelResult">
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROPOSAL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRAVEL_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MODE_OF_TRANSPOPRT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FZTXT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MEDIA_OF_CATEGORY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TEXT25" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="FromValue" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ToValue" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TravelType" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TIME_OF_DEPT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VEHICLE_NUM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FLYNUM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ADVANCE_AMOUNT" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="AIRLINE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="VISA_REQUIRED" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FR_EXCHANGE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="INSUR_MEDICLAIM" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="SEAT_PREFERENCE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="MEAL_PREFERENCE" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BAGGAGE_COUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HAND_BAGGAGE_COUNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRAVELER_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="HOD_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TD_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_create_groupReq_Ticket" Method="sp_create_groupReq_Ticket">
+    <Parameter Name="member_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Ticket_ID" Parameter="ticket_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_ALL_Ticket_Booked_details" Method="sp_get_ALL_Ticket_Booked_details">
+    <ElementType Name="sp_get_ALL_Ticket_Booked_detailsResult">
+      <Column Name="TICKET_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROPOSAL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FLIGHT_TRAIN_BUS_NO" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="TICKET_NO" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PNR_NO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="COACH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SEAT_BIRTH" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CLASS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TICKET_FARE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ARRIVAL_TIME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DEPARTURE_TIME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TRAVEL_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Bill_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bill_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Bill_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CN_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CN_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CN_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Net_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_ALL_Accomm_Ticket_Booked_details" Method="sp_get_ALL_Accomm_Ticket_Booked_details">
+    <ElementType Name="sp_get_ALL_Accomm_Ticket_Booked_detailsResult">
+      <Column Name="Ticket_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accommadation_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROPOSAL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Payment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tariff" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Booking_given_to" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hotel_Invoice_Num" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bill_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CurrentStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Outlocal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CN_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CN_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CN_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Net_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_ALL_Vehi_Ticket_Booked_details" Method="sp_get_ALL_Vehi_Ticket_Booked_details">
+    <Parameter Name="Role" Parameter="role" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Vehicle_req_id" Parameter="vehicle_req_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_ALL_Vehi_Ticket_Booked_detailsResult">
+      <Column Name="Veh_Ticket_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vehicle_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROPOSAL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Vehicle_Source" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Agent_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Booking_passed_to" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vehicle_Num" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Rate_kms" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Driver_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Contact_Number" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Statutory_Req" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Agent_BillNum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bill_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Agent_BillAmnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Driver_Batta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Total_km" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Total_Cost" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CurrentStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Outlocal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CN_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CN_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CN_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Net_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_TravelRemarks" Method="sp_get_TravelRemarks">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_TravelRemarksResult">
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TRAVELER_REMARKS" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="HOD_REMARKS" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TD_REMARKS" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FINAL_REMARKS" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="REASON_FOR_CANCEL" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Ticket_Bill_Updates" Method="sp_Ticket_Bill_Updates">
+    <Parameter Name="Ticket_id" Parameter="ticket_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Bill_No" Parameter="bill_No" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Bill_Date" Parameter="bill_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Bill_Amnt" Parameter="bill_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Net_Amnt" Parameter="net_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Agent_Name" Parameter="agent_Name" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="role" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_Vendorlist" Method="sp_get_Vendorlist">
+    <ElementType Name="sp_get_VendorlistResult">
+      <Column Name="VENDOR_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EXPENSE_TYPE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Ticket_Booked_details" Method="sp_get_Ticket_Booked_details">
+    <ElementType Name="sp_get_Ticket_Booked_detailsResult">
+      <Column Name="TICKET_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROPOSAL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FLIGHT_TRAIN_BUS_NO" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="TICKET_NO" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PNR_NO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="COACH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SEAT_BIRTH" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CLASS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TICKET_FARE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ARRIVAL_TIME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DEPARTURE_TIME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TRAVEL_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Bill_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bill_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Bill_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CN_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CN_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CN_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Net_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Agent_Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Accomm_Ticket_Booked_details" Method="sp_get_Accomm_Ticket_Booked_details">
+    <ElementType Name="sp_get_Accomm_Ticket_Booked_detailsResult">
+      <Column Name="Ticket_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accommadation_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROPOSAL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Payment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tariff" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Booking_given_to" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hotel_Invoice_Num" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bill_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Amount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CurrentStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Outlocal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CN_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CN_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CN_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Net_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Agent_Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Vehi_Ticket_Booked_details" Method="sp_get_Vehi_Ticket_Booked_details">
+    <ElementType Name="sp_get_Vehi_Ticket_Booked_detailsResult">
+      <Column Name="Veh_Ticket_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vehicle_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROPOSAL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Vehicle_Source" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Agent_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Booking_passed_to" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vehicle_Num" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Rate_kms" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Driver_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Contact_Number" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Statutory_Req" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Agent_BillNum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bill_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Agent_BillAmnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Driver_Batta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Total_km" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Total_Cost" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CurrentStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Outlocal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CN_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CN_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CN_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Net_Amnt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_create_ticket_booked_details" Method="sp_create_ticket_booked_details">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PROPOSAL_ID" Parameter="pROPOSAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PRO_SEGMENT_ID" Parameter="pRO_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FLIGHT_BUS_TRAIN_NO" Parameter="fLIGHT_BUS_TRAIN_NO" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="TICKET_NO" Parameter="tICKET_NO" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="PNR_NO" Parameter="pNR_NO" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="COACH" Parameter="cOACH" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="SEAT_BIRTH" Parameter="sEAT_BIRTH" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="CLASS" Parameter="cLASS" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="TICKET_FARE" Parameter="tICKET_FARE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ARRIVAL_TIME" Parameter="aRRIVAL_TIME" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DEPARTURE_TIME" Parameter="dEPARTURE_TIME" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="STATUS_UPDATED_BY" Parameter="sTATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="created_by" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="TRAVEL_DATE" Parameter="tRAVEL_DATE" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Bill_No" Parameter="bill_No" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Bill_Date" Parameter="bill_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Bill_Amnt" Parameter="bill_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CN_No" Parameter="cN_No" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CN_Date" Parameter="cN_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CN_Amnt" Parameter="cN_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Net_Amnt" Parameter="net_Amnt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TicketID" Parameter="ticketID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_Accom_ticket_booked_details" Method="sp_create_Accom_ticket_booked_details">
+    <Parameter Name="Accommadation_req_id" Parameter="accommadation_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PROPOSAL_ID" Parameter="pROPOSAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PRO_SEGMENT_ID" Parameter="pRO_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Payment" Parameter="payment" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Tariff" Parameter="tariff" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Booking_given_to" Parameter="booking_given_to" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Hotel_Invoice_Num" Parameter="hotel_Invoice_Num" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Bill_date" Parameter="bill_date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_Vehi_ticket_booked_details" Method="sp_create_Vehi_ticket_booked_details">
+    <Parameter Name="Vehicle_req_id" Parameter="vehicle_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PROPOSAL_ID" Parameter="pROPOSAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PRO_SEGMENT_ID" Parameter="pRO_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Vehicle_Source" Parameter="vehicle_Source" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Agent_Name" Parameter="agent_Name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Booking_passed_to" Parameter="booking_passed_to" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Vehicle_Num" Parameter="vehicle_Num" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Rate_kms" Parameter="rate_kms" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Driver_Name" Parameter="driver_Name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Contact_Number" Parameter="contact_Number" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Statutory_Req" Parameter="statutory_Req" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Agent_BillNum" Parameter="agent_BillNum" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Bill_Date" Parameter="bill_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Agent_BillAmnt" Parameter="agent_BillAmnt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Driver_Batta" Parameter="driver_Batta" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Total_km" Parameter="total_km" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Total_Cost" Parameter="total_Cost" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="CurrentStatus" Parameter="currentStatus" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_Vendor_Ins" Method="sp_create_Vendor_Ins">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PROPOSAL_ID" Parameter="pROPOSAL_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AGENT_NAME" Parameter="aGENT_NAME" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="AGENT_BILLNUM" Parameter="aGENT_BILLNUM" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BILL_DATE" Parameter="bILL_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="AGENT_BILLAMNT" Parameter="aGENT_BILLAMNT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_create_Vendor_Visa" Method="sp_create_Vendor_Visa">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PROPOSAL_ID" Parameter="pROPOSAL_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AGENT_NAME" Parameter="aGENT_NAME" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="AGENT_BILLNUM" Parameter="aGENT_BILLNUM" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BILL_DATE" Parameter="bILL_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="AGENT_BILLAMNT" Parameter="aGENT_BILLAMNT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_Vendor_Visa" Method="sp_get_Vendor_Visa">
+    <ElementType Name="sp_get_Vendor_VisaResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROPOSAL_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AGENT_NAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AGENT_BILLNUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BILL_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AGENT_BILLAMNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Vendor_Ins" Method="sp_get_Vendor_Ins">
+    <ElementType Name="sp_get_Vendor_InsResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROPOSAL_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AGENT_NAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AGENT_BILLNUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BILL_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AGENT_BILLAMNT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_VendorName" Method="sp_Get_VendorName">
+    <Parameter Name="EXPENSE_TYPE" Parameter="eXPENSE_TYPE" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_Get_VendorNameResult">
+      <Column Name="VENDOR_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

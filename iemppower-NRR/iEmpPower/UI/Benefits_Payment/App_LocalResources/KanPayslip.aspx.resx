@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountNum" xml:space="preserve">
+    <value>ಉಳಿತಾಯ ಖಾತೆ ಸಂಖ್ಯೆ</value>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>ಬ್ಯಾಂಕಿನ ಹೆಸರು</value>
+  </data>
+  <data name="CompanyAddress" xml:space="preserve">
+    <value>ನಂ. 1553, ವಾಣಿವಿಲಾಸ ರಸ್ತೆ, ಮೈಸೂರು - 570004</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>ಎನ್ ರಂಗರಾವ್ ಅಂಡ್ ಸನ್ಸ್ ಪ್ರೈ.ಲಿ.</value>
+  </data>
+  <data name="Department" xml:space="preserve">
+    <value>ವಿಭಾಗ</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>ಹುದ್ದೆ</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>ಉದ್ಯೋಗಿಯ ಹೆಸರು</value>
+  </data>
+  <data name="ESINumber" xml:space="preserve">
+    <value>ಇ.ಎಸ್.ಐ ಸಂಖ್ಯೆ</value>
+  </data>
+  <data name="JoiningDate" xml:space="preserve">
+    <value>ಸೇರಿದ ದಿನಾಂಕ</value>
+  </data>
+  <data name="NEFTNum" xml:space="preserve">
+    <value>ಎನ್.ಇ.ಎಫ್.ಟಿ ಸಂಖ್ಯೆ</value>
+  </data>
+  <data name="PaymentMethod" xml:space="preserve">
+    <value>ಪಾವತಿ ವಿಧಾನ</value>
+  </data>
+  <data name="Pernr" xml:space="preserve">
+    <value>ಉದ್ಯೋಗಿಯ ಸಂಖ್ಯೆ</value>
+  </data>
+  <data name="PFNum" xml:space="preserve">
+    <value>ಪಿ.ಎಫ್ ಸಂಖ್ಯೆ</value>
+  </data>
+  <data name="PresentDays" xml:space="preserve">
+    <value>ಹಾಜರಾದ ದಿನಗಳು</value>
+  </data>
+  <data name="UnkownError" xml:space="preserve">
+    <value>Unknown error occured. Please contact your system administrator.</value>
+  </data>
+  <data name="WorkingDays" xml:space="preserve">
+    <value>ಹಾಜರಾಗಬೇಕಾದ ದಿನಗಳು</value>
+  </data>
+  <data name="Deductions" xml:space="preserve">
+    <value>ಕಡಿತಗಳು</value>
+  </data>
+  <data name="Ernings" xml:space="preserve">
+    <value>ಗಳಿಕೆಗಳು</value>
+  </data>
+  <data name="NetPay" xml:space="preserve">
+    <value>ನಿವ್ವಳ ವೇತನ</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Payslip Not Found</value>
+  </data>
+  <data name="Rupees" xml:space="preserve">
+    <value>ರೂ.</value>
+  </data>
+  <data name="TotalDeduc" xml:space="preserve">
+    <value>ಒಟ್ಟು ಕಡಿತ</value>
+  </data>
+  <data name="TotalPay" xml:space="preserve">
+    <value>ಒಟ್ಟು ವೇತನ</value>
+  </data>
+  <data name="83F1" xml:space="preserve">
+    <value>ಇ.ಪಿ.ಎಫ಼್</value>
+  </data>
+  <data name="83E1" xml:space="preserve">
+    <value>ಇ.ಎಸ್‌.ಐ</value>
+  </data>
+  <data name="/460" xml:space="preserve">
+    <value>ವೃತಿ ತೆರಿಗೆ</value>
+  </data>
+  <data name="1W15" xml:space="preserve">
+    <value>ಮುಂಗಡ</value>
+  </data>
+  <data name="1W00" xml:space="preserve">
+    <value>ಮೂಲ ವೇತನ</value>
+  </data>
+  <data name="1W01" xml:space="preserve">
+    <value>ವ್ಯತ್ಯಸ್ಥ  ತುಟ್ಟಿ ಭತ್ಯೆ</value>
+  </data>
+  <data name="1W03" xml:space="preserve">
+    <value>ವಿಶೇಷ ಭತ್ಯೆ</value>
+  </data>
+  <data name="1W02" xml:space="preserve">
+    <value>ಸ್ವಚ್ಚತಾ ಭತ್ಯೆ</value>
+  </data>
+  <data name="83E2" xml:space="preserve">
+    <value>ಇ.ಸ್‌.ಐ</value>
+  </data>
+  <data name="2W02" xml:space="preserve">
+    <value>ಇತರೆ</value>
+  </data>
+  <data name="1W12" xml:space="preserve">
+    <value>ಇತರೆ ಭತ್ಯೆ</value>
+  </data>
+  <data name="A" xml:space="preserve">
+    <value />
+  </data>
+  <data name="D1" xml:space="preserve">
+    <value>ರಿಂದ</value>
+  </data>
+  <data name="D2" xml:space="preserve">
+    <value>ವರೆಗೆ</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>ವಾರದ ವೇತನ ಚೀಟಿ ದಿನಾಂಕ :</value>
+  </data>
+  <data name="EndLine" xml:space="preserve">
+    <value>ಗಣಕೀಕೃತ ವೇತನ  ಚೀಟಿಯಾಗಿದ್ಧರಿಂದ ಅಧಿಕಾರಿಯ ಹಸ್ತಾಕ್ಷರವಿರುವುದಿಲ್ಲ</value>
+  </data>
+  <data name="/3P1" xml:space="preserve">
+    <value>ವೃತ್ತಿ ತೆರಿಗೆ</value>
+  </data>
+  <data name="83F2" xml:space="preserve">
+    <value>ಇ.ವಿ.ಪಿ.ಎಫ಼್</value>
+  </data>
+  <data name="83W1" xml:space="preserve">
+    <value>ಕಾರ್ಮಿಕ ಕ್ಷೇಮಾಭಿವೃದ್ಧಿ ನಿಧಿ</value>
+  </data>
+  <data name="3LRP" xml:space="preserve">
+    <value>ಸಾಲ ಮರುಪಾವತಿ</value>
+  </data>
+</root>

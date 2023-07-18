@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="mstimesheetreviewDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_ms_Load_TimeSheetReview_Employees" Method="sp_ms_Load_TimeSheetReview_Employees">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pspnr" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_ms_Load_TimeSheetReview_EmployeesResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="PROJ" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="WBS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Activity" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Attd" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="WORKINGDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CATSHOURS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ms_Load_TimeSheetReview" Method="sp_ms_Load_TimeSheetReview">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MngPernr" Parameter="mngPernr" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="pspnr" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_ms_Load_TimeSheetReviewResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="CATSHOURS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="WORKINGDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="KTEXT" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ATEXT" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Activity" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMP_DEPT" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

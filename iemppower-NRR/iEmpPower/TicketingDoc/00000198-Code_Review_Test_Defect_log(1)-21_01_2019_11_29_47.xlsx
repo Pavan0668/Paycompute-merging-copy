@@ -1,0 +1,963 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=Edge" /><meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" /><title>
+	Ticketing Tool Dashboard
+</title>
+    <!-- Favicon-->
+    
+    <link rel="icon" type="/images/png" sizes="16x16" href="/images/favicon.png" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css" /><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Core Css -->
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Waves Effect Css -->
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="../../plugins/morrisjs/morris.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../../css/style.css" rel="stylesheet" />
+
+
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+    
+
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+
+
+    <style type="text/css">
+        .lnkbtn
+        {
+            display: none;
+            visibility: hidden;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function signout() {
+            document.getElementById("lnkBtnSignout1").click();
+        }
+    </script>
+
+
+    
+
+    <style type="text/css">
+        .modal-content
+        {
+            /*display:none;*/
+            z-index: -1;
+            background-color: rgba(0,97,124,0.8);
+            /*margin: 15% auto;*/ /* 15% from the top and centered */
+            padding: 20px;
+            border: 2px solid #888;
+            width: 25%; /*Could be more or less, depending on screen size*/
+        }
+
+        .hidden
+        {
+            visibility: hidden;
+        }
+
+        .modalBackground
+        {
+            /*visibility:hidden;
+            position:absolute;
+            top:25vh;*/
+            background-color: black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+        }
+
+        .c14
+        {
+            background-color: #B03A2E !important;
+            color: #fff !important;
+        }
+
+        .c15
+        {
+            background-color: #f06291 !important;
+            color: #fff !important;
+        }
+
+        .c16
+        {
+            background-color: #656464 !important;
+            color: #fff !important;
+        }
+
+        .c17
+        {
+            background-color: #9A7D0A !important;
+            color: #fff !important;
+        }
+
+        .c18
+        {
+            background-color: #ff6347 !important;
+            color: #fff !important;
+        }
+
+        .chrt_backgrd
+        {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            height: auto;
+            width: auto;
+            display: flex;
+            cursor: default;
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+            .chrt_backgrd .content .text
+            {
+                font-size: 15px;
+                margin-top: 11px;
+                color: #555;
+            }
+
+        .style_prevu_kit
+        {
+            display: inline-block;
+            border: 0;
+            width: auto;
+            height: auto;
+            position: relative;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1);
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1);
+            transition: all 200ms ease-in;
+            transform: scale(1);
+        }
+
+            .style_prevu_kit:hover
+            {
+                box-shadow: 0px 0px 10px #000;
+                z-index: 121;
+                -webkit-transition: all 200ms ease-in;
+                -webkit-transform: scale(1.5);
+                -ms-transition: all 200ms ease-in;
+                -ms-transform: scale(1.5);
+                -moz-transition: all 200ms ease-in;
+                -moz-transform: scale(1.5);
+                transition: all 200ms ease-in;
+                transform: scale(1.5);
+            }
+
+
+        .TextBx
+        {
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            min-width: 80px;
+            max-width: 200px;
+            padding: 5px;
+        }
+
+            .TextBx:hover
+            {
+                border: 2px solid #00617C;
+            }
+
+            .TextBx:focus
+            {
+                border: 2px solid #00617C;
+            }
+    </style>
+
+<link href="../../App_Themes/SkinFile/StyleSheet.css" type="text/css" rel="stylesheet" /><link href="/WebResource.axd?d=U8z-u8oTZAz-RgAR2MVlsRByCUkCDfj7E24Nr6Xv18Xsq7higNWypPjXI2DDWcu80vZ4I7kVXXVzZA_xW4QdZ6pmlvgYLtBQjKtF05Tr6MiUuw6G1jHf8epBkwJp5H1bkN8xFK1QMBOVCcATw-lGDRs2wtockDTX7CGqWbJc4uM1&amp;t=634644971480000000" type="text/css" rel="stylesheet" /></head>
+<body class="theme-red">
+    <!-- Page Loader -->
+    
+    <!-- #END# Page Loader -->
+    <form method="post" action="./TicketingTDashBoard.aspx" id="form1" autocomplete="off">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTI1MTM0MTA4MQ9kFgJmD2QWAgIED2QWEgIGDzwrAAkAZAIHDw8WAh4ISW1hZ2VVcmwFGH4vRW1wSW1hZ2VzL0VtcEltYWdlLmpwZ2RkAggPZBYCZg9kFgICAQ8PFgIeBFRleHQFFURpdml0aCBLIE0gfCAwMDAwMDI1NmRkAgkPFgIeCWlubmVyaHRtbAUWRElWSVRILktNQElUQ0hBTVBTLkNPTWQCDA9kFgQCAw8WAh4HVmlzaWJsZWhkAgUPFgIfA2hkAg4PZBYCAgUPZBYCAgMPFgIfA2hkAhAPZBYEAgMPFgIfA2hkAgUPFgIfA2hkAhIPFgIfAQUEMjAxOWQCEw9kFgwCBQ8WAh8CBQtQZW5kaW5nIDogMGQCEQ8PFgQfAQUKMDEvMDEvMjAxOR4JTWF4TGVuZ3RoZmRkAhUPFggeDklucHV0RGlyZWN0aW9uCymKAUFqYXhDb250cm9sVG9vbGtpdC5NYXNrZWRFZGl0SW5wdXREaXJlY3Rpb24sIEFqYXhDb250cm9sVG9vbGtpdCwgVmVyc2lvbj0zLjAuMzA5MzAuMjg3MzYsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MjhmMDFiMGU4NGI2ZDUzZQAeCkFjY2VwdEFtUG1oHgxEaXNwbGF5TW9uZXkLKYYBQWpheENvbnRyb2xUb29sa2l0Lk1hc2tlZEVkaXRTaG93U3ltYm9sLCBBamF4Q29udHJvbFRvb2xraXQsIFZlcnNpb249My4wLjMwOTMwLjI4NzM2LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTI4ZjAxYjBlODRiNmQ1M2UAHg5BY2NlcHROZWdhdGl2ZQsrBQBkAhcPDxYEHwEFCjA4LzAxLzIwMTkfBGZkZAIbDxYIHwULKwQAHwZoHwcLKwUAHwgLKwUAZAInDw8WAh8DaGQWBAIBDw8WAh8BBRNBU1NJR05FRCBUTyBNWSBURUFNZGQCDw8PFgIfAQUaUmVwb3J0ZWVzIEludGVybmFsIFRpY2tldHNkZBgBBRNjdGwwMCRIZWFkTG9naW5WaWV3Dw9kAgFkxX24gBGtPLsMOQJ186nJYc/ni40zPHM4goL9b7tNLJs=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=04JSblFBefofWjE53ITqALiybJFilsPiU0JwsMrEw3LI811IiYwtQNryj4QAZ8_PoVr9EI4o0fIXlofyWBx69gnZ2YdcSWMRuvB2VRasz0I1&amp;t=636776919115427324" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=KV3qUjmjEBnEAbCqD9jYESzHkaaz6xxEkMvP-CXBu3T945BSZZRwQZaszAFSrGrWoAiph5U4D3iWJI3cbAuxBNjw9HtmLHN-ZyedAIkYWed_ihzybJ_pws4j5xyxVxQEbuPYOlxOWLWOSAZbjJsBPcpusJR4-JHg9l5mU4vt1F3jD_NtrK64l3G8zHUtMHsb0&amp;t=ffffffff999c3159" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=tcFy8LmxHItvRzv5CG4RF8TYFWmXBGKZ3GfmhZ6uwZMclOdgkyG5suWyLJeVx1gQkXklCXSemZcHSL8zEteh-_ZCJmzO-bgrXECiMi3xQQD1qwc8GI2Q5SWYVl6zh1NYYJMRsp7LYMb77Q0P3K8tNQbIEh9R4MoBY1DfcBnnM0m-NfNDriQH5tzdcaKdkCee0&amp;t=ffffffff999c3159" type="text/javascript"></script>
+<script src="../../plugins/jquery/jquery.min.js" type="text/javascript"></script>
+<script src="../../plugins/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+<script src="../../plugins/bootstrap-select/js/bootstrap-select.js" type="text/javascript"></script>
+<script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js" type="text/javascript"></script>
+<script src="../../plugins/node-waves/waves.js" type="text/javascript"></script>
+<script src="../../plugins/jquery-countto/jquery.countTo.js" type="text/javascript"></script>
+<script src="../../plugins/raphael/raphael.min.js" type="text/javascript"></script>
+<script src="../../plugins/morrisjs/morris.js" type="text/javascript"></script>
+<script src="../../plugins/chartjs/Chart.bundle.js" type="text/javascript"></script>
+<script src="../../plugins/flot-charts/jquery.flot.js" type="text/javascript"></script>
+<script src="../../plugins/flot-charts/jquery.flot.resize.js" type="text/javascript"></script>
+<script src="../../plugins/flot-charts/jquery.flot.pie.js" type="text/javascript"></script>
+<script src="../../plugins/flot-charts/jquery.flot.categories.js" type="text/javascript"></script>
+<script src="../../plugins/flot-charts/jquery.flot.time.js" type="text/javascript"></script>
+<script src="../../plugins/jquery-sparkline/jquery.sparkline.js" type="text/javascript"></script>
+<script src="../../js/Admin2.js" type="text/javascript"></script>
+<script src="../../js/JScontrls.js" type="text/javascript"></script>
+<script src="../../js/pages/index.js" type="text/javascript"></script>
+<script src="../../js/demo.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dGRm3ftGU2-vsGtr2Frs1ySr144qXl-xQ6-RIeo1wzpHB4MMioK6-YyYt3d5kJCqfX1Nkk-GxdhMa4_aNvd3DpQrZahJlHMop656kffJaJ9psT4JIKQtj5ZPTi73lHH7QHwOyJMDj_EB5FObwbrSA1NzVtCg3_VNnihVoLvbYsY1&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=vpi4q0kGLA1Wnwx4JbwvhyEKTet20Ojv1BsCjxZYUAeCQ9gWGyM8gdFh2dKmSgq71oOnIfmxYat0GK2Fa7AlqarMGkJ61Da93UhEktJH1aZ7GrWzimBCKbjxkB4oMm291BRH7szJGW0BXNjWOorY4sT_PkQVY7xsPucP78c0szI1&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=UgKOZdVRJqMYiEIhEglngRj32q8-kyWH02Zs6Sb72kRFKrr1MMFbv61xOAjy6w5uuFhdwjc5KoE43nF-U6HJ2p_oShT_MmC_lFPfgb2bGYd0-og7AHn84yANqTy4brBoSX_dMsBNNIPtE8qR5WuybDqt36A7A-3Eevsru6EV-E0hbelxkM-ptPOhFwfLtbEu0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=m6S1UDE3xizuv4nPYqWKhyCdSFqkSgD88y0v6VV6NOFTqqzODb3fVpebEA4gGKVQYSuHcPmLWeoGBHEVuWP4OFnD_YhIR0IwlarA3Ump0Peqp0SCEGHLdOuHzVtYL9vBRVEXBR5NucS5dNYYPm3-pZp5WTxodUW1gaVgQbgf4KQ1&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=lI5eL3AvZ7hDMN9z111XUP1Y6uJMWZeGMqazoZbanU2K27xpwwhhgNgdEVbYx50c5bxhj_oUx2VwSXvaRn0qMW6t5zmWch_7T9GrACQvV1Jt2uHVCManshrpcOgQ0SibTxTJKKvk3tJk5-qRnxTaBihH8PW_0CVg7QMh_yELo8VlwF9JkQtBMt9ggJGZDRkA0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Cy_NsbNGDqjuP9QhyqRZrgmuvp28qiYgDQI5eVKhz4rQYiuvERWLof5_Md5O7It-oA5KVX3qNiHtspuXIYdBlVOd89EHN3T-fzF-xW-XzE36kpwdp0uaYOCbd992ZDMDzdQyYXDPfY_3tnNzYdt2DE2q46E_6MHRWcA-4vhfMTvi2HmTuuN7vOYT1uisEZXEgLXvSzxy3J2w777UVHxLPQ2&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=-v_cVonuoCFdbPKPJsmbwPucySsoG_ti9t0kmboJDOXRvSz8feMRDVTtCwd9RRTWcS9zs_RHi2wZ8FDixp5vtSDB4N5M1akFlxAgjF0TeSqOBW5OXB2yGD20tD6mNS25zESAFJk27RaMBetc2QRfQenqedGsOeQwMBuMp8ppCFye0QrJT9zetXShRgpjBsEA0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=4gRDG6s3oSuAxnzAL-a-UWbyXoG0GInY7Q6xyVZaxSfQinj5ccxR84KrabFHoVBz1xOWMEAy38PCq4byJ9Azm6Qq4_VcSrlATFBJItoR1XT6aXRz74Gq9fkxtds_N9nwt7XyKsm4HvsvuiyGt-xmezXp6oN1ySq4koG0qsWHptZCWgQLCPVgQB2GjgtC9MwY0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=yVPiQjdfmYFIQ8ScIhq2mXWAhpTucxVDcAkw94LqShWjNXjYGWZ21-yd-02PRZ03Ayc8UPaH-w9GySNA5adIJnXB38C1-oPnzvRPnw1nv6kmCwzq7p5zwDU0xgt25CTQ3qR5_42vC7YC86cJHD2R0A4dxOlU2uHbEpoOcOluWUx5MO5DIAchluPdaV5Pw4po0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=KpjOuuMNYyzIZ2a6DEFix_lkS7kur6N4MaBuNtmpIKmK-ix7UMlZlEl1pd27iTiUU1YcPbgP1zq7Hrs11ZerS7u8MRon-4QGHKoYAjYOG7YGR-qRn4mFVq6CDn8cgQVT6i-EjKM1k7oWP9SU7mWfayGx7WJgI8ED_l_Hq_JsteI1&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Kg_MiaiNduhLvQth8Vkmb6J0yCPuE5KmHSjwmGFecT3tMeIdq2Z65ESx0nTO6xOpTFpGOLpCdQ2dy0QV00jaePBOkzveoPz-rWLJpmmCxsN3OD9GnRgt5cJWRXHRJsdpZx8KtJqoq0atFRNqgBVclYlxmW_VrU9YUGKcztQ4vf01&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Iv-e5AruYa1DxV95QOd_vDD6jNAWftI82vd4guqJw4RlpZWIaJ2CbxPVVno23wJtVu7iucxqrNT8PnxYA_PCbrshvHxqt0LFxNkB0p0_CtoJBRtU1G2tsPTRMH0ubNd0F5wYpJbyk-E1ZSlCp5_Rqio4du7NRC4WUKOYFqs1M2Y8HOYqLKHIrLtAaW90XSc50&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=HW19sfnts5y5KGmo6TzBGMLsSQEHeg1MZKb8DwbCZFwil6eab35t50K7TDtWSTEABhG4vD3hVRH31hDVmTiAnLXecMODvc_Az5f-XjN36KOl8YRQUhcLLe5avNY5ywvAg1U7QYXOOLhKJ85HnLybUpiB1BiSUHKGUggDBzaWn8H-dD8SW1BdUVFCbJC1E8M70&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=FJrGo45kNukfHFkVBE8498EqNCFXvZ5C3TXGjLAuKesn4ZPZe7tF82lf-l1SmSf9ZRh4KCyfrXbmmbX3pxRaVkQQBuBXnXg4qo9BhhPFCvBtLyoHP5hWqjfWPa4_aDyMzjDYE-JfatLcJcN1blxL9U4_wDIMzl4GEc4HMpJBxSw1&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=indSY9x5Vh9oFe4LYn9QWo-wjwNsMy_y8e-uKeiMTogBxQA1jKDe8G5Cffw2A21XZM0NCmHjm0Gdl5Ps2HVBpSZE3iWcl9452YZGPVvAYNo83xcJv0unyGv5VyJd4JwcK10URGXVT-EqEAPrtWEYbr5TWK5qbCk1qeZqhW_DaHscRb1iJn81qVepsdlfwQXj0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_L_boUBLP8q-kArh7HYU0KIbhRr7SR5nRRleGhoCSYWHiIFs6V9AcJ09NmAgjVs7Lq6dfTfyt_f5ldKWtjcm0X2XXpcWLdPEez1yDxXZg3ODeHvV6BU-eCNEhs1i_yXHVevkUhvwHUQYP23JTjQg1R7SBRXUH2EkwIWwErFDT5TsPrARzq0o6x4A1XfCLTiJ0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=PrRNX_qsF2r2UFDwYGqMOFfve3T3grDEfBC7NXBa10Wo8xUDDhWN3kkLc-Ij_N1Zl6ws94Rxn7JLlzEByjQtsikyl9TzW17RHkcOxdSWMHZhuD4WV6A--0ZsfSRdj1Ln4JjYVkGwthpc_G5_ZfORlOc5CTkivzbmQ6l8ZU3grG3YKmDYSnPIZr80QpcoN04T0&amp;t=ffffffff9b7d03cf" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F87FA1BD" />
+</div>
+
+
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+
+        <!-- Overlay For Sidebars -->
+        <div class="overlay"></div>
+        <!-- #END# Overlay For Sidebars -->
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="search-icon">
+                <i class="material-icons">search</i>
+            </div>
+            <input type="text" placeholder="START TYPING..." />
+            <div>
+                <a href="../../Account/Login.aspx" style="text-align: right">
+
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </div>
+        <!-- #END# Search Bar -->
+        <!-- Top Bar -->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                        <input type="hidden" id="_ispostback" value="True" />
+                   <input type="hidden" name="ctl00$_CSS" id="_CSS" />
+                    
+                    <div class="title">
+                        <img id="Image1" onclick="window.location=&#39;../../Dashboard.aspx&#39;" src="../../images/logo.png" alt="iEmpPower Logo" />
+                        
+
+                        
+
+                        <img id="imgCustomerLogo" onclick="window.location=&#39;../../Dashboard.aspx&#39;" src="../../images/itchamps_logo.png" style="height:50px;width:180px;" />
+
+
+                        <img id="ImgMenu" class="menustyle" src="../../images/outline_menu_white_18dp.png" />
+                        <div>
+                            <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                            <div id="divmenu"><a href="javascript:void(0);" class="bars"></a></div>
+
+                        </div>
+
+
+                        <div class="bdemp">
+                            <marquee scrollamount="3">
+                                
+                                <table class="">
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                     
+                                        </td>
+                                        
+                                    </tr>
+                                </table>
+                               
+                            </marquee>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="pull-right"><a href="javascript:signout()">
+                            <span>Sign Out</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+        <section>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                <!-- User Info -->
+                <div class="user-info">
+                    <div class="image">
+                        <img id="imgEmp" alt="User" src="../../EmpImages/EmpImage.jpg" style="height:48px;width:48px;" />
+                    </div>
+                    <div class="info-container">
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            
+                            
+                                    <span>
+                                        <span id="HeadLoginView_lblEmployyeName">Divith K M | 00000256</span></span>
+
+                                    
+                                
+                        </div>
+                        <div id="divemail" class="email">DIVITH.KM@ITCHAMPS.COM</div>
+                        <div id="pnlSidebardd">
+	
+                            <div class="btn-group user-helper-dropdown">
+                                <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="../../UI/Personal_Information/personal_data.aspx"><i class="material-icons">person</i>Profile</a></li>
+                                    <li role="seperator" class="divider"></li>
+                                    <li><a href="../../Default.aspx"><i class="material-icons">group</i>Followers</a></li>
+                                    
+                                    <li><a href="../../UI/Manager_Self_Service/who'swho.aspx"><i class="material-icons">search</i>Directory</a></li>
+                                    <li role="seperator" class="divider"></li>
+                                    <li><a href="javascript:signout()"><i class="material-icons">input</i>Sign Out</a></li>
+                                </ul>
+                            </div>
+                        
+</div>
+                    </div>
+                </div>
+                <!-- #User Info -->
+                <!-- Menu -->
+                <div class="menu">
+                    <ul id="ulmenu" class="list">
+                        <li class="header">MAIN NAVIGATION</li>
+                        <div id="pnlDashbord">
+	
+                            <li class="active">
+                                <a href="../../Dashboard.aspx">
+                                    <i class="material-icons">dashboard</i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                        
+</div>
+                        <div id="pnlotherMenu">
+	
+                            <li id="MenuHome">
+                                <a href="../../Default.aspx">
+                                    <i class="material-icons">pageview</i>
+                                    <span>Reportees / My Requests</span>
+                                </a>
+                            </li>
+
+                            
+
+                            
+
+                            <li id="MenuPersonalInfo">
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <i class="material-icons">person</i>
+                                    <span>Personal Information</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="../../UI/Personal_Information/address_information.aspx">Address Information</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Personal_Information/bank_information.aspx">Bank Information</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Personal_Information/communication_information.aspx">Communication Information</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Personal_Information/family_members.aspx">Family members / Dependants</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Personal_Information/personal_data.aspx">Personal Data</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Personal_Information/personal_ids.aspx">Personal IDs</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Manager_Self_Service/addressproof.aspx">Address Proof</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Manager_Self_Service/employmentproof.aspx">Employment Proof</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        
+</div>
+                        <div id="pnltckngtool">
+	
+                            <li id="MenuTicketingTool">
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <i class="material-icons">report_problem</i>
+                                    <span>Ticketing Tool</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li id="Li4">
+                                        <a href="../../UI/Ticketing Tool/TicketingTDashBoard.aspx">Ticketing Tool Dashboard</a>
+                                    </li>
+                                    <li id="Li1">
+                                        <a href="../../UI/Ticketing Tool/IssueTracker.aspx">Issue Tracker</a>
+                                    </li>
+                                    <li id="Li3">
+                                        <a href="../../UI/Ticketing Tool/TicketingToolReport.aspx">Reports</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        
+</div>
+                        <div id="pnlothermenu3">
+	
+                            <li id="MenuWorkingTime">
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <i class="material-icons">update</i>
+                                    <span>Working Time</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="../../UI/Working_Time/Leaverequest_new.aspx">Leave / Attendance Request</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Working_Time/recordworking_time.aspx">Record Working Time</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Manager_Self_Service/TimeSheetReview_Employees.aspx">TimeSheet Overview</a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="../../UI/Working_Time/ActualTask.aspx">Planned Task</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Working_Time/ViewPlannedActivities.aspx">View Task details</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../UI/Manager_Self_Service/ClockInOutReviewNew.aspx">Punch IN / OUT details</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+
+
+                            
+
+                            <li id="MenuBP">
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <i class="material-icons">view_list</i>
+                                    <span>Benefits and Payments</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li id="MenuPayslip">
+                                        <a href="../../UI/Benefits_Payment/PaySlipNew.aspx">PaySlip</a>
+                                    </li>
+                                    
+                                    <li id="MenuCTC">
+                                        <a href="../../UI/Benefits_Payment/Ctc.aspx">CTC</a>
+                                    </li>
+                                    <li id="MenuForm16">
+                                        <a href="../../UI/Benefits_Payment/form16.aspx">Form 16</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        
+</div>
+
+                        <div id="pnlotherMenu2">
+	
+                            <li id="MenuDoc">
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <i class="material-icons">description</i>
+                                    <span>DMS</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li id="Li2">
+                                        <a href="../../UI/Document Management System/UserManual.aspx">iEmp User Manual</a>
+                                    </li>
+                                    <li id="Li5">
+                                        <a href="../../UI/Document Management System/TcktToolUserManual.aspx">Ticketing Tool User Manual</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        
+</div>
+
+                        <li id="MenuMyaccount">
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">settings</i>
+                                <span>My Account</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="../../UI/UserAccount/changepassword.aspx">Change password</a>
+                                </li>
+                                <li>
+                                    <a href="../../UI/UserAccount/createquestionandanswer.aspx">Account Security Question</a>
+                                </li>
+                                <li id="MenuMaintainDirectory">
+                                    <a href="../../UI/Manager_Self_Service/who'swho.aspx">Directory</a>
+                                </li>
+                                
+                                
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:signout()">
+                                <i class="material-icons">exit_to_app</i>
+                                <span>Sign Out</span>
+                                <a id="lnkBtnSignout1" class="lnkbtn" href="javascript:__doPostBack(&#39;ctl00$lnkBtnSignout1&#39;,&#39;&#39;)">Sign Out</a>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- #Menu -->
+                <!-- Footer -->
+                <div class="legal">
+                    <div class="copyright">
+                        &copy; 2010 -
+                        2019
+                        
+                        <a href="http://itchamps.com/">ITChamps Software Pvt. Ltd.</a>
+                    </div>
+                    <div class="version">
+                        <b>Version: </b>2.0
+               
+                    </div>
+                </div>
+                <!-- #Footer -->
+            </aside>
+            <!-- #END# Left Sidebar -->
+            <!-- Right Sidebar -->
+            <aside id="rightsidebar" class="right-sidebar">
+                <ul class="nav nav-tabs tab-nav-right" role="tablist">
+
+                    <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+                    
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+                        <ul class="demo-choose-skin">
+                            <li data-theme="red">
+                                <div class="red"></div>
+                                <span>Red</span>
+                            </li>
+                            <li data-theme="pink">
+                                <div class="pink"></div>
+                                <span>Pink</span>
+                            </li>
+
+
+                            <li data-theme="purple">
+                                <div class="purple"></div>
+                                <span>Purple</span>
+                            </li>
+                            <li data-theme="deep-purple">
+                                <div class="deep-purple"></div>
+                                <span>Deep Purple</span>
+                            </li>
+                            <li data-theme="indigo" class="active">
+                                <div class="indigo"></div>
+                                <span>Indigo</span>
+                            </li>
+                            <li data-theme="blue">
+                                <div class="blue"></div>
+                                <span>Blue</span>
+                            </li>
+                            <li data-theme="light-blue">
+                                <div class="light-blue"></div>
+                                <span>Light Blue</span>
+                            </li>
+                            <li data-theme="cyan">
+                                <div class="cyan"></div>
+                                <span>Cyan</span>
+                            </li>
+                            <li data-theme="teal">
+                                <div class="teal"></div>
+                                <span>Teal</span>
+                            </li>
+                            <li data-theme="green">
+                                <div class="green"></div>
+                                <span>Green</span>
+                            </li>
+                            <li data-theme="light-green">
+                                <div class="light-green"></div>
+                                <span>Light Green</span>
+                            </li>
+                            <li data-theme="lime">
+                                <div class="lime"></div>
+                                <span>Lime</span>
+                            </li>
+                            <li data-theme="yellow">
+                                <div class="yellow"></div>
+                                <span>Yellow</span>
+                            </li>
+                            <li data-theme="amber">
+                                <div class="amber"></div>
+                                <span>Amber</span>
+                            </li>
+                            <li data-theme="orange">
+                                <div class="orange"></div>
+                                <span>Orange</span>
+                            </li>
+                            <li data-theme="deep-orange">
+                                <div class="deep-orange"></div>
+                                <span>Deep Orange</span>
+                            </li>
+                            <li data-theme="brown">
+                                <div class="brown"></div>
+                                <span>Brown</span>
+                            </li>
+                            <li data-theme="grey">
+                                <div class="grey"></div>
+                                <span>Grey</span>
+                            </li>
+                            <li data-theme="blue-grey">
+                                <div class="blue-grey"></div>
+                                <span>Blue Grey</span>
+                            </li>
+                            <li data-theme="black">
+                                <div class="black"></div>
+                                <span>Black</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <!-- #END# Right Sidebar -->
+        </section>
+        <div>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="card">
+                                
+
+    <div style="margin-left: 12px;">
+        <div class="row " style="padding-top: 10px;margin-right: 0px; padding-bottom: 0; margin-bottom: 0;">
+            <div id="MainContent_pnlIssue">
+	
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    
+                    <a id="MainContent_lnk" href="javascript:__doPostBack(&#39;ctl00$MainContent$lnk&#39;,&#39;&#39;)"><div class="info-box hover-zoom-effect PointerHover" style="margin-bottom: 10px !important;">
+                            <div class="icon c15">
+                                <i class="material-icons">report_problem</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">Issue Ticket</div>
+                                
+                                <div class="number count-to" data-from="0" data-to="125" data-speed="1000" data-fresh-interval="20">Raise</div>
+                                
+                            </div>
+
+                        </div></a>
+                    
+                </div>
+            
+</div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a href="../../UI/Ticketing Tool/IssueTracker.aspx">
+                    <div class="info-box hover-zoom-effect PointerHover" style="margin-bottom: 10px !important;">
+                        <div class="icon c16">
+                            <i class="material-icons">find_in_page</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Raised Tickets</div>
+                            
+                            
+                            <div id="MainContent_TTMYQUEUE" class="numberPending">Pending : 0</div>
+                            
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a href="../../UI/Ticketing Tool/TicketingToolReport.aspx">
+                    <div class="info-box hover-zoom-effect PointerHover" style="margin-bottom: 10px !important;">
+                        <div class="icon c18">
+                            <i class="material-icons">description</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Ticket Reports</div>
+                            
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="1000" data-fresh-interval="20">Export</div>
+                            
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a id="MainContent_mandateDocs">
+                    <div class="info-box hover-zoom-effect PointerHover" style="margin-bottom: 10px !important;">
+                        <div class="icon c17">
+                            <i class="material-icons">assignment_late</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Mandatory</div>
+                            
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="1000" data-fresh-interval="20">Templates</div>
+                            
+                        </div>
+
+                    </div>
+                </a>
+                
+                
+            </div>
+        </div>
+
+        
+
+
+
+        <div class="row " style="padding-top: 10px; padding-bottom: 0; margin-bottom: 0;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="">
+                <div class="info-box" style="margin-bottom: 10px !important; margin-right: 10px !important; height: auto;">
+                    <div class="content">
+                        <div class="" style="color: #555;">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    
+                                    <div class="col-sm-2" style="width: 115px;">
+                                        <h5>Select From : </h5>
+                                    </div>
+                                    <div class="col-sm-3" style="width: 210px;">
+                                        <input name="ctl00$MainContent$txtTTFromDate" type="text" value="01/01/2019" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$txtTTFromDate\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="MainContent_txtTTFromDate" class="TextBx" />
+                                        
+                                        <input type="hidden" name="ctl00$MainContent$MEE_TxtFromDate_ClientState" id="MainContent_MEE_TxtFromDate_ClientState" />
+                                    </div>
+                                    <div class="col-sm-1" style="width: 55px;">
+                                        <h5>To : </h5>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input name="ctl00$MainContent$txtTTToDate" type="text" value="08/01/2019" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$txtTTToDate\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="MainContent_txtTTToDate" class="TextBx" />
+                                        
+                                        <input type="hidden" name="ctl00$MainContent$MEE_TxtToDate_ClientState" id="MainContent_MEE_TxtToDate_ClientState" />
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block-header" style="margin-top: 15px">
+            <h2><b>ASSIGNED TO ME</b></h2>
+        </div>
+        <div class="">
+            <div class="row clearfix ">
+                <a>
+                    <div class="style_prevu_kit col-lg-4 col-md-4 col-sm-8 col-xs-12 ">
+                        <div class="chrt_backgrd ">
+                            <div class="content ">
+                                <div class="text font-bold">Ticket Status</div>
+                                <img id="MainContent_ctl00" src="/UI/Ticketing%20Tool/ChartImg.axd?i=chart_d34875c7e87b4688a1e1f5bf123e3a1d_3.png&amp;g=a5816f65add24d69a8df61c44324e5af" alt="" style="height:300px;width:300px;border-width:0px;" />
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+
+
+                <a>
+                    <div class="style_prevu_kit col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="chrt_backgrd">
+                            <div class="content ">
+                                <div class="text font-bold">Priority Based Tickets</div>
+                                <img id="MainContent_ctpriority" src="/UI/Ticketing%20Tool/ChartImg.axd?i=chart_d34875c7e87b4688a1e1f5bf123e3a1d_4.png&amp;g=e15fc817d54a47b9ae928bd22d1c66f0" alt="" style="height:300px;width:300px;border-width:0px;" />
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a>
+                    <div class="style_prevu_kit col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="chrt_backgrd">
+                            <div class="content ">
+                                <div class="text font-bold">Tickets In Progress</div>
+                                <img id="MainContent_Cttckprogress" src="/UI/Ticketing%20Tool/ChartImg.axd?i=chart_d34875c7e87b4688a1e1f5bf123e3a1d_5.png&amp;g=4735f34e78f3441cbb85cee989364eae" alt="" style="height:300px;width:300px;border-width:0px;" />
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+            <div id="MainContent_pnlclient">
+	
+                <div class="row clearfix">
+                    <a>
+                        <div class="style_prevu_kit col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                            <div class="chrt_backgrd">
+                                <div class="content ">
+                                    <div class="text font-bold">Request Type Tickets</div>
+                                    <img id="MainContent_ctreqType" src="/UI/Ticketing%20Tool/ChartImg.axd?i=chart_d34875c7e87b4688a1e1f5bf123e3a1d_0.png&amp;g=f6fdc50259f245e3b4e5bb4ce8a3c2f7" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+
+
+
+                    <a>
+                        <div class="style_prevu_kit col-lg-4 col-md-4 col-sm-8 col-xs-12 ">
+                            <div class="chrt_backgrd">
+                                <div class="content ">
+                                    <div class="text font-bold">Clients Raised Tickets</div>
+                                    <img id="MainContent_ctclients" src="/UI/Ticketing%20Tool/ChartImg.axd?i=chart_d34875c7e87b4688a1e1f5bf123e3a1d_1.png&amp;g=d3c6fc0f1e82443c887c3c6fbc064a2b" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div id="MainContent_pnlmytckts">
+		
+                        <a>
+                            <div class="style_prevu_kit col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                                <div class="chrt_backgrd">
+                                    <div class="content ">
+                                        <div class="text font-bold">My Tickets</div>
+                                        <img id="MainContent_ctagent" src="/UI/Ticketing%20Tool/ChartImg.axd?i=chart_d34875c7e87b4688a1e1f5bf123e3a1d_2.png&amp;g=fc6d1d6763c342848750c6e43e9716e5" alt="" style="height:300px;width:300px;border-width:0px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    
+	</div>
+                </div>
+            
+</div>
+
+            
+
+        </div>
+        
+    </div>
+    <div id="MainContent_pnlMandateDocs" class="modal-content">
+	
+        <div class="Fr">
+            <input type="submit" name="ctl00$MainContent$btnADvanceClose" value=" × " id="MainContent_btnADvanceClose" class="btnStyle" />
+        </div>
+        <h5 style="color: white"><b>Mandate Document Templates</b></h5>
+        <ul style="color:white">
+            <li>
+                <a id="MainContent_hypDocFS" href="javascript:__doPostBack(&#39;ctl00$MainContent$hypDocFS&#39;,&#39;&#39;)" style="color:White;">Functional Specification</a></li>
+            <li>
+                <a id="MainContent_hypDocTS" href="javascript:__doPostBack(&#39;ctl00$MainContent$hypDocTS&#39;,&#39;&#39;)" style="color:White;">Technical Specification</a></li>
+            <li>
+                <a id="MainContent_hypCodeRw" href="javascript:__doPostBack(&#39;ctl00$MainContent$hypCodeRw&#39;,&#39;&#39;)" style="color:White;">Code Review Check List</a></li>
+            <li>
+                <a id="MainContent_hypTstD" href="javascript:__doPostBack(&#39;ctl00$MainContent$hypTstD&#39;,&#39;&#39;)" style="color:White;">Code Review Test Defect Log</a></li>
+        </ul>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"MainContent_btnADvanceClose","PopupControlID":"MainContent_pnlMandateDocs","dynamicServicePath":"/UI/Ticketing Tool/TicketingTDashBoard.aspx","id":"MainContent_mp1"}, null, null, $get("MainContent_mandateDocs"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.CalendarBehavior, {"format":"dd/MM/yyyy","id":"MainContent_CE_TxtFromDate"}, null, null, $get("MainContent_txtTTFromDate"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.MaskedEditBehavior, {"ClientStateFieldID":"MainContent_MEE_TxtFromDate_ClientState","CultureAMPMPlaceholder":"AM;PM","CultureCurrencySymbolPlaceholder":"£","CultureDateFormat":"DMY","CultureDatePlaceholder":"/","CultureDecimalPlaceholder":".","CultureName":"en-GB","CultureThousandsPlaceholder":",","CultureTimePlaceholder":":","ErrorTooltipEnabled":true,"Mask":"99/99/9999","MaskType":1,"id":"MainContent_MEE_TxtFromDate"}, null, null, $get("MainContent_txtTTFromDate"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.CalendarBehavior, {"format":"dd/MM/yyyy","id":"MainContent_CE_TxtToDate"}, null, null, $get("MainContent_txtTTToDate"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.MaskedEditBehavior, {"ClientStateFieldID":"MainContent_MEE_TxtToDate_ClientState","CultureAMPMPlaceholder":"AM;PM","CultureCurrencySymbolPlaceholder":"£","CultureDateFormat":"DMY","CultureDatePlaceholder":"/","CultureDecimalPlaceholder":".","CultureName":"en-GB","CultureThousandsPlaceholder":",","CultureTimePlaceholder":":","ErrorTooltipEnabled":true,"Mask":"99/99/9999","MaskType":1,"id":"MainContent_MEE_TxtToDate"}, null, null, $get("MainContent_txtTTToDate"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

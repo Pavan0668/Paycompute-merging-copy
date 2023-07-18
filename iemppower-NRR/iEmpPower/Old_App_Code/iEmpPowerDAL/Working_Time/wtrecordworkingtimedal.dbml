@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="wtrecordworkingtimedalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PayCompute20032020ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_wt_load_working_hours_for_employee" Method="sp_wt_load_working_hours_for_employee">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_wt_load_working_hours_for_employeeResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ARBST" Type="System.Decimal" DbType="Decimal(10,1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Assigntask_SubEmp" Method="sp_Assigntask_SubEmp">
+    <Parameter Name="MNGRPERNR" Parameter="mNGRPERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="FROMDATE" Parameter="fROMDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TODATE" Parameter="tODATE" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_Assigntask_SubEmpResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ACTIVITYID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Monday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Tuesday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Wednesday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Thursday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Friday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MondayTask" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TuesdayTask" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="WednesdayTask" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ThursdayTask" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FridayTask" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MondayHours" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TuesdayHours" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="WednesdayHours" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ThursdayHours" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FridayHours" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getEmpAssigndtask" Method="sp_getEmpAssigndtask">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="FROMDATE" Parameter="fROMDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TODATE" Parameter="tODATE" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_getEmpAssigndtaskResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ACTIVITYID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="AWART" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Monday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Tuesday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Wednesday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Thursday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Friday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MondayTask" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TuesdayTask" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="WednesdayTask" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ThursdayTask" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FridayTask" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MondayHours" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TuesdayHours" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="WednesdayHours" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ThursdayHours" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FridayHours" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_loadAssigntask_tocalendar" Method="sp_loadAssigntask_tocalendar">
+    <Parameter Name="MNGRPERNR" Parameter="mNGRPERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="from" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="to" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_loadAssigntask_tocalendarResult">
+      <Column Name="WORKINGDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_loadEmpAssigntask_tocalendar" Method="sp_loadEmpAssigntask_tocalendar">
+    <Parameter Name="EMPPERNR" Parameter="eMPPERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="from" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="to" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_loadEmpAssigntask_tocalendarResult">
+      <Column Name="WORKINGDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_wt_create_AssignTaskActivities" Method="sp_wt_create_AssignTaskActivities">
+    <Parameter Name="TASKID" Parameter="tASKID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ACTIVITYID" Parameter="aCTIVITYID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKWORKDATE" Parameter="tASKWORKDATE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKWORK" Parameter="tASKWORK" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKHOURS" Parameter="tASKHOURS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CREATEDONDATE" Parameter="cREATEDONDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CREATED_BYPERN" Parameter="cREATED_BYPERN" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="MNGRUPDATEDON" Parameter="mNGRUPDATEDON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MNGRUPDATEDBY" Parameter="mNGRUPDATEDBY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="EMPUPDATEON" Parameter="eMPUPDATEON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EMPUPDATEDBY" Parameter="eMPUPDATEDBY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKSTATUS" Parameter="tASKSTATUS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FLAG" Parameter="fLAG" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_wt_create_ActualTaskHour" Method="sp_wt_create_ActualTaskHour">
+    <Parameter Name="TASKID" Parameter="tASKID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TASKWORKDATE" Parameter="tASKWORKDATE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TASKHOURS" Parameter="tASKHOURS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CREATEDONDATE" Parameter="cREATEDONDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CREATED_BYPERN" Parameter="cREATED_BYPERN" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="MNGRUPDATEDON" Parameter="mNGRUPDATEDON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MNGRUPDATEDBY" Parameter="mNGRUPDATEDBY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="EMPUPDATEON" Parameter="eMPUPDATEON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EMPUPDATEDBY" Parameter="eMPUPDATEDBY" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Load_PlannedActivities" Method="sp_Load_PlannedActivities">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MngPernr" Parameter="mngPernr" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="sp_Load_PlannedActivitiesResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMP_DEPART" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="WORKINGDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CATSHOURS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="WORKASSIGNED" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_wt_get_recordworking_time_date" Method="sp_wt_get_recordworking_time_date">
+    <Parameter Name="pkey" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_wt_get_recordworking_time_dateResult">
+      <Column Name="Fromdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_wt_get_recordworking_time" Method="sp_wt_get_recordworking_time">
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="from" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="to" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_wt_get_recordworking_timeResult">
+      <Column Name="CURRECORDNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AWART" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CATSHOURS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WORKINGDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="day" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="cost_center" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="order_type" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="RPROJ" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="RNPLNR" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VORNR" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Plndhrs" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_wt_get_recordworking_time_week" Method="sp_wt_get_recordworking_time_week">
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="compcode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="from" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="to" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_wt_get_recordworking_time_weekResult">
+      <Column Name="CURRECORDNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AWART" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cost_center" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="order_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Monday" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Tuesday" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Wednesday" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Thursday" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Friday" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Saturday" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Sunday" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="RPROJ" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RNPLNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VORNR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Plndhrs" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_wt_get_recordworking_time_Mail" Method="sp_wt_get_recordworking_time_Mail">
+    <Parameter Name="Pkey" Parameter="pkey" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ccode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SupervisorMail" Parameter="supervisorMail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="EmpMail" Parameter="empMail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="EmpName" Parameter="empName" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="SupervisiorName" Parameter="supervisiorName" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="EmpId" Parameter="empId" Type="System.String" DbType="VarChar(8)" Direction="InOut" />
+    <ElementType Name="sp_wt_get_recordworking_time_MailResult">
+      <Column Name="MinDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaxDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_wt_update_recordworking_time" Method="sp_wt_update_recordworking_time">
+    <Parameter Name="CURRECORDNO" Parameter="cURRECORDNO" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="AWART" Parameter="aWART" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CATSHOURS" Parameter="cATSHOURS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="WORKINGDATE" Parameter="wORKINGDATE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="costcenter" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="order" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RPROJ" Parameter="rPROJ" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RNPLNR" Parameter="rNPLNR" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="LSTAR" Parameter="lSTAR" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RREMARKS" Parameter="rREMARKS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TicketIDS" Parameter="ticketIDS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Plndhrs" Parameter="plndhrs" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="company_Code" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SuperVisorStatus" Parameter="superVisorStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="errormessage" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_wt_create_recordworking_time" Method="sp_wt_create_recordworking_time">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="AWART" Parameter="aWART" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CATSHOURS" Parameter="cATSHOURS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="WORKINGDATE" Parameter="wORKINGDATE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="costcenter" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="order" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RPROJ" Parameter="rPROJ" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RNPLNR" Parameter="rNPLNR" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="LSTAR" Parameter="lSTAR" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RREMARKS" Parameter="rREMARKS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TicketIDS" Parameter="ticketIDS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Plndhrs" Parameter="plndhrs" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="company_Code" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="SuperVisorStatus" Parameter="superVisorStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="errormessage" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="pkey" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

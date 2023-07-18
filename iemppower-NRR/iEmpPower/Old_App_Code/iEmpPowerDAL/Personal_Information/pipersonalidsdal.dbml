@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="pipersonalidsdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_conf_checkvalidation_for_personal_ids" Method="sp_conf_checkvalidation_for_personal_ids">
+    <ElementType Name="sp_conf_checkvalidation_for_personal_idsResult">
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[values]" Member="values" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pi_update_personal_ids" Method="sp_pi_update_personal_ids">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="ICTYPE" Parameter="iCTYPE" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="ICNUM" Parameter="iCNUM" Type="System.String" DbType="Char(30)" />
+    <Parameter Name="OLD_ICNUM" Parameter="oLD_ICNUM" Type="System.String" DbType="Char(30)" />
+    <Parameter Name="OLD_ICTYPE" Parameter="oLD_ICTYPE" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="SuperVisorStatus" Parameter="superVisorStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HRStatus" Parameter="hRStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HR_Name" Parameter="hR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Pernr_Email" Parameter="pernr_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_pi_create_personal_ids" Method="sp_pi_create_personal_ids">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ICTYPE" Parameter="iCTYPE" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="ICNUM" Parameter="iCNUM" Type="System.String" DbType="Char(30)" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="SuperVisorStatus" Parameter="superVisorStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HRStatus" Parameter="hRStatus" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="HR_Name" Parameter="hR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Name" Parameter="superVisor_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Email" Parameter="superVisor_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="HR_Phn" Parameter="hR_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="SuperVisor_Phn" Parameter="superVisor_Phn" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_Visa_Passport_Details" Method="sp_Get_Visa_Passport_Details">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_Visa_Passport_DetailsResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ICTYPE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="ICNUM" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ICTXT" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_All_personal_ids" Method="sp_get_All_personal_ids">
+    <ElementType Name="sp_get_All_personal_idsResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ICTYPE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="ICNUM" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="isupdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ENDDA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ICTXT" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[sp_get_master.ZTR_FLYER_NUMBER]" Method="sp_get_master_ZTR_FLYER_NUMBER">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_get_master_ZTR_FLYER_NUMBERResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="FRFLYNUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMPNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AIRLINE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VALSTATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[sp_get_master.ZTR_TRAVEL_INS]" Method="sp_get_master_ZTR_TRAVEL_INS">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_get_master_ZTR_TRAVEL_INSResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRINSNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMPNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOI" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DOE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PLAN1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PREMIUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AGENT_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[sp_get_master.ZTR_VISA]" Method="sp_get_master_ZTR_VISA">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_get_master_ZTR_VISAResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VINUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PASNUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMPNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COUNTRY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOI" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DOE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VISA_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[sp_get_master.ZTR_PASSPORT]" Method="sp_get_master_ZTR_PASSPORT">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_get_master_ZTR_PASSPORTResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMPNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PASNUM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOI" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DOE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PLISS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pi_get_personal_ids_full" Method="sp_pi_get_personal_ids_full">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_pi_get_personal_ids_fullResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ICTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ICTXT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ICNUM" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TransStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pi_get_personal_ids" Method="sp_pi_get_personal_ids">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_pi_get_personal_idsResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ICTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ICTXT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ICNUM" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="RecordCnt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_pi_get_Personalidinfo_mail" Method="sp_pi_get_Personalidinfo_mail">
+    <Parameter Name="pkey" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sts" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_pi_get_Personalidinfo_mailResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PKEY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ICTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ICTXT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ICNUM" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_PERNRPAN" Method="sp_get_PERNRPAN">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="sp_get_PERNRPANResult">
+      <Column Name="ICNUM" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.payc_Load_benefitsbased_onEmpid" Method="payc_Load_benefitsbased_onEmpid">
+    <Parameter Name="EmpID" Parameter="empID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="cc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="payc_Load_benefitsbased_onEmpidResult">
+      <Column Name="TEXT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="VALUE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_pi_personal_id_details" Method="usp_pi_personal_id_details">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ICTYPE" Parameter="iCTYPE" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="ICNUM" Parameter="iCNUM" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="EMPDOC" Parameter="eMPDOC" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="BEGDA" Parameter="bEGDA" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ENDDA" Parameter="eNDDA" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HR_Email" Parameter="hR_Email" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Parameter Name="Supervisor_Email" Parameter="supervisor_Email" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Parameter Name="PERNR_Name" Parameter="pERNR_Name" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Parameter Name="PERNR_Email" Parameter="pERNR_Email" Type="System.String" DbType="VarChar(200)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_set_car_details_pids" Method="usp_set_car_details_pids">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="CC" Parameter="cC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Regdate" Parameter="regdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="file" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RCNo" Parameter="rCNo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RCName" Parameter="rCName" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="CC1" Parameter="cC1" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Regdate1" Parameter="regdate1" Type="System.DateTime" DbType="Date" Direction="InOut" />
+    <Parameter Name="file1" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="RCNo1" Parameter="rCNo1" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Parameter Name="RCName1" Parameter="rCName1" Type="System.String" DbType="VarChar(150)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

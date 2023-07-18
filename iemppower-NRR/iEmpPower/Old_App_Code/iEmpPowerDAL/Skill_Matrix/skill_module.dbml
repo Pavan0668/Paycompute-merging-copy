@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PRD24122019" Class="skill_moduleDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=PRD24122019;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_Skill_add_modls" Method="usp_Skill_add_modls">
+    <Parameter Name="module" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="item" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Skill_add_submodl" Method="usp_Skill_add_submodl">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="module" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sub_module" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Skill_check_modsub_updt" Method="usp_Skill_check_modsub_updt">
+    <Parameter Name="M_name" Parameter="m_name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="s_name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="status_mod" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="status_submod" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Skill_check_Row_Record" Method="usp_Skill_check_Row_Record">
+    <Parameter Name="chk_PERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="chk_module" Type="System.Int32" DbType="Int" />
+    <Parameter Name="chk_submodule" Type="System.Int32" DbType="Int" />
+    <Parameter Name="chk_month_yr" Type="System.String" DbType="VarChar(7)" />
+    <Parameter Name="chk_Score" Type="System.Decimal" DbType="Decimal(2,1)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Skill_check_submodule" Method="usp_Skill_check_submodule">
+    <Parameter Name="chk_module" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="chk_submodule" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Skill_Ename_DDL" Method="usp_Skill_Ename_DDL">
+    <Parameter Name="role" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Skill_Ename_DDLResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Skill_exists_modls" Method="usp_Skill_exists_modls">
+    <Parameter Name="module" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Skill_get_subordinates" Method="usp_Skill_get_subordinates">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_Skill_get_subordinatesResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="USRID" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PHN" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Skill_Module_DDL" Method="usp_Skill_Module_DDL">
+    <ElementType Name="usp_Skill_Module_DDLResult">
+      <Column Name="MOD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOD_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_by" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_on" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Modified_On" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Skill_Save_Score_Record" Method="usp_Skill_Save_Score_Record">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="module" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sub_module" Type="System.Int32" DbType="Int" />
+    <Parameter Name="score" Type="System.Decimal" DbType="Decimal(2,1)" />
+    <Parameter Name="remarks" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="modified_on" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="month_of_year" Type="System.String" DbType="VarChar(7)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Skill_Sub_Module_DDL" Method="usp_Skill_Sub_Module_DDL">
+    <Parameter Name="moduleid" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="usp_Skill_Sub_Module_DDLResult">
+      <Column Name="SUB_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUB__MOD_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Skill_update_modsub" Method="usp_Skill_update_modsub">
+    <Parameter Name="MID" Parameter="mID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SID" Parameter="sID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="M_name" Parameter="m_name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="s_name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="M_modifiedby" Parameter="m_modifiedby" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="S_modifiedby" Parameter="s_modifiedby" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="flag" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Skill_View_modlsubmodl" Method="usp_Skill_View_modlsubmodl">
+    <ElementType Name="usp_Skill_View_modlsubmodlResult">
+      <Column Name="MOD_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MOD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUB__MOD_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SUB_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="module_createdbyID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Module_Created_On" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="submod_createdbyID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Sub_Module_Created_On" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Mod_createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubM_createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mod_modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMod_modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Skill_View_Score_Record" Method="usp_Skill_View_Score_Record">
+    <Parameter Name="login" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="V_PERNR" Parameter="v_PERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="V_module" Parameter="v_module" Type="System.Int32" DbType="Int" />
+    <Parameter Name="V_month_Ofyear" Parameter="v_month_Ofyear" Type="System.String" DbType="VarChar(7)" />
+    <Parameter Name="Statement_Type" Parameter="statement_Type" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Skill_View_Score_RecordResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUB_MODULE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Month_Of_Year" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="SCORE" Type="System.Decimal" DbType="Decimal(2,1) NOT NULL" CanBeNull="false" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="managr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MOD_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SUB__MOD_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_CheckHR_Mnagmt" Method="usp_CheckHR_Mnagmt">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Skill_srchall_modsubmod_Record" Method="usp_Skill_srchall_modsubmod_Record">
+    <Parameter Name="loginID" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="emp_ID" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="modid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="subid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Statement_Type" Parameter="statement_Type" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Skill_srchall_modsubmod_RecordResult">
+      <Column Name="MOD_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MOD_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUB__MOD_NAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUB_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="module_createdbyID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Module_Created_On" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="submod_createdbyID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Sub_Module_Created_On" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Mod_createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubM_createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mod_modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMod_modifiedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_skill_srchmodsub_emplst" Method="usp_skill_srchmodsub_emplst">
+    <ElementType Name="usp_skill_srchmodsub_emplstResult">
+      <Column Name="PERNR1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

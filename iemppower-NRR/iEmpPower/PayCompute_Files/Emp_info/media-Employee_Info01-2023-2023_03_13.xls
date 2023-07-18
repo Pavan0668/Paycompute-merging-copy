@@ -1,0 +1,130 @@
+<div id="ContentPlaceHolder1_MainContent_pnlexprt">
+	
+                                                <div id="ContentPlaceHolder1_MainContent_emprowtoexprt" class="row col-sm-12 Grid" style="background-color:#ffe6ba;height:50px;margin-left:3px">
+                                        <div class="col-sm-3" style="padding-top:15px">Employee ID : <span id="ContentPlaceHolder1_MainContent_lbl_empid">1046</span></div>
+                                         <div class="col-sm-3" style="padding-top:15px">Employee Name : <span id="ContentPlaceHolder1_MainContent_lblename">Abhishek  Nidoni</span></div>
+                                         <div class="col-sm-3" style="padding-top:15px">Date of Joining : <span id="ContentPlaceHolder1_MainContent_lbl_JOD">03-Sep-2019</span></div>
+                                          <div class="col-sm-3" style="padding-top:15px">Separation Date : <span id="ContentPlaceHolder1_MainContent_lbl_exitdate">31-May-2020</span></div>
+                                        </div>
+
+                                                 <div>
+                                                <b>Employee's Personal Details</b>
+                                            </div>
+                                            <div>
+		<table class="gridviewNew" cellspacing="0" cellpadding="4" id="ContentPlaceHolder1_MainContent_gv_exp1" style="width:100%;border-collapse:collapse;">
+			<tr>
+				<th scope="col">Employee DOB</th><th scope="col">Father&#39;s Name</th><th scope="col">Mother&#39;s Name</th><th scope="col">Marital Status</th><th scope="col">Spouse Name</th><th scope="col">Created On</th>
+			</tr><tr>
+				<td>01-Jan-01 12:00:00 AM</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>09-06-2020</td>
+			</tr>
+		</table>
+	</div>
+
+                                                <br />
+
+                                             <div>
+                                                <b>Employee's Department Info</b>
+                                            </div>
+                                                 <div>
+		<table class="gridviewNew" cellspacing="0" cellpadding="4" id="ContentPlaceHolder1_MainContent_gv_expty2" style="width:100%;border-collapse:collapse;">
+			<tr>
+				<th scope="col">Department</th><th scope="col">Grade</th><th scope="col">Branch</th><th scope="col">Division</th><th scope="col">DOJ</th><th scope="col">Created On</th>
+			</tr><tr>
+				<td>&nbsp;</td><td>&nbsp;</td><td>Bangalore </td><td>&nbsp;</td><td>03-09-2019</td><td>09-06-2020</td>
+			</tr>
+		</table>
+	</div>
+                                                <br />
+                                                <div>
+                                                <b>Employee's Designation Info</b>
+                                            </div>
+                                                <div>
+		<table class="gridviewNew" cellspacing="0" cellpadding="4" id="ContentPlaceHolder1_MainContent_gv_exprt3" style="width:100%;border-collapse:collapse;">
+			<tr>
+				<th scope="col">Designation</th><th scope="col">Valid From</th><th scope="col">Valid To</th><th scope="col">Updated On</th>
+			</tr><tr>
+				<td>Test Engineer</td><td>&nbsp;</td><td>&nbsp;</td><td>09-06-2020</td>
+			</tr>
+		</table>
+	</div>
+                                                 <br />
+                                               
+                                                <div>
+                                                <b>Employee's Manager Info</b>
+                                            </div>
+
+                                                 <div>
+		<table class="gridviewNew" cellspacing="0" cellpadding="4" id="ContentPlaceHolder1_MainContent_gv_expt4" style="width:100%;border-collapse:collapse;">
+			<tr>
+				<th scope="col">Manager ID</th><th scope="col">Manager Name</th><th scope="col">Valid From</th><th scope="col">Valid To</th><th scope="col">Updated On</th>
+			</tr><tr>
+				<td>techvi1001</td><td>Girish  Sannappanavar</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+                                                <br />
+                                                
+                                            <div>
+                                                <b>Employee's Address Info</b>
+                                            </div>
+                                            <div>
+		<table class="gridviewNew" cellspacing="0" cellpadding="4" id="ContentPlaceHolder1_MainContent_gv_exprt5" style="width:100%;border-collapse:collapse;">
+			<tr class="emptygridstyle">
+				<td colspan="10">No Record Found!</td>
+			</tr>
+		</table>
+	</div>
+                                                <br />
+                                                <div>
+                                                <b>Employee's Communication Info</b>
+                                            </div>
+                                            <div>
+		<table class="gridviewNew" cellspacing="0" cellpadding="4" id="ContentPlaceHolder1_MainContent_gv_exprt6" style="width:100%;border-collapse:collapse;">
+			<tr>
+				<th scope="col">Contact Type</th><th scope="col">Contact Type ID</th><th scope="col">Created On</th>
+			</tr><tr>
+				<td>Official Mail ID</td><td>abhishek.nidoni@techvibrant.com</td><td>09-06-2020</td>
+			</tr>
+		</table>
+	</div>
+                                            <br />
+
+                                                <div>
+                                                <b>Employee's Documents Info</b>
+                                            </div>
+                                            <div>
+		<table class="gridviewNew" cellspacing="0" cellpadding="4" id="ContentPlaceHolder1_MainContent_gv_exprt7" style="width:100%;border-collapse:collapse;">
+			<tr class="emptygridstyle">
+				<td colspan="3">No Record Found!</td>
+			</tr>
+		</table>
+	</div>
+                                                <br />
+                                                <div>
+                                                <b>Employee's Bank Info</b>
+                                            </div>
+                                            <div>
+		<table class="gridviewNew" cellspacing="0" cellpadding="4" id="ContentPlaceHolder1_MainContent_gv_exprt8" style="width:100%;border-collapse:collapse;">
+			<tr style="background-color:LightBlue;">
+				<th scope="col">Bank</th><th scope="col">Account NO.</th><th scope="col">IFSC Code</th><th scope="col">Bank Branch</th><th scope="col">Bank District</th><th scope="col">Country</th><th scope="col">State</th><th scope="col">Created On</th>
+			</tr><tr>
+				<td>Axis Bank</td><td>919010061081291</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>               </td><td>                    </td><td>09-06-2020</td>
+			</tr>
+		</table>
+	</div>
+                                                <br />
+
+                                                <div>
+                                                <b>Employee's Benefits Info</b>
+                                            </div>
+                                            <div>
+		<table class="gridviewNew" cellspacing="0" cellpadding="4" id="ContentPlaceHolder1_MainContent_gv_exprt9" style="width:100%;border-collapse:collapse;">
+			<tr style="background-color:LightBlue;">
+				<th scope="col">ESI Applicable</th><th scope="col">ESI Number</th><th scope="col">ESI Dispensary</th><th scope="col">PF Applicable</th><th scope="col">PF Number</th><th scope="col">PF Restrict</th><th scope="col">Zero Pension</th><th scope="col">Zero PT</th><th scope="col">Created On</th>
+			</tr><tr>
+				<td>Yes</td><td>0</td><td>&nbsp;</td><td>No</td><td>&nbsp;</td><td>No</td><td>No</td><td>No</td><td>09-06-2020</td>
+			</tr>
+		</table>
+	</div> 
+                                            
+</div>

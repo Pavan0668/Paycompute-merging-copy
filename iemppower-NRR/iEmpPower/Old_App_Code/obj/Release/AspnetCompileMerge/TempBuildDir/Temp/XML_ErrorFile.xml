@@ -1,0 +1,238 @@
+<?xml version="1.0" standalone="yes"?>
+<ErrorData>
+  <Exception>
+    <DateTime>05-22-2015 04:20:51</DateTime>
+    <ErrorCode>404</ErrorCode>
+    <ExceptionType>System.Web.HttpException</ExceptionType>
+    <PageName>http://localhost:1080/favicon.ico</PageName>
+    <Description>File does not exist.</Description>
+    <InnerExp>
+    </InnerExp>
+    <Source>System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-14-2015 04:58:18</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/Account/Login.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>The control with ID 'FTB_UserName' requires a ScriptManager on the page. The ScriptManager must appear before any controls that need it.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 03:39:30</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaim.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Object reference not set to an instance of an object.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 05:08:18</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpParseException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaimsApproval.aspx</PageName>
+    <Description>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</Description>
+    <InnerExp>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</InnerExp>
+    <Source>Void ParseString(System.String, System.Web.VirtualPath, System.Text.Encoding)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 05:11:12</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpParseException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaimsApproval.aspx</PageName>
+    <Description>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</Description>
+    <InnerExp>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</InnerExp>
+    <Source>Void ParseString(System.String, System.Web.VirtualPath, System.Text.Encoding)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 05:12:21</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpParseException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaimsApproval.aspx</PageName>
+    <Description>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</Description>
+    <InnerExp>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</InnerExp>
+    <Source>Void ParseString(System.String, System.Web.VirtualPath, System.Text.Encoding)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 05:14:15</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpParseException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaimsApproval.aspx</PageName>
+    <Description>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</Description>
+    <InnerExp>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</InnerExp>
+    <Source>Void ParseString(System.String, System.Web.VirtualPath, System.Text.Encoding)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 05:23:32</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpParseException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaimsApproval.aspx</PageName>
+    <Description>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</Description>
+    <InnerExp>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</InnerExp>
+    <Source>Void ParseString(System.String, System.Web.VirtualPath, System.Text.Encoding)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 05:24:00</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpParseException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaimsApproval.aspx</PageName>
+    <Description>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</Description>
+    <InnerExp>Could not load type 'iEmpPower.UI.Benefits_Payment.EmpClaimsApproval'.</InnerExp>
+    <Source>Void ParseString(System.String, System.Web.VirtualPath, System.Text.Encoding)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 07:58:11</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaim.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Object reference not set to an instance of an object.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 07:58:49</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaim.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Input string was not in a correct format.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 11:29:36</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaim.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Object reference not set to an instance of an object.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-15-2015 05:06:13</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaim.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Object reference not set to an instance of an object.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-16-2015 01:31:36</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/hod_requisition.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Object reference not set to an instance of an object.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-16-2015 02:32:48</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/hod_requisition.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Object reference not set to an instance of an object.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-16-2015 02:33:38</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/hod_requisition.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Object reference not set to an instance of an object.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-17-2015 12:44:26</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/hod_requisition.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Object reference not set to an instance of an object.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-21-2015 03:53:51</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/new_accommodation_requisition.aspx?RequiSegmentId=1&amp;PreviousPage=travel_request.aspx&amp;TravelType=1&amp;TravelDateV=21-Jul-2015 12:00:00 AM&amp;TravelEndDateV=23-Jul-2015 12:00:00 AM</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Input string was not in a correct format.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-21-2015 04:06:05</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/new_accommodation_requisition.aspx?RequiSegmentId=1&amp;PreviousPage=travel_request.aspx&amp;TravelType=1&amp;TravelDateV=21-Jul-2015 12:00:00 AM&amp;TravelEndDateV=22-Jul-2015 12:00:00 AM</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Input string was not in a correct format.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-21-2015 04:24:21</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/new_accommodation_requisition.aspx?RequiSegmentId=1&amp;PreviousPage=travel_request.aspx&amp;TravelType=1&amp;TravelDateV=21-Jul-2015 12:00:00 AM&amp;TravelEndDateV=22-Jul-2015 12:00:00 AM</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>String was not recognized as a valid DateTime.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-21-2015 04:30:14</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/new_accommodation_requisition.aspx?RequiSegmentId=1&amp;PreviousPage=travel_request.aspx&amp;TravelType=1&amp;TravelDateV=21-Jul-2015 12:00:00 AM&amp;TravelEndDateV=22-Jul-2015 12:00:00 AM</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>String was not recognized as a valid DateTime.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-24-2015 03:22:23</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaim.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>DataBinding: 'requisitionbo' does not contain a property with the name 'EMPNAME'.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-24-2015 03:28:43</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpParseException</ExceptionType>
+    <PageName>http://localhost:49195/default.aspx</PageName>
+    <Description>External component has thrown an exception.</Description>
+    <InnerExp>External component has thrown an exception.</InnerExp>
+    <Source>Void ProcessException(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-24-2015 09:07:10</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaim1.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>The handle is invalid. (Exception from HRESULT: 0x80070006 (E_HANDLE))</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-24-2015 09:51:56</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/UI/Benefits_Payment/EmpClaim1.aspx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>The TargetControlID of 'CCD_DDLExpType' is not valid. A control with ID 'DDLExp' could not be found.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+  <Exception>
+    <DateTime>07-25-2015 10:40:43</DateTime>
+    <ErrorCode>500</ErrorCode>
+    <ExceptionType>System.Web.HttpUnhandledException</ExceptionType>
+    <PageName>http://localhost:49195/download.aspx?RANGSONS_POSTING_MANUAL.docx</PageName>
+    <Description>Exception of type 'System.Web.HttpUnhandledException' was thrown.</Description>
+    <InnerExp>Object reference not set to an instance of an object.</InnerExp>
+    <Source>Boolean HandleError(System.Exception)</Source>
+  </Exception>
+</ErrorData>

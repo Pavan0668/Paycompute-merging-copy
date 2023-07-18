@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IEmpPower_NRR" Class="Accomodation_requisitionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=IEmpPower_NRR;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_delete_accomodation_requisition" Method="sp_delete_accomodation_requisition">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TravelType" Parameter="travelType" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_accommodation_details_History" Method="sp_get_accommodation_details_History">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_accommodation_details_HistoryResult">
+      <Column Name="Accommadation_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_in_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_out_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Arrival_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Departure_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_CAT_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROOM_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_service" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_create_Sep_accomodation_proposal" Method="sp_create_Sep_accomodation_proposal">
+    <Parameter Name="Accommadation_req_id" Parameter="accommadation_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Date_of_travel" Parameter="date_of_travel" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Check_in_date" Parameter="check_in_date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Check_out_date" Parameter="check_out_date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Arrival_time" Parameter="arrival_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Departure_time" Parameter="departure_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HOTEL_CAT_CODE" Parameter="hOTEL_CAT_CODE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ROOM_CODE" Parameter="rOOM_CODE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HOTEL_CODE" Parameter="hOTEL_CODE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Additional_service" Parameter="additional_service" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="STATUS_UPDATED_BY" Parameter="sTATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="created_by" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_update_HOD_status_SeparateAccomm" Method="sp_update_HOD_status_SeparateAccomm">
+    <Parameter Name="Accommadation_req_id" Parameter="accommadation_req_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REMARKS" Parameter="rEMARKS" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="OutstLocal" Parameter="outstLocal" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_LocalAccomm_requisition_details" Method="sp_get_LocalAccomm_requisition_details">
+    <Parameter Name="acc_req_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_LocalAccomm_requisition_detailsResult">
+      <Column Name="Local_Accommadation_Requistion_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LOCAL_ACCOMMODATION_TYPE" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Check_in_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Check_out_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Arrival_time" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Departure_time" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_CAT_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROOM_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Hotel_place_city" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_service" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Number_of_members" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Is_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_accommo_SeparateReq_details" Method="sp_get_accommo_SeparateReq_details">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_get_accommo_SeparateReq_detailsResult">
+      <Column Name="Accommadation_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_in_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_out_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Arrival_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Departure_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_CAT_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROOM_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_service" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reason_for_cancel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_hotel_category" Method="sp_get_hotel_category">
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="placecode" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="sp_get_hotel_categoryResult">
+      <Column Name="HOTEL_CAT_CODE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="HOTEL_CATEGORY" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_hotel_names" Method="sp_get_hotel_names">
+    <Parameter Name="hc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="placecode" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="sp_get_hotel_namesResult">
+      <Column Name="CODE" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HOTEL_NAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REGION" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_room_names" Method="sp_get_room_names">
+    <Parameter Name="hc" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_get_room_namesResult">
+      <Column Name="HOTEL_CAT_CODE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ROOM_CODE" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="ROOM_CATEGORY" Type="System.String" DbType="Char(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_create_accomodation_requisition" Method="sp_create_accomodation_requisition">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Date_of_travel" Parameter="date_of_travel" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Check_in_date" Parameter="check_in_date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Check_out_date" Parameter="check_out_date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Arrival_time" Parameter="arrival_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Departure_time" Parameter="departure_time" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HOTEL_PLACE_CITY" Parameter="hOTEL_PLACE_CITY" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HOTEL_CAT_CODE" Parameter="hOTEL_CAT_CODE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ROOM_CODE" Parameter="rOOM_CODE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HOTEL_CODE" Parameter="hOTEL_CODE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Additional_service" Parameter="additional_service" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="STATUS_UPDATED_BY" Parameter="sTATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="created_by" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="created_on" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_get_accommodation_details" Method="sp_get_accommodation_details">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_accommodation_detailsResult">
+      <Column Name="Accommadation_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_in_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_out_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Arrival_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Departure_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_PLACE_CITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEL_CAT_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROOM_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_service" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reason_for_cancel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_OutLocalAccomm_requisition_details" Method="sp_get_OutLocalAccomm_requisition_details">
+    <Parameter Name="acc_req_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_OutLocalAccomm_requisition_detailsResult">
+      <Column Name="Accommadation_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_in_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_out_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Arrival_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Departure_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_PLACE_CITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEL_CAT_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROOM_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_service" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reason_for_cancel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_TravelReq_accommodation_details" Method="sp_get_TravelReq_accommodation_details">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_TravelReq_accommodation_detailsResult">
+      <Column Name="Accommadation_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_in_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_out_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Arrival_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Departure_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_PLACE_CITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEL_CAT_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROOM_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_service" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reason_for_cancel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_traveller_accommodation" Method="sp_get_traveller_accommodation">
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_get_traveller_accommodationResult">
+      <Column Name="Accommadation_req_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUISITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DATE_BEG" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_in_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Check_out_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Arrival_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Departure_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_PLACE_CITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEL_CAT_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ROOM_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEL_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_service" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="current_status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_UPDATED_BY" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="created_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="modified_on" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reason_for_cancel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_hotel_category_TD" Method="sp_get_hotel_category_TD">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_get_hotel_category_TDResult">
+      <Column Name="HOTEL_CAT_CODE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="HOTEL_CATEGORY" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

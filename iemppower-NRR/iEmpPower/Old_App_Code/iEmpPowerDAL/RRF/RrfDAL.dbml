@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PRD06032019_rrf" Class="RrfDALDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS2012;Initial Catalog=PRD06032019_rrf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_get_Organizationunit" Method="sp_get_Organizationunit">
+    <ElementType Name="sp_get_OrganizationunitResult">
+      <Column Name="ORGEH" Type="System.Decimal" DbType="Decimal(8,0)" CanBeNull="true" />
+      <Column Name="ORGTX" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_rrf_get_designations_details" Method="usp_rrf_get_designations_details">
+    <ElementType Name="usp_rrf_get_designations_detailsResult">
+      <Column Name="OTYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLANS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="PLSXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_rrf_load_projects" Method="usp_rrf_load_projects">
+    <ElementType Name="usp_rrf_load_projectsResult">
+      <Column Name="PSPNR" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="PSPID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_rrf_load_regions" Method="usp_rrf_load_regions">
+    <ElementType Name="usp_rrf_load_regionsResult">
+      <Column Name="LAND1" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="RGION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEXT25" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_rrf_get_requestor_details" Method="usp_rrf_get_requestor_details">
+    <ElementType Name="usp_rrf_get_requestor_detailsResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Desig" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DESIGPLNS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="dept" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="deptID" Type="System.Decimal" DbType="Decimal(8,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Emp_names_id_rrf" Method="usp_Emp_names_id_rrf">
+    <ElementType Name="usp_Emp_names_id_rrfResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_rrf_pos_rep_manager" Method="usp_rrf_pos_rep_manager">
+    <Parameter Name="PLANS" Parameter="pLANS" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_rrf_pos_rep_managerResult">
+      <Column Name="PERNR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_rrf_eductn_qualiftn" Method="usp_rrf_eductn_qualiftn">
+    <ElementType Name="usp_rrf_eductn_qualiftnResult">
+      <Column Name="qualification_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="qualification_name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_rrf_get_details" Method="usp_rrf_get_details">
+    <Parameter Name="RID" Parameter="rID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_rrf_get_detailsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INDNTR_NAME" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="REQTR_NAME" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DES_RECUTD" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="REP_EXT_EMP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="REP_EXT_EMP_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REQ_POS_BUDGT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="REQ_POS_BUDGT_FRM_MONTH" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="REQ_POS_BUDGT_COST" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PURPS_HIRNG" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPS_HIRNG_LOC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PURPS_HIRNG_PROJ" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="POS_REPT_TO_ID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="MIN_EDU_QLAFTN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MIN_CERTIFNTN" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TOT_EXP" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TOT_DOMAIN_EXP" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_EXPRTSE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="OTHER_SPC_REQ" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="JOB_DISP" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DISP_FILE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TENTTIVE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NORESOURCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_rrf_en_dsble_req_status" Method="usp_rrf_en_dsble_req_status">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_CheckHR" Method="usp_CheckHR">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(5)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_rrf_update_rec" Method="usp_rrf_update_rec">
+    <Parameter Name="RID" Parameter="rID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="INDNTR_NAME" Parameter="iNDNTR_NAME" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REQTR_NAME" Parameter="rEQTR_NAME" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="DES_RECUTD" Parameter="dES_RECUTD" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REP_EXT_EMP" Parameter="rEP_EXT_EMP" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="REP_EXT_EMP_ID" Parameter="rEP_EXT_EMP_ID" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REQ_POS_BUDGT" Parameter="rEQ_POS_BUDGT" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="REQ_POS_BUDGT_FRM_MONTH" Parameter="rEQ_POS_BUDGT_FRM_MONTH" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="REQ_POS_BUDGT_COST" Parameter="rEQ_POS_BUDGT_COST" Type="System.Double" DbType="Float" />
+    <Parameter Name="PURPS_HIRNG" Parameter="pURPS_HIRNG" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="PURPS_HIRNG_LOC" Parameter="pURPS_HIRNG_LOC" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PURPS_HIRNG_PROJ" Parameter="pURPS_HIRNG_PROJ" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="POS_REPT_TO_ID" Parameter="pOS_REPT_TO_ID" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MIN_EDU_QLAFTN" Parameter="mIN_EDU_QLAFTN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MIN_CERTIFNTN" Parameter="mIN_CERTIFNTN" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="TOT_EXP" Parameter="tOT_EXP" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TOT_DOMAIN_EXP" Parameter="tOT_DOMAIN_EXP" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="AREA_EXPRTSE" Parameter="aREA_EXPRTSE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="OTHER_SPC_REQ" Parameter="oTHER_SPC_REQ" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="JOB_DISP" Parameter="jOB_DISP" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="DISP_FILE" Parameter="dISP_FILE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TENTTIVE_DATE" Parameter="tENTTIVE_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NORESOURCE" Parameter="nORESOURCE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Flg" Parameter="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ErrorMsg" Parameter="errorMsg" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Req_mail" Parameter="req_mail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="Sup_mail" Parameter="sup_mail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_rrf_create_rec" Method="usp_rrf_create_rec">
+    <Parameter Name="INDNTR_NAME" Parameter="iNDNTR_NAME" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REQTR_NAME" Parameter="rEQTR_NAME" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="DES_RECUTD" Parameter="dES_RECUTD" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REP_EXT_EMP" Parameter="rEP_EXT_EMP" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="REP_EXT_EMP_ID" Parameter="rEP_EXT_EMP_ID" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REQ_POS_BUDGT" Parameter="rEQ_POS_BUDGT" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="REQ_POS_BUDGT_FRM_MONTH" Parameter="rEQ_POS_BUDGT_FRM_MONTH" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="REQ_POS_BUDGT_COST" Parameter="rEQ_POS_BUDGT_COST" Type="System.Double" DbType="Float" />
+    <Parameter Name="PURPS_HIRNG" Parameter="pURPS_HIRNG" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="PURPS_HIRNG_LOC" Parameter="pURPS_HIRNG_LOC" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PURPS_HIRNG_PROJ" Parameter="pURPS_HIRNG_PROJ" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="POS_REPT_TO_ID" Parameter="pOS_REPT_TO_ID" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MIN_EDU_QLAFTN" Parameter="mIN_EDU_QLAFTN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MIN_CERTIFNTN" Parameter="mIN_CERTIFNTN" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="TOT_EXP" Parameter="tOT_EXP" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TOT_DOMAIN_EXP" Parameter="tOT_DOMAIN_EXP" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="AREA_EXPRTSE" Parameter="aREA_EXPRTSE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="OTHER_SPC_REQ" Parameter="oTHER_SPC_REQ" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="JOB_DISP" Parameter="jOB_DISP" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="DISP_FILE" Parameter="dISP_FILE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TENTTIVE_DATE" Parameter="tENTTIVE_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NORESOURCE" Parameter="nORESOURCE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Flg" Parameter="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ErrorMsg" Parameter="errorMsg" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Req_mail" Parameter="req_mail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="Sup_mail" Parameter="sup_mail" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="RID" Parameter="rID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_rrf_Approver_app_rej_update" Method="usp_rrf_Approver_app_rej_update">
+    <Parameter Name="RID" Parameter="rID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="App_PERNR" Parameter="app_PERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="Reqtr_Email" Parameter="reqtr_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Cur_App_Email" Parameter="cur_App_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="next_App_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Indntr" Parameter="indntr" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Desig_name" Parameter="desig_name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Req_name" Parameter="req_name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="curEmil_name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_rrf_get_request" Method="usp_rrf_get_request">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_rrf_get_requestResult">
+      <Column Name="RRF_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INDNTR_NAME" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="IND_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REQTR_NAME" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="REQT_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DES_RECUTD" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DESREQ_TEXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="REP_EXT_EMP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="REP_EXT_EMP_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="EXT_EMP_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REQ_POS_BUDGT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="REQ_POS_BUDGT_FRM_MONTH" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="REQ_POS_BUDGT_COST" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PURPS_HIRNG" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPS_HIRNG_LOC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LOCTEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PURPS_HIRNG_PROJ" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PROJTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="POS_REPT_TO_ID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="POSREP_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIN_EDU_QLAFTN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="qualification_name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MIN_CERTIFNTN" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TOT_EXP" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TOT_DOMAIN_EXP" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_EXPRTSE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="OTHER_SPC_REQ" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="JOB_DISP" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DISP_FILE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TENTTIVE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NORESOURCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED1_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP1ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED1_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED1_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED2_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP2ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED2_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED2_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED3_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP3ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED3_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED3_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED4_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP4ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED4_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED4_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED5_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP5ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED5_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED5_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MODIFIED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_rrf_get_request_through_id" Method="usp_rrf_get_request_through_id">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_rrf_get_request_through_idResult">
+      <Column Name="RRF_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INDNTR_NAME" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="IND_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REQTR_NAME" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="REQT_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DES_RECUTD" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DESREQ_TEXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="REP_EXT_EMP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="REP_EXT_EMP_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="EXT_EMP_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REQ_POS_BUDGT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="REQ_POS_BUDGT_FRM_MONTH" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="REQ_POS_BUDGT_COST" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PURPS_HIRNG" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPS_HIRNG_LOC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LOCTEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PURPS_HIRNG_PROJ" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PROJTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="POS_REPT_TO_ID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="POSREP_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIN_EDU_QLAFTN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="qualification_name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MIN_CERTIFNTN" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TOT_EXP" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TOT_DOMAIN_EXP" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_EXPRTSE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="OTHER_SPC_REQ" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="JOB_DISP" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DISP_FILE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TENTTIVE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NORESOURCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED1_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP1ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED1_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED1_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED2_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP2ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED2_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED2_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED3_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP3ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED3_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED3_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED4_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP4ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED4_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED4_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED5_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP5ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED5_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED5_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MODIFIED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_rrf_search" Method="usp_rrf_search">
+    <Parameter Name="selctdid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="seahtxt" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="slectreqtype" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pernr" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="flg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_rrf_searchResult">
+      <Column Name="RRF_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INDNTR_NAME" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="IND_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REQTR_NAME" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="REQT_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DES_RECUTD" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DESREQ_TEXT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="REP_EXT_EMP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="REP_EXT_EMP_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="EXT_EMP_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REQ_POS_BUDGT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="REQ_POS_BUDGT_FRM_MONTH" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="REQ_POS_BUDGT_COST" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PURPS_HIRNG" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPS_HIRNG_LOC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LOCTEXT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PURPS_HIRNG_PROJ" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PROJTEXT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="POS_REPT_TO_ID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="POSREP_ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MIN_EDU_QLAFTN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="qualification_name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MIN_CERTIFNTN" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TOT_EXP" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TOT_DOMAIN_EXP" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA_EXPRTSE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="OTHER_SPC_REQ" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="JOB_DISP" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DISP_FILE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TENTTIVE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NORESOURCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED1_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP1ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED1_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED1_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED2_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP2ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED2_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED2_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED3_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP3ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED3_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED3_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED4_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP4ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED4_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED4_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED5_ID" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APP5ENAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED5_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPROVED5_REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MODIFIED_ON" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

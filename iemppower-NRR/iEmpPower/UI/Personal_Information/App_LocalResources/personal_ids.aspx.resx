@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="bdpDOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="bdpValidToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.HeaderText" xml:space="preserve">
+    <value>ID number</value>
+  </data>
+  <data name="BoundFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.HeaderText" xml:space="preserve">
+    <value>Date of issue</value>
+  </data>
+  <data name="BoundFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.HeaderText" xml:space="preserve">
+    <value>Valid to</value>
+  </data>
+  <data name="btnCreateNewResource1.Text" xml:space="preserve">
+    <value>Create New ID</value>
+  </data>
+  <data name="btnCreateNewResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnExitResource1.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="btnExitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnPreviousStepResource1.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="btnPreviousStepResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnReviewResource1.Text" xml:space="preserve">
+    <value>Review</value>
+  </data>
+  <data name="btnReviewResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSaveResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnSaveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkNoCheckResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkNoCheckResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.CancelText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CommandFieldResource1.DeleteText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="CommandFieldResource1.EditText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="CommandFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.InsertText" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="CommandFieldResource1.NewText" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="CommandFieldResource1.SelectText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="CommandFieldResource1.UpdateText" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="drpdwnCOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="drpdwnCountryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="drpdwnIDTypesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="drpdwnSearchIDTypesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="grdPersonalIdResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="grdPersonalIdResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="grdPersonalIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAuthorResource1.Text" xml:space="preserve">
+    <value>Author </value>
+  </data>
+  <data name="lblAuthorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCOIssueResource1.Text" xml:space="preserve">
+    <value>Country of issue </value>
+  </data>
+  <data name="lblCOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCountryResource1.Text" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="lblCountryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDOIssueResource1.Text" xml:space="preserve">
+    <value>Date of issue </value>
+  </data>
+  <data name="lblDOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIDColourResource1.Text" xml:space="preserve">
+    <value>ID colour </value>
+  </data>
+  <data name="lblIDColourResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIDNoResource1.Text" xml:space="preserve">
+    <value>ID number  </value>
+  </data>
+  <data name="lblIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIDypeResource1.Text" xml:space="preserve">
+    <value>ID type</value>
+  </data>
+  <data name="lblIDypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIssuingNoResource1.Text" xml:space="preserve">
+    <value>Issuing number  </value>
+  </data>
+  <data name="lblIssuingNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageBoardResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageBoardResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNoCheckResource1.Text" xml:space="preserve">
+    <value>No check </value>
+  </data>
+  <data name="lblNoCheckResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPOIssueResource1.Text" xml:space="preserve">
+    <value>Place of issue </value>
+  </data>
+  <data name="lblPOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPreviousIDNoResource1.Text" xml:space="preserve">
+    <value>Previous ID number  </value>
+  </data>
+  <data name="lblPreviousIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSearchIDtypeResource1.Text" xml:space="preserve">
+    <value>ID type</value>
+  </data>
+  <data name="lblSearchIDtypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateAuthorResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidateAuthorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateCOIssueResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidateCOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateCountryResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidateCountryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateDOIssueResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidateDOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateIDColourResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateIDColourResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateIDNoResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidateIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateIDTypeResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidateIDTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateIssuingNoResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidateIssuingNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateNoCheckResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidateNoCheckResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidatePOIssueResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidatePOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidatePreviousIDNoResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidatePreviousIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidateValidToResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="lblValidateValidToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidationResource1.Text" xml:space="preserve">
+    <value>Fields marked by an asterisk (*) are required fields</value>
+  </data>
+  <data name="lblValidationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidToResource1.Text" xml:space="preserve">
+    <value>Valid to </value>
+  </data>
+  <data name="lblValidToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Personal IDs</value>
+  </data>
+  <data name="pnlPersonalIdsResource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlPersonalIdsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAuthorResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAuthorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIDColourResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIDColourResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIDNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIssuingNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIssuingNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPOIssueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPOIssueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPreviousIDNoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPreviousIDNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DuplicateEntry" xml:space="preserve">
+    <value>The personal Id type already exists .</value>
+  </data>
+  <data name="NoMatchingRecordFound" xml:space="preserve">
+    <value>No matching record found.</value>
+  </data>
+  <data name="SaveSuccess" xml:space="preserve">
+    <value>Personal Id's information has been saved successfully.</value>
+  </data>
+  <data name="UnkownError" xml:space="preserve">
+    <value>Unknown error occured. Please contact your system administrator.</value>
+  </data>
+  <data name="UpdateSuccess" xml:space="preserve">
+    <value>Selected personal Id's record has been modified successfully.</value>
+  </data>
+  <data name="GapAndNoOverlap" xml:space="preserve">
+    <value>Record may include gaps, no overlapping</value>
+  </data>
+  <data name="NoGapAndNoOverlap" xml:space="preserve">
+    <value>Record cannot have gaps, and no overlapping allowed.</value>
+  </data>
+  <data name="ApproveMsg" xml:space="preserve">
+    <value>is pending for approval, Please modify after approval.</value>
+  </data>
+  <data name="ApprovalSuccess" xml:space="preserve">
+    <value>Personal ID's information has been saved successfully and sent for approval to supervisor</value>
+  </data>
+  <data name="DuplicateIDEntry" xml:space="preserve">
+    <value>The personal Id number already exists .</value>
+  </data>
+  <data name="HRSuccess" xml:space="preserve">
+    <value>Personal ID's information has been saved successfully and sent for approval to HR admin </value>
+  </data>
+  <data name="BothApprovalSuccess" xml:space="preserve">
+    <value>Personal ID 's details submitted successfully and sent for both supervisor and HR approval.</value>
+  </data>
+</root>

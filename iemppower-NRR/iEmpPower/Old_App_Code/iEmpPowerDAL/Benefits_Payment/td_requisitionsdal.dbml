@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iEmpPower-NRR" Class="td_requisitionsdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=iEmpPower-NRR;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_get_Proposal_count" Method="sp_get_Proposal_count">
+    <Parameter Name="REQ_ID_FOR_PROPOSAL" Parameter="rEQ_ID_FOR_PROPOSAL" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_get_Proposal_countResult">
+      <Column Name="REQ_SEGMENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_create_proposal_mst_dtl" Method="sp_create_proposal_mst_dtl">
+    <Parameter Name="FTPT_REQUEST_ID_FOR_PROPOSAL" Parameter="fTPT_REQUEST_ID_FOR_PROPOSAL" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REQ_SEGMENT_ID_FOR_PROPOSAL" Parameter="rEQ_SEGMENT_ID_FOR_PROPOSAL" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="EMPLOYEE_NO" Parameter="eMPLOYEE_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="created_by" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TRAVEL_TYPE" Parameter="tRAVEL_TYPE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TRAVEL_DATE" Parameter="tRAVEL_DATE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TIME_OF_DEPT" Parameter="tIME_OF_DEPT" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="isActive" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="current_status" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="MODE_OF_TRANSPOPRT" Parameter="mODE_OF_TRANSPOPRT" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="MEDIA_OF_CATEGORY" Parameter="mEDIA_OF_CATEGORY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="VEHICLE_NUM" Parameter="vEHICLE_NUM" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REGION_FROM" Parameter="rEGION_FROM" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REGION_TO" Parameter="rEGION_TO" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FLYNUM" Parameter="fLYNUM" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ADVANCE_AMOUNT" Parameter="aDVANCE_AMOUNT" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="AIRLINE" Parameter="aIRLINE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="VISA_REQUIRED" Parameter="vISA_REQUIRED" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FR_EXCHANGE" Parameter="fR_EXCHANGE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="INSUR_MEDICLAIM" Parameter="iNSUR_MEDICLAIM" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="SEAT_PREFERENCE" Parameter="sEAT_PREFERENCE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="MEAL_PREFERENCE" Parameter="mEAL_PREFERENCE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="BAGGAGE_COUNT" Parameter="bAGGAGE_COUNT" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="HAND_BAGGAGE_COUNT" Parameter="hAND_BAGGAGE_COUNT" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REMARKS" Parameter="rEMARKS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TRIP_END_DATE" Parameter="tRIP_END_DATE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ARRIVAL_TIME" Parameter="aRRIVAL_TIME" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REASON" Parameter="rEASON" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_update_requisition_status_mst_dtl_for_traveldesk" Method="sp_update_requisition_status_mst_dtl_for_traveldesk">
+    <Parameter Name="REQUISITION_ID" Parameter="rEQUISITION_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modified_by" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REQ_SEGMENT_ID" Parameter="rEQ_SEGMENT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REMARKS" Parameter="rEMARKS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="REASON_FOR_CANCEL" Parameter="rEASON_FOR_CANCEL" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CURRENT_STATUS" Parameter="cURRENT_STATUS" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

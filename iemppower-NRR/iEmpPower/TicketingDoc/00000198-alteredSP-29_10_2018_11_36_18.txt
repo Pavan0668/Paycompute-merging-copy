@@ -1,0 +1,673 @@
+USE [PRISMTRVLNEWUI]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_travel_search]    Script Date: 05-06-2018 15:07:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[usp_travel_search]
+	@PERNR varchar(8),
+	@SelectedType varchar(2),
+	@txtSearch varchar(MAX),
+	@flag int
+AS
+BEGIN
+	SET NOCOUNT ON;
+	--Declare @type varchar(2)
+	Declare @sqlw varchar(max),@sql varchar(max)
+	
+	if(@SelectedType='2')
+	Begin
+		if(upper(@txtSearch) LIKE 'DOMESTIC')                          
+			 BEGIN                          
+			  set @txtSearch = 'A'                          
+			 END                          
+		else if(upper(@txtSearch) LIKE 'INTERNATIONAL')                          
+			 BEGIN                          
+			  set @txtSearch = 'B'                          
+			 END 		
+	End
+	if(@flag=1)
+	----------------------------Trip Request page---------------------------------------
+	Begin
+
+		if(@txtSearch<>'')
+		Begin
+			set @sqlw=Case When @SelectedType='1' then 'ZTR.REINR='''+@txtSearch+''' and ZTR.PERNR='''+@PERNR+''' and ZTR.STATUS not in (''Cancelled'',''Cancel Approved'')'
+			When @SelectedType='2' then 'ZTR.KZREA='''+@txtSearch+''' and ZTR.PERNR='''+@PERNR+''' and ZTR.STATUS not in (''Cancelled'',''Cancel Approved'')'
+			--when @SelectedType='3' then 'ZTR.PERNR LIKE '''+@txtSearch+''' and 
+			--		(ZTR.APPROVED_BY1='''+@PERNR+''' and ZTR.STATUS=''Requested'') or
+			--		(ZTR.APPROVED_BY2='''+@PERNR+'''  and ZTR.STATUS=''Approved1'') or
+			--		(ZTR.APPROVED_BY3='''+@PERNR+'''  and ZTR.STATUS=''Approved2'')' 
+			--when @SelectedType='4' then  ' 
+			--'''+@txtSearch+''' in (p2.VORNA,p2.NACHN) and 
+			--		(ZTR.APPROVED_BY1='''+@PERNR+''' and ZTR.STATUS=''Requested'') or
+			--		(ZTR.APPROVED_BY2='''+@PERNR+'''  and ZTR.STATUS=''Approved1'') or
+			--		(ZTR.APPROVED_BY3='''+@PERNR+'''  and ZTR.STATUS=''Approved2'')  '
+			ELSE '1=1' END
+		End
+		Goto SearchData;
+	End
+	if(@flag=2)
+	----------------------------Trip Approval page---------------------------------------
+	Begin
+
+		if(@txtSearch<>'')
+		Begin
+			set @sqlw=Case When @SelectedType='1' then 'ZTR.REINR='''+@txtSearch+''' and ZTR.STATUS not in (''Cancel Approved'') and 
+							((ZTR.APPROVED_BY1='''+@PERNR+''' and ZTR.STATUS IN (''Requested'',''Cancelled'',''Updated'')) or
+					(ZTR.APPROVED_BY2='''+@PERNR+'''  and ZTR.STATUS=''Approved1'') or
+					(ZTR.APPROVED_BY3='''+@PERNR+'''  and ZTR.STATUS=''Approved2'') or
+					(ZTR.APPROVED_BY4='''+@PERNR+'''  and ZTR.STATUS=''Approved3''))' 
+			When @SelectedType='2' then 'ZTR.KZREA='''+@txtSearch+''' and ZTR.STATUS not in (''Cancel Approved'') and
+					((ZTR.APPROVED_BY1='''+@PERNR+''' and ZTR.STATUS IN (''Requested'',''Cancelled'',''Updated'')) or
+					(ZTR.APPROVED_BY2='''+@PERNR+'''  and ZTR.STATUS=''Approved1'') or
+					(ZTR.APPROVED_BY3='''+@PERNR+'''  and ZTR.STATUS=''Approved2'') or
+					(ZTR.APPROVED_BY4='''+@PERNR+'''  and ZTR.STATUS=''Approved3''))'
+			when @SelectedType='3' then 'ZTR.PERNR LIKE '''+@txtSearch+''' and ZTR.STATUS not in (''Cancel Approved'') and 
+						((ZTR.APPROVED_BY1='''+@PERNR+''' and ZTR.STATUS IN (''Requested'',''Cancelled'',''Updated'')) or
+					(ZTR.APPROVED_BY2='''+@PERNR+'''  and ZTR.STATUS=''Approved1'') or
+					(ZTR.APPROVED_BY3='''+@PERNR+'''  and ZTR.STATUS=''Approved2'') or
+					(ZTR.APPROVED_BY4='''+@PERNR+'''  and ZTR.STATUS=''Approved3''))'
+			when @SelectedType='4' then  ' 
+					'''+@txtSearch+''' in (p2.VORNA,p2.NACHN) and ZTR.STATUS not in (''Cancel Approved'') and 
+						((ZTR.APPROVED_BY1='''+@PERNR+''' and ZTR.STATUS IN (''Requested'',''Cancelled'',''Updated'')) or
+					(ZTR.APPROVED_BY2='''+@PERNR+'''  and ZTR.STATUS=''Approved1'') or
+					(ZTR.APPROVED_BY3='''+@PERNR+'''  and ZTR.STATUS=''Approved2'') or
+					(ZTR.APPROVED_BY4='''+@PERNR+'''  and ZTR.STATUS=''Approved3''))'
+			ELSE '1=1' END
+		End
+		Goto SearchData;
+	End
+	if(@flag=3)
+	----------------------------Hr behalf emp trvl Request page---------------------------------------
+	Begin
+
+		if(@txtSearch<>'')
+		Begin
+			set @sqlw=Case When @SelectedType='1' then 'ZTR.REINR='''+@txtSearch+''' and 
+			'''+@PERNR+''' NOT IN (ZTR.PERNR) and ZTR.STATUS not in (''Cancelled'',''Cancel Approved'')' 
+			When @SelectedType='2' then 'ZTR.KZREA='''+@txtSearch+''' and
+					 '''+@PERNR+''' NOT IN (ZTR.PERNR) and ZTR.STATUS not in (''Cancelled'',''Cancel Approved'')' 
+			when @SelectedType='3' then 'ZTR.PERNR LIKE '''+@txtSearch+''' and 
+					 '''+@PERNR+''' NOT IN (ZTR.PERNR) and ZTR.STATUS not in (''Cancelled'',''Cancel Approved'')' 
+			when @SelectedType='4' then  ' 
+					'''+@txtSearch+''' in (p2.VORNA,p2.NACHN) and 
+				 '''+@PERNR+''' NOT IN (ZTR.PERNR) and ZTR.STATUS not in (''Cancelled'',''Cancel Approved'')'
+			ELSE '1=1' END
+		End
+		Goto SearchData;
+	End
+
+	if(@flag=4)
+	----------------------------All emp Trip Request status page---------------------------------------
+	Begin
+		if(@txtSearch<>'')
+		Begin
+			set @sqlw=Case When @SelectedType='1' then 'ZTR.REINR='''+@txtSearch+''' '
+			When @SelectedType='2' then 'ZTR.KZREA='''+@txtSearch+''''
+			when @SelectedType='3' then 'ZTR.PERNR LIKE '''+@txtSearch+'''' 
+			when @SelectedType='4' then  ''''+@txtSearch+''' in (p2.VORNA,p2.NACHN)'
+			ELSE '1=1' END
+		End
+		Goto SearchData;
+	End
+
+	if(@flag=5)
+	----------------------------Perticular emp Trip Request status page---------------------------------------
+	Begin
+		if(@txtSearch<>'')
+		Begin
+			set @sqlw=Case When @SelectedType='1' then 'ZTR.REINR='''+@txtSearch+''' and ZTR.PERNR='''+@PERNR+''''
+			When @SelectedType='2' then 'ZTR.KZREA='''+@txtSearch+''' and ZTR.PERNR='''+@PERNR+''''
+			
+			ELSE '1=1' END
+		End
+		Goto SearchData;
+	End
+
+	
+	
+	SearchData:
+	 set @sql='
+	 
+		select Distinct [REINR],ztr.[PERNR],p2.VORNA, p2.NACHN,[SCHEM],[KZREA],[TOREGION]
+			,ft.TEXT25 as ftotext
+			,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'''') as FRMCNTRY,isNull(fctry.LANDX,'''') as frmcntrytxt,isNull([FRMREGION],'''')as FRMREGION
+			,isNull(fr.TEXT25,'''') as frmtxt
+			,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+				,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNull(proj.POST1,'''') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+				Vec.FZTXT as Vehicle
+				,[VECH_SUBTYP],
+				SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+				,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+				,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],[APPROVED_BY4] ,[APPROVED_ON4] ,[REMARKS4] from ESS.ZTRV_ALL_TABLE_TRANS ZTR
+				inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+				left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ztr.FRMCNTRY 
+				inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION  and Ft.LAND1=ztr.TOCNTRY
+				inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+				left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+				left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+				inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+				inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+				where '+ @sqlw +'   
+		union all
+			select Distinct [REINR],ztr.[PERNR],p2.VORNA, p2.NACHN,[SCHEM],[KZREA],[TOREGION]
+		 ,ft.TEXT25 as ftotext
+		 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'''')as FRMCNTRY,isNull(fctry.LANDX,'''') as frmcntrytxt,isNull([FRMREGION],'''')as FRMREGION
+		 ,isNull(fr.TEXT25,'''') as frmtxt
+		 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+			  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNull(proj.POST1,'''') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+			  Vec.FZTXT as Vehicle
+			   ,[VECH_SUBTYP],
+			   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+			  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+			  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],[APPROVED_BY4] ,[APPROVED_ON4] ,[REMARKS4] from ESS.ZTRV_ALL_TABLE ZTR
+			  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+			 left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ztr.FRMCNTRY 
+				inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION  and Ft.LAND1=ztr.TOCNTRY
+				inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+				left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+			  left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+			  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+				inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+			  where '+ @sqlw +' 
+			  and REINR NOT IN (SELECT REINR FROM ESS.ZTRV_ALL_TABLE_TRANS ZTR where '+ @sqlw +')   
+			    order by REINR DESC  
+			  '
+
+		--Select @sql
+	EXECUTE (@sql)
+
+
+
+	--select Distinct [REINR],ztr.[PERNR],p2.VORNA, p2.NACHN,[SCHEM],[KZREA],[TOREGION]
+	--		,ft.TEXT25 as ftotext
+	--		,[TOCNTRY] ,ctry.LANDX as cntrytext,[FRMREGION]
+	--		,fr.TEXT25 as frmtxt
+	--		,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+	--			,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNull(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+	--			Vec.FZTXT as Vehicle
+	--			,[VECH_SUBTYP],
+	--			SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+	--			,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+	--			,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],[APPROVED_BY4] ,[APPROVED_ON4] ,[REMARKS4] from ESS.ZTRV_ALL_TABLE_TRANS ZTR
+	--			inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+	--			inner join Master.T706O FR on FR.RGION = ztr.FRMREGION 
+	--			inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION 
+	--			inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+	--			left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+	--			inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+	--			inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+				
+	--	union all
+	--		select Distinct [REINR],ztr.[PERNR],p2.VORNA, p2.NACHN,[SCHEM],[KZREA],[TOREGION]
+	--	 ,ft.TEXT25 as ftotext
+	--	 ,[TOCNTRY] ,ctry.LANDX as cntrytext,[FRMREGION]
+	--	 ,fr.TEXT25 as frmtxt
+	--	 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+	--		  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNull(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+	--		  Vec.FZTXT as Vehicle
+	--		   ,[VECH_SUBTYP],
+	--		   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+	--		  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+	--		  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],[APPROVED_BY4] ,[APPROVED_ON4] ,[REMARKS4] from ESS.ZTRV_ALL_TABLE ZTR
+	--		  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+	--		  inner join Master.T706O FR on FR.RGION = ztr.FRMREGION 
+	--		  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION 
+	--		  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+	--		  left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+	--		  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+	--			inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+			
+
+END
+
+
+=========================================================usp_get_travel_req_app_rej_details======================================================================================================================
+
+
+
+USE [PRISMTRVLNEWUI]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_get_travel_req_app_rej_details]    Script Date: 05-06-2018 15:03:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[usp_get_travel_req_app_rej_details] 
+	@REINR int,
+	@PERNR varchar(8)
+
+AS
+BEGIN
+
+--Declare @r int=(Select REINR From ESS.ZTRV_ALL_TABLE_TRANS where PERNR=@PERNR)
+
+		 select [REINR],ztr.[PERNR], p2.NACHN +' '+p2.VORNA as PerName,[SCHEM],[KZREA],[TOREGION]
+		 ,ft.TEXT25 as ftotext
+		 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'')as FRMCNTRY,isNull(fctry.LANDX,'') as frmcntrytxt ,isNull([FRMREGION],'')as FRMREGION
+		 ,isNull(fr.TEXT25,'') as frmtxt
+		 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+			  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+			  Vec.FZTXT as Vehicle
+			   ,[VECH_SUBTYP],
+			   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+			  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+			  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],[APPROVED_BY4],[APPROVED_ON4],[REMARKS4] ,
+			 IsNull(a1.VORNA+' '+ a1.NACHN,'') as App1N,
+			  IsNull(a2.VORNA +' '+a2.NACHN,'') as App2N,
+			  IsNull(a3.VORNA+' '+a3.NACHN,'') as App3N,
+			  IsNull(a4.VORNA+' '+a4.NACHN,'') as App4N,ZTR.EREMARKS
+			   from ess.ZTRV_ALL_TABLE_TRANS ZTR
+			  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+			  Left join ess.PA0002 a1 on ZTR.APPROVED_BY1=a1.PERNR
+			  
+				left join ess.PA0002 a2 on ZTR.APPROVED_BY2=a2.PERNR
+				left join ess.PA0002 a3 on ZTR.APPROVED_BY3=a3.PERNR
+				left join ess.PA0002 a4 on ZTR.APPROVED_BY4=a4.PERNR
+			  left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ztr.FRMCNTRY
+			  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION and Ft.LAND1=ZTR.TOCNTRY
+			  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+			    left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+			  left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+			  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+				inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+				
+			  where 
+				ZTR.PERNR=@PERNR and ZTR.REINR=@REINR
+	  
+
+	  UNION ALL
+	  
+	  
+	   select [REINR],ztr.[PERNR], p2.NACHN +' '+p2.VORNA as PerName,[SCHEM],[KZREA],[TOREGION]
+		 ,ft.TEXT25 as ftotext
+		 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'')as FRMCNTRY,isNull(fctry.LANDX,'') as frmcntrytxt ,isNull([FRMREGION],'')as FRMREGION
+		 ,isNull(fr.TEXT25,'') as frmtxt
+		 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+			  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+			  Vec.FZTXT as Vehicle
+			   ,[VECH_SUBTYP],
+			   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+			  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+			  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],[APPROVED_BY4],[APPROVED_ON4],[REMARKS4] ,
+			 IsNull(a1.VORNA+' '+ a1.NACHN,'') as App1N,
+			  IsNull(a2.VORNA +' '+a2.NACHN,'') as App2N,
+			  IsNull(a3.VORNA+' '+a3.NACHN,'') as App3N,
+			  IsNull(a4.VORNA+' '+a4.NACHN,'') as App4N,ZTR.EREMARKS
+			   from ess.ZTRV_ALL_TABLE ZTR
+			  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+			  Left join ess.PA0002 a1 on ZTR.APPROVED_BY1=a1.PERNR
+			  
+				left join ess.PA0002 a2 on ZTR.APPROVED_BY2=a2.PERNR
+				left join ess.PA0002 a3 on ZTR.APPROVED_BY3=a3.PERNR
+				left join ess.PA0002 a4 on ZTR.APPROVED_BY4=a4.PERNR
+			  left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ztr.FRMCNTRY
+			  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION and Ft.LAND1=ZTR.TOCNTRY
+			  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+			    left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+			  left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+			  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+				inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+				
+			  where 
+				ZTR.PERNR=@PERNR and ZTR.REINR=@REINR and REINR NOT IN (Select REINR From ESS.ZTRV_ALL_TABLE_TRANS where PERNR=@PERNR)
+
+END
+
+==============================================================usp_get_travel_req_app_rej========================================================================================================
+
+USE [PRISMTRVLNEWUI]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_get_travel_req_app_rej]    Script Date: 05-06-2018 14:49:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[usp_get_travel_req_app_rej] 
+	@PERNR varchar(8),
+	@flag int
+AS
+BEGIN
+if(@flag=1)
+----------------------Approval Page Trip Details------------------------------------
+	Begin 
+	---Declare @r int=(select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS where @PERNR in (APPROVED_BY1,APPROVED_BY2,APPROVED_BY3,APPROVED_BY4))
+		 select [REINR],ztr.[PERNR], p2.NACHN,p2.VORNA,[SCHEM],[KZREA],[TOREGION]
+		 ,ft.TEXT25 as ftotext
+		 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'')as FRMCNTRY,isNull(fctry.LANDX,'') as frmcntrytxt,isNull([FRMREGION],'')as FRMREGION
+		 ,isNull(fr.TEXT25,'') as frmtxt
+		 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+			  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+			  Vec.FZTXT as Vehicle
+			   ,[VECH_SUBTYP],
+			   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+			  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+			  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],ZTR.EREMARKS,[APPROVED_BY4],[APPROVED_ON4],[REMARKS4] from ess.ZTRV_ALL_TABLE_TRANS ZTR
+			  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+			  left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ZTR.FRMCNTRY
+			  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION and Ft.LAND1=ZTR.TOCNTRY
+			  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+			  left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+			  LEFT join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+			  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+				inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+			  where 
+				(ZTR.APPROVED_BY1=@PERNR and ZTR.STATUS in ('Cancelled','Requested','Updated')) or
+				(ZTR.APPROVED_BY2=@PERNR and ZTR.STATUS='Approved1') or
+				(ZTR.APPROVED_BY3=@PERNR and ZTR.STATUS='Approved2' )or
+				(ZTR.APPROVED_BY4=@PERNR and ZTR.STATUS='Approved3' )
+
+				UNION ALL
+
+				 select [REINR],ztr.[PERNR], p2.NACHN,p2.VORNA,[SCHEM],[KZREA],[TOREGION]
+		 ,ft.TEXT25 as ftotext
+		 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'')as FRMCNTRY,isNull(fctry.LANDX,'') as frmcntrytxt,isNull([FRMREGION],'')as FRMREGION
+		 ,isNull(fr.TEXT25,'') as frmtxt
+		 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+			  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+			  Vec.FZTXT as Vehicle
+			   ,[VECH_SUBTYP],
+			   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+			  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+			  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],ZTR.EREMARKS,[APPROVED_BY4],[APPROVED_ON4],[REMARKS4] from ess.ZTRV_ALL_TABLE ZTR
+			  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+			  left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ZTR.FRMCNTRY
+			  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION and Ft.LAND1=ZTR.TOCNTRY
+			  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+			  left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+			  LEFT join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+			  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+				inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+			  where 
+				((ZTR.APPROVED_BY1=@PERNR and ZTR.STATUS in ('Requested','Updated')) or
+				(ZTR.APPROVED_BY2=@PERNR and ZTR.STATUS='Approved1') or
+				(ZTR.APPROVED_BY3=@PERNR and ZTR.STATUS='Approved2' )or
+				(ZTR.APPROVED_BY4=@PERNR and ZTR.STATUS='Approved3' )) and ZTR.REINR not in (select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS where 
+				((APPROVED_BY1=@PERNR and STATUS in ('Cancelled','Requested','Updated')) or
+				(APPROVED_BY2=@PERNR and STATUS='Approved1') or
+				(APPROVED_BY3=@PERNR and STATUS='Approved2' )or
+				(APPROVED_BY4=@PERNR and STATUS='Approved3' )) and
+				@PERNR in (APPROVED_BY1,APPROVED_BY2,APPROVED_BY3,APPROVED_BY4))   order by REINR DESC  
+	  End
+
+		else if(@flag=2)
+		Begin 
+		----------------------Perticular Emp Status Page  Trip Details------------------------------------
+	--	SET @r=(select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS where PERNR=@PERNR )
+				 select [REINR],ztr.[PERNR], p2.NACHN,p2.VORNA,[SCHEM],[KZREA],[TOREGION]
+				 ,ft.TEXT25 as ftotext
+				 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'')as FRMCNTRY,isNull(fctry.LANDX,'') as frmcntrytxt,isNull([FRMREGION],'')as FRMREGION
+				 ,isNull(fr.TEXT25,'') as frmtxt
+				 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+					  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+					  Vec.FZTXT as Vehicle
+					   ,[VECH_SUBTYP],
+					   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+					  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+					  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],ZTR.EREMARKS,[APPROVED_BY4],[APPROVED_ON4],[REMARKS4]  from ess.ZTRV_ALL_TABLE_TRANS ZTR
+					  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+					   left  join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ZTR.FRMCNTRY
+			  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION and Ft.LAND1=ZTR.TOCNTRY
+			  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+			   left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+					  LEFT join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+					  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+						inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+					  where 
+						ZTR.PERNR=@PERNR 
+
+						UNION ALL
+
+						 select [REINR],ztr.[PERNR], p2.NACHN,p2.VORNA,[SCHEM],[KZREA],[TOREGION]
+				 ,ft.TEXT25 as ftotext
+				 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'')as FRMCNTRY,isNull(fctry.LANDX,'') as frmcntrytxt,isNull([FRMREGION],'')as FRMREGION
+				 ,isNull(fr.TEXT25,'') as frmtxt
+				 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+					  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+					  Vec.FZTXT as Vehicle
+					   ,[VECH_SUBTYP],
+					   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+					  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+					  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],ZTR.EREMARKS,[APPROVED_BY4],[APPROVED_ON4],[REMARKS4]  from ess.ZTRV_ALL_TABLE ZTR
+					  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+					   left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ZTR.FRMCNTRY
+			  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION and Ft.LAND1=ZTR.TOCNTRY
+			  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+			   left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+					  LEFT join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+					  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+						inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+					  where 
+						ZTR.PERNR=@PERNR and ZTR.REINR not in (select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS where PERNR=@PERNR)   order by REINR DESC  
+		  End
+
+		else if(@flag=3)
+		Begin 
+			----------------------All Emp Status Page  Trip Details------------------------------------
+		--SET @r=(select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS)
+				 select [REINR],ztr.[PERNR], p2.NACHN,p2.VORNA,[SCHEM],[KZREA],[TOREGION]
+				 ,ft.TEXT25 as ftotext
+				 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'')as FRMCNTRY ,isNull(fctry.LANDX,'') as frmcntrytxt,isNull([FRMREGION],'')as FRMREGION
+				 ,isNull(fr.TEXT25,'') as frmtxt
+				 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+					  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+					  Vec.FZTXT as Vehicle
+					   ,[VECH_SUBTYP],
+					   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+					  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+					  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],ZTR.EREMARKS,[APPROVED_BY4],[APPROVED_ON4],[REMARKS4]  from ess.ZTRV_ALL_TABLE_TRANS ZTR
+					  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+					   left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ZTR.FRMCNTRY
+			  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION and Ft.LAND1=ZTR.TOCNTRY
+			  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+			   left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+					  LEFT join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+					  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+					inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP	
+
+					UNION ALL
+
+					select [REINR],ztr.[PERNR], p2.NACHN,p2.VORNA,[SCHEM],[KZREA],[TOREGION]
+				 ,ft.TEXT25 as ftotext
+				 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'')as FRMCNTRY,isNull(fctry.LANDX,'') as frmcntrytxt,isNull([FRMREGION],'') as FRMREGION
+				 ,isNull(fr.TEXT25,'') as frmtxt
+				 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+					  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+					  Vec.FZTXT as Vehicle
+					   ,[VECH_SUBTYP],
+					   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+					  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+					  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK],ZTR.EREMARKS,[APPROVED_BY4],[APPROVED_ON4],[REMARKS4]  from ess.ZTRV_ALL_TABLE ZTR
+					  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+					   left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ZTR.FRMCNTRY
+			  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION and Ft.LAND1=ZTR.TOCNTRY
+			  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+			   left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+					  LEFT join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+					  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+					inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP	where ZTR.REINR not in (select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS)   order by REINR DESC  
+		  End
+
+END
+
+==========================================================usb_sp_get_travel_request======================================================================================================================================
+
+USE [PRISMTRVLNEWUI]
+GO
+/****** Object:  StoredProcedure [dbo].[usb_sp_get_travel_request]    Script Date: 05-06-2018 15:57:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[usb_sp_get_travel_request] 
+	@PERNR varchar(8),
+	@flag int
+AS
+BEGIN
+	SET NOCOUNT ON;
+	----------------  Travel Req Trip Details-----------------------------------------
+	if(@flag=1)
+	Begin
+	--declare @r int
+	select distinct [REINR],z.[PERNR],p2.VORNA, p2.NACHN,[SCHEM],[KZREA],[TOREGION]
+ ,ft.TEXT25 as ftotext
+ ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNULL([FRMCNTRY],'') as FRMCNTRY,isNULL(fctry.LANDX,'') as frmcntrytext,isNULL([FRMREGION],'') as FRMREGION
+ ,isNULL(fr.TEXT25,'') as frmtxt
+ ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+      ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+	  Vec.FZTXT as Vehicle
+	   ,[VECH_SUBTYP],
+	   SVec.TEXT25 as Vehile_Sub ,z.[CREATED_ON] ,z.[CREATED_BY]
+      ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+      ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],z.[STATUS],z.[TASK]
+	  ,[APPROVED_BY4] ,[APPROVED_ON4] ,[REMARKS4] from [ESS].[ZTRV_ALL_TABLE_TRANS] z 
+	  inner join ess.pa0002 p2 on z.PERNR = p2.PERNR
+	  LEFT join Master.T706O FR on FR.RGION = z.FRMREGION and FR.LAND1=z.FRMCNTRY 
+	  inner join Master.T706O Ft on Ft.RGION = z.TOREGION  and Ft.LAND1=z.TOCNTRY
+	  inner join master.T005T ctry on ctry.LAND1 = z.TOCNTRY
+	  LEFT join master.T005T fctry on fctry.LAND1 = z.FRMCNTRY
+		Left join master.PROJ proj on proj.PSPNR=z.PROJECTID
+	  inner Join master.T706E Vec on vec.KZPMF=z.VECH_TYP
+	    inner Join master.T706W SVec on SVec.PKWKL=z.VECH_SUBTYP 
+	  where z.STATUS not in ('Cancelled') and z.PERNR=@PERNR 
+	  UNION ALL
+	select distinct [REINR],ztr.[PERNR],p2.VORNA, p2.NACHN,[SCHEM],[KZREA],[TOREGION]
+	,isNULL(ft.TEXT25,'') as ftotext
+	,[TOCNTRY] ,ctry.LANDX as cntrytext,isNULL([FRMCNTRY],'')as FRMCNTRY,isNULL(fctry.LANDX,'') as frmcntrytext,isNULL([FRMREGION],'')as FRMREGION
+	,isNULL(fr.TEXT25,'') as frmtxt
+	,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+      ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+	  Vec.FZTXT as Vehicle
+	   ,[VECH_SUBTYP],
+	   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+      ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+      ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK]
+	  ,[APPROVED_BY4] ,[APPROVED_ON4] ,[REMARKS4] from ess.ZTRV_ALL_TABLE ZTR
+	  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+	  left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ZTR.FRMCNTRY 
+	  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION  and Ft.LAND1=ZTR.TOCNTRY
+	  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+	  left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+		Left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+	  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+	    inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+	  where ZTR.STATUS not in ('Cancel Approved') and ZTR.PERNR=@PERNR 
+	  and ZTR.REINR not in (select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS where PERNR=@PERNR)     order by REINR DESC  
+	  --(isnull(@r,''))
+   End
+
+   else if(@flag=2)
+   Begin
+
+   ----------------HR Behalf of emp Travel Req Trip Details-----------------------------------------
+  -- set @r=(select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS where CREATED_BY=@PERNR)
+	   select [REINR],ztr.[PERNR],p2.VORNA, p2.NACHN,[SCHEM],[KZREA],[TOREGION]
+	 ,ft.TEXT25 as ftotext
+	 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'')as FRMCNTRY,isNull(fctry.LANDX,'') as frmcntrytext,isNull([FRMREGION],'') as FRMREGION
+	 ,isNull(fr.TEXT25,'') as frmtxt
+	 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+		  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+		  Vec.FZTXT as Vehicle
+		   ,[VECH_SUBTYP],
+		   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+		  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+		  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK]
+		  ,[APPROVED_BY4] ,[APPROVED_ON4] ,[REMARKS4] from ess.ZTRV_ALL_TABLE_TRANS ZTR
+		  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+		  left join Master.T706O FR on FR.RGION = ztr.FRMREGION  and FR.LAND1=ZTR.FRMCNTRY
+		  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION  and Ft.LAND1=ZTR.TOCNTRY
+		  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+		   left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+		  Left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+		  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+			inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+		  where ZTR.STATUS not  in ('Cancelled') 
+		  --and ZTR.CREATED_BY=@PERNR and ZTR.PERNR not in(@PERNR)
+
+		  UNION ALL
+
+		   select [REINR],ztr.[PERNR],p2.VORNA, p2.NACHN,[SCHEM],[KZREA],[TOREGION]
+	 ,ft.TEXT25 as ftotext
+	 ,[TOCNTRY] ,ctry.LANDX as cntrytext,isNull([FRMCNTRY],'') as FRMCNTRY,isNull(fctry.LANDX,'') as frmcntrytext,isNull([FRMREGION],'') as FRMREGION
+	 ,isNull(fr.TEXT25,'') as frmtxt
+	 ,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+		  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+		  Vec.FZTXT as Vehicle
+		   ,[VECH_SUBTYP],
+		   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+		  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+		  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK]
+		  ,[APPROVED_BY4] ,[APPROVED_ON4] ,[REMARKS4] from ess.ZTRV_ALL_TABLE ZTR
+		  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+		  left join Master.T706O FR on FR.RGION = ztr.FRMREGION and FR.LAND1=ZTR.FRMCNTRY
+		  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION and Ft.LAND1=ZTR.TOCNTRY
+		  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+		  left join master.T005T fctry on fctry.LAND1 = ztr.FRMCNTRY
+		  Left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+		  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+			inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+		  where ZTR.STATUS not  in ('Cancel Approved') and 
+		  --ZTR.CREATED_BY=@PERNR and ZTR.PERNR not in(@PERNR) and
+		    ZTR.REINR not in (select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS)   order by REINR DESC  
+   End
+
+
+  ----    else if(@flag=3)
+  ---- Begin
+  ---- -- set @r=(select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS where PERNR=@PERNR)
+	 ----  select [REINR],ztr.[PERNR],p2.VORNA, p2.NACHN,[SCHEM],[KZREA],[TOREGION]
+	 ----,ft.TEXT25 as ftotext
+	 ----,[TOCNTRY] ,ctry.LANDX as cntrytext,[FRMREGION]
+	 ----,fr.TEXT25 as frmtxt
+	 ----,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+		----  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+		----  Vec.FZTXT as Vehicle
+		----   ,[VECH_SUBTYP],
+		----   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+		----  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+		----  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK]
+		----  ,[APPROVED_BY4] ,[APPROVED_ON4] ,[REMARKS4] from ess.ZTRV_ALL_TABLE_TRANS ZTR
+		----  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+		----  inner join Master.T706O FR on FR.RGION = ztr.FRMREGION 
+		----  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION 
+		----  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+		----  Left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+		----  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+		----	inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+		----  --where ZTR.STATUS not  in ('Rejected1','Rejected2','Rejected3','Rejected4','Cancel Approved','Cancelled') 
+
+		----  UNION ALL
+
+		----    select [REINR],ztr.[PERNR],p2.VORNA, p2.NACHN,[SCHEM],[KZREA],[TOREGION]
+	 ----,ft.TEXT25 as ftotext
+	 ----,[TOCNTRY] ,ctry.LANDX as cntrytext,[FRMREGION]
+	 ----,fr.TEXT25 as frmtxt
+	 ----,[FRMDAT],[FRMTIME] ,[TODAT],[TOTIME]
+		----  ,[ADVANCE],[ADDIT_ADV],[CURRENCY],[PROJECTID],isNULL(proj.POST1,'') as PROJ_NAME,[PURPOSE],[VECH_TYP],
+		----  Vec.FZTXT as Vehicle
+		----   ,[VECH_SUBTYP],
+		----   SVec.TEXT25 as Vehile_Sub ,ZTR.[CREATED_ON] ,ZTR.[CREATED_BY]
+		----  ,[UPDATED_ON] ,[UPDATED_BY] ,[APPROVED_BY1] ,[APPROVED_ON1] ,[REMARKS1],[APPROVED_BY2],[APPROVED_ON2] ,[REMARKS2]
+		----  ,[APPROVED_BY3] ,[APPROVED_ON3] ,[REMARKS3],ZTR.[STATUS],ZTR.[TASK]
+		----  ,[APPROVED_BY4] ,[APPROVED_ON4] ,[REMARKS4] from ess.ZTRV_ALL_TABLE ZTR
+		----  inner join ess.pa0002 p2 on ztr.PERNR = p2.PERNR
+		----  inner join Master.T706O FR on FR.RGION = ztr.FRMREGION 
+		----  inner join Master.T706O Ft on Ft.RGION = ztr.TOREGION 
+		----  inner join master.T005T ctry on ctry.LAND1 = ztr.TOCNTRY
+		----  Left join master.PROJ proj on proj.PSPNR=ZTR.PROJECTID
+		----  inner Join master.T706E Vec on vec.KZPMF=ZTR.VECH_TYP
+		----	inner Join master.T706W SVec on SVec.PKWKL=ZTR.VECH_SUBTYP
+		----  -- ZTR.STATUS not  in ('Rejected1','Rejected2','Rejected3','Rejected4','Cancel Approved','Cancelled') and 
+		---- where ZTR.REINR not in (select REINR FROM ESS.ZTRV_ALL_TABLE_TRANS where PERNR=@PERNR)   order by REINR DESC  
+  ---- End
+
+   
+
+
+END

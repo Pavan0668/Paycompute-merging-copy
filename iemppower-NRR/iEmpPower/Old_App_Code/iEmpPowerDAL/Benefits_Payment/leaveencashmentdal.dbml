@@ -1,0 +1,973 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Paycompute_NewUIPRD" Class="leaveencashmentdalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Paycompute_NewUIPRD;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iEmpPowerConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_Create_Iexp" Method="sp_Create_Iexp">
+    <Parameter Name="IEXP_ID" Parameter="iEXP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PROJ_ID" Parameter="pROJ_ID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="TASK" Parameter="tASK" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="PURPOSE" Parameter="pURPOSE" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="RCURR" Parameter="rCURR" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_ON1" Parameter="aPPROVED_ON1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY1" Parameter="aPPROVED_BY1" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS1" Parameter="rEMARKS1" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON2" Parameter="aPPROVED_ON2" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY2" Parameter="aPPROVED_BY2" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS2" Parameter="rEMARKS2" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON3" Parameter="aPPROVED_ON3" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY3" Parameter="aPPROVED_BY3" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS3" Parameter="rEMARKS3" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON4" Parameter="aPPROVED_ON4" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY4" Parameter="aPPROVED_BY4" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS4" Parameter="rEMARKS4" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON5" Parameter="aPPROVED_ON5" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY5" Parameter="aPPROVED_BY5" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS5" Parameter="rEMARKS5" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON6" Parameter="aPPROVED_ON6" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY6" Parameter="aPPROVED_BY6" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS6" Parameter="rEMARKS6" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON7" Parameter="aPPROVED_ON7" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY7" Parameter="aPPROVED_BY7" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS7" Parameter="rEMARKS7" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON8" Parameter="aPPROVED_ON8" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY8" Parameter="aPPROVED_BY8" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS8" Parameter="rEMARKS8" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON9" Parameter="aPPROVED_ON9" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY9" Parameter="aPPROVED_BY9" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS9" Parameter="rEMARKS9" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(38,10)" />
+    <Parameter Name="PR_ID" Parameter="pR_ID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Delete_Saved_Iexpense" Method="sp_Delete_Saved_Iexpense">
+    <Parameter Name="EXPID" Parameter="eXPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CreateSaved_Iexp" Method="sp_CreateSaved_Iexp">
+    <Parameter Name="IEXP_ID" Parameter="iEXP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PROJ_ID" Parameter="pROJ_ID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="TASK" Parameter="tASK" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="PURPOSE" Parameter="pURPOSE" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="RCURR" Parameter="rCURR" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_ON1" Parameter="aPPROVED_ON1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY1" Parameter="aPPROVED_BY1" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS1" Parameter="rEMARKS1" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON2" Parameter="aPPROVED_ON2" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY2" Parameter="aPPROVED_BY2" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS2" Parameter="rEMARKS2" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON3" Parameter="aPPROVED_ON3" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY3" Parameter="aPPROVED_BY3" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS3" Parameter="rEMARKS3" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON4" Parameter="aPPROVED_ON4" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY4" Parameter="aPPROVED_BY4" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS4" Parameter="rEMARKS4" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON5" Parameter="aPPROVED_ON5" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY5" Parameter="aPPROVED_BY5" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS5" Parameter="rEMARKS5" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON6" Parameter="aPPROVED_ON6" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY6" Parameter="aPPROVED_BY6" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS6" Parameter="rEMARKS6" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON7" Parameter="aPPROVED_ON7" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY7" Parameter="aPPROVED_BY7" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS7" Parameter="rEMARKS7" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON8" Parameter="aPPROVED_ON8" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY8" Parameter="aPPROVED_BY8" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS8" Parameter="rEMARKS8" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON9" Parameter="aPPROVED_ON9" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY9" Parameter="aPPROVED_BY9" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS9" Parameter="rEMARKS9" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(38,10)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteFile_Saved_Iexp" Method="sp_DeleteFile_Saved_Iexp">
+    <Parameter Name="IEXPID" Parameter="iEXPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_AllIexpense_View_forFinance" Method="sp_Get_AllIexpense_View_forFinance">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_Get_AllIexpense_View_forFinanceResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(41) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_CountofId_IexpenseItems" Method="sp_Get_CountofId_IexpenseItems">
+    <Parameter Name="IEXPID" Parameter="iEXPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_Iexp_Types" Method="sp_Get_Iexp_Types">
+    <Parameter Name="Iexp_Id" Parameter="iexp_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Get_Iexp_TypesResult">
+      <Column Name="IEXP_TYPID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXP_TYPE" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="S_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NO_DAYS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EXPT_AMT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EXPT_CURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="EXC_RATE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RE_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="JUSTIFY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RECEIPT_FILE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="RECEIPT_FID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LGTXT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="entity" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Iexpense" Method="sp_Get_Iexpense">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="sp_Get_IexpenseResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="entity" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="P_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Iexpense_MC" Method="sp_Get_Iexpense_MC">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="sp_Get_Iexpense_MCResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="entity" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="P_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Iexpense_MC_month" Method="sp_Get_Iexpense_MC_month">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_Iexpense_MC_monthResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="entity" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="P_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Iexpense_MC_month_Rpager" Method="sp_Get_Iexpense_MC_month_Rpager">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_Get_Iexpense_MC_month_RpagerResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TASK" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="entity" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="P_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Iexpense_month" Method="sp_Get_Iexpense_month">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_Iexpense_monthResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="entity" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="P_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Iexpense_month_Rpager" Method="sp_Get_Iexpense_month_Rpager">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EMPLOYEE_Name" Parameter="eMPLOYEE_Name" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_Get_Iexpense_month_RpagerResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TASK" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="entity" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="P_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_get_Iexpense_PendingMngrApp" Method="sp_get_Iexpense_PendingMngrApp">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="sp_get_Iexpense_PendingMngrAppResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(41) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Iexpense_View" Method="sp_Get_Iexpense_View">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_Get_Iexpense_ViewResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Iexpense_View_forsaved" Method="sp_Get_Iexpense_View_forsaved">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_Get_Iexpense_View_forsavedResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Iexpense_View_month" Method="sp_Get_Iexpense_View_month">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_Get_Iexpense_View_monthResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_Iexpense_View_month_Rpager" Method="sp_Get_Iexpense_View_month_Rpager">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="month" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageSize" Parameter="pageSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recordcount" Parameter="recordcount" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="sp_Get_Iexpense_View_month_RpagerResult">
+      <Column Name="RowNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TASK" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_IexpenseStatusDetails" Method="sp_Get_IexpenseStatusDetails">
+    <Parameter Name="Iexp_Id" Parameter="iexp_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Get_IexpenseStatusDetailsResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PURPOSE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME1" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME2" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME3" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME4" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME5" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME6" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ENAME7" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_IEXPTypesStatus" Method="sp_Get_IEXPTypesStatus">
+    <Parameter Name="EXPID" Parameter="eXPID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Get_IEXPTypesStatusResult">
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENAME1" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENAME2" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENAME3" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENAME4" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENAME5" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENAME6" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENAME7" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BUKRS" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_MailList_IExpense" Method="sp_Get_MailList_IExpense">
+    <Parameter Name="IEXp_ID" Parameter="iEXp_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPPERNR" Parameter="eMPPERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY1" Parameter="aPPROVED_BY1" Type="System.String" DbType="VarChar(8)" Direction="InOut" />
+    <Parameter Name="Approver_Name" Parameter="approver_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Approver_Email" Parameter="approver_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EMP_Name" Parameter="eMP_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EMP_Email" Parameter="eMP_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EmpEntity" Parameter="empEntity" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_MailList_IExpApp" Method="sp_Get_MailList_IExpApp">
+    <Parameter Name="IEXP_ID" Parameter="iEXP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="APPROVED_BY1" Parameter="aPPROVED_BY1" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" Direction="InOut" />
+    <Parameter Name="APPROVEDBY" Parameter="aPPROVEDBY" Type="System.String" DbType="VarChar(8)" Direction="InOut" />
+    <Parameter Name="Approver_Name" Parameter="approver_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Approver_Email" Parameter="approver_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EMP_Name" Parameter="eMP_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EMP_Email" Parameter="eMP_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PRSNTAPPROVEDBY_Email" Parameter="pRSNTAPPROVEDBY_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PRSNTAPPROVEDBY_Name" Parameter="pRSNTAPPROVEDBY_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Purpose" Parameter="purpose" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Project_code" Parameter="project_code" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EmpEntity" Parameter="empEntity" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <ElementType Name="sp_Get_MailList_IExpAppResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Get_MailList_IexpclaimChangeApprovers" Method="sp_Get_MailList_IexpclaimChangeApprovers">
+    <Parameter Name="IEXPID" Parameter="iEXPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EMPPERNR" Parameter="eMPPERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY" Parameter="aPPROVED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="PresentApprover" Parameter="presentApprover" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Approver_Name" Parameter="approver_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="Approver_Email" Parameter="approver_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EMP_Name" Parameter="eMP_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EMP_Email" Parameter="eMP_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="EmpEntity" Parameter="empEntity" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="Project_code" Parameter="project_code" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="TAmt" Parameter="tAmt" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="PRSNTAPPROVEDBY_Email" Parameter="pRSNTAPPROVEDBY_Email" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Parameter Name="PRSNTAPPROVEDBY_Name" Parameter="pRSNTAPPROVEDBY_Name" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_Pdate" Method="sp_Get_Pdate">
+    <Parameter Name="Iexp_Id" Parameter="iexp_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pdate" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Get_SavedExpTypes" Method="sp_Get_SavedExpTypes">
+    <Parameter Name="Iexp_Id" Parameter="iexp_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CalcReAmt" Parameter="calcReAmt" Type="System.Decimal" DbType="Decimal(38,2)" Direction="InOut" />
+    <Parameter Name="reamtcurr" Type="System.String" DbType="VarChar(5)" Direction="InOut" />
+    <ElementType Name="sp_Get_SavedExpTypesResult">
+      <Column Name="IEXP_TYPID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXP_TYPE" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="S_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NO_DAYS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EXPT_AMT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EXPT_CURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="EXC_RATE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RE_AMT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="JUSTIFY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RECEIPT_FILE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="RECEIPT_FID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LGTXT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="entity" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_IEXP_AddItems" Method="sp_IEXP_AddItems">
+    <Parameter Name="IEXP_ID" Parameter="iEXP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EXP_TYPE" Parameter="eXP_TYPE" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="S_DATE" Parameter="s_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NO_DAYS" Parameter="nO_DAYS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EXPT_AMT" Parameter="eXPT_AMT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EXPT_CURR" Parameter="eXPT_CURR" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="EXC_RATE" Parameter="eXC_RATE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RE_AMT" Parameter="rE_AMT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="JUSTIFY" Parameter="jUSTIFY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Iexp_claim_UpdateApprovers" Method="sp_Iexp_claim_UpdateApprovers">
+    <Parameter Name="IEXPID" Parameter="iEXPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="APPROVED_BY1" Parameter="aPPROVED_BY1" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY2" Parameter="aPPROVED_BY2" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY3" Parameter="aPPROVED_BY3" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY4" Parameter="aPPROVED_BY4" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY5" Parameter="aPPROVED_BY5" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY6" Parameter="aPPROVED_BY6" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY7" Parameter="aPPROVED_BY7" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY8" Parameter="aPPROVED_BY8" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_BY9" Parameter="aPPROVED_BY9" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="status" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Iexp_req_fiadvalUpdate" Method="sp_Iexp_req_fiadvalUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IexpID" Parameter="iexpID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Iexp_req_fiadvalUpdatePdate" Method="sp_Iexp_req_fiadvalUpdatePdate">
+    <Parameter Name="IexpID" Parameter="iexpID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pdate" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_iexpense_req_fiadvalDelete" Method="sp_iexpense_req_fiadvalDelete">
+    <Parameter Name="IEXPID" Parameter="iEXPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_IexpTypes_Add" Method="sp_IexpTypes_Add">
+    <Parameter Name="IEXP_TYPID" Parameter="iEXP_TYPID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="IEXP_ID" Parameter="iEXP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EXP_TYPE" Parameter="eXP_TYPE" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="S_DATE" Parameter="s_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NO_DAYS" Parameter="nO_DAYS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EXPT_AMT" Parameter="eXPT_AMT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EXPT_CURR" Parameter="eXPT_CURR" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="EXC_RATE" Parameter="eXC_RATE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RE_AMT" Parameter="rE_AMT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="JUSTIFY" Parameter="jUSTIFY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_load_ExchangeType" Method="sp_load_ExchangeType">
+    <Parameter Name="frm_curr" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="to_curr" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="sp_load_ExchangeTypeResult">
+      <Column Name="FCURR" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TCURR" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="UKURS" Type="System.Decimal" DbType="Decimal(10,5)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_load_iexp_forManager" Method="sp_load_iexp_forManager">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_load_iexp_forManagerResult">
+      <Column Name="IEXP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROJ_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="POST1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RCURR" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CREATED_ON" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_ON1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY1" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY2" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY3" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY4" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY5" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY6" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY7" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY8" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVED_ON9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="APPROVED_BY9" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="REMARKS9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ENAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="entity" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="P_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_load_SettlementAmount" Method="sp_load_SettlementAmount">
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(38,2)" />
+    <Parameter Name="TotalAmtCurrency" Parameter="totalAmtCurrency" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="sp_load_SettlementAmountResult">
+      <Column Name="SettelmentCurrancy" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="SettelmentAmount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_loadParticular_Allexp_forFinance" Method="sp_loadParticular_Allexp_forFinance">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+  </Function>
+  <Function Name="dbo.sp_loadParticular_exp_foremp" Method="sp_loadParticular_exp_foremp">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_loadParticular_exp_forManager" Method="sp_loadParticular_exp_forManager">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_loadParticular_exp_forSaved" Method="sp_loadParticular_exp_forSaved">
+    <Parameter Name="APPROVER_NO" Parameter="aPPROVER_NO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SELECTED_TYPE" Parameter="sELECTED_TYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TXTSEARCH" Parameter="tXTSEARCH" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Save_Iexp" Method="sp_Save_Iexp">
+    <Parameter Name="IEXP_ID" Parameter="iEXP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PROJ_ID" Parameter="pROJ_ID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="TASK" Parameter="tASK" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="PURPOSE" Parameter="pURPOSE" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="RCURR" Parameter="rCURR" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="CREATED_ON" Parameter="cREATED_ON" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CREATED_BY" Parameter="cREATED_BY" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="APPROVED_ON1" Parameter="aPPROVED_ON1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY1" Parameter="aPPROVED_BY1" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS1" Parameter="rEMARKS1" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON2" Parameter="aPPROVED_ON2" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY2" Parameter="aPPROVED_BY2" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS2" Parameter="rEMARKS2" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON3" Parameter="aPPROVED_ON3" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY3" Parameter="aPPROVED_BY3" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS3" Parameter="rEMARKS3" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON4" Parameter="aPPROVED_ON4" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY4" Parameter="aPPROVED_BY4" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS4" Parameter="rEMARKS4" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON5" Parameter="aPPROVED_ON5" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY5" Parameter="aPPROVED_BY5" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS5" Parameter="rEMARKS5" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON6" Parameter="aPPROVED_ON6" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY6" Parameter="aPPROVED_BY6" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS6" Parameter="rEMARKS6" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON7" Parameter="aPPROVED_ON7" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY7" Parameter="aPPROVED_BY7" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS7" Parameter="rEMARKS7" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON8" Parameter="aPPROVED_ON8" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY8" Parameter="aPPROVED_BY8" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS8" Parameter="rEMARKS8" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="APPROVED_ON9" Parameter="aPPROVED_ON9" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="APPROVED_BY9" Parameter="aPPROVED_BY9" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="REMARKS9" Parameter="rEMARKS9" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="STATUS" Parameter="sTATUS" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(38,10)" />
+    <Parameter Name="PR_ID" Parameter="pR_ID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_update_Iexpense_Status" Method="sp_update_Iexpense_Status">
+    <Parameter Name="Iexp_id" Parameter="iexp_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Approved_by" Parameter="approved_by" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Approver_comment" Parameter="approver_comment" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Status1" Parameter="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Update_Iexptype_fiadval" Method="sp_Update_Iexptype_fiadval">
+    <Parameter Name="IEXPID" Parameter="iEXPID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EXP_TYPE" Parameter="eXP_TYPE" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateSaved_Exp_AddItems" Method="sp_UpdateSaved_Exp_AddItems">
+    <Parameter Name="IEXP_ID" Parameter="iEXP_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EXP_TYPE" Parameter="eXP_TYPE" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="S_DATE" Parameter="s_DATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NO_DAYS" Parameter="nO_DAYS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EXPT_AMT" Parameter="eXPT_AMT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EXPT_CURR" Parameter="eXPT_CURR" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="EXC_RATE" Parameter="eXC_RATE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RE_AMT" Parameter="rE_AMT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="JUSTIFY" Parameter="jUSTIFY" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RECEIPT_FILE" Parameter="rECEIPT_FILE" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="RECEIPT_FID" Parameter="rECEIPT_FID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="RECEIPT_FPATH" Parameter="rECEIPT_FPATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="status1" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="fileupdatey_n" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_project_validation" Method="usp_project_validation">
+    <Parameter Name="PERNR" Parameter="pERNR" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="POSID" Parameter="pOSID" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
